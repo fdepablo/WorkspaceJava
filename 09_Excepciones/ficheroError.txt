@@ -1,0 +1,7 @@
+java.util.InputMismatchException
+	at java.util.Scanner.throwFor(Unknown Source)
+	at java.util.Scanner.next(Unknown Source)
+	at java.util.Scanner.nextInt(Unknown Source)
+	at java.util.Scanner.nextInt(Unknown Source)
+	at _01_excepciones.Main6.pedirValor(Main6.java:49)
+	at _01_excepciones.Main6.main(Main6.java:14)

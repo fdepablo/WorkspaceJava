@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="cruceros">
+		<xsd:complexType>
+			<!-- la etiqueta sequence implica que tiene que haber una sequencia de
+				etiqutas, si no tiene minOcurros y maxOcurus solamente podra haber 1 -->
+			<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+				<xsd:element name="crucero">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="destino" type="xsd:string" />
+							<xsd:element name="detalles"> 
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="cia" type="xsd:string" />
+										<xsd:element name="dias" type="xsd:string" />
+										<xsd:element name="fechaSalida" type="xsd:date" />
+									</xsd:sequence>
+								</xsd:complexType>						
+							</xsd:element>
+							<xsd:element name="escalas">
+								<xsd:complexType>
+									<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+										<xsd:element name="escala">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="parada" type="xsd:string" />
+													<xsd:element name="llegada" type="xsd:string" />
+													<xsd:element name="salida" type="xsd:string" />
+												</xsd:sequence>
+												<xsd:attribute name="dia" type="xsd:int" />
+											</xsd:complexType>	
+										</xsd:element>								
+									</xsd:sequence>
+								</xsd:complexType>	
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="codigo" type="xsd:string" />
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

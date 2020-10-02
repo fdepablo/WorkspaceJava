@@ -1,0 +1,27 @@
+ HERENCIA
+ --------
+ 
+ En una empresa hay tres tipos de empleados, todos con dos atributos comunes, el
+ NOMBRE y el salario base.
+ El nombre no puede estar vacio
+ Los tipos son los siguientes:
+ 	Directivos
+ 		- Tienen a empleados a su cargo
+ 	Jefes
+ 		- Tienen unos incentivos
+ 	Trabajadores
+ 	
+
+ A todos los empleados se les puede calcular el sueldo pero a 
+ cada uno se le calcula el sueldo en función de ciertas reglas
+ 	- El sueldo de los directivos es su nomina + el numero de empleados multiplicado
+ 	por un extra
+ 	- el sueldo de los Jefes es su nomina + sus incentivos
+ 	- el sueldo de los trabajadores es simplemente su nomina
+ 	
+ Se pide
+ 	Diseñar el modelo de clases
+ 	Esta vez se requiere de una aplicacion que podamos hacer los siguiente
+ 		Dar de alta a un empleado, nos pedira por pantalla todos sus datos
+ 		Dar de baja a un empleado, nos pedirá un nombre y lo daremos de baja //optativo
+ 		listar todos los empleados

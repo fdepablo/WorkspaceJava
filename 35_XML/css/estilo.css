@@ -1,0 +1,18 @@
+@CHARSET "ISO-8859-1";
+body {
+	font-family: Verdana;
+}
+
+p {
+	color: blue;
+}
+
+td {
+	width: 100px;
+	text-align: center;
+	border: solid;
+}
+
+table {
+	border-collapse: collapse;
+}

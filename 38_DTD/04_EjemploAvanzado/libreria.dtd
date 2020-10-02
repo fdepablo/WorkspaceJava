@@ -1,0 +1,139 @@
+<!-- 
+Elementos
+Atributos
+Entidades
+PCDATA is text that WILL be parsed by a parser. The text will be examined by 
+the parser for entities and markup.
+CDATA is text that will NOT be parsed by a parser. Tags inside the text will 
+NOT be treated as markup and entities will not be expanded.
+-->
+
+<!-- ELEMENTOS -->
+
+<!--
+Una etiqueta que solo tiene un nodo de texto
+<!ELEMENT libro (#PCDATA)>
+-->
+
+<!--Etiquetas con hijos, tienen que ir en ese orden
+<!ELEMENT libro (ISBN, titulo, autor, year)>
+	<!ELEMENT ISBN (#PCDATA)>
+	<!ELEMENT titulo (#PCDATA)>
+	<!ELEMENT autor (#PCDATA)>
+	<!ELEMENT year (#PCDATA)>
+-->
+
+<!-- Los hijos a su vez pueden contener otras etiquetas: -->
+<!ELEMENT libros (ISBN, titulo, autor, year)>
+	<!ELEMENT ISBN (#PCDATA)>
+	<!ELEMENT titulo (#PCDATA)>
+	<!ELEMENT autor (nombre, pais, año_nacimiento)>
+		<!ELEMENT nombre (#PCDATA)>
+		<!ELEMENT pais (#PCDATA)>
+		<!ELEMENT año_nacimiento (#PCDATA)>
+	<!ELEMENT year (#PCDATA)>
+
+<!-- Elemento vacío -->
+<!ELEMENT br EMPTY>
+
+<!-- 
+Número de ocurrencias 
+(hijo)  : una y solo una
+(hijo+) : una o más
+(hijo*) : cero o más
+(hijo?) : cero o una
+-->
+
+<!--
+-->
+<!ELEMENT pedido (codigo, cliente, notas?, detalles)>
+	<!ELEMENT codigo (#PCDATA)>
+	<!ELEMENT cliente (id,nombrecompleto,telefono)>
+		<!ELEMENT id (#PCDATA)>
+		<!ELEMENT nombrecompleto (#PCDATA)>
+		<!ELEMENT telefono (#PCDATA)>		
+	<!ELEMENT notas (#PCDATA)>
+	<!ELEMENT detalles (detalle+)>
+		<!ELEMENT detalle (producto, precio, cantidad)>
+			<!ELEMENT producto (#PCDATA)>
+			<!ELEMENT precio (#PCDATA)>
+			<!ELEMENT cantidad (#PCDATA)>
+
+<!-- 
+(hijo1|hijo2) : uno u otro, se puede poner en el ejmplo de arriba
+(precioeuros|preciopesetas) y definirlos abajo
+-->
+
+<!ELEMENT mensaje ( texto, (destinatario|destinatarios) )>
+	<!ELEMENT texto (#PCDATA)>
+	<!ELEMENT destinatario (#PCDATA)>
+	<!ELEMENT destinatarios (destinatario+)>
+
+<!--
+Contenido mixto. No recomendable por su ambiguedad
+-->
+<!ELEMENT aviso (#PCDATA|descripcion)*>
+	<!ELEMENT descripcion (#PCDATA)>
+
+<!--
+Atributos
+Elemets vs Atributes, Avoid using attributes?
+
+Some of the problems with attributes are:
+
+    attributes cannot contain multiple values (child elements can)
+    attributes are not easily expandable (for future changes)
+    attributes cannot describe structures (child elements can)
+    attributes are more difficult to manipulate by program code
+    attribute values are not easy to test against a DTD
+
+If you use attributes as containers for data, you end up with documents that are difficult to 
+read and maintain. Try to use elements to describe data. Use attributes only to provide information 
+that is not relevant to the data.
+
+<note day="12" month="11" year="2002"
+to="Tove" from="Jani" heading="Reminder"
+body="Don't forget me this weekend!">
+</note> 
+
+Tipo:
+CDATA	   Alfanumérico
+(v1|v2|..) Valor seleccionado de una lista
+ID	       Identificador único
+IDREF	   Identificador de otro elemento
+IDREFS	   Lista de identificadores de otros elementos
+
+Valor
+"texto"        valor por defecto del atributo
+#REQUIRED      atributo obligatorio
+#IMPLIED       opcional (por defecto)
+#FIXED "valor" Solo puede tener un valor
+-->
+
+<!ELEMENT coche EMPTY>
+	<!-- <!ATTLIST coche id ID #REQUIRED> -->
+	<!ATTLIST coche marca CDATA #REQUIRED>
+	<!ATTLIST coche modelo CDATA #IMPLIED>
+	<!ATTLIST coche matricula CDATA "">
+	<!ATTLIST coche color CDATA #FIXED "Rojo">
+	<!ATTLIST coche tipo (monovolumen|utilitario) #REQUIRED>
+
+<!-- 
+Entities 
+<etiqueta>&entidad;</etiqueta>
+-->
+<!ENTITY version "Version 1.0">
+<!ENTITY dato "DATO">
+
+<!ELEMENT informacion (#PCDATA)>
+
+
+
+
+
+
+
+
+
+
+

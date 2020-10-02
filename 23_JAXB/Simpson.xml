@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<personas>
+    <persona id="1">
+        <nombre>Homer</nombre>
+        <apellidos>Simpson</apellidos>
+        <edad>48</edad>
+        <direccion>
+            <cp>28054</cp>
+            <nombreVia>Gran Via</nombreVia>
+            <tipoVia>Calle</tipoVia>
+        </direccion>
+    </persona>
+    <persona id="2">
+        <nombre>Lisa</nombre>
+        <apellidos>Simpson</apellidos>
+        <edad>12</edad>
+    </persona>
+    <persona id="3">
+        <nombre>Bart</nombre>
+        <apellidos>Simpson</apellidos>
+        <edad>13</edad>
+    </persona>
+    <persona id="4">
+        <nombre>Marge</nombre>
+        <apellidos>Simpson</apellidos>
+        <edad>40</edad>
+    </persona>
+</personas>

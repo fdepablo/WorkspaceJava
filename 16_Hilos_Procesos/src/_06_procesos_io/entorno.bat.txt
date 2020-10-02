@@ -1,0 +1,2 @@
+set path=%path%;C:\Program Files\Java\jdk1.8.0_181\bin
+set classpath=D:\Users\vened\Pronoide\20_Material\Java\Basico\WorkspaceJavaBasico\16_Hilos_Procesos\bin

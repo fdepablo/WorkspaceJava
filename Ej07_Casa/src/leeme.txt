@@ -1,0 +1,19 @@
+ CLASES
+ ------
+ 
+ Crear un modelo que encapsule la información referente a una CASA orientada
+ a su alquiler
+ 
+ La casa podra almacenar lo siguiente:
+ 	- Una Direccion
+ 		- La direccion tendra tipo via, un nombre de via, un cp y un numero
+ 	- Unas habitaciones
+ 		- Las habitaciones tendrán metros cuadrados, un tipo de habitacion
+ 		 y un numero de habitacion
+ 	- Un propietario
+ 		- Nombre, dni, telefono y Direccion
+ 	- Unos inquilinos
+ 		- Nombre, dni, telefono y Direccion
+ 	- un precio de alquiler
+ 	
+ Ademas, un metodo que saque el numero de metros cuadrados de una casa

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE note [
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+]>
+
+<!-- PODEMOS TENER DTD'S INTERNOS O EXTERNOS, NORMALMENTE SUELEN USARSE MÁS
+LOS EXTERNOS.
+EN ESTE EJEMPLO, TENEMOS UN DTD INTERNOS (DENTRO DEL XML)
+
+"note" despues del DOCTYPE seria el nodo raiz
+ -->
+<note>
+	<to>Felix</to>
+	<from>Ana</from>
+	<heading>Acuerdate!!</heading>
+	<body>No te olvides que tenemos que ir al cine</body>
+</note> 

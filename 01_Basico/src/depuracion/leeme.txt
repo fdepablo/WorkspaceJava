@@ -1,0 +1,10 @@
+La depueracion es una herramienta que nos ayuda a los programadores
+a ejecutar un programa linea por linea y asi poder ir viendo los resultados
+parciales que se van ejecutando en java
+
+Para depurar es importante poner un "break point"
+Para poner un break point debemos de hacer doble click sobre el 
+lateral de la linea donde queremos que se para nuestro programa
+
+Una vez hecho esto, debemos de arrancar el programa con 
+boton derecho -> debug as -> Java Application

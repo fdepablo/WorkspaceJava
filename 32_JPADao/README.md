@@ -1,0 +1,1 @@
+Ejemplo igual que el anterior pero siguiendo el patron DAO

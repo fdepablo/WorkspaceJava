@@ -1,0 +1,505 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<almacen>
+	<categoria id="1">
+		<nombreCategoria>Bebidas</nombreCategoria>
+		<productos>
+			<producto>
+				<nombreProducto>Té Dharamsala</nombreProducto>
+				<cantidadPorUnidad>10 cajas x 20 bolsas</cantidadPorUnidad>
+				<precio>20.16</precio>
+				<stock>39</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Cerveza tibetana Barley</nombreProducto>
+				<cantidadPorUnidad>24 - bot. 12 l</cantidadPorUnidad>
+				<precio>21.28</precio>
+				<stock>17</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Refresco Guaraná Fantástica</nombreProducto>
+				<cantidadPorUnidad>12 - latas 355 ml</cantidadPorUnidad>
+				<precio>5.04</precio>
+				<stock>20</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Cerveza Sasquatch</nombreProducto>
+				<cantidadPorUnidad>24 - bot. 12 l</cantidadPorUnidad>
+				<precio>15.68</precio>
+				<stock>111</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Cerveza negra Steeleye</nombreProducto>
+				<cantidadPorUnidad>24 - bot. 12 l</cantidadPorUnidad>
+				<precio>20.16</precio>
+				<stock>20</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Vino Côte de Blaye</nombreProducto>
+				<cantidadPorUnidad>12 - bot. 75 cl</cantidadPorUnidad>
+				<precio>295.12</precio>
+				<stock>17</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Licor verde Chartreuse</nombreProducto>
+				<cantidadPorUnidad>750 cc por bot.</cantidadPorUnidad>
+				<precio>20.16</precio>
+				<stock>69</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Café de Malasia</nombreProducto>
+				<cantidadPorUnidad>16 - latas 500 g</cantidadPorUnidad>
+				<precio>51.52</precio>
+				<stock>17</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Cerveza Laughing Lumberjack</nombreProducto>
+				<cantidadPorUnidad>24 - bot. 12 l</cantidadPorUnidad>
+				<precio>15.68</precio>
+				<stock>52</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Cerveza Outback</nombreProducto>
+				<cantidadPorUnidad>24 - bot. 355 ml</cantidadPorUnidad>
+				<precio>16.8</precio>
+				<stock>15</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Cerveza Klosterbier Rhönbräu</nombreProducto>
+				<cantidadPorUnidad>24 - bot. 0,5 l</cantidadPorUnidad>
+				<precio>8.68</precio>
+				<stock>125</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Licor Cloudberry</nombreProducto>
+				<cantidadPorUnidad>500 ml</cantidadPorUnidad>
+				<precio>20.16</precio>
+				<stock>57</stock>
+			</producto>
+		</productos>
+	</categoria>
+	<categoria id="2">
+		<nombreCategoria>Condimentos</nombreCategoria>
+		<productos>
+			<producto>
+				<nombreProducto>Sirope de regaliz</nombreProducto>
+				<cantidadPorUnidad>12 - bot. 550 ml</cantidadPorUnidad>
+				<precio>11.2</precio>
+				<stock>13</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Especias Cajun del chef Anton</nombreProducto>
+				<cantidadPorUnidad>48 - frascos 6 l</cantidadPorUnidad>
+				<precio>24.64</precio>
+				<stock>53</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Mezcla Gumbo del chef Anton</nombreProducto>
+				<cantidadPorUnidad>36 cajas</cantidadPorUnidad>
+				<precio>23.912</precio>
+				<stock>0</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Mermelada de grosellas de la abuela</nombreProducto>
+				<cantidadPorUnidad>12 - frascos 8 l</cantidadPorUnidad>
+				<precio>28</precio>
+				<stock>120</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Salsa de arándanos Northwoods</nombreProducto>
+				<cantidadPorUnidad>12 - frascos 12 l</cantidadPorUnidad>
+				<precio>44.8</precio>
+				<stock>6</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Salsa de soja baja en sodio</nombreProducto>
+				<cantidadPorUnidad>24 - bot. 250 ml</cantidadPorUnidad>
+				<precio>17.36</precio>
+				<stock>39</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Azúcar negra Malacca</nombreProducto>
+				<cantidadPorUnidad>20 - bolsas 2 kg</cantidadPorUnidad>
+				<precio>21.784</precio>
+				<stock>27</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Sirope de arce</nombreProducto>
+				<cantidadPorUnidad>24 - bot. 500 ml</cantidadPorUnidad>
+				<precio>31.92</precio>
+				<stock>113</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Sandwich de vegetales</nombreProducto>
+				<cantidadPorUnidad>15 - frascos 625 g</cantidadPorUnidad>
+				<precio>49.168</precio>
+				<stock>24</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Salsa de pimiento picante de Luisiana</nombreProducto>
+				<cantidadPorUnidad>32 - bot. 8 l</cantidadPorUnidad>
+				<precio>23.576</precio>
+				<stock>76</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Especias picantes de Luisiana</nombreProducto>
+				<cantidadPorUnidad>24 - frascos 8 l</cantidadPorUnidad>
+				<precio>19.04</precio>
+				<stock>4</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Salsa verde original Frankfurter</nombreProducto>
+				<cantidadPorUnidad>12 cajas</cantidadPorUnidad>
+				<precio>14.56</precio>
+				<stock>32</stock>
+			</producto>
+		</productos>
+	</categoria>
+	<categoria id="3">
+		<nombreCategoria>Repostería</nombreCategoria>
+		<productos>
+			<producto>
+				<nombreProducto>Postre de merengue Pavlova</nombreProducto>
+				<cantidadPorUnidad>32 - cajas 500 g</cantidadPorUnidad>
+				<precio>19.544</precio>
+				<stock>29</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Pastas de té de chocolate</nombreProducto>
+				<cantidadPorUnidad>10 cajas x 12 piezas</cantidadPorUnidad>
+				<precio>10.304</precio>
+				<stock>25</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Mermelada de Sir Rodney&apos;s</nombreProducto>
+				<cantidadPorUnidad>30 cajas regalo</cantidadPorUnidad>
+				<precio>90.72</precio>
+				<stock>40</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Bollos de Sir Rodney&apos;s</nombreProducto>
+				<cantidadPorUnidad>24 paq. x 4 piezas</cantidadPorUnidad>
+				<precio>11.2</precio>
+				<stock>3</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Crema de chocolate y nueces NuNuCa</nombreProducto>
+				<cantidadPorUnidad>20 - vasos  450 g</cantidadPorUnidad>
+				<precio>15.68</precio>
+				<stock>76</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Ositos de goma Gumbär</nombreProducto>
+				<cantidadPorUnidad>100 - bolsas 250 g</cantidadPorUnidad>
+				<precio>34.9776</precio>
+				<stock>15</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Chocolate Schoggi</nombreProducto>
+				<cantidadPorUnidad>100 - piezas 100 g</cantidadPorUnidad>
+				<precio>49.168</precio>
+				<stock>49</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Galletas Zaanse</nombreProducto>
+				<cantidadPorUnidad>10 - cajas 4 l</cantidadPorUnidad>
+				<precio>10.64</precio>
+				<stock>36</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Chocolate holandés</nombreProducto>
+				<cantidadPorUnidad>10 paq.</cantidadPorUnidad>
+				<precio>14.28</precio>
+				<stock>15</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Regaliz</nombreProducto>
+				<cantidadPorUnidad>24 - paq. 50 g</cantidadPorUnidad>
+				<precio>22.4</precio>
+				<stock>10</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Chocolate blanco</nombreProducto>
+				<cantidadPorUnidad>12 - barras 100 g</cantidadPorUnidad>
+				<precio>18.2</precio>
+				<stock>65</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Tarta de azúcar</nombreProducto>
+				<cantidadPorUnidad>48 tartas</cantidadPorUnidad>
+				<precio>55.216</precio>
+				<stock>17</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Barras de pan de Escocia</nombreProducto>
+				<cantidadPorUnidad>10 cajas x 8 porc.</cantidadPorUnidad>
+				<precio>14</precio>
+				<stock>6</stock>
+			</producto>
+		</productos>
+	</categoria>
+	<categoria id="4">
+		<nombreCategoria>Lácteos</nombreCategoria>
+		<productos>
+			<producto>
+				<nombreProducto>Queso Cabrales</nombreProducto>
+				<cantidadPorUnidad>paq. 1 kg</cantidadPorUnidad>
+				<precio>23.52</precio>
+				<stock>22</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Queso Manchego La Pastora</nombreProducto>
+				<cantidadPorUnidad>10 - paq. 500 g</cantidadPorUnidad>
+				<precio>42.56</precio>
+				<stock>86</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Queso gorgonzola Telino</nombreProducto>
+				<cantidadPorUnidad>12 - paq. 100 g</cantidadPorUnidad>
+				<precio>14</precio>
+				<stock>0</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Queso Mascarpone Fabioli</nombreProducto>
+				<cantidadPorUnidad>24 - paq. 200 g</cantidadPorUnidad>
+				<precio>35.84</precio>
+				<stock>9</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Queso de cabra</nombreProducto>
+				<cantidadPorUnidad>500 g</cantidadPorUnidad>
+				<precio>2.8</precio>
+				<stock>112</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Raclet de queso Courdavault</nombreProducto>
+				<cantidadPorUnidad>paq. 5 kg</cantidadPorUnidad>
+				<precio>61.6</precio>
+				<stock>79</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Camembert Pierrot</nombreProducto>
+				<cantidadPorUnidad>15 - paq. 300 g</cantidadPorUnidad>
+				<precio>38.08</precio>
+				<stock>19</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Queso Gudbrandsdals</nombreProducto>
+				<cantidadPorUnidad>paq. 10 kg</cantidadPorUnidad>
+				<precio>40.32</precio>
+				<stock>26</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Crema de queso Fløtemys</nombreProducto>
+				<cantidadPorUnidad>10 - paq. 500 g</cantidadPorUnidad>
+				<precio>24.08</precio>
+				<stock>26</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Queso Mozzarella Giovanni</nombreProducto>
+				<cantidadPorUnidad>24 - paq. 200 g</cantidadPorUnidad>
+				<precio>38.976</precio>
+				<stock>14</stock>
+			</producto>
+		</productos>
+	</categoria>
+	<categoria id="5">
+		<nombreCategoria>Granos/Cereales</nombreCategoria>
+		<productos>
+			<producto>
+				<nombreProducto>Pan de centeno crujiente estilo Gustaf&apos;s</nombreProducto>
+				<cantidadPorUnidad>24 - paq. 500 g</cantidadPorUnidad>
+				<precio>23.52</precio>
+				<stock>104</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Pan fino</nombreProducto>
+				<cantidadPorUnidad>12 - paq. 250 g</cantidadPorUnidad>
+				<precio>10.08</precio>
+				<stock>61</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Tallarines de Singapur</nombreProducto>
+				<cantidadPorUnidad>32 - 1 kg paq.</cantidadPorUnidad>
+				<precio>15.68</precio>
+				<stock>26</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Cereales para Filo</nombreProducto>
+				<cantidadPorUnidad>16 - cajas 2 kg</cantidadPorUnidad>
+				<precio>7.84</precio>
+				<stock>38</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Gnocchi de la abuela Alicia</nombreProducto>
+				<cantidadPorUnidad>24 - paq. 250 g</cantidadPorUnidad>
+				<precio>42.56</precio>
+				<stock>21</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Raviolis Angelo</nombreProducto>
+				<cantidadPorUnidad>24 - paq. 250 g</cantidadPorUnidad>
+				<precio>21.84</precio>
+				<stock>36</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Bollos de pan de Wimmer</nombreProducto>
+				<cantidadPorUnidad>20 bolsas x 4 porc.</cantidadPorUnidad>
+				<precio>37.24</precio>
+				<stock>22</stock>
+			</producto>
+		</productos>
+	</categoria>
+	<categoria id="6">
+		<nombreCategoria>Carnes</nombreCategoria>
+		<productos>
+			<producto>
+				<nombreProducto>Buey Mishi Kobe</nombreProducto>
+				<cantidadPorUnidad>18 - paq. 500 g</cantidadPorUnidad>
+				<precio>108.64</precio>
+				<stock>29</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Cordero Alice Springs</nombreProducto>
+				<cantidadPorUnidad>20 - latas 1 kg</cantidadPorUnidad>
+				<precio>43.68</precio>
+				<stock>0</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Salchicha Thüringer</nombreProducto>
+				<cantidadPorUnidad>50 bolsas x 30 salch</cantidadPorUnidad>
+				<precio>138.6448</precio>
+				<stock>0</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Empanada de carne</nombreProducto>
+				<cantidadPorUnidad>48 porc.</cantidadPorUnidad>
+				<precio>36.736</precio>
+				<stock>0</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Empanada de cerdo</nombreProducto>
+				<cantidadPorUnidad>16 tartas</cantidadPorUnidad>
+				<precio>8.344</precio>
+				<stock>21</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Paté chino</nombreProducto>
+				<cantidadPorUnidad>24 cajas x 2 tartas</cantidadPorUnidad>
+				<precio>26.88</precio>
+				<stock>115</stock>
+			</producto>
+		</productos>
+	</categoria>
+	<categoria id="7">
+		<nombreCategoria>Frutas/Verduras</nombreCategoria>
+		<productos>
+			<producto>
+				<nombreProducto>Peras secas orgánicas del tío Bob</nombreProducto>
+				<cantidadPorUnidad>12 - paq. 1 kg</cantidadPorUnidad>
+				<precio>33.6</precio>
+				<stock>15</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Cuajada de judías</nombreProducto>
+				<cantidadPorUnidad>40 - paq. 100 g</cantidadPorUnidad>
+				<precio>26.04</precio>
+				<stock>35</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Col fermentada Rössle</nombreProducto>
+				<cantidadPorUnidad>25 - latas 825 g</cantidadPorUnidad>
+				<precio>51.072</precio>
+				<stock>26</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Manzanas secas Manjimup</nombreProducto>
+				<cantidadPorUnidad>50 - paq. 300 g</cantidadPorUnidad>
+				<precio>59.36</precio>
+				<stock>20</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Queso de soja Longlife</nombreProducto>
+				<cantidadPorUnidad>paq. 5 kg</cantidadPorUnidad>
+				<precio>11.2</precio>
+				<stock>4</stock>
+			</producto>
+		</productos>
+	</categoria>
+	<categoria id="8">
+		<nombreCategoria>Pescado/Marisco</nombreCategoria>
+		<productos>
+			<producto>
+				<nombreProducto>Pez espada</nombreProducto>
+				<cantidadPorUnidad>12 - frascos 200 ml</cantidadPorUnidad>
+				<precio>34.72</precio>
+				<stock>31</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Algas Konbu</nombreProducto>
+				<cantidadPorUnidad>caja 2 kg</cantidadPorUnidad>
+				<precio>6.72</precio>
+				<stock>24</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Langostinos tigre Carnarvon</nombreProducto>
+				<cantidadPorUnidad>paq. 16 kg</cantidadPorUnidad>
+				<precio>70</precio>
+				<stock>42</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Arenque blanco del noroeste</nombreProducto>
+				<cantidadPorUnidad>10 - vasos 200 g</cantidadPorUnidad>
+				<precio>28.9968</precio>
+				<stock>10</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Escabeche de arenque</nombreProducto>
+				<cantidadPorUnidad>24 - frascos 250 g</cantidadPorUnidad>
+				<precio>21.28</precio>
+				<stock>112</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Salmón ahumado Gravad</nombreProducto>
+				<cantidadPorUnidad>12 - paq. 500 g</cantidadPorUnidad>
+				<precio>29.12</precio>
+				<stock>11</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Carne de cangrejo de Boston</nombreProducto>
+				<cantidadPorUnidad>24 - latas 4 l</cantidadPorUnidad>
+				<precio>20.608</precio>
+				<stock>123</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Crema de almejas estilo Nueva Inglaterra</nombreProducto>
+				<cantidadPorUnidad>12 - latas 12 l</cantidadPorUnidad>
+				<precio>10.808</precio>
+				<stock>85</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Arenque ahumado</nombreProducto>
+				<cantidadPorUnidad>paq. 1k</cantidadPorUnidad>
+				<precio>10.64</precio>
+				<stock>5</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Arenque salado</nombreProducto>
+				<cantidadPorUnidad>4 - vasos 450 g</cantidadPorUnidad>
+				<precio>13.44</precio>
+				<stock>95</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Caracoles de Borgoña</nombreProducto>
+				<cantidadPorUnidad>24 porc.</cantidadPorUnidad>
+				<precio>14.84</precio>
+				<stock>62</stock>
+			</producto>
+			<producto>
+				<nombreProducto>Caviar rojo</nombreProducto>
+				<cantidadPorUnidad>24 - frascos150 g</cantidadPorUnidad>
+				<precio>16.8</precio>
+				<stock>101</stock>
+			</producto>
+		</productos>
+	</categoria>
+</almacen>

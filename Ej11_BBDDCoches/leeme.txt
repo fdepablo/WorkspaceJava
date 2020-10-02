@@ -1,0 +1,7 @@
+CREATE TABLE `prueba`.`coches` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `matricula` VARCHAR(45) NULL,
+  `marca` VARCHAR(45) NULL,
+  `modelo` VARCHAR(45) NULL,
+  `kilometros` INT NULL,
+  PRIMARY KEY (`id`));

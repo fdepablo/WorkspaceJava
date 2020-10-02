@@ -1,0 +1,5 @@
+ BUCLE FOR e IF
+ --------------
+ 
+ Programa que reciba un número por pantalla y diga si el número es primo o no
+ Un número es primo cuando es divisible por el mismo y por la unidad

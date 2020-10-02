@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Aquí, estamos indicando que el elemento cruceros estará compuesto por un 
+conjunto de elementos crucero, cada uno de los cuales estará compuesto a 
+su vez por los elementos internos destino, detalles y escalas.
+-->
+<!ELEMENT cruceros (crucero*)>
+<!ELEMENT crucero (destino, detalles, escalas)>
+
+<!--
+De este modo indicamos que el elemento o etiqueta destino estará compuesto 
+por un dato elemental, es decir, que no se descompone en más etiquetas hijas 
+o elementos.
+-->
+<!ELEMENT destino (#PCDATA)>
+
+<!--
+En este caso, indicamos que el elemento detalles estará compuesto por 
+los elementos hijos cia, dias y fechaSalida. Por otro lado, cada uno de 
+estos tres elementos hijo son datos elementales que no se descomponen en
+más niveles.
+-->
+<!ELEMENT detalles (cia, dias, fechaSalida)>
+<!ELEMENT cia (#PCDATA)>
+<!ELEMENT dias (#PCDATA)>
+<!ELEMENT fechaSalida (#PCDATA)>
+
+<!--
+Aquí indicamos que el elemento escalas estará compuesto por un conjunto de 
+elementos hijos escala. Cada uno de los elementos escala estará, a su vez, 
+compuesto por los elementos hijo parada, llegada y salida de tipo elemental.
+-->
+<!ELEMENT escalas (escala*)>
+<!ELEMENT escala (parada, llegada, salida)>
+<!ELEMENT parada (#PCDATA)>
+<!ELEMENT llegada (#PCDATA)>
+<!ELEMENT salida (#PCDATA)>
+
+<!--
+Por último, estamos definiendo los atributos codigo y dia para las etiquetas 
+crucero y escala como requeridos.
+-->
+<!ATTLIST crucero codigo CDATA #REQUIRED>
+<!ATTLIST escala dia CDATA #REQUIRED>

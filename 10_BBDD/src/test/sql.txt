@@ -1,0 +1,11 @@
+Primero crear el esquema "bbdd"
+
+A continuacion lanzar la siguiente instruccion sql
+
+CREATE TABLE `personas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(45) DEFAULT NULL,
+  `edad` int(3) DEFAULT NULL,
+  `peso` double DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);

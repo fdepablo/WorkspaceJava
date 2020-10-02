@@ -1,0 +1,1 @@
+{"personas":[{"idPersona":1,"nombre":"Homer","apellido":"Simpson","edad":48},{"idPersona":2,"nombre":"Lisa","apellido":"Simpson","edad":12},{"idPersona":3,"nombre":"Bart","apellido":"Simpson","edad":13},{"idPersona":4,"nombre":"Marge","apellido":"Simpson","edad":40}]}

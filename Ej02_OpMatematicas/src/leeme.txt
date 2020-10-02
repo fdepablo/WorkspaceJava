@@ -1,0 +1,9 @@
+ Funciones
+-----------
+Ejercicio que se pida dos numeros por pantalla y saque sus operaciones
+matemáticas con esos dos numeros (suma,resta, multiplicacion y division)
+
+Este ejercicio se tiene que hacer con funciones
+	- Funcion que pida numeros por pantalla
+	- Funcion suma,resta,multiplicación y división que pida 2 numeros
+	- Función que muestre los resultados

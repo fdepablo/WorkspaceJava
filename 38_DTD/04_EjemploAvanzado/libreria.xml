@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+<!DOCTYPE note [
+<!ELEMENT etiqueta>
+]>
+-->
+
+<!DOCTYPE raiz SYSTEM "libreria.dtd">
+
+<raiz>
+
+	<libro>
+		<ISBN>123</ISBN>
+		<titulo>Fundacion</titulo>
+		<autor>
+			<nombre>Isaac Asimov</nombre>
+			<pais>Rusia (USA)</pais>
+			<año_nacimiento>1921</año_nacimiento>
+		</autor>
+		<year>1940</year>
+	</libro>
+
+	<br></br>
+	<br/>
+	
+	<pedido>
+		<codigo>PED-1</codigo>
+		<cliente> 
+			<id>CLI-1</id>
+			<nombrecompleto>Benito</nombrecompleto>
+			<telefono>555</telefono>
+		</cliente>
+		
+		<notas></notas>
+
+		<detalles>
+			<detalle>
+				<producto></producto>
+				<precio></precio>
+				<cantidad></cantidad>
+			</detalle>
+			<detalle>
+				<producto></producto>
+				<precio></precio>
+				<cantidad></cantidad>
+			</detalle>
+		</detalles>
+	</pedido>
+
+	<mensaje>
+		<texto>Hola que tal</texto>
+		<destinatarios>
+			<destinatario>Destinatario1</destinatario>
+			<destinatario>Destinatario2</destinatario>
+			<destinatario>Destinatario3</destinatario>
+			<destinatario>Destinatario4</destinatario>
+			<destinatario>Destinatario5</destinatario>
+		</destinatarios>
+	</mensaje>
+
+	<mensaje>
+		<texto>Hola que tal</texto>
+		<destinatario>Destinatario1</destinatario>
+	</mensaje>
+
+	<aviso>
+		Texto
+		<descripcion>Descripción</descripcion>
+		Texto
+	</aviso>
+	
+	<!-- Podemos quitar la matricula y no da error -->
+	<coche marca="Ford" matricula="XXX" tipo="monovolumen"/>
+
+	<informacion>
+		Este documento se ha cerado con la &version; del DTD
+		&dato;
+	</informacion>
+	<informacion>
+		Version 1.0
+		DATO
+	</informacion>
+
+
+</raiz>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

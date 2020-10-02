@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="cruceros.xsl" ?>
+<!-- Podemos parsear un xml con un css -->
+<cruceros>
+	<crucero codigo="CRUMED21">
+		<destino>Mediterraneo (Grecia, Italia)</destino>
+		<detalles>
+			<cia>Costa cruceros</cia>
+			<dias>6 días</dias>
+			<fechaSalida>2018-12-26</fechaSalida>
+		</detalles>
+		<escalas>
+			<escala dia="1">
+				<parada>Venecia</parada>
+				<llegada></llegada>
+				<salida>18:00</salida>
+			</escala>
+			<escala dia="2">
+				<parada>Navegación</parada>
+				<llegada></llegada>
+				<salida></salida>
+			</escala>	
+			<escala dia="3">
+				<parada>Agostini</parada>
+				<llegada>7:00</llegada>
+				<salida>14:00</salida>
+			</escala>		
+			<escala dia="4">
+				<parada>Santorini</parada>
+				<llegada>9:00</llegada>
+				<salida>20:00</salida>
+			</escala>	
+			<escala dia="5">
+				<parada>Bari</parada>
+				<llegada>8:00</llegada>
+				<salida>14:00</salida>
+			</escala>			
+			<escala dia="6">
+				<parada>Venecia</parada>
+				<llegada>8:30</llegada>
+				<salida></salida>
+			</escala>			
+		</escalas>
+	</crucero>
+	<crucero codigo="CRUATL22">
+		<destino>Atlántico (España, Marruecos, Portugal)</destino>
+		<detalles>
+			<cia>MSC Cruceros</cia>
+			<dias>7 días</dias>
+			<fechaSalida>2019-02-13</fechaSalida>
+		</detalles>
+		<escalas>
+			<escala dia="1">
+				<parada>Barcelona</parada>
+				<llegada></llegada>
+				<salida>18:00</salida>
+			</escala>
+			<escala dia="2">
+				<parada>Navegación</parada>
+				<llegada></llegada>
+				<salida></salida>
+			</escala>	
+			<escala dia="3">
+				<parada>Casablanca</parada>
+				<llegada>7:00</llegada>
+				<salida>22:00</salida>
+			</escala>		
+			<escala dia="4">
+				<parada>Navegación</parada>
+				<llegada></llegada>
+				<salida></salida>
+			</escala>	
+			<escala dia="5">
+				<parada>Santa Cruz de Tenerife</parada>
+				<llegada>9:00</llegada>
+				<salida>16:00</salida>
+			</escala>			
+			<escala dia="6">
+				<parada>Funchal</parada>
+				<llegada>8:00</llegada>
+				<salida>19:00</salida>
+			</escala>	
+			<escala dia="7">
+				<parada>Barcelona</parada>
+				<llegada>17:00</llegada>
+				<salida></salida>
+			</escala>			
+		</escalas>
+	</crucero>
+</cruceros>

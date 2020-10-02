@@ -1,0 +1,26 @@
+ ARRAYS
+-------------
+Ejercicio que se pida dos numeros por pantalla y saque sus operaciones
+matemáticas con esos dos numeros (suma,resta, multiplicacion y division)
+
+Este ejercicio se tiene que hacer con funciones
+	- Funcion que pida numeros por pantalla
+	- Funcion suma,resta,multiplicación y división que pida 2 numeros
+	- Función que muestre los resultados
+	
+Además los numeros deben de ser positivos para poder operarse
+En caso de que el denominador sea 0, no se hara la division
+
+El programa nos preguntará despues de mostrarnos las operaciones si queremos
+introducir dos numeros de nuevo. El programa se continuará ejecutando hasta
+que digamos que 'no' queremos introducir más números
+
+Todos los resultados se deben de guardar en un array de string con el formato
+"Numero1 operacion Numero2 = Resultado"
+Ejemplos:
+"3 + 5 = 8"
+"4 - 2 = 2"
+"2 * 5 = 10"
+
+Cuando el usuario diga que no quiere meter más numeros, el programa recorrerá
+el array mostrando todos los resultados almacenados y se parará el programa

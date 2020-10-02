@@ -1,0 +1,14 @@
+Ejercicio que podamos add coches a un array, pedidos por pantalla
+La aplicacion mostrará 2 opciones,
+	add coche
+	listar coches
+
+Si add un coche la aplicacion nos pedirá 
+matricula;
+marca;
+modelo;
+kilometros;
+
+En caso de listar nos mostrará todos los coches introducidos
+Se pide como requisito que la matricula tenga que sera igual 7
+
