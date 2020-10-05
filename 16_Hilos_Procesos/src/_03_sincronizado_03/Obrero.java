@@ -13,6 +13,13 @@ public class Obrero extends Thread{
 		this.nombre = nombre;
 	}
 	
+	//Esto es excatamente "igual" a un main de java
+	@Override
+	public void run() {
+		ponerLadrillos();//los obreros cuando se ejecuta su start, se ponen a poner ladridos como locos!
+	}
+	
+	
 	public void ponerLadrillos() {
 		for(int i = inicioLadrillo;i<=finLadrillo;i++) {
 			System.out.println("Obrero " + nombre + " esta Poniendo el ladrillo " + i);
@@ -30,11 +37,6 @@ public class Obrero extends Thread{
 		}
 	}
 
-	//Esto es excatamente "igual" a un main de java
-	@Override
-	public void run() {
-		ponerLadrillos();
-	}
 
 	public String getNombre() {
 		return nombre;

@@ -22,16 +22,16 @@ public class MainObreros {
 		obrero1.setSilla(silla);
 				
 		Obrero obrero2 = new Obrero(101,200,"Luis");
-		obrero2.setSilla(new Silla());
+		obrero2.setSilla(silla);
 		
 		Obrero obrero3 = new Obrero(201,300,"Maria");
-		obrero3.setSilla(new Silla());
+		obrero3.setSilla(silla);
 		
 		Obrero obrero4 = new Obrero(301,400,"Marta");
-		obrero4.setSilla(new Silla());		
+		obrero4.setSilla(silla);		
 		
 		Obrero obrero5 = new Obrero(401,500,"Harry potter");
-		obrero5.setSilla(new Silla());
+		obrero5.setSilla(silla);
 		
 		obrero1.start();
 		obrero2.start();

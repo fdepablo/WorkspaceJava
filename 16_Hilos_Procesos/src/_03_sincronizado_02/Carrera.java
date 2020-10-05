@@ -13,8 +13,17 @@ public class Carrera {
 		Thread t2 = new Thread(c2);
 		Thread t3 = new Thread(c3);
 		
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		t1.start();
 		t2.start();
 		t3.start();
+		
+		//System.out.println(meta.getLista());
 	}
 }
