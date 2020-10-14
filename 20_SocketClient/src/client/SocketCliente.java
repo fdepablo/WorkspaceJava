@@ -33,9 +33,9 @@ public class SocketCliente {
 			//En la siguiente linea se va a quedar parado el hilo principal
 			//de ejecución hasta que el servidor responda
 			String resultado = bf.readLine();//Hola soy el servidor, te reenvio la suma:7
-			System.out.println("CLIENTE: " + resultado);//mostramos el resultado de la suma
+			System.out.println("CLIENTE: " + resultado);//resultado:7
 			String[] arrayResultado = resultado.split(":");
-			System.out.println("CLIENTE: El resultado de la suma es: " + arrayResultado[1]);
+			System.out.println("CLIENTE: El resultado de la suma es: " + arrayResultado[1]);//7
 		} catch (Exception e) {
 			System.err.println("Error: " + e);
 			e.printStackTrace();

@@ -27,7 +27,8 @@ public class SocketServer {
 				
 				entrada = new InputStreamReader(socketConexion.getInputStream());
 				BufferedReader bf = new BufferedReader(entrada);
-				String stringRecibido = bf.readLine();//3-4
+				String stringRecibido = bf.readLine();//"3-4"
+				//TODO LO QUE LLEGA DEL CLIENTE Y LO QUE LE MANDE AL SERVIDOR SON STRING
 				System.out.println("SERVIDOR: Me ha llegado del cliente: " + stringRecibido);
 				String[] operadores = stringRecibido.split("-");
 				int iNumero1 = Integer.parseInt(operadores[0]);//3

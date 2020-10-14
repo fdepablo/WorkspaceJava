@@ -22,10 +22,10 @@ public class Cola {
 			cola.offer(mensaje);
 		}*/
 		//Si la cola esta llena no debemos introducir ningun elemento más
-		while(cola.size() == MAX_ELEMENTOS){
+		while(cola.size() == MAX_ELEMENTOS){//3
 			try {
 				//A diferencia del sleep no se activará pasado un tiempo, sino que se
-				//activaria cuando se le notifique, ademas, liberamos el recurso por 
+				//activaria cuando se le notifique, ADEMAS, liberamos el recurso por 
 				//lo que otro hilo que intente entrar en addMensaje podra hacerlo. 
 				//wait() solo se puede ejecutar en un bloque sincronizado y debe de 
 				//estar dentro de un while ya que cuando hacemos un notify desde 
@@ -67,5 +67,5 @@ public class Cola {
 		notify();
 		return s;
 	}
-
+	
 }
