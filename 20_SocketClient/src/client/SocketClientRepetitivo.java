@@ -52,7 +52,7 @@ public class SocketClientRepetitivo {
 			System.err.println("Error de entrada/salida");
 		} catch (Exception e) {
 			System.err.println("Error: " + e);
-		}finally {			
+		}finally {//ES MUYYY IMPORTANTE QUE EN LOS SOCKETS SIEMPRE SE CIERREN LAS CONEXIONES			
 			try {
 				salida.close();
 				entrada.close();

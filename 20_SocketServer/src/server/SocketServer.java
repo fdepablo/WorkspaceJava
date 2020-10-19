@@ -24,9 +24,12 @@ public class SocketServer {
 				//Cuando la conexion es establecida, se crea un socket en 
 				//para llevar la comunicacion
 				socketConexion = servidorSocket.accept();//Se parará el programa, hasta que entre la peticion de un cliente
-				
+													//Y se crear un objeto Socket
 				entrada = new InputStreamReader(socketConexion.getInputStream());
+				//este InputStreamReader permite leer caracter a caracter
 				BufferedReader bf = new BufferedReader(entrada);
+				//este BufferedReader permite leer frase a frase
+				
 				String stringRecibido = bf.readLine();//"3-4"
 				//TODO LO QUE LLEGA DEL CLIENTE Y LO QUE LE MANDE AL SERVIDOR SON STRING
 				System.out.println("SERVIDOR: Me ha llegado del cliente: " + stringRecibido);
@@ -41,7 +44,7 @@ public class SocketServer {
 			}
 		} catch (IOException excepcion) {
 			System.out.println(excepcion);
-		}finally {
+		}finally {//ES MUYYY IMPORTANTE QUE EN LOS SOCKETS SIEMPRE SE CIERREN LAS CONEXIONES
 			try {
 				if(salida != null && entrada != null){
 					salida.close();

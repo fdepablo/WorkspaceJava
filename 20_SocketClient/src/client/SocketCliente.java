@@ -1,6 +1,7 @@
 package client;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
@@ -39,6 +40,15 @@ public class SocketCliente {
 		} catch (Exception e) {
 			System.err.println("Error: " + e);
 			e.printStackTrace();
+		}finally {//ES MUYYY IMPORTANTE QUE EN LOS SOCKETS SIEMPRE SE CIERREN LAS CONEXIONES			
+			try {
+				salida.close();
+				entrada.close();
+				socketCliente.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 
