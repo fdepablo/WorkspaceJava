@@ -1,8 +1,9 @@
 package clienteHilo;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.InputStreamReader;
+import java.io.PrintStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
@@ -14,41 +15,54 @@ public class ClienteHilo {
 		System.out.println("-----------------------------------");
 
 		Scanner lector = new Scanner(System.in);
+		
+		InputStreamReader entrada = null;
+		PrintStream salida = null;
+		Socket socketCliente = null;
+		
 		try {
-			Socket cliente = new Socket();
+			socketCliente = new Socket();
 			InetSocketAddress direccionServidor = new InetSocketAddress("localhost", 2001);
 			System.out.println("Esperando a que el servidor acepte la conexión");
 
-			cliente.connect(direccionServidor);
+			socketCliente.connect(direccionServidor);
 			System.out.println("Comunicación establecida con el servidor");
 
-			InputStream entrada = cliente.getInputStream();
-			OutputStream salida = cliente.getOutputStream();
-
+			entrada = new InputStreamReader(socketCliente.getInputStream());
+			salida = new PrintStream(socketCliente.getOutputStream());
+			BufferedReader entradaBuffer = new BufferedReader(entrada);
+			
 			String texto = "";
 			while (!texto.equals("FIN")) {
 				System.out.println("Escribe mensaje (FIN para terminar): ");
 				texto = lector.nextLine();//mensaje leido del usuario
-				salida.write(texto.getBytes());
-				byte[] mensaje = new byte[100];
+
+				salida.println(texto);
 				System.out.println("Esperando respuesta ...... ");
-				entrada.read(mensaje);
-				System.out.println("Servidor responde: " + new String(mensaje));
+				
+				String respuesta = entradaBuffer.readLine();
+				System.out.println("Servidor responde: " + respuesta);
 			}
-
-			entrada.close();
-			salida.close();
-			cliente.close();
-
-			System.out.println("Comunicación cerrada");
-
 		} catch (UnknownHostException e) {
 			System.out.println("No se puede establecer comunicación con el servidor");
 			System.out.println(e.getMessage());
 		} catch (IOException e) {
 			System.out.println("Error de E/S");
 			System.out.println(e.getMessage());
+		} finally {
+			try {
+				if(salida != null && entrada != null){
+					salida.close();
+					entrada.close();
+					socketCliente.close();
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
+		lector.close();
+		System.out.println("Comunicación cerrada");
 	}
 }

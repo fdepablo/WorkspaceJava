@@ -4,11 +4,19 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 public class SocketServer {
+	
+	public static final int PUERTO = 2017;
+	public static final String IP_SERVER = "localhost";
+	
 	public static void main(String[] args) throws InterruptedException {
+		System.out.println("      APLICACIÓN DE SERVIDOR      ");
+		System.out.println("----------------------------------");
+		
 		//Este objeto es el que abrirá un puerto
 		ServerSocket servidorSocket = null;
 		PrintStream salida = null;
@@ -16,10 +24,13 @@ public class SocketServer {
 		Socket socketConexion = null;
 		
 		try {
-			servidorSocket = new ServerSocket(2017);//puerto por el que escuchamos a los clientes
+			servidorSocket = new ServerSocket();
+			InetSocketAddress direccion = new InetSocketAddress(IP_SERVER,PUERTO);
+			//decimos al socket que escuche peticiones desde la IP y el puerto
+			servidorSocket.bind(direccion);
+			
 			//estamos continuamente escuchando 
 			while(true){
-				//Lo ideal seria sacar esto en un hilo
 				System.out.println("SERVIDOR: Esperando peticion...");
 				//Cuando la conexion es establecida, se crea un socket en 
 				//para llevar la comunicacion
@@ -30,6 +41,7 @@ public class SocketServer {
 				BufferedReader bf = new BufferedReader(entrada);
 				//este BufferedReader permite leer frase a frase
 				
+				//El servidor se quedaría aquí parado hasta que el cliente escriba algo
 				String stringRecibido = bf.readLine();//"3-4"
 				//TODO LO QUE LLEGA DEL CLIENTE Y LO QUE LE MANDE AL SERVIDOR SON STRING
 				System.out.println("SERVIDOR: Me ha llegado del cliente: " + stringRecibido);
