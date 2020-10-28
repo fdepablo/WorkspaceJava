@@ -49,6 +49,9 @@ public class Persona {
 
 	@Override
 	public String toString() {
-		return nombre + " " + apellido + ", Edad=" + edad;
+		return "Persona [idPersona=" + idPersona + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad
+				+ "]";
 	}
+
+
 }
