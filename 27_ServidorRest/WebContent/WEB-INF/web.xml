@@ -2,12 +2,12 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
   <display-name>27_ServidorRest</display-name>
   
-  <!-- Damos de alta el servlet que hara de super controlador (face controler)
+  <!-- Damos de alta el servlet que hara de super controlador (face controller)
   	Será por este controlador por el que pasaremos cuando queramos desviar
   	nuestras peticiones http a nuestros webservices
   	
   	Lo más importante es configurar el param-value que es el paquete donde se
-  	van a encontrar nuestras anotaciones que mapean URLs a los recursos
+  	van a encontrar nuestras clases anotadas que mapearan URLs a los recursos
    -->
   <servlet>
     <servlet-name>JerseyRESTService</servlet-name>

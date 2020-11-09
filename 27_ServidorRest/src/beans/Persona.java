@@ -19,6 +19,10 @@ public class Persona implements Serializable{
 		
 	}
 	
+	public Persona(int id) {
+		this.id = id;
+	}
+	
 	public Persona(int id, String nombre, String apellido, int edad) {
 		this.id = id;
 		this.nombre = nombre;
@@ -54,7 +58,7 @@ public class Persona implements Serializable{
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Persona [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + "]";

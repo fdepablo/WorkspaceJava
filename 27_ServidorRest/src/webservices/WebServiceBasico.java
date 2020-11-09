@@ -8,12 +8,12 @@ import beans.Mensaje;
 
 /*
  *  La anotación @Path indica la ruta que debe seguir el usuario 
- *  para acceder al servicio web (una vez haya entrado en nuestro super servlet jersey,
+ *  para acceder al servicio web (una vez haya entrado en nuestro servlet jersey,
  *  ver el fichero web.xml).
  *  Este seria el recurso al que queremos acceder
  */
 @Path("mensaje")
-public class WebService {
+public class WebServiceBasico {
 	/*
 	 * La anotación @GET indica el método HTTP que se utilizará para recibir 
 	 * peticiones. 

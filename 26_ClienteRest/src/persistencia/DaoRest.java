@@ -1,13 +1,13 @@
-package main;
+package persistencia;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
 
-public class Principal {
-	public static void main(String[] args) throws IOException {
-		
+public class DaoRest {
+	
+	public String leerHTML() throws IOException{
 		/*
 		 * Aquí, estamos solicitando el servicio a través de una URL y 
 		 * un objeto HttpURLConnection. La petición se envía a través 
@@ -38,6 +38,6 @@ public class Principal {
 		
 		lector.close();
 		
-		System.out.println(respuesta);
+		return respuesta;
 	}
 }
