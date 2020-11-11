@@ -4,7 +4,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
-import beans.MensajeHTML;
+import entidades.MensajeHTML;
 
 @Path("mensajeHTML")
 public class WebServiceHTML {

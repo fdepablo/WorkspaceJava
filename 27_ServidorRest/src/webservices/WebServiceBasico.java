@@ -4,7 +4,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
-import beans.Mensaje;
+import entidades.Mensaje;
 
 /*
  *  La anotación @Path indica la ruta que debe seguir el usuario 
@@ -30,8 +30,8 @@ public class WebServiceBasico {
 	public String mostrarMensaje() {
 		Mensaje msg = new Mensaje("Hola amigo");
 		return msg.getTexto();
-		//return "Hola mi primer servicio rest";
 	}
+	
 	
 	//este metodo no será usado para mapear nada ya que no tiene ninguna anotación
 	public void miMetodo() {

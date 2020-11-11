@@ -1,4 +1,4 @@
-package beans;
+package entidades;
 
 public class MensajeHTML {
 	private String texto;

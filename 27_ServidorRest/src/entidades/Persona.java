@@ -1,10 +1,12 @@
-package beans;
+package entidades;
 
 import java.io.Serializable;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
+//Atributo para convertir el objeto en xml en vez de en JSON.
+//solo se usa en caso de que se devuelva un xml
 @XmlRootElement
 public class Persona implements Serializable{
 	
@@ -30,6 +32,8 @@ public class Persona implements Serializable{
 		this.edad = edad;
 	}
 
+	//Decimos que el ID vaya como atributo de la etiqueta persona en vez de 
+	//como elemento hijo
 	@XmlAttribute
 	public int getId() {
 		return id;

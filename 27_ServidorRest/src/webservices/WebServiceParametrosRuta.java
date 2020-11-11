@@ -6,17 +6,17 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 
-import beans.Mensaje;
+import entidades.Mensaje;
 
 @Path("mensajeParametros")
 public class WebServiceParametrosRuta {
 	
-	//0
+	//mensajeParametros/path/felix
 	@GET
-	@Path("/path/{nombre}")
+	@Path("/path/{nombre}/")
 	@Produces({"text/html"})
-	public String mostrarMensajePath(@PathParam("nombre") String n) {
-		Mensaje msg = new Mensaje("Hola " + n);
+	public String mostrarMensajePath(@PathParam("nombre") String nombre) {
+		Mensaje msg = new Mensaje("Hola " + nombre);
 		String html = "<!DOCTYPE html>";
 		html = html + "<html>";
 		html = html + "<head>";
@@ -31,13 +31,17 @@ public class WebServiceParametrosRuta {
 		return html;
 	}
 	
+	//mensajeParametros/query
+	//mensajeParametros/query?nombre=felix&apellidos=Gomez
 	@GET
-	@Path("query")//localhost:8080/27_ServidorRest/rest/mensajeParametros/query?nombre=felix&apellidos=Gomez
+	@Path("query")
 	@Produces({"text/html"})
-	public String mostrarMensaje(@QueryParam("nombre") String nom, 
+	public String mostrarMensaje(
+			@QueryParam("nombre") String nombre, 
 			@QueryParam("apellidos") String apellidos) {
+		
 		System.out.println("Recibiendo peticion del cliente!!!");
-		Mensaje msg = new Mensaje("Hola " + nom + " " + apellidos);
+		Mensaje msg = new Mensaje("Hola " + nombre + " " + apellidos);
 		String html = "<!DOCTYPE html>";
 		html = html + "<html>";
 		html = html + "<head>";

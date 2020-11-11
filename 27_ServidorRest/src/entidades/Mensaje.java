@@ -1,4 +1,4 @@
-package beans;
+package entidades;
 
 public class Mensaje {
 	private String texto;

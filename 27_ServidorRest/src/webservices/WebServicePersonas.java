@@ -11,8 +11,10 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
-import beans.Persona;
+import entidades.Persona;
 import persistencia.DaoPersona;
 
 @Path("personas")
@@ -23,9 +25,14 @@ public class WebServicePersonas {
 	//http://localhost:8080/27_ServidorRest/rest/personas
 	@GET
 	@Produces({"application/json"})
-	public List<Persona> listarPersonas() {
-		System.out.println("Listando las personas");
-		return daoPersona.list();	
+	public List<Persona> listarPersonas(@QueryParam("nombre") String nombre) {
+		System.out.println("Listando las personas " + nombre);
+		//En caso de que me pida filtrar por un nombre lo hago, en caso de que
+		//no, le devuelvo toda la lista
+		if(nombre == null)
+			return daoPersona.list();	
+		else 
+			return daoPersona.getByName(nombre);
 	}
 	
 	@GET
@@ -36,15 +43,8 @@ public class WebServicePersonas {
 		Persona p = daoPersona.get(id);
 		return p;	
 	}
-	
-	@GET
-	@Path("buscar")
-	@Produces({"application/json"})
-	public List<Persona> getPersonaQuery(@QueryParam("nombre") String nombre) {
-		System.out.println("Buscando persona con nombre " + nombre);
-		return daoPersona.getByName(nombre);	
-	}
 
+	/*
 	@POST
 	@Consumes({"application/json"})
 	@Produces({"application/json","application/xml"})
@@ -53,6 +53,21 @@ public class WebServicePersonas {
 		daoPersona.add(p);
 		return p;	
 	}	
+	*/
+	
+	//Realmente los metodos tendrían que responder adecuadamente, por ejemplo
+	//cuando creamos un objeto mediante POST deberiamos devolver un "201 CREATED"
+	//no un "200 OK". Habria que hacer cosas parecidas en todos los metodos y no
+	//devolver siempre un "200 OK", ¡hay que reponder adecuadamente!
+	@POST	
+	@Consumes({"application/json"})
+	@Produces({"application/json","application/xml"})
+	public Response altaPersona(Persona p) {
+		System.out.println(p);
+		daoPersona.add(p);
+		//creamos el codigo de respuesta 201, metemos la entidad y lo construimos
+		return Response.status(Response.Status.CREATED).entity(p).build();
+	}
 	
 	@DELETE
 	@Path("/{id}")
@@ -73,6 +88,5 @@ public class WebServicePersonas {
 		p.setId(id);
 		p = daoPersona.update(p);
 		return p;	
-	}		
-
+	}
 }
