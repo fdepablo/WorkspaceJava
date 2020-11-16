@@ -44,6 +44,8 @@ public class WebServicePersonas {
 		return p;	
 	}
 
+	//Este metodo funcionaría de una manera sencilla, pero mejor mirar el ejemplo
+	//del siguiente metodo post
 	/*
 	@POST
 	@Consumes({"application/json"})
@@ -63,7 +65,7 @@ public class WebServicePersonas {
 	@Consumes({"application/json"})
 	@Produces({"application/json","application/xml"})
 	public Response altaPersona(Persona p) {
-		System.out.println(p);
+		System.out.println("altaPersona: objeto persona: " + p);
 		daoPersona.add(p);
 		//creamos el codigo de respuesta 201, metemos la entidad y lo construimos
 		return Response.status(Response.Status.CREATED).entity(p).build();

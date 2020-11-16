@@ -16,7 +16,7 @@ public class DaoPersona {
 	
 	static {
 		listaPersonas = new ArrayList<Persona>();
-		contador = 1;
+		contador = 0;
 		Persona p1 = new Persona(contador++,"RODOLFO", "LANGOSTINO", 39);
 		Persona p2 = new Persona(contador++,"HARRY", "POTTER", 19);
 		Persona p3 = new Persona(contador++,"CHIQUITO", "DE LA CALZADA", 79);

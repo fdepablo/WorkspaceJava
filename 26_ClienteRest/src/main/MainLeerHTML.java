@@ -1,16 +1,13 @@
 package main;
 
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.Scanner;
 
-import persistencia.DaoRest;
+import persistencia.AccesoRest;
 
 public class MainLeerHTML {
 	
 	public static void main(String[] args) throws IOException {
-		DaoRest daoRest = new DaoRest();
+		AccesoRest daoRest = new AccesoRest();
 		
 		String respuesta = daoRest.leerHTML();
 		System.out.println("HTML " + respuesta);
