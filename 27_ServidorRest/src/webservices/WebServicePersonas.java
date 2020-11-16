@@ -62,11 +62,17 @@ public class WebServicePersonas {
 	//no un "200 OK". Habria que hacer cosas parecidas en todos los metodos y no
 	//devolver siempre un "200 OK", ¡hay que reponder adecuadamente!
 	@POST	
-	@Consumes({"application/json"})
+	@Consumes({"application/json"})//esta etiqueta esta relacionada con content-type
+								//del cliente, decimos que solo consumimos los
+								//mime type que son "application/json"
+								//es decir, el cliente tiene que tener la cabecera
+								//content-type con valor "application/json"
 	@Produces({"application/json","application/xml"})
-	public Response altaPersona(Persona p) {
+	public Response altaPersona(Persona p) {//la persona la tenemos que enviar
+										//en el body del mensaje HTTP
 		System.out.println("altaPersona: objeto persona: " + p);
 		daoPersona.add(p);
+		//por defecto todas las respuestas crean el codigo de respuesta 200
 		//creamos el codigo de respuesta 201, metemos la entidad y lo construimos
 		return Response.status(Response.Status.CREATED).entity(p).build();
 	}
@@ -84,6 +90,8 @@ public class WebServicePersonas {
 	@Path("/{id}")
 	@Consumes({"application/json"})
 	@Produces({"application/json"})
+	//En el path le voy a poner el ID y en el body le voy a mandar el nuevo
+	//contenido del objeto en formato json
 	public Persona modificarPersona(@PathParam("id") int id, Persona p) {
 		System.out.println("ID a modificar: " + id);
 		System.out.println("Datos a modificar: " + p);
