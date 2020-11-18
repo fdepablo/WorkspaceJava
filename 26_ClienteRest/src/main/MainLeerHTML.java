@@ -7,9 +7,9 @@ import persistencia.AccesoRest;
 public class MainLeerHTML {
 	
 	public static void main(String[] args) throws IOException {
-		AccesoRest daoRest = new AccesoRest();
+		AccesoRest accesoRest = new AccesoRest();
 		
-		String respuesta = daoRest.leerHTML();
+		String respuesta = accesoRest.leerHTML();
 		System.out.println("HTML " + respuesta);
 	}
 }

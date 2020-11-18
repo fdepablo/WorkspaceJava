@@ -16,6 +16,7 @@ public class MainListarPersonas {
 		List<Persona> listaPersonas = daoRest.listarPersonas(null);
 		System.out.println(listaPersonas);
 
+		
 		System.out.println("Listado de personas con nombre");
 		System.out.println("------------------------------");
 		listaPersonas = daoRest.listarPersonas("HARRY");

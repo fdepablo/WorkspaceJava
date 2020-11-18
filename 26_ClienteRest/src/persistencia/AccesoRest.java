@@ -42,10 +42,10 @@ public class AccesoRest {
 		 * Dicho flujo de datos se lo pasamos a un objeto Scanner, 
 		 * que facilitará enormemente la lectura.
 		 */
-		Scanner lector = new Scanner (conexion.getInputStream());
+		Scanner lector = new Scanner(conexion.getInputStream());
 		String respuesta = "";
 		while (lector.hasNextLine()) {
-			respuesta = respuesta.concat(lector.nextLine());
+			respuesta += lector.nextLine();
 		}
 		
 		lector.close();
@@ -73,24 +73,28 @@ public class AccesoRest {
 		conexion.connect();
 		
 		int codigoHTTP = conexion.getResponseCode();
+		//Aqui suponemos que todo va a ir bien, pero podemos decidir
+		//que hacemos con la respuesta en funcion del codigo de respuesta
 		System.out.println("Código: " + codigoHTTP);
-		
-		
+				
 		Scanner lector = new Scanner (conexion.getInputStream());
 		
+		//leemos el json que me manda el servidor
 		String jsonRespuesta = lector.nextLine();
 		
+		//convierto el json en una lista de objetos persona
 		Gson gson = new Gson();
 		listaPersonas = gson.fromJson(jsonRespuesta, new TypeToken<List<Persona>>(){}.getType());
 		
-		lector.close();		
+		//muy importante cerrar la conexión
+		conexion.disconnect();	
+		lector.close();
 		
 		return listaPersonas;
 	}
 	
 	public Persona obtenerPersona(int id) throws Exception{
-		String url = null;
-		url = IP + "/" + id;
+		String url = IP + "/" + id;
 		
 		System.out.println("Peticion a: " + url);
 		URL objURL = new URL(url);
@@ -104,12 +108,12 @@ public class AccesoRest {
 		System.out.println("Código: " + codigoHTTP);
 		
 		Scanner lector = new Scanner (conexion.getInputStream());
-		
 		String respuesta = lector.nextLine();
-		Gson gson = new Gson();
 		
+		Gson gson = new Gson();
 		Persona pRespuesta = gson.fromJson(respuesta, Persona.class);
 		
+		conexion.disconnect();
 		lector.close();		
 		
 		return pRespuesta;
@@ -118,41 +122,46 @@ public class AccesoRest {
 	public Persona altaPersona(Persona p) throws Exception{
 		System.out.println("Peticion a: " + IP);
 		URL objURL = new URL(IP);
+		
 		HttpURLConnection conexion = (HttpURLConnection) objURL.openConnection();
 		conexion.setRequestMethod("POST");
+		//ponemos la cabecera Content-Type con valor application/json
+		//ya que mi servidor solo "Consume" mensajes json
 		conexion.setRequestProperty("Content-Type", "application/json");
-		conexion.setDoOutput(true);//Permitimos mandar contenido en el body
+		conexion.setDoOutput(true);//OJO! Permitimos mandar contenido en el body
 				
+		//Parseamos el cliente a formato json para enviarlo
 		Gson gson = new Gson();
 		String jsonAEnviar = gson.toJson(p);
 		System.out.println("Json a enviar: " + jsonAEnviar);
 				
+		//Usamos el objeto PrintStream para escribir en el body del HTTP Request
 		PrintStream salida = new PrintStream(conexion.getOutputStream());
 		salida.println(jsonAEnviar);
 		
 		//Realizamos la solicitud al servidor
 		conexion.connect();
-				
+			
+		//ahora leemos la respueta
 		Scanner lector = new Scanner (conexion.getInputStream());
 		
 		int codigoHTTP = conexion.getResponseCode();
 		System.out.println("Código: " + codigoHTTP);
 		
 		String jsonRespuesta = lector.nextLine();
-
 		Persona pRespuesta = gson.fromJson(jsonRespuesta, Persona.class);
 		
 		lector.close();
 		salida.close();
+		conexion.disconnect();
 	
 		return pRespuesta;
 	}
 	
 	public Persona modificarPersona(Persona p, int id) throws Exception{
-		String url = null;
-		url = IP + "/" + id;
+		String url = IP + "/" + id;
 		
-		System.out.println("Peticion a: " + IP);
+		System.out.println("Peticion a: " + url);
 		URL objURL = new URL(url);
 		
 		HttpURLConnection conexion = (HttpURLConnection) objURL.openConnection();
@@ -181,13 +190,14 @@ public class AccesoRest {
 		
 		lector.close();
 		salida.close();
+		conexion.disconnect();
 	
 		return pRespuesta;
 	}
 	
-	public int borrarPersonas(int id) throws Exception{
-		String url = null;
-		url = IP + "/" + id;
+	//Esto es un copy/paste del obtenerPersona, pero en vez de un "GET" un "DELETE"
+	public Persona borrarPersonas(int id) throws Exception{
+		String url = IP + "/" + id;
 		
 		System.out.println("Peticion a: " + url);
 		URL objURL = new URL(url);
@@ -204,10 +214,12 @@ public class AccesoRest {
 		
 		String respuesta = lector.nextLine();
 		
-		int idRespuesta = Integer.parseInt(respuesta);
+		Gson gson = new Gson();
+		Persona pRespuesta = gson.fromJson(respuesta, Persona.class);
 		
+		conexion.disconnect();
 		lector.close();		
 		
-		return idRespuesta;
+		return pRespuesta;
 	}
 }

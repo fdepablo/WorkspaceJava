@@ -6,9 +6,9 @@ import persistencia.AccesoRest;
 public class MainObtenerPersona {
 
 	public static void main(String[] args) throws Exception {
-		AccesoRest daoRest = new AccesoRest();
+		AccesoRest accesoRest = new AccesoRest();
 
-		Persona p = daoRest.obtenerPersona(2);
+		Persona p = accesoRest.obtenerPersona(2);
 		System.out.println(p);
 	}
 

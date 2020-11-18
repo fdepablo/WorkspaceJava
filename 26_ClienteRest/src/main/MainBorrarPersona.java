@@ -1,5 +1,6 @@
 package main;
 
+import entidad.Persona;
 import persistencia.AccesoRest;
 
 public class MainBorrarPersona {
@@ -7,8 +8,8 @@ public class MainBorrarPersona {
 	public static void main(String[] args) throws Exception {
 		AccesoRest daoRest = new AccesoRest();
 		
-		int id = daoRest.borrarPersonas(2);
-		System.out.println("Id borrado: " + id);
+		Persona p = daoRest.borrarPersonas(3);
+		System.out.println("Persona borrada: " + p);
 	}
 
 }
