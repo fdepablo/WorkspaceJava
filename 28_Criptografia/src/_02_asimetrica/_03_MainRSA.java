@@ -29,30 +29,33 @@ import javax.crypto.Cipher;
 public class _03_MainRSA {
 	public static void main(String[] args) {
 		try {
+			//En vez de KeyGenerator usamos KeyPairGenerator
 			KeyPairGenerator generador = KeyPairGenerator.getInstance("RSA");
 			System.out.println("Paso 1: Se ha obtenido el generador de claves");
 			
+			//Obtenemos el par de claves (publica y privada)
 			KeyPair claves = generador.generateKeyPair();
 			System.out.println("Paso 2: Se ha obtenido el par de claves");
 			
-			Cipher descifrador = Cipher.getInstance("RSA");
+			Cipher cifrador = Cipher.getInstance("RSA");
 			System.out.println("Paso 3: Hemos obtenido el descifrador");
 			
-			descifrador.init(Cipher.ENCRYPT_MODE, claves.getPrivate());
+			cifrador.init(Cipher.ENCRYPT_MODE, claves.getPrivate());
 			System.out.println(claves.getPublic().getClass().getName());
 			System.out.println("Paso 4: Hemos configurado el descifrador para usar clave publica");
 			
 			String mensajeOriginal = "La cripta mágica";
 			byte[] bytesMensajeOriginal = mensajeOriginal.getBytes();
-			byte[] bytesMensajeCifrado = descifrador.doFinal(bytesMensajeOriginal);
+			//ciframos el mensaje
+			byte[] bytesMensajeCifrado = cifrador.doFinal(bytesMensajeOriginal);
 			String mensajeCifrado = new String(bytesMensajeCifrado);
 			System.out.println("Paso 5: Hemos preparado y cifrado el mensaje original");
 			System.out.println("Mensaje Original: " + mensajeOriginal);
 			System.out.println("Mensaje Cifrado: " + mensajeCifrado);
 			
 			System.out.println("AHORA VAMOS A DESCIFRAR EL MENSAJE CIFRADO USANDO LA CLAVE PRIVADA");
-			descifrador.init(Cipher.DECRYPT_MODE, claves.getPublic());
-			byte[] bytesMensajeDescifrado = descifrador.doFinal(bytesMensajeCifrado);
+			cifrador.init(Cipher.DECRYPT_MODE, claves.getPublic());
+			byte[] bytesMensajeDescifrado = cifrador.doFinal(bytesMensajeCifrado);
 			System.out.println("Mensaje Descifrado: " + new String(bytesMensajeDescifrado));
 			
 		} catch (GeneralSecurityException e) {

@@ -1,5 +1,7 @@
 package _01_simetrica;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
@@ -26,7 +28,7 @@ import javax.crypto.SecretKey;
     5- Una vez finalizadas las 16 rondas, cada bloque sufrirá una transformación final.
  */
 public class _01_MainDES {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		System.out.println("Probando sistema de encriptación con algoritmo DES");
 		try {
 			//generador de escítalas espartanas
@@ -35,8 +37,10 @@ public class _01_MainDES {
 			
 			//Generamos la clave simetrica. (La escítala espartana)
 			SecretKey paloEspartano = generador.generateKey();
+			//Si yo hiciera otra vez, obtendria otro palo espartano DIFERENTE
+			//SecretKey paloEspartano = generador.generateKey();
 			System.out.println("Paso 2: Se ha obtenido la clave");
-
+			
 			//objeto que nos permitira encriptar o desencriptar a a partir de un
 			//palo espartano
 			Cipher cifrador = Cipher.getInstance("DES");

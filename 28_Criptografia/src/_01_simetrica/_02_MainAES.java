@@ -21,7 +21,7 @@ import javax.crypto.SecretKey;
  */
 public class _02_MainAES {
 	public static void main (String args[]) {
-		System.out.println("Probando sistema de encriptación con algoritmo DES");
+		System.out.println("Probando sistema de encriptación con algoritmo AES");
 		try {
 			KeyGenerator generador = KeyGenerator.getInstance("AES");
 			System.out.println("Paso 1: Se ha obtenido el generador de claves");
