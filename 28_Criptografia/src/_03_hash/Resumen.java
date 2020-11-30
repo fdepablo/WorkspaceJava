@@ -2,6 +2,7 @@ package _03_hash;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
 
 public class Resumen {
 
@@ -10,7 +11,7 @@ public class Resumen {
 		byte[] cancion2 = "Imagine".getBytes();
 		byte[] cancion3 = "We Are the Champions".getBytes();
 		byte[] cancion4 = "Hotel California".getBytes();
-		byte[] cancion5 = "Yesterday".getBytes();
+		byte[] cancion5 = "".getBytes();
 		
 		/*
 		 * Creamos un objeto MessageDigest a través del método estático 
@@ -32,6 +33,15 @@ public class Resumen {
 		//será una cadena de bytes.
 		
 		byte[] resumen = md.digest();
-		System.out.println("Resumen hash: " + new String(resumen));
+		String mensaje = new String(resumen);
+		System.out.println("Resumen hash: " + mensaje);
+		
+		//Mejor pasarlo a Base64
+		String mensajeHashBase64 = Base64.getEncoder().encodeToString(resumen);
+		System.out.println(mensajeHashBase64);
+		
+		//O a Hexadecimal
+		String mensajeHashHex = javax.xml.bind.DatatypeConverter.printHexBinary(resumen);
+		System.out.println(mensajeHashHex);
 	}
 }
