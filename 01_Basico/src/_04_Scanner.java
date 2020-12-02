@@ -1,6 +1,8 @@
 
 import java.util.Scanner;
 
+//Problema con la clase Scanner
+//https://puntocomnoesunlenguaje.blogspot.com/2012/08/java-scanner.html
 public class _04_Scanner {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
