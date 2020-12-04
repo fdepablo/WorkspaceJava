@@ -6,7 +6,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 
-import entidades.Mensaje;
+import entidad.Mensaje;
 
 @Path("mensajeParametros")
 public class WebServiceParametrosRuta {

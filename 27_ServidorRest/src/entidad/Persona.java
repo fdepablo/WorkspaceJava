@@ -1,4 +1,4 @@
-package entidades;
+package entidad;
 
 import java.io.Serializable;
 

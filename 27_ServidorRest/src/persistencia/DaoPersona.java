@@ -3,7 +3,7 @@ package persistencia;
 import java.util.ArrayList;
 import java.util.List;
 
-import entidades.Persona;
+import entidad.Persona;
 
 //Patron DAO (Data Access Object), objeto que se encarga de hacer las consultas
 //a algun motor de persistencia (BBDD, Ficheros, incluso en memoria)

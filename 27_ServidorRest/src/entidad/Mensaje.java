@@ -1,23 +1,23 @@
-package entidades;
+package entidad;
 
-public class MensajeHTML {
+public class Mensaje {
 	private String texto;
 	private static long peticiones;
 	
-	public MensajeHTML(String texto) {
+	public Mensaje(String texto) {
 		this.texto = texto;
 		peticiones ++;
 	}
 
 	public String getTexto() {
-		return texto;
+		return texto + "\n" + "Acceso numero: " + peticiones;
 	}
 
 	public void setTexto(String texto) {
 		this.texto = texto;
 	}
 
-	public String getPeticiones() {
-		return "Accesos desde el inicio del servidor: " + peticiones;
+	public static long getPeticiones() {
+		return peticiones;
 	}
 }
