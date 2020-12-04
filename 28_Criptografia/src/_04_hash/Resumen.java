@@ -1,4 +1,4 @@
-package _03_hash;
+package _04_hash;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
