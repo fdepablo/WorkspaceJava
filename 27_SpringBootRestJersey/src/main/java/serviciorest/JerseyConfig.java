@@ -12,5 +12,8 @@ public class JerseyConfig extends ResourceConfig
     {
     	//registramos nuestra clase webService
         register(WebServicePersonas.class);
+        //Si quisieramos registrar otros servicios o cambiar el de arriba
+        //podriamos hacer varios register
+        //register(OtroServicioDistinto.class);
     }
 }

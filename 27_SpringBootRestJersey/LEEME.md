@@ -1,5 +1,19 @@
- INSTRUCCIONES
----------------
+ INSTRUCCIONES PARA ARRANCAR ESTE PROYECTO
+-------------------------------------------
+1) Copiar este proyecto en el workspace
+2) Importar el proyecto a tu workspace como maven proyect, para ello:
+	a) File -> import -> Existing Maven Proyect -> seleccionar este proyecto de la lista
+3) Para arrancar el proyecto 
+	a) acceder a "src/main/java/serviciorest"
+	b) ejecutar Application.java, boton derecho -> rus as -> Java Application
+4) Probar mediante un explorador web o una app como el POSTMAN que se pueden acceder a las URLs de nuestros servicios web
+5) Si se quisieran hacer más servicios rest o cambiar los que tenemos, deberemos de añadir o cambiar dichos servicios en "src/main/java/serviciorest/JerseyConfig.java"
+6) Si queremos cambiar la raiz de nuestra URL para acceder a nuestros servicios rest,
+deberemos de hacerlo en "src/main/resources/application.properties" dentro de la propiedad
+"spring.jersey.application-path="
+ 
+ INSTRUCCIONES PARA ARRANCAR DE CERO UN PROYECTO SPRING BOOT
+-------------------------------------------------------------
 Para hacer un proyecto Spring boot, primero de todo tenemos que tener algún plug-in de
 spring del market place (algún "Spring Tools")
 
@@ -29,10 +43,9 @@ nuestro proyecto
 
  Configurar Jersey
 -------------------
-Crear la clase JerseyConfig, dentro de esta tenemos que poner la clase que contiene el 
-webservice.
+Crear la clase JerseyConfig, dentro de esta tenemos que poner la clase que contiene las anotaciones del servicio rest (o todas las clases que queramos)
 
-OJO, todos los paquete deben de tener el paquete raiz como raiz!
+OJO, todos los paquete deben de tener el paquete "serviciorest" como paquete raiz!
 
  FUENTES
 ---------
