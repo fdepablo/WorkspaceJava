@@ -2,6 +2,8 @@ package _03_ficheros_binarios;
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class _01_EscrituraBinarios {
@@ -12,6 +14,11 @@ public class _01_EscrituraBinarios {
 		Producto p1 = new Producto("Manzanas Royal Gala",2.50f,7);
 		Producto p2 = new Producto("Dátiles de la tía Julita",3.25f,12);
 		Producto p3 = new Producto("Mandarinas Clementinas",2.20f,25);
+		
+		List<Producto> listaProductos = new ArrayList<Producto>();
+		listaProductos.add(p1);
+		listaProductos.add(p2);
+		listaProductos.add(p3);
 		
 		FileOutputStream fichero;
 		DataOutputStream  escritor;
@@ -29,18 +36,11 @@ public class _01_EscrituraBinarios {
 		
 		// Escribir datos en el fichero almacen.dat
 		try {
-			escritor.writeUTF(p1.getNombre());
-			escritor.writeFloat(p1.getPrecio());
-			escritor.writeInt(p1.getUnidadesEnExistencia());
-					
-			escritor.writeUTF(p2.getNombre());
-			escritor.writeFloat(p2.getPrecio());
-			escritor.writeInt(p2.getUnidadesEnExistencia());
-					
-			escritor.writeUTF(p3.getNombre());
-			escritor.writeFloat(p3.getPrecio());
-			escritor.writeInt(p3.getUnidadesEnExistencia());
-					
+			for(Producto p : listaProductos) {
+				escritor.writeUTF(p.getNombre());
+				escritor.writeFloat(p.getPrecio());
+				escritor.writeInt(p.getUnidadesEnExistencia());
+			}					
 		} catch (IOException e) {
 			System.out.println("Ha ocurrido un error al escribir datos en el fichero");
 			System.out.println(e.getMessage());
