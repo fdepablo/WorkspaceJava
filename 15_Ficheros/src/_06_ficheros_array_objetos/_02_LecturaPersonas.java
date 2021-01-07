@@ -8,13 +8,17 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;
 
-public class LecturaPersonasAutoclose {
+public class _02_LecturaPersonas {
 
 	public static void main(String[] args) {
-		File file = new File(EscrituraPersonasAutoclose.nombreFichero);
+		File file = new File(_01_EscrituraPersonas.nombreFichero);
+		FileInputStream fis;
+		ObjectInputStream ois = null;
 		
-		try (FileInputStream fis = new FileInputStream(file);
-			 ObjectInputStream ois = new ObjectInputStream(fis);) {
+		try {
+			fis = new FileInputStream(file);
+			ois = new ObjectInputStream(fis);
+			@SuppressWarnings("unchecked")
 			List<Persona> listaPersona = (List<Persona>)ois.readObject();
 			System.out.println("Objeto leido");
 			System.out.println("Imprimiendo personas");
@@ -30,7 +34,15 @@ public class LecturaPersonasAutoclose {
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} 
+		} finally {
+			if(ois != null)
+				try {
+					ois.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}
 		
 		System.out.println("Cerrando programa");
 	}

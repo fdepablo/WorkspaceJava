@@ -4,7 +4,7 @@ import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class LecturaBinarios {
+public class _03_LecturaBinariosAutoclose {
 
 	public static void main(String[] args) {
 		FileInputStream fichero;

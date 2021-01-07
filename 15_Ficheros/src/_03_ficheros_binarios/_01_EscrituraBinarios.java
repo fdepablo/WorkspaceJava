@@ -4,7 +4,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 
-public class EscrituraBinarios {
+public class _01_EscrituraBinarios {
 
 	public static void main(String[] args) {
 		

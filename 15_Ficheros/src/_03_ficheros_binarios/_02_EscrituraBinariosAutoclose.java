@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class EscrituraBinariosAutoclose {
+public class _02_EscrituraBinariosAutoclose {
 
 	public static void main(String[] args) {
 		

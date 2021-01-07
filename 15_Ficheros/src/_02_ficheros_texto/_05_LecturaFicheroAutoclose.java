@@ -6,17 +6,17 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class LecturaFicheroAutoclose {
+public class _05_LecturaFicheroAutoclose {
 
 	public static void main(String[] args) {
-		System.out.println("Vamos a leer nuestro fichero de texto + " + EscrituraFicheroAutoclose.NOMBRE_FICHERO);
+		System.out.println("Vamos a leer nuestro fichero de texto + " + _04_EscrituraFicheroAutoclose.NOMBRE_FICHERO);
 
-		try (FileReader fr = new FileReader(EscrituraFicheroAutoclose.NOMBRE_FICHERO);
+		try (FileReader fr = new FileReader(_04_EscrituraFicheroAutoclose.NOMBRE_FICHERO);
 			 BufferedReader br = new BufferedReader(fr);) {
-			String s = br.readLine();
-			while(s != null){
-				System.out.println("Frase del fichero: " +s);
-				s = br.readLine();
+			String frase = br.readLine();
+			while(frase != null){
+				System.out.println("Frase del fichero: " + frase);
+				frase = br.readLine();
 			}
 			System.out.println("Fichero leido correctamente");
 		} catch (FileNotFoundException e) {

@@ -1,6 +1,6 @@
 package _07_propiedades;
 
-public class Prueba {
+public class MainPropiedades {
 	public static void main(String[] args) {
 		Configuracion conf = new Configuracion();
 		conf.inicializar();

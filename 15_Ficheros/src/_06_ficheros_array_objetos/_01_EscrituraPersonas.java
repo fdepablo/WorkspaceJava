@@ -1,13 +1,14 @@
 package _06_ficheros_array_objetos;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EscrituraPersonasAutoclose {
+public class _01_EscrituraPersonas {
 
 	public static final String nombreFichero = "personas.dat";
 	
@@ -29,16 +30,30 @@ public class EscrituraPersonasAutoclose {
 		listaPersona.add(persona1);
 		
 		File file = new File(nombreFichero);
-	
-		try (FileOutputStream fos = new FileOutputStream(file);
-			 ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+		FileOutputStream fos;
+		ObjectOutputStream oos = null;
+		
+		try {
+			fos = new FileOutputStream(file);
+			oos = new ObjectOutputStream(fos);
 			//oos = new ObjectOutputStream(new FileOutputStream(new File(nombreFichero)));
 			oos.writeObject(listaPersona);
 			System.out.println("Objeto introducido");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} 
+		} finally {
+			if(oos != null)
+				try {
+					oos.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}
 		
 		System.out.println("Cerrando programa");
 	}

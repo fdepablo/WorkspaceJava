@@ -4,7 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class EscrituraFicheroBuffer {
+public class _02_EscrituraFicheroBuffer {
 	public static void main(String args[]) {
 
 		// Abrir fichero para escritura
@@ -12,7 +12,7 @@ public class EscrituraFicheroBuffer {
 		try {
 			file = new FileWriter("peliculas.txt");
 		} catch (IOException e) {
-			System.out.println("No se puede abrir el fichero");
+			System.out.println("No se puede abrir o crear el fichero");
 			System.out.println(e.getMessage());
 			return;
 		}
@@ -22,6 +22,7 @@ public class EscrituraFicheroBuffer {
 		try {
 			buffer.write("¡Bienvenido, Mister Marshall!");
 			buffer.newLine();
+			buffer.flush();//con flush mandamos la información que tenemos en el buffer al fichero
 			buffer.write("Con la muerte en los talones");
 			buffer.newLine();
 			buffer.write("Muerte de un ciclista");
