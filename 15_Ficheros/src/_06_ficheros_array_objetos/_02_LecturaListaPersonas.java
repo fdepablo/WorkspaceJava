@@ -8,16 +8,19 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;
 
-public class _04_LecturaPersonasAutoclose {
+public class _02_LecturaListaPersonas {
 
 	public static void main(String[] args) {
-		File file = new File(_03_EscrituraPersonasAutoclose.nombreFichero);
+		File file = new File(_01_EscrituraListaPersonas.nombreFichero);
 		
 		try (FileInputStream fis = new FileInputStream(file);
 			 ObjectInputStream ois = new ObjectInputStream(fis);) {
+			
 			List<Persona> listaPersona = (List<Persona>)ois.readObject();
+			
 			System.out.println("Objeto leido");
 			System.out.println("Imprimiendo personas");
+			
 			for(Persona p : listaPersona){
 				System.out.println(p);
 			}

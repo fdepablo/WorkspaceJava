@@ -20,12 +20,13 @@ public class _01_EscrituraBinarios {
 		listaProductos.add(p2);
 		listaProductos.add(p3);
 		
+		//Para trabajar con ficheros binarios podemos usar las dos siguientes clases
 		FileOutputStream fichero;
 		DataOutputStream  escritor;
 		
 		// Apertura del fichero almacen.dat
 		try {
-			//abrimos el fichero en modo add
+			//abrimos el fichero en modo add (true)
 			fichero = new FileOutputStream("almacen.dat", true);
 			escritor = new DataOutputStream (fichero);
 		} catch (IOException e) {
@@ -37,7 +38,8 @@ public class _01_EscrituraBinarios {
 		// Escribir datos en el fichero almacen.dat
 		try {
 			for(Producto p : listaProductos) {
-				escritor.writeUTF(p.getNombre());
+				//Es interesante usar el metodo adecuado al tipo de dato que queremos guardar
+				escritor.writeUTF(p.getNombre());//escribimos en UTF-8
 				escritor.writeFloat(p.getPrecio());
 				escritor.writeInt(p.getUnidadesEnExistencia());
 			}					
@@ -46,6 +48,7 @@ public class _01_EscrituraBinarios {
 			System.out.println(e.getMessage());
 		}
 		
+		//simpre cerramos los canales de comunicacion
 		try {
 			escritor.close();
 			fichero.close();

@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+//Exacatmente igual que el ejemplo 01, pero con try/catch autoclose
 public class _02_EscrituraBinariosAutoclose {
 
 	public static void main(String[] args) {

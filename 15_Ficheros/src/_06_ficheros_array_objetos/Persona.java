@@ -8,10 +8,12 @@ public class Persona implements Serializable{
 	
 	private String dni;
 	private int edad;
+	private double peso;
+	
 	//Si ponemos algun atributo como 'transient'
 	//no se serializara (no se copiará al fichero)
 	//transient private double peso;
-	private double peso;
+	//private double peso;
 	
 	public String getDni() {
 		return dni;

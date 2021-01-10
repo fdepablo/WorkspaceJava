@@ -1,4 +1,4 @@
-package _07_propiedades;
+package _07_fichero_propiedades;
 
 import java.io.IOException;
 import java.io.InputStream;

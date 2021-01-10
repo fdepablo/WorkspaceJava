@@ -7,26 +7,26 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class _03_EscrituraPersonasAutoclose {
+public class _01_EscrituraListaPersonas {
 
 	public static final String nombreFichero = "personas.dat";
 	
 	public static void main(String[] args) {
 		System.out.println("Vamos a salvar personas");
 		List<Persona> listaPersona = new ArrayList<Persona>();
-		Persona persona1 = new Persona();
+		Persona persona = new Persona();		
+		persona.setDni("52887766s");
+		persona.setEdad(25);
+		persona.setPeso(78.2);
 		
-		persona1.setDni("52887766s");
-		persona1.setEdad(25);
-		persona1.setPeso(78.2);
+		listaPersona.add(persona);
 		
-		persona1 = new Persona();
+		persona = new Persona();		
+		persona.setDni("52887768d");
+		persona.setEdad(34);
+		persona.setPeso(34.2);
 		
-		persona1.setDni("adsfhkdsajhfds");
-		persona1.setEdad(34);
-		persona1.setPeso(34.2);
-		
-		listaPersona.add(persona1);
+		listaPersona.add(persona);
 		
 		File file = new File(nombreFichero);
 	

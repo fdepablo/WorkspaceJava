@@ -7,42 +7,37 @@ import java.io.IOException;
 public class _03_LecturaBinariosAutoclose {
 
 	public static void main(String[] args) {
-		FileInputStream fichero;
-		DataInputStream  lector;
 		
-		try {
-			fichero = new FileInputStream("almacen.dat");
-			lector = new DataInputStream (fichero);
+		//Para leer de un fichero necesitamos los "input"
+		try (FileInputStream fichero = new FileInputStream("almacen.dat");
+				DataInputStream lector = new DataInputStream (fichero);){
+			
+			//eof -> end of file, todos los finales de fichero se marcan con eof para saber que 
+			//no hay mas datos
+			boolean eof = false;
+			while (!eof) {
+				//cada vez que leemos algo, es subceptible a que de un EOFException
+				try {
+					String pro = lector.readUTF();
+					float pre = lector.readFloat();
+					int uni = lector.readInt();
+					Producto p = new Producto(pro, pre, uni);
+					System.out.println(p);
+				} catch (EOFException e1) {
+					//si intentamos leer algo y estamos en EOF, entonces dara esta excepcion
+					eof = true;
+				} catch (IOException e2) {
+					System.out.println("Ha ocurrido un error al leer los registros");
+					System.out.println(e2.getMessage());
+					break; // sale del bucle while
+				}
+			}
 		} catch (IOException e) {
 			System.out.println("Ha ocurrido un error al abrir el fichero");
 			System.out.println(e.getMessage());
 			return;
-		}
-		
-		boolean eof = false;
-		while (!eof) {
-			try {
-				String pro = lector.readUTF();//cada vez que leemos algo, es subceptible a que de un EOFException
-				float pre = lector.readFloat();
-				int uni = lector.readInt();
-				Producto p = new Producto(pro, pre, uni);
-				System.out.println(p);
-			} catch (EOFException e1) {
-				eof = true;
-			} catch (IOException e2) {
-				System.out.println("Ha ocurrido un error al leer los registros");
-				System.out.println(e2.getMessage());
-				break; // sale del bucle while
-			}
-		}
-		
-		try {
-			lector.close();
-			fichero.close(); 
-		} catch (IOException e) {
-			System.out.println("Ha ocurrido un error al cerrar el fichero");
-			System.out.println(e.getMessage());			
-		}
+		}		
+
 	}
 	
 }
