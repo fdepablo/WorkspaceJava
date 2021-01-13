@@ -3,7 +3,7 @@ package depuracion;
 public class _00_Depuracion {
 	//para depurar el codigo en vez de ejecutar con run as -> run se hara con debug as -> debug
 	public static void main(String[] args) {
-		//podemos poner puntos de interrupcion
+		//podemos poner puntos de interrupcion, haciendo doble click sobre la linea que queremos
 		//en cualquier momento podemos pulsar f8 para hacer que el programa ejecute hasta el siguiente
 		//punto de interrupción, si no hubiera, hasta el fin del programa
 		System.out.println("Hola mundo!!");
@@ -18,6 +18,10 @@ public class _00_Depuracion {
 		variable *= 3;//variable = variable * 3;
 		variable /= 2;
 		
+		String nombre = "Harry potter";
+		nombre = "Ernion Güesley";
+		
+		System.out.println(nombre);
 		//si pulsamos f5 pasaremos dentro de la función,f6 para siguiente linea
 		int resultado = sumar(variable, 90);
 		

@@ -1,4 +1,4 @@
-La depueracion es una herramienta que nos ayuda a los programadores
+La depuracion es una herramienta que nos ayuda a los programadores
 a ejecutar un programa linea por linea y asi poder ir viendo los resultados
 parciales que se van ejecutando en java
 

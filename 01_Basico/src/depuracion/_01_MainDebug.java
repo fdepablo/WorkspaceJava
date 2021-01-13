@@ -13,7 +13,7 @@ public class _01_MainDebug {
 		System.out.println(resultado);
 		
 		System.out.println("*****************************");
-		for(int i=0;i<10;i++) {
+		for(int i=0;i<100;i++) {
 			//podemos poner un breakpoint condicional, lo ponemos
 			//con doble click y a continuacion en la pestaña de breakpoints
 			//escogemos la opcion Conditional y dentro le damos el valor (Ej: i==5)
