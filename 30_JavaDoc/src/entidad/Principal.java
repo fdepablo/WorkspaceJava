@@ -1,10 +1,21 @@
 package entidad;
 
 /**
- * Aqui iria una descripcion de lo que hace clase
- * @author vened
+ * Esto seria un comentario java doc, que sirve para documetar, y empiezan por "/**"
+ * Podemos documentar principalmente clases, atributos y métodos
+ * 
+ * Aqui iria una descripcion de lo que hace clase, con todo el nivel de detalle que se precise
+ * 
+ * En javadoc podemos poner anotaciones o etiquetas, cuya función es la de separar o 
+ * remarcar ciertas partes de la documentación
+ * 
+ * Esta anotacion representará el autor que ha hecho esta clase
+ * @author Felix de Pablo Lobo
+ * 
+ * Esta anotacion representaria la version
+ * @version 1.0
  *
- */
+ *///acaban asi los java doc :)
 public class Principal {
 
 	public static void main(String[] args) {

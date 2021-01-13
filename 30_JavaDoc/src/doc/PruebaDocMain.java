@@ -2,6 +2,11 @@ package doc;
 
 import java.util.Date;
 
+/*
+ * El objetivo de javadoc es el de proporcionar informacion a otro desarrolladores de como tienen
+ * que utilizar nuestros clases y metodos. Esta documentacion no es para nosotros (que tambien)
+ * es principalmente para los programadores que usen nuestro codigo.
+ */
 public class PruebaDocMain {
 
 	public static void main(String[] args) {
@@ -13,6 +18,10 @@ public class PruebaDocMain {
 		//de entender el codigo
 		pd.metodoDos(34, new Date());
 		pd.metodoTres("texto");
+		
+		String cadena = "Esto es un string";
+		cadena.length();
+		cadena.substring(0, 8);
 	}
 
 }

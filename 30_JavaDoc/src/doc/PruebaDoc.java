@@ -56,10 +56,10 @@ public class PruebaDoc {
 	 * expliquen los parametros de entrada y los parametros de salida
 	 * 
 	 * @param numero
-	 *            Valor numerico entero.
+	 *            Valor numerico del entero y su funcion es... (lo que sea)
 	 * @param fecha
-	 *            Valor fecha.
-	 * @return Cadena devuelta.
+	 *            Valor fecha de nacimiento de la persona (por ejemplo...)
+	 * @return Cadena devuelta calculada despues de... (lo que sea)
 	 */
 	public String metodoDos(Integer numero, Date fecha) {
 
@@ -74,6 +74,7 @@ public class PruebaDoc {
 	 * @param texto
 	 *            Valor texto.
 	 * @return Valor numerico.
+	 * 
 	 * @throws Exception
 	 *             Excepcion dada. {@link Exception#getLocalizedMessage()}
 	 */
