@@ -4,40 +4,23 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+//IMPORTANTE
+//EN TODAS LAS CONEXIONES A BBDD DEBEMOS DE USAR LA CLASE PREPARED STATEMENT EN LUGAR
+//DE LA CLASE STATEMENT
 public class _02_InsertarPreparedStatement {
 
 	public static void main(String[] args) {
-		
-		// Paso 1: Cargar el driver
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
-			System.out.println("No se ha encontrado el driver para MySQL");
-			return;
-		}
-		System.out.println("Se ha cargado el Driver de MySQL");
-		
-		// Paso 2: Establecer conexión con la base de datos
+		// Paso 1: Establecemos los parametros de conexión con la base de datos
 		String cadenaConexion = "jdbc:mysql://localhost:3306/bbdd";
 		String user = "root";
 		String pass = "";
-		Connection con;
-		try {
-			con = DriverManager.getConnection(cadenaConexion, user, pass);
-		} catch (SQLException e) {
-			System.out.println("No se ha podido establecer la conexión con la BD");
-			System.out.println(e.getMessage());
-			return;
-		}
-		System.out.println("Se ha establecido la conexión con la Base de datos");
 		
-		// Paso 3: Interactuar con la BD 
-		try {
+		// Paso 2: Interactuar con la BD 
+		try (Connection con = DriverManager.getConnection(cadenaConexion, user, pass)){
 			//esta es la manera que hay que hacer si quereis aprobar
-			//porque? luego os lo cuento
-			//de momento ganamos en claridad
-			String sql = "INSERT INTO PERSONAS (NOMBRE, EDAD, PESO) " +
-				"VALUES (?, ?, ?)"; // en vez de poner los valores ponemos interrogantes
+			//porque? De momento ganamos en claridad, es mas visual
+			String sql = "INSERT INTO PERSONAS (NOMBRE, EDAD, PESO) VALUES (?, ?, ?)"; 
+			// en vez de poner los valores ponemos interrogantes
 			
 			String nombre = "Ernion Güeslei";
 			int edad = 18;
@@ -55,25 +38,14 @@ public class _02_InsertarPreparedStatement {
 			sentencia.setInt(2, edad);//
 			sentencia.setDouble(3, peso);
 			
-			int afectados = sentencia.executeUpdate();//para actualizar la bbdd
+			//Ejecutamos la query
+			int afectados = sentencia.executeUpdate();
 			System.out.println("Sentencia SQL ejecutada con éxito");
 			System.out.println("Registros afectados: "+afectados);
 		} catch (SQLException e) {
 			System.out.println("Error al añadir una nueva persona");
 			System.out.println(e.getMessage());
 		}
-		
-		
-		// Paso 4: Cerrar la conexión
-		try {
-			con.close();
-		} catch (SQLException e) {
-			System.out.println("No se ha podido cerrar la conexión con la BD");
-			System.out.println(e.getMessage());
-			return;
-		}
-		System.out.println("Se ha cerrado la base de datos");
-
 	}
 
 }

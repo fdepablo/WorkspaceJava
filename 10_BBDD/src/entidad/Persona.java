@@ -1,10 +1,6 @@
 package entidad;
 
-import java.io.Serializable;
-
-public class Persona implements Serializable{
-		
-	private static final long serialVersionUID = 4409871808231768382L;
+public class Persona{
 	
 	private int id;
 	private String nombre;
