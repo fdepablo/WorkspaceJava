@@ -1,17 +1,18 @@
 package test;
 
 import modelo.entidad.Persona;
-import modelo.negocio.GestorPersonas;
+import modelo.persistencia.DaoPersonaMySql;
+import modelo.persistencia.interfaces.DaoPersona;
 
 public class TestAlta {
 	public static void main(String[] args) {
 		Persona persona = new Persona();
-		persona.setNombre("Ramon");
+		persona.setNombre("Filemon");
 		persona.setEdad(45);
-		persona.setPeso(76.5);
+		persona.setPeso(66.5);
 		
-		GestorPersonas gestorPersonas = new GestorPersonas();
-		boolean alta = gestorPersonas.alta(persona);
+		DaoPersona dp = new DaoPersonaMySql();
+		boolean alta = dp.alta(persona);
 		if(alta){
 			System.out.println("La persona se ha dado de alta");
 		}else{

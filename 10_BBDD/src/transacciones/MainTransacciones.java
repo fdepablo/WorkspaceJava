@@ -5,22 +5,15 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 //Cuando ejecutamos varias queries en un entorno de transaccionalidad 
-//quiere decir que ejecutamos todas las queries como si fuera una
-//es decir, si falla una deben de fallar todas
-public class Principal {
+//quiere decir que ejecutamos todas las queries como si fuera una unica (operacion atómica)
+//es decir, si falla una de las quueries deben de fallar todas
+
+//Este ejemplo no se ha podido hacer con autoclose ya que si ponemos la referencia
+//"Connection con" dentro del autoclose, no tenemos visibilidad dentro del catch
+public class MainTransacciones {
 
 	public static void main(String[] args) throws SQLException {
-		
-		// Paso 1: Cargar el driver
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
-			System.out.println("No se ha encontrado el driver para MySQL");
-			return;
-		}
-		System.out.println("Se ha cargado el Driver de MySQL");
-		
-		// Paso 2: Establecer conexión con la base de datos
+		// Paso 1: Establecer conexión con la base de datos
 		String cadenaConexion = "jdbc:mysql://localhost:3306/Ferreteria";
 		String user = "root";
 		String pass = "";
@@ -34,19 +27,25 @@ public class Principal {
 		}
 		System.out.println("Se ha establecido la conexión con la Base de datos");
 		
-		// Paso 3: Interactuar con la BD 
+		// Paso 2: Interactuar con la BD 
 		try {
-			//por defecto cada vez que lanzamos una consulta se hace commit a la bbdd
-			//así pues lo desactivamos
+			//por defecto cada vez que lanzamos una modificacion(inserte, update, delete...)
+			//, se hace commit a la bbdd.
+			//Por lo tanto, lo desactivamos para hacer commit solamente cuando se hayan ejecutado 
+			//todas las las queries
 			con.setAutoCommit(false);
-			//Se debería hacer con preparedstatements
+			
+			//Este es un ejemplo sencillo y usarremos Statement
+			//OJO! Se debería hacer con preparedstatements, consultas parametrizadas
 			Statement sentencia = con.createStatement();
 			
+			//Simulamos el alta de un cliente con una factura que tiene asociada unos productos
+			//Hay que modificar todas las tablas y si no se puede, no hay que modificar ninguna
 			String sql = "INSERT INTO CLIENTE VALUES ('51666666A','ROCAFLOR DELGADO RODOLFO', 'C/ PITONISA, 45', '616656644', 'SEVILLA');";
 			sentencia.executeUpdate(sql);
 			sql = "INSERT INTO FACTURA VALUES (5446,'2018/04/23', 0, '51666666A');";
 			sentencia.executeUpdate(sql);
-			sql = "INSERT INTO DETALLE VALUES (5446,'MAR2', 1, 7);";
+			sql = "INSERT INTO DETALLE VALUES (5446,'MAR2', 1, 7);";//factura - producto - cantidad - precio
 			sentencia.executeUpdate(sql);		
 			sql = "INSERT INTO DETALLE VALUES (5446,'TOR7', 2, 0.8);";
 			sentencia.executeUpdate(sql);	
@@ -60,15 +59,16 @@ public class Principal {
 			con.commit();
 			
 		} catch (SQLException e) {
-			System.out.println("Ha ocurrido un error al añadir la factura");
+			System.out.println("Ha ocurrido un error al ejecutar la transaccion");
 			System.out.println(e.getMessage()); 
 			//si en algun caso ha ocurrido algún error, eliminamos todas las
-			//anteriores queries que se hayan lanzado
+			//anteriores queries que se hayan lanzado, para mantener la 
+			//consistencia en nuestra bbdd
 			con.rollback();
 		}
 		
 		
-		// Paso 4: Cerrar la conexión
+		// Paso 3: Cerrar la conexión
 		try {
 			con.close();
 		} catch (SQLException e) {

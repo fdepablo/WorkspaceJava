@@ -1,19 +1,20 @@
 package test;
 
 import modelo.entidad.Persona;
-import modelo.negocio.GestorPersonas;
+import modelo.persistencia.DaoPersonaMySql;
+import modelo.persistencia.interfaces.DaoPersona;
 
 public class TestModificar {
 	public static void main(String[] args) {
 		Persona persona = new Persona();
-		persona.setId(1);
-		persona.setNombre("Maria");
-		persona.setEdad(30);
-		persona.setPeso(70);
+		persona.setId(10);
+		persona.setNombre("Mortadelo");
+		persona.setEdad(40);
+		persona.setPeso(73.5);
 		
-		GestorPersonas gp = new GestorPersonas();
+		DaoPersona dp = new DaoPersonaMySql();
 		
-		boolean modificar = gp.modificar(persona);
+		boolean modificar = dp.modificar(persona);
 		if(modificar){
 			System.out.println("La persona se ha modificado");
 		}else{

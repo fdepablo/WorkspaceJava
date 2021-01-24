@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import modelo.entidad.Persona;
-import modelo.persistencia.interfaces.PersonaDao;
+import modelo.persistencia.interfaces.DaoPersona;
 
-public class PersonaDaoDerby implements PersonaDao{
+public class DaoPersonaMySql implements DaoPersona{
 
 	private Connection conexion;
 	
@@ -19,24 +19,30 @@ public class PersonaDaoDerby implements PersonaDao{
 	//por java JUSTO ANTES de ejecutar el metodo main()
 	//java busca todos los metodos staticos que haya en el programa
 	//y los ejecuta
+	/*
 	static{
 		try {
 			//Esta sentencia carga del jar que hemos importado
 			//una clase que se llama Driver que esta en el paqueta
 			//com.mysql.jdbc. Esta clase se carga previamente en
 			//java para más adelante ser llamada
-			//Si fuera NO embedded, seria "org.apache.derby.jdbc.Driver"
-			Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
+			//Esto solo es necesario si utilizamos una versión java anterior
+			//a la 1.7 ya que desde esta versión java busca automaticamente 
+			//los drivers
+			Class.forName("com.mysql.jdbc.Driver");
 			System.out.println("Driver cargado");
 		} catch (ClassNotFoundException e) {
 			System.out.println("Driver NO cargado");
 			e.printStackTrace();
 		}
-	}
+	}*/
 	
 	public boolean abrirConexion(){
+		String url = "jdbc:mysql://localhost:3306/bbdd";
+		String usuario = "root";
+		String password = "";
 		try {
-			conexion = DriverManager.getConnection("jdbc:derby:bbdd;create=true");
+			conexion = DriverManager.getConnection(url,usuario,password);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -54,7 +60,6 @@ public class PersonaDaoDerby implements PersonaDao{
 		}
 		return true;
 	}
-	
 	
 	
 	
@@ -77,8 +82,6 @@ public class PersonaDaoDerby implements PersonaDao{
 			int numeroFilasAfectadas = ps.executeUpdate();
 			if(numeroFilasAfectadas == 0)
 				alta = false;
-			else
-				alta = true;
 		} catch (SQLException e) {
 			System.out.println("alta -> Error al insertar: " + p);
 			alta = false;
@@ -96,7 +99,7 @@ public class PersonaDaoDerby implements PersonaDao{
 			return false;
 		}
 		
-		boolean borrado = false;
+		boolean borrado = true;
 		String query = "delete from personas where id = ?";
 		try {
 			PreparedStatement ps = conexion.prepareStatement(query);
@@ -106,9 +109,8 @@ public class PersonaDaoDerby implements PersonaDao{
 			int numeroFilasAfectadas = ps.executeUpdate();
 			if(numeroFilasAfectadas == 0)
 				borrado = false;
-			else
-				borrado = true;
 		} catch (SQLException e) {
+			borrado = false;
 			System.out.println("baja -> No se ha podido dar de baja"
 					+ " el id " + id);
 			e.printStackTrace();
@@ -136,8 +138,6 @@ public class PersonaDaoDerby implements PersonaDao{
 			int numeroFilasAfectadas = ps.executeUpdate();
 			if(numeroFilasAfectadas == 0)
 				modificado = false;
-			else
-				modificado = true;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println("modificar -> error al modificar la "
@@ -218,5 +218,4 @@ public class PersonaDaoDerby implements PersonaDao{
 		return listaPersonas;
 	}
 
-	
 }

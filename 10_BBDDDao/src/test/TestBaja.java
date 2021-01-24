@@ -1,12 +1,13 @@
 package test;
 
-import modelo.negocio.GestorPersonas;
+import modelo.persistencia.DaoPersonaMySql;
+import modelo.persistencia.interfaces.DaoPersona;
 
 public class TestBaja {
 	public static void main(String[] args) {
-		GestorPersonas gp = new GestorPersonas();
+		DaoPersona dp = new DaoPersonaMySql();
 		
-		boolean baja = gp.baja(1);
+		boolean baja = dp.baja(11);
 		if(baja){
 			System.out.println("La persona se ha dado de baja");
 		}else{

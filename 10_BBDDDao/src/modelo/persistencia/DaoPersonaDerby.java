@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import modelo.entidad.Persona;
-import modelo.persistencia.interfaces.PersonaDao;
+import modelo.persistencia.interfaces.DaoPersona;
 
-public class PersonaDaoMySql implements PersonaDao{
-
+public class DaoPersonaDerby implements DaoPersona{
+	
 	private Connection conexion;
 	
 	//Bloque estatico, los bloques estaticos son ejecutados
@@ -25,10 +25,8 @@ public class PersonaDaoMySql implements PersonaDao{
 			//una clase que se llama Driver que esta en el paqueta
 			//com.mysql.jdbc. Esta clase se carga previamente en
 			//java para más adelante ser llamada
-			//Esto solo es necesario si utilizamos una versión java anterior
-			//a la 1.7 ya que desde esta versión java busca automaticamente 
-			//los drivers
-			Class.forName("com.mysql.jdbc.Driver");
+			//Si fuera NO embedded, seria "org.apache.derby.jdbc.Driver"
+			Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
 			System.out.println("Driver cargado");
 		} catch (ClassNotFoundException e) {
 			System.out.println("Driver NO cargado");
@@ -37,11 +35,8 @@ public class PersonaDaoMySql implements PersonaDao{
 	}
 	
 	public boolean abrirConexion(){
-		String url = "jdbc:mysql://localhost:3306/bbdd";
-		String usuario = "root";
-		String password = "";
 		try {
-			conexion = DriverManager.getConnection(url,usuario,password);
+			conexion = DriverManager.getConnection("jdbc:derby:bbdd;create=true");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -59,6 +54,7 @@ public class PersonaDaoMySql implements PersonaDao{
 		}
 		return true;
 	}
+	
 	
 	
 	
@@ -222,4 +218,5 @@ public class PersonaDaoMySql implements PersonaDao{
 		return listaPersonas;
 	}
 
+	
 }
