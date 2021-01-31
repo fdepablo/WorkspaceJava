@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ejemplo</groupId>
+	<artifactId>43_Maven</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<!-- Mediante la siguiente propiedad le decimos a maven que queremos usar 
+		la versión 1.8 de java en nuestro proyecto, podriamos elegir la versión que 
+		quisieramos Importante una vez que pongamos esta propiedad en nuestro proyecto 
+		debemos actualizar nuestro proyecto para queu coja los cambios, para ello: 
+		- Boton derecho sobre el proyecto -> Maven -> Update proyect Debremos observar 
+		que la JRE system library de nuestro proyecto se cambia de la version 1.5 
+		(version por defecto de java para maven) por la que hayamos puesto (en este 
+		caso la 1.8) El significado de las propiedades es el siguiente maven.compiler.target 
+		-> propiedad que establece la versión de java de la maquina donde se va a 
+		ejecutar maven.compiler.source -> propiedad que establece la version de java 
+		del codigo fuente. -->
+	<properties>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+	</properties>
+
+	<!-- Esta parte es de las más importantes de nuestro proyecto maven y es 
+		donde le decimos las librerías externas que vamos a utilizar en nuestro proyecto. 
+		Deberan ir dentro de la etiqueta <dependecies> y podemos sacarlas de nuestro 
+		repositorio central de maven: https://mvnrepository.com/repos/central En 
+		el repositorio centra podemos buscar las librerías que necesitemos Podemos 
+		add todas las dependecias que queramos -->
+	<dependencies>
+
+		<!-- Por ejemplo supongamos que queremos meter en nuestro proyecto una 
+			librería para crear ficheros pdf. Nos vamos a rpositorio centra del maven 
+			y buscamos por pdf. En nuestro caso elegimos pdfbox que vemos que ha sido 
+			usada por bastante gente (numero de usos en el repositorio maven) -->
+		<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>2.0.22</version>
+		</dependency>
+
+
+		<!-- En este ejemplo estamos agragando a nuestro proyecto una librería 
+			de MySql, para poder realizar conexiones a una Base de Datos MySql -->
+
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.23</version>
+		</dependency>
+	</dependencies>
+</project>
