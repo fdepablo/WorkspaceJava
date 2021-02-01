@@ -13,7 +13,7 @@ import programa.Producto;
  * 
  * Mas informacion https://www.baeldung.com/parameterized-tests-junit-5
  */
-public class _02_TestProductoParametros {
+public class _03_TestProductoParametros {
 
 	@ParameterizedTest
 	@ValueSource(doubles = {10.00, 100.00, 200.00})

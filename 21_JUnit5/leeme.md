@@ -1,5 +1,6 @@
  JUnit
--------
+-
+
 Para alcanzar los resultados deseados de forma rápida se requiere un framework de 
 prueba. JUnit es un framework bastante bueno para realizar y automatizar estas 
 pruebas en Java.
@@ -19,23 +20,25 @@ sometiendo al método a realizar operaciones con diferentes rangos y así comproba
 su correcto funcionamiento en diferentes situaciones.
 
  Caracteristicas
------------------
-JUnit es un framework de código abierto que se utiliza para escribir y ejecutar pruebas.
+-
 
-Proporciona una anotación para identificar los métodos de ensayo.
+	1) JUnit es un framework de código abierto que se utiliza para escribir y ejecutar pruebas.
 
-Proporciona aserciones para resultados esperados del análisis.
+	2) Proporciona una anotación para identificar los métodos de ensayo.
 
-Proporciona clases para la ejecución de pruebas o ejecutores de pruebas.
+	3) Proporciona aserciones para resultados esperados del análisis.
+
+	4) Proporciona clases para la ejecución de pruebas o ejecutores de pruebas.
 
  Instalación
--------------
+-
+
 JUnit5 no viene incluido en el JRE 1.8 por lo que hay
 que add al classpath.
 
-Ademas JUnit 5 esta fragmentado en 3 proyectos, nosotros nos centraremos
-en JUnit Jupiter (otro es Junit vintage con las caracteristicas de JUnit4,
-y el otro Junit platform que es para pruebas con la JVM)
+Ademas JUnit 5 esta fragmentado en 3 proyectos, nosotros nos centraremos en JUnit Jupiter 
+(otro es Junit vintage con las caracteristicas de JUnit4, y el otro Junit platform que es 
+para pruebas con la JVM)
 
 Para crear un modulo JUnit5 en eclipse:
 - boton derecho sobre un paquete -> new -> JUnit Test Case -> new Junit Jupiter test

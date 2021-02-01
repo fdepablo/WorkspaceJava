@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import programa.Producto;
 
 //en junit5 la class no tiene porque se publica
-class _01_TestProducto {
+class _02_TestProducto {
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {

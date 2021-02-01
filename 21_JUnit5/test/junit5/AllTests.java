@@ -10,8 +10,8 @@ import org.junit.runners.Suite.SuiteClasses;
 @RunWith(Suite.class)
 //Aqui podemos poner todos los test que tengamos
 @SuiteClasses({
-        _01_Basico.class,
-        _00_Inicial.class})
+        _01_Asserciones.class,
+        _00_Anotaciones.class})
 
 public class AllTests {
 

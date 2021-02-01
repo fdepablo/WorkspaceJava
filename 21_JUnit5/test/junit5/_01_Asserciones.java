@@ -22,7 +22,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
-class _01_Basico {
+class _01_Asserciones {
 
 	/*
 	 * Con esto buscamos hacer unas pruebas unitarias

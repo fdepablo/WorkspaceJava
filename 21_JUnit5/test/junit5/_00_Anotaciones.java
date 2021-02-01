@@ -17,7 +17,7 @@ import org.junit.jupiter.api.Test;
  * nombres recomendados
  *
  */
-class _00_Inicial {
+class _00_Anotaciones {
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
