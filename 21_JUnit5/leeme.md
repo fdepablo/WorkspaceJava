@@ -41,10 +41,13 @@ Ademas JUnit 5 esta fragmentado en 3 proyectos, nosotros nos centraremos en JUni
 para pruebas con la JVM)
 
 Para crear un modulo JUnit5 en eclipse:
-- boton derecho sobre un paquete -> new -> JUnit Test Case -> new Junit Jupiter test
+-
+1. Crear una carpeta al mismo nivel que src (test)
+2. Add esa carpeta al classpath del proyecto
+	- boton derecho sobre la carpeta que hemos creado (test) -> build path -> configure build path
+	- Pulsamos en la pestaña source y dentro de ahi -> add Folder -> add carpeta test -> pulsamos OK
+3. boton derecho sobre la carpeta (test) -> new -> JUnit Test Case -> new JUnit Jupiter test
+4. Dentro de la ventana rellenamos el nombre del paquete (juni5) y el nombre de la clase (_00_Anotaciones)
+5. Si no tenemos JUnit5 add al proyecto, eclipse nos preguntará para añadir el framework de JUNIT5
+6. Podemos observar como se ha creado una libreria en nuestro proyecto con el nombre de JUNIT 5
 
-Si no tenemos JUnit5 add al proyecto, eclipse nos preguntará
-para añadirlo (nos metera los 3 proyectos de jUnit 5)
-
-Tambien se creo la carpeta test y se metio en el classpath. Dentro el paquete 
-junit5

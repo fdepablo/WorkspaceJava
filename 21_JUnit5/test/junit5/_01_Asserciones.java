@@ -1,5 +1,8 @@
 package junit5;
 
+//OJO con la manera de importar los asserts, son metodos estaticos de la clase
+//Assert y por tanto hay que importarlos de manera estatica (import static)
+
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -15,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.junit.Ignore;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -29,13 +33,15 @@ class _01_Asserciones {
 	 * Consisten en probar la correcta funcionalidad del módulo en 
 	 * cuestión como si actuara independiente de los demás.
 	 * Serían las pruebas más basicas y precederían a las pruebas de 
-	 * integración
+	 * integración o las pruebas funcionales
 	 * 
 	 * Podemos ejecutarlas con boton derecho -> run as.. -> JUnit Test
-	 * Posibles colores al lanzar la prueba
+	 * Posibles colores al lanzar la prueba:
+	 * 
 	 * Verde, la prueba ha ido bien
-	 * Azul, la prueba ha ido mal, alguna aserción no se ha cumplido
-	 * Rojo, ha habido algun error en la prueba
+	 * Azul, la prueba ha ido mal, alguna aserción no se ha cumplido o se ha ejecutado
+	 * la funcion fail()
+	 * Rojo, ha habido algun error en la prueba, digamos que no es concluyente
 	 */
 	
 	@BeforeAll
@@ -65,10 +71,14 @@ class _01_Asserciones {
 		System.out.println("Test 1");
 		String cadena = new String("Hola mundo");
 		//Las funciones assert son funciones de aceptación
-		//para dar por valida una prueba
+		//Sirve para dar por valida una prueba, si no cumple un assert la prueba sera fallida
+		//si lo cumple, la prueba sera valida
 		//en este caso esperamos que sea cierta una condición
 		//En cuanto llegue a un assert se acaba la prueba
-		assertTrue(cadena.endsWith("mundo"));
+		
+		//Normalmente estos metodos trabajan con clases y metodos del programa principal
+		//para probar su funcionamiento
+		assertTrue(cadena.endsWith("mundo"));//TRUE, dariamos la prueba por buena
 	}
 	
 	@Test
@@ -76,15 +86,16 @@ class _01_Asserciones {
 		System.out.println("Test 2");
 		String cadena = new String("Hola mundo");
 		//En este caso esperamos que sea falso
-		assertFalse(cadena.endsWith("hola"));
+		assertFalse(cadena.endsWith("hola"));//FASE, dariamos por buena la prueba
 	}
 	
 	@Test
 	public void esIgualAHolaMundoTest() {
 		System.out.println("Test 3");
-		String cadena = new String("Hola mundo");
-		//En este caso esperamos que no sean iguales (según el metodo equals())
-		assertEquals("Hola mundo",cadena);
+		String cadena1 = "Hola mundo";
+		String cadena2 = new String("Hola mundo");
+		//En este caso esperamos que sean iguales (según el metodo equals())
+		assertEquals(cadena1,cadena2);
 		//No solo para String, para todos los primitivos, objetos, etc
 	}
 	
@@ -111,6 +122,8 @@ class _01_Asserciones {
 		//Esperamos que no sea nulo
 		assertNotNull(cadena);
 	}
+	//Hasta aquí los más importantes
+	
 	
 	//Podemos tambien que ocurra alguna excepcion
 	@Test
@@ -119,13 +132,13 @@ class _01_Asserciones {
 		
 		String cadena = new String("Hola mundo");
 		
+		//Hay que hacer una funcion lambda
 		Exception exception = assertThrows(
 				IndexOutOfBoundsException.class, 
 				() -> cadena.charAt(20));
 		
-		//la excepcion capturada es Index IndexOutOfBoundsException
+		//la excepcion capturada es IndexOutOfBoundsException
 		//por lo que el mensaje que tendrá será el siguiente
-        assertTrue(exception.getMessage().contains("String index out of range"));
 	}
 	
 	//Tiempo maximo para que se ejecute el test (en ms)
@@ -163,19 +176,21 @@ class _01_Asserciones {
 		String s2 = "Hola";
 		//Comprobamos si apuntan al mismo objeto(no invoca a equal, 
 		//es si la referencia apunta al mismo objeto)
-		assertSame(s1, s2);//este test falla, ya que son objetos diferentes
-		//tambien tenemos assertNotSame(s1,s2)
+		assertNotSame(s1, s2);//este test falla, ya que son objetos diferentes
+		//tambien tenemos assertSame(s1,s2)
 	}
 	
 	//Podemos usar esta etiqueta si queremos ignorar algun test en un momento
 	//dado
-	//@Ignore("De momento no la queremos pasar")
+	/*
+	@Ignore("De momento no la queremos pasar")
 	@Test
 	public void failTest() throws InterruptedException{
 		System.out.println("Test 11");
-		//podemos fallar el test bajo alguna cóndición
+		//podemos fallar el test bajo alguna cóndición, si se llega a ejecutar fail() en algun momento
+		//se da por fallada la prueba
 		if(true) fail("Con esto fallamos");
 		System.out.println("Fin del Test 9");
-	}
+	}*/
 
 }
