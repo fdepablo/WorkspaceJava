@@ -21,14 +21,17 @@ public class DatosBancarios {
 	@Column(name = "numero_cuenta")
 	private Integer numeroTC;
 
-	// Relaciï¿½n de uno a uno con dos tablas
-	// Extremo obligatorio es el que tiene la fk
-	@OneToOne/*(cascade= CascadeType.ALL)*/ //Este cascade sobra
-									//ya que no queremos actuar al cliente si 
-									//borramos un datobancario
-	//la fk esta en la tabla datos_bancarios x el @JoinColumn y 
-	//le podemos dar el nombre de la columna y a que columna de la tabla
-	//cliente estamos referenciando
+	// Relación de uno a uno
+	//-----------------------
+	// Al ser una relacion bidireccional, tambien ponemos la anotacion @OneToOne sobre
+	// este atributo
+	// Este cascade no lo ponemos, ya que no queremos actuar sobre el cliente en caso de hacer 
+	// alguna accion con los datos bancarios
+	@OneToOne/*(cascade= CascadeType.ALL)*/ 
+		
+	// Mediante @JoinColumn establecemos que la FK estará en esta tabla (datos_bancarios).
+	// Le podemos dar el nombre de la columna y a que columna de la tabla
+	// cliente estamos referenciando, que normalmente es la Primary Key (PK)
 	@JoinColumn(name = "fk_id_cliente", referencedColumnName = "id")
 	private Cliente cliente;
 

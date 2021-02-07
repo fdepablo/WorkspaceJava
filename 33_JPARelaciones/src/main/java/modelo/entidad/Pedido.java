@@ -22,9 +22,14 @@ public class Pedido {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fecha;
 
-	//Relaciï¿½n de uno a muchos, extremo obligatorio
-	@ManyToOne//(cascade=CascadeType.ALL) //Este cascade es una locura
-	//ya que borrar un pedido y borrar un cliente...
+	// Relación de muchos a uno
+	//--------------------------
+	// Usaremos la etiqueta @ManyToOne
+	// OJO con los cascades en esta etiqueta, poner un CascadeType.ALL hace que al
+	// borrar un pedido se borraría tambien el cliente de dicho pedido...
+	@ManyToOne//(cascade=CascadeType.ALL) 
+	// En una relacion de "uno a muchos", la FK siempre esta en el lado de "Muchos", en una
+	// relacion de "uno a uno" podemos poner la FK donde queramos.
 	@JoinColumn(name="fk_id_cliente", referencedColumnName="id")
 	private Cliente cliente;
 

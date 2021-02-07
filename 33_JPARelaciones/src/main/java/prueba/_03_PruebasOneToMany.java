@@ -1,4 +1,4 @@
-package test;
+package prueba;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -29,6 +29,8 @@ public class _03_PruebasOneToMany {
 		//aqui no tenemos el id del cliente
 		System.out.println("Id del cliente:"+c.getId());
 		
+		//Añadimos los pedidos asociados al cliente, no nos olvidamos de cruzar las
+		//referencias para hacerlo bidireccional, a los pedidos le asignamos su cliente
 		List<Pedido> pedidos = new ArrayList<>();
 		Pedido p1 = new Pedido(null,"PED-1",new Date(),c);
 		Pedido p2 = new Pedido(null,"PED-2",new Date(),c);
@@ -40,7 +42,8 @@ public class _03_PruebasOneToMany {
 		pedidos.add(p3);
 		pedidos.add(p4);
 		pedidos.add(p5);
-		//hacemos bidrecionalidad
+		
+		//hacemos bidrecionalidad del cliente con sus pedidos
 		c.setPedidos(pedidos);		
 		
 		System.out.println("==============================================");
@@ -59,11 +62,15 @@ public class _03_PruebasOneToMany {
 
 		
 		//Como tenemos cascades en los dos extremos da igual el objeto
-		//que escojamos para hacer el persist...
+		//que escojamos para hacer el persist...	
+		//Se insertan tb los pedidos en una especie de proceso batch, es decir
+		//multiples inserts en la BBDD
+		em.persist(c); 
 		
-		em.persist(c); //Se insertan tb los pedidos en una especie de proceso batch
-		//em.persist(p2); //tambien funcionaria, de hecho al insertar cliente
-		//y detectar que tiene 4 pedidos mas, tambien se insertarian
+		//El siguiente persist tambien funcionaria, de hecho al insertar cliente
+		//y detectar que tiene 4 pedidos mas, tambien se insertarian los pedidos en la
+		//BBDD
+		//em.persist(p2); 
 		
 		em.getTransaction().commit(); 
 		em.close();		
@@ -71,8 +78,7 @@ public class _03_PruebasOneToMany {
 		//observar como JPA actualiza el id de el objeto cliente
 		//al persistir el objeto en la bbdd
 		System.out.println("Id del cliente:"+c.getId());
-		
-		
+				
 		//Acceso a objetos
 		System.out.println("==============================================");
 		em = emf.createEntityManager();
@@ -105,7 +111,7 @@ public class _03_PruebasOneToMany {
 		//@OneToOne(mappedBy = "cliente", cascade=CascadeType.ALL,fetch = FetchType.LAZY)
 		//@OneToMany(mappedBy="cliente", cascade=CascadeType.ALL, fetch = FetchType.EAGER) 
 		
-		//Nota para hibernate:
+		//Nota para hibernate (NO aplica a Eclipse LINK):
 		//tengo que acceder a los pedidos antes de cerrar el entity manager
 		//si no, daria error al intentar acceder a los pedidos más adelante.
 		//Si se utiliza eclipselink o toplink no haria falta0

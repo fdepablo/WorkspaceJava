@@ -1,4 +1,4 @@
-package test;
+package prueba;
 
 import java.util.Date;
 
@@ -9,6 +9,8 @@ import javax.persistence.Persistence;
 import modelo.entidad.Cliente;
 import modelo.entidad.Direccion;
 
+//En esta prueba buscamos ver como la direccion que esta embebida en el cliente
+//los atributos de dirección van dentro de la clase cliente
 public class _01_PruebasClienteDireccion {
 
 	public static void main(String[] args) {
@@ -18,7 +20,9 @@ public class _01_PruebasClienteDireccion {
 			
 		EntityManager em = null;
 
-		Cliente c = new Cliente(null, "Montgomery Burns", "555", null);
+		//No pondemos ni el id ni los datos bancarios, el id se autogenera y 
+		//los datos bancarios no es objeto de esta prueba
+		Cliente c = new Cliente(null, "Montgomery Burns", "555-7654", null);
 		c.setFechaNacimiento(new Date());//fecha de hoy
 		
 		Direccion d = new Direccion();
@@ -32,7 +36,7 @@ public class _01_PruebasClienteDireccion {
 		em = emf.createEntityManager();
 		em.getTransaction().begin();
 		
-		//salvamos y observamos como la direccion se ha guardado
+		//Salvamos y observamos como la direccion se ha guardado
 		//dentro de la tabla clientes(ya que direccion esta embebida)
 		em.persist(c);
 		
