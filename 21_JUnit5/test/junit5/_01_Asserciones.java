@@ -74,7 +74,9 @@ class _01_Asserciones {
 		//Sirve para dar por valida una prueba, si no cumple un assert la prueba sera fallida
 		//si lo cumple, la prueba sera valida
 		//en este caso esperamos que sea cierta una condición
-		//En cuanto llegue a un assert se acaba la prueba
+		//En cuanto llegue a un assert y ese assert de FALLO, se acaba la prueba
+		//Si el assert no da fallo, seguiria con la ejecución de la prueba (pudiendo poner
+		//otros asserts)
 		
 		//Normalmente estos metodos trabajan con clases y metodos del programa principal
 		//para probar su funcionamiento
