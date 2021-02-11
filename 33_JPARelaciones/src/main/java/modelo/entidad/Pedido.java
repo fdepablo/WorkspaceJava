@@ -24,12 +24,14 @@ public class Pedido {
 
 	// Relación de muchos a uno
 	//--------------------------
-	// Usaremos la etiqueta @ManyToOne
+	// Usaremos la etiqueta @ManyToOne, con esta etiqueta sería suficiente
+	// para hacer una relacion unidireccional.
 	// OJO con los cascades en esta etiqueta, poner un CascadeType.ALL hace que al
-	// borrar un pedido se borraría tambien el cliente de dicho pedido...
+	// borrar un pedido se borraría tambien el cliente de dicho pedido... MUY PELIGROSO
 	@ManyToOne//(cascade=CascadeType.ALL) 
 	// En una relacion de "uno a muchos", la FK siempre esta en el lado de "Muchos", en una
 	// relacion de "uno a uno" podemos poner la FK donde queramos.
+	// Por lo tanto la @JoinColumn siempre estará en este lado en este tipo de relaciones
 	@JoinColumn(name="fk_id_cliente", referencedColumnName="id")
 	private Cliente cliente;
 

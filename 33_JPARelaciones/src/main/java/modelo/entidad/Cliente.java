@@ -106,24 +106,32 @@ public class Cliente {
 	
 	// Relacion de "uno a muchos"
 	//---------------------------
-	// Esta anotacion en este extremo es opcional ya que
-	// la anotacion que es obligatoria es la que tiene la FK
-	// Este cascade no seria realmente necesario, ya que lo 
-	// suyo sería insertar primero el cliente y luego sus pedidos
+	// Esta anotacion en este extremo es para hacer relaciones bidireccionales.
+	// La anotacion que es obligatoria es la que tiene la FK, es decir, la clase
+	// Pedidio. 
+	
+	// Este cascade hace que cuando demos de alta o baja un cliente, lo hagamos
+	// tambien de sus pedidos asociados. OJO! con esto porque podemos perder
+	// información de pedidos.
 	@OneToMany(mappedBy="cliente", cascade=CascadeType.ALL) 
 	private List<Pedido> pedidos;
 	
 	// Relacion de "muchos a muchos"
 	//------------------------------
-	// Es una relacion que muchas veces es mejor crear una entidad nueva
-	// y hacer relaciones 1 a N y N a 1 con esa entidad, porque así
-	// podemos crear esa tabla intermedia a nuestro gusto
+	// En este tipo de relaciones se nos creara una tabla intermedia automacticamente
+	// con las FK a las PK de las otras tablas.
+	// Es una relacion que muchas veces es mejor crear una entidad nueva intermedia
+	// y hacer relaciones 1 a N y N a 1 con esa entidad nueva creada, porque así
+	// podemos crear esa tabla intermedia a nuestro gusto, con los atributos
+	// que queramos. 
+	// Si hacemos una relación ManyToMany se nos creara esta tabla intermedia, 
+	// pero no podremos modificar sus campos.
 
-	// OJO! Este cascade que hemos puesto es PELIGROSISIMO, ya que 
+	// OJO! CascadeType.ALL es PELIGROSISIMO, ya que 
 	// si borramos un cliente, borraremos tambien sus comerciales
-	// asociados, cuando pueden ser esos comerciales usados por
+	// asociados, y seguramente esos comerciales sean usados por
 	// otros clientes
-	@ManyToMany(mappedBy="clientes", cascade=CascadeType.ALL) 
+	@ManyToMany(mappedBy="clientes", cascade=CascadeType.PERSIST) 
 	private List<Comercial> comerciales;	
 
 	public Cliente() {

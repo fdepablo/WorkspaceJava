@@ -15,49 +15,71 @@ public class _04_PruebasManyToMany {
 	public static void main(String[] args) {
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("PruebaJPARelaciones");
-		
-		Cliente c1 = new Cliente(null, "Bud Spencer", "555", null);
-		Cliente c2 = new Cliente(null, "Terence Hill", "777", null);
-		Cliente c3 = new Cliente(null, "M.A. Baracus", "999", null);
-
-		Comercial co1 = new Comercial(null,"Harry Potter",null);
-		Comercial co2 = new Comercial(null,"Ron",null);
-		
-		//El comercial1 tiene a los cliente 1 y 2
-		List<Cliente> clientes1 = new ArrayList<Cliente>();
-		clientes1.add(c1);
-		clientes1.add(c2);		
-		co1.setClientes(clientes1);
-		
-		//El comercial2 tiene a los clientes 2 y 3
-		List<Cliente> clientes2 = new ArrayList<Cliente>();
-		clientes2.add(c2);
-		clientes2.add(c3);			
-		co2.setClientes(clientes2);		
-		
-		List<Comercial> comerciales1 = new ArrayList<Comercial>();
-		comerciales1.add(co1);		
-		c1.setComerciales(comerciales1);
-
-		List<Comercial> comerciales2 = new ArrayList<Comercial>();
-		comerciales2.add(co1);
-		comerciales2.add(co2);		
-		c2.setComerciales(comerciales2);
-		
-		List<Comercial> comerciales3 = new ArrayList<Comercial>();
-		comerciales1.add(co2);		
-		c3.setComerciales(comerciales3);
 				
+		//Creamos los objetos
+		//Cliente 1
+		Cliente bud = new Cliente(null, "Bud Spencer", "555", null);
+		//Cliente 2
+		Cliente terence = new Cliente(null, "Terence Hill", "777", null);
+		//Clliente 3
+		Cliente baracus = new Cliente(null, "M.A. Baracus", "999", null);
+		
+		//Comercial 1
+		Comercial harry = new Comercial(null,"Harry Potter",null);
+		//Comercial 2
+		Comercial ron = new Comercial(null,"Ron",null);
+				
+		//Asignamos los comerciales a los clientes
+		
+		//Asignamos al cliente Bud su lista de comerciales
+		//El cliente BUD tiene al comercial Harry
+		List<Comercial> comercialesBud = new ArrayList<Comercial>();
+		comercialesBud.add(harry);		
+		bud.setComerciales(comercialesBud);
+
+		//Asignamos al cliente Terence su lista de comerciales
+		//El cliente Terence tiene al comercial Harry y al comercial Ron
+		List<Comercial> comercialesTerence = new ArrayList<Comercial>();
+		comercialesTerence.add(harry);
+		comercialesTerence.add(ron);		
+		terence.setComerciales(comercialesTerence);
+		
+		//Asignamos al cliente Baracus su lista de comerciales
+		//El cliente Baracus tiene al comercial Ron
+		List<Comercial> comercialesBaracus = new ArrayList<Comercial>();
+		comercialesBaracus.add(ron);		
+		baracus.setComerciales(comercialesBaracus);
+				
+		//Bidireccion
+		//Asignammos comerciales a los clientes
+		
+		//El comercial Harry tiene a los cliente Bud y Terence
+		List<Cliente> clientesHarry = new ArrayList<Cliente>();
+		clientesHarry.add(bud);
+		clientesHarry.add(terence);		
+		harry.setClientes(clientesHarry);
+		
+		//El comercial Ron tiene a los clientes Terence y Baracus
+		List<Cliente> clientesRon = new ArrayList<Cliente>();
+		clientesRon.add(terence);
+		clientesRon.add(baracus);			
+		ron.setClientes(clientesRon);		
+		
+		//Persistimos los objetos
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
 		
-		em.persist(c1);
+		//Como estan puestos los cascades, al dar de alta un cliente, se dan de alta
+		//sus comerciales, y a dar de alta esos comerciales, se dan de alta los clientes
+		//Si no hubiera cascades, habría que hacerlo poco a poco como en las relaciones
+		//"one to many"
+		em.persist(bud);
 		
+		//Ojo, JPA lanza los insertes NO NECESARIAMENTE en el mismo orden que se crean los
+		//objetos de este ejemplo, por lo que los IDs de los clientes pueden variar
+		//en la BBDD
 		em.getTransaction().commit();
 		em.close();
-		emf.close();
-			
-		
-	}
-	
+		emf.close();		
+	}	
 }
