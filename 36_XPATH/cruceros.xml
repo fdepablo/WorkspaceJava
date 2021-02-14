@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="cruceros.xsl" ?>
-<!-- Podemos parsear un xml con un css -->
 <cruceros>
 	<dias>45</dias>
 	<crucero codigo="CRUMED21">
 		<destino>Mediterraneo (Grecia, Italia)</destino>
 		<detalles>
 			<cia>Costa cruceros</cia>
-			<dias>6 días</dias>
+			<dias>6</dias>
 			<fechaSalida>2018-12-26</fechaSalida>
 		</detalles>
 		<escalas>
-			<escala>
+			<escala dia="1">
 				<parada>Venecia</parada>
 				<llegada></llegada>
 				<salida>18:00</salida>
@@ -47,7 +46,7 @@
 		<destino>Atlántico (España, Marruecos, Portugal)</destino>
 		<detalles>
 			<cia>MSC Cruceros</cia>
-			<dias>7 días</dias>
+			<dias>7</dias>
 			<fechaSalida>2019-02-13</fechaSalida>
 		</detalles>
 		<escalas>
