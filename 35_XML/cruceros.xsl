@@ -5,7 +5,7 @@
 		en el XML
 		<?xml-stylesheet type="text/xsl" href="cruceros.xsl"?>
 		
-		XSL es un motor para mostrar XML del formato que queramos.
+		XSL es un motor para mostrar XML en el formato que queramos.
 		
 		XSL se basa en plantillas (templates). Dentro de la etiqueta
 		template podemos escribir como queremos que sea la salida del xml
@@ -16,10 +16,13 @@
 		En este primer ejemplo nos situamos en el nodo raiz "/"
  	-->
 	<xsl:template match="/">
+		<!-- Dentro podemos escribir lo que queramos, como quiero generar un HTML, escribo el lenguaje
+		HTML -->
 		<html>
 		<head>
 		<title>Cruceros</title>
-		<!-- Tambien podriamos meter un css al html -->
+		<!-- Tambien podriamos meter un CSS al html resultante, es decir, renderizarlo
+		con un XSL y añadirle estilos CSS -->
 		<link rel="stylesheet" href="css/estilo.css" />
 		</head>
 		<body>
@@ -47,18 +50,18 @@
 			</p>
 			<table>
 				<tr>
-				<th>Dia</th>
-				<th>Parada</th>
-				<th>Llegada</th>
-				<th>Salida</th>
+					<th>Dia</th>
+					<th>Parada</th>
+					<th>Llegada</th>
+					<th>Salida</th>
 				</tr>
 				<xsl:for-each select="escalas/escala">
 					<tr>
-					<!-- Con arroba accedemos a atributos -->
-					<td><xsl:value-of select="@dia"/></td>
-					<td><xsl:value-of select="parada"/></td>
-					<td><xsl:value-of select="llegada"/></td>
-					<td><xsl:value-of select="salida"/></td>
+						<!-- Con arroba (@) accedemos a atributos -->
+						<td><xsl:value-of select="@dia"/></td>
+						<td><xsl:value-of select="parada"/></td>
+						<td><xsl:value-of select="llegada"/></td>
+						<td><xsl:value-of select="salida"/></td>
 					</tr>
 				</xsl:for-each>
 			</table>
