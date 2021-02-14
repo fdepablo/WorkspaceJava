@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-<persistence-unit name="PruebaJPARelaciones" transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="PruebaJPARelaciones" transaction-type="RESOURCE_LOCAL">
+		<!-- Decimos a JPA cuales son las clases con las que tiene que trabajar -->
 		<class>modelo.entidad.Cliente</class>
 		<class>modelo.entidad.Comercial</class>
 		<class>modelo.entidad.DatosBancarios</class>
@@ -8,9 +9,14 @@
 		<class>modelo.entidad.Direccion</class>
 		
 		<properties>
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpa_relaciones"/>
 			<property name="javax.persistence.jdbc.user" value="root"/>
+			<!-- Cada vez que arranquemos el programa se nos crearan todos los datos de la BBDD -->
+			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+			<!-- Mostrar trazas sql con eclipselink -->
+			<property name="eclipselink.logging.level.sql" value="FINE" />
+			<property name="eclipselink.logging.parameters" value="true" />
 		</properties>
 	</persistence-unit>
 </persistence>
