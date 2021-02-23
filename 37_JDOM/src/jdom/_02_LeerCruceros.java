@@ -32,14 +32,14 @@ public class _02_LeerCruceros {
 		System.out.println("Elementos en el nodo raíz: " + nodos.getLength());
 		//Aqui queremos pintar todos los elementos, pero evitando los nodos texto
 		//que son nodos hijos directos de "cruceros"
-		for (int i=0; i<nodos.getLength();i++) {
+		for (int i=0; i<nodos.getLength();i++) {//5
 			// Iteración por los elementos crucero.
 			Node nodoHijo = nodos.item(i);
 			//Solo accedemos a los nodos elemento, evitamos los nodos texto
 			//otra manera if(nodoHijo.item(i).getNodeName().equals("crucero"))
 			//pero habria que conocer el nombre del nodo
 			if (nodoHijo.getNodeType() == Node.ELEMENT_NODE) {
-				//accedemos al nodo 1 ya que el 0 es un texto
+				//Accedemos al nodo 1 ya que el 0 es un texto (otra vez por el tema de los saltos de linea)
 				//esto no se deberia hacer asi, si no que habria que 
 				//volver a recorrer todos los nodos hijos, y solo pintar
 				//los que sean nodo elemento

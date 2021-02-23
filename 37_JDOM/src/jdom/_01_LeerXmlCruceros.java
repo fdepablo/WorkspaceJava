@@ -6,40 +6,34 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
 /*
- * JDOM son librerias java que estan incluidas en la jdk, y nos sirven`
- * para trabajar con el arbol DOM. Todo documento xml se suele
- * transforman en los navegadores en nodos. Cada etiqueta se transforma
- * en un nodo elemento, los textos en un nodo texto y los atributos
- * se transforman en un noto atributo :O
- * https://www.w3schools.com/js/js_htmldom.asp
+ * En este ejemplo vamos a pasar un xml a un arbol DOM mediante Java
  */
 public class _01_LeerXmlCruceros {
 	public static void main(String[] args) {
-		//lo primero necestimos una factoria que nos cree los objetos
-		//el patron factoria es patron de diseño creacional, en la cual
-		//su funcion es evitar el acoplamiento de clases y centralizar
-		//la creacion de los objetos en una unica clase
-		//Hay un concepto que se llama IoC, o inversion de control, que se
-		//basa en que otra clase haga el new por ti.
+		//Lo primero necestimos una factoria que nos cree los objetos
+		//el patron factoria es un patron de diseño creacional, en la cual
+		//su funcion es evitar el acoplamiento de clases, y de esta manera,
+		//centralizar la creacion de los objetos en una unica clase
+		
 		DocumentBuilderFactory fabrica = DocumentBuilderFactory.newInstance();
-		//sigue el patron de diseño builder y cuya funcion es crear objetos
+		//Sigue el patron de diseño builder y cuya funcion es crear objetos
 		//complejos de manera simple
 		DocumentBuilder analizador;
 		//el nodo documento
-		Document doc;
-		//Este nodo representara el nodo raiz
-		Node raiz;
+		Document dom;
+		//Este nodo representara el nodo raiz en este ejemplo
+		Node document;
 		
 		try {
 			analizador = fabrica.newDocumentBuilder();
-			//lo primero es parsear el cruzros.xml para
+			//Lo primero es parsear el fichero cruceros.xml para
 			//convertilo en un arbol DOM, basicamente lo que hacen los navegadores
-			//el arbol DOM seran objetos
-			doc = analizador.parse("cruceros.xml");
-			//ponemos la referencia raiz en el objeto Document
-			raiz = doc.getDocumentElement();
-			//le decimos que nos pinte todos los nodos texto del document
-			System.out.println(raiz.getTextContent());
+			//El arbol DOM seran objetos con una jerarquia en forma de arbol
+			dom = analizador.parse("cruceros.xml");
+			//Ponemos la referencia raiz en el objeto Document
+			document = dom.getDocumentElement();
+			//Decimos que nos pinte todos los nodos texto del document
+			System.out.println(document.getTextContent());
 			System.out.println("-------------------------");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

@@ -43,10 +43,11 @@ public class _04_CrearAgendaXml {
 		Element contacto = doc.createElement("contacto");
 		agenda.appendChild(contacto);		
 		Element nombre = doc.createElement("nombre");
-		Text textoAmelia = doc.createTextNode("AMELIA GONZALEZ LOPEZ");
-		nombre.appendChild(textoAmelia);
+		Text textoTony = doc.createTextNode("Tony Stark");
+		nombre.appendChild(textoTony);
 		contacto.appendChild(nombre);
 		Element telefono = doc.createElement("telefono");
+		//lo hacemos de manera directa
 		telefono.appendChild(doc.createTextNode("612333333"));
 		contacto.appendChild(telefono);
 
