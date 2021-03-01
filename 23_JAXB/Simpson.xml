@@ -3,7 +3,7 @@
     <persona id="1">
         <nombre>Homer</nombre>
         <apellidos>Simpson</apellidos>
-        <edad>48</edad>
+        <edad>38</edad>
         <direccion>
             <cp>28054</cp>
             <nombreVia>Gran Via</nombreVia>
@@ -13,16 +13,16 @@
     <persona id="2">
         <nombre>Lisa</nombre>
         <apellidos>Simpson</apellidos>
-        <edad>12</edad>
+        <edad>8</edad>
     </persona>
     <persona id="3">
         <nombre>Bart</nombre>
         <apellidos>Simpson</apellidos>
-        <edad>13</edad>
+        <edad>11</edad>
     </persona>
     <persona id="4">
         <nombre>Marge</nombre>
         <apellidos>Simpson</apellidos>
-        <edad>40</edad>
+        <edad>35</edad>
     </persona>
 </personas>

@@ -28,10 +28,10 @@ public class GrupoPersonasToXML {
 			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
 			GrupoPersonas grupo = new GrupoPersonas();
-			grupo.getPersonas().add(new Persona(1, "Homer", "Simpson", 48));
-			grupo.getPersonas().add(new Persona(2, "Lisa", "Simpson", 12));
-			grupo.getPersonas().add(new Persona(3, "Bart", "Simpson", 13));
-			grupo.getPersonas().add(new Persona(4, "Marge", "Simpson", 40));
+			grupo.getPersonas().add(new Persona(1, "Homer", "Simpson", 38));
+			grupo.getPersonas().add(new Persona(2, "Lisa", "Simpson", 8));
+			grupo.getPersonas().add(new Persona(3, "Bart", "Simpson", 11));
+			grupo.getPersonas().add(new Persona(4, "Marge", "Simpson", 35));
 			
 			Direccion direccion = new Direccion();
 			direccion.setNombreVia("Gran Via");

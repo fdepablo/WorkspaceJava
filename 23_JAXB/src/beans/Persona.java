@@ -13,10 +13,10 @@ import javax.xml.bind.annotation.XmlType;
 //esta etiqueta estamos estableciendo el nombre de el nodo raiz en xml
 //etiqueta obligatoria
 @XmlRootElement(name="persona")
-//podemos hacer que las etiquetas salgan en un determinado orden
+//Podemos hacer que las etiquetas salgan en un determinado orden
 //etiqueta opcional
 @XmlType(propOrder = {
-	    "idPersona",
+		"idPersona",
 	    "nombre",
 	    "apellido",
 	    "edad",
