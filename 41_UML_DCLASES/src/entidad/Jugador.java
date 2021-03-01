@@ -17,11 +17,15 @@ public class Jugador extends Persona implements Movible{
 	//plenamente del objeto contenido
 	//En java se implenta haciendo UNA unica refencia en la clase y tambien
 	//haciendo NEW dentre de la clase
-	private Historial historial = new Historial();
+	//En este caso hacemos el NEW dentro del constructor
+	private Historial historial;
 
+	public Jugador() {
+		historial = new Historial();
+	}
 	
 	//metodo accesor, empieza obligatoriamente por get y luego
-	//el atribugo en camelcase
+	//el atributo en camelcase
 	public String getNombre() {
 		return nombre;
 	}
@@ -53,13 +57,19 @@ public class Jugador extends Persona implements Movible{
 
 	@Override
 	public void moverseLento() {
-		System.out.println("Soy el jugador " + nombre + " y me muevo 5 metros");
-		
+		System.out.println("Soy el jugador " + nombre + " y me muevo 5 metros");		
 	}
 
 	@Override
 	public void moverseRapido() {
-		System.out.println("Soy el jugador " + nombre + " y me muevo 20 metros");
-		
+		System.out.println("Soy el jugador " + nombre + " y me muevo 20 metros");		
+	}
+
+	public Historial getHistorial() {
+		return historial;
+	}
+
+	public void setHistorial(Historial historial) {
+		this.historial = historial;
 	}
 }

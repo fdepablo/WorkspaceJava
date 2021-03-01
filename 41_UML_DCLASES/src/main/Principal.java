@@ -27,6 +27,7 @@ public class Principal {
 		
 		//Creo un objeto en java
 		Jugador j2 = new Jugador();//el objeto nace
+		j2.setNombre("Messi");
 		
 		//aqui el objeto creado en la linea 26 MURIO! :( :( :'(
 		j2 = new Jugador();
@@ -41,11 +42,25 @@ public class Principal {
 		//es este la referencia j2 vive mientras este el main 
 		//ejecutandose
 		Jugador j3 = new Jugador();
-		j3.setNombre("Messi");
+		j3.setNombre("Luis Suarez");
 		
 		Jugador j4 = j3;
+		j3.setEdad(34);
 		
+		//Ambas referencias estan apuntando al mismo objeto
+		System.out.println("Edad de j4: " + j4.getEdad());
+				
 		j3 = new Jugador();
+		System.out.println("Edad de j3: " + j3.getEdad());
+		
+		//Accedemos a la direccion de j3
+		j3.setDireccion(new Direccion());//Si comentamos esta linea, no tenemos objeto y la linea siguiente fallara
+		j3.getDireccion().setNombreVia("Calle Anton Martin");
+		System.out.println("Calle: " + j3.getDireccion().getNombreVia());
+		
+		j3.getHistorial().setNumeroTarjetasRojas(2);
+		System.out.println("Numero de tarjetas rojas" + j3.getHistorial().getNumeroTarjetasRojas());
+		
 		
 		ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
 		listaJugadores.add(j);

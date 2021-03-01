@@ -11,9 +11,14 @@ public class Equipo {
 	//Dicho de otra manera, el ciclo de vida del objeto agregado NO DEPENDE 
 	//del objeto que lo agrega. Es decir, el ciclo de vida de cada objeto 
 	//es independiente
-	//Se diferencia con composicion en que el NEW no se hace aqui
+	
+	//Se diferencia con la composicion en que el NEW no se hace aqui
 	//tendrá que venir injectado de otra clase
 	private ArrayList<Jugador> listaJugadores;
+	
+	public Equipo() {
+		super();
+	}
 
 	public String getNombre() {
 		return nombre;
