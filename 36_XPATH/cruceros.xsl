@@ -68,6 +68,16 @@
 			<hr/>
 
 			<!--
+				Solo los dias del primer crucero
+			-->
+			<xsl:value-of select="/cruceros/crucero[1]/detalles/dias" />
+
+			<!-- OJO, /cruceros/crucero/detalles/dias[1], esto nos sacaria todos los dias
+				de todos los cruceros, porque solo hacemos filtro por el atributo dia
+			-->
+			<hr/>
+
+			<!--
 				Solo la escala que tenga un atributo dia cuyo valor sea 3
 			-->
 			<xsl:value-of select="/cruceros/crucero/escalas/escala[@dia=3]" />
@@ -77,6 +87,9 @@
 				Los cruceros que tengo una escala cuyo atributo dia sea 3
 			-->
 			<xsl:value-of select="/cruceros/crucero[escalas/escala/@dia=3]" />
+			<!-- Notese que siempre se muestra el ultimo nodo de la consulta xpath, dentro de
+				los "[]" irian las condiciones (predicados)
+			-->
 			<hr/>
 
 			<!--

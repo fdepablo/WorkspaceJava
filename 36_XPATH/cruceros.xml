@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="cruceros.xsl" ?>
+<!-- 
+	Podemos parsear un xml sea leido aplicando reglas de CSS o de XSL
+	CSS -> <?xml-stylesheet type="text/css" href="cruceros.css"?>
+	XSL -> <?xml-stylesheet type="text/xsl" href="cruceros.xsl"?>
+-->
+<?xml-stylesheet type="text/xsl" href="cruceros.xsl"?>
+
 <cruceros>
-	<dias>45</dias>
+	<informacion>Cruceros por el mundo!</informacion>
 	<crucero codigo="CRUMED21">
 		<destino>Mediterraneo (Grecia, Italia)</destino>
 		<detalles>
@@ -12,13 +18,13 @@
 		<escalas>
 			<escala dia="1">
 				<parada>Venecia</parada>
-				<llegada></llegada>
+				<llegada>5:00</llegada>
 				<salida>18:00</salida>
 			</escala>
 			<escala dia="2">
 				<parada>Navegación</parada>
-				<llegada></llegada>
-				<salida></salida>
+				<llegada>8:00</llegada>
+				<salida>19:00</salida>
 			</escala>	
 			<escala dia="3">
 				<parada>Agostini</parada>
@@ -38,7 +44,7 @@
 			<escala dia="6">
 				<parada>Venecia</parada>
 				<llegada>8:30</llegada>
-				<salida></salida>
+				<salida>5:45</salida>
 			</escala>			
 		</escalas>
 	</crucero>
@@ -52,13 +58,13 @@
 		<escalas>
 			<escala dia="1">
 				<parada>Barcelona</parada>
-				<llegada></llegada>
+				<llegada>10:00</llegada>
 				<salida>18:00</salida>
 			</escala>
 			<escala dia="2">
 				<parada>Navegación</parada>
-				<llegada></llegada>
-				<salida></salida>
+				<llegada>10:00</llegada>
+				<salida>20:00</salida>
 			</escala>	
 			<escala dia="3">
 				<parada>Casablanca</parada>
@@ -67,8 +73,8 @@
 			</escala>		
 			<escala dia="4">
 				<parada>Navegación</parada>
-				<llegada></llegada>
-				<salida></salida>
+				<llegada>7:00</llegada>
+				<salida>21:00</salida>
 			</escala>	
 			<escala dia="5">
 				<parada>Santa Cruz de Tenerife</parada>
@@ -83,7 +89,7 @@
 			<escala dia="7">
 				<parada>Barcelona</parada>
 				<llegada>17:00</llegada>
-				<salida></salida>
+				<salida>15:00</salida>
 			</escala>			
 		</escalas>
 	</crucero>
