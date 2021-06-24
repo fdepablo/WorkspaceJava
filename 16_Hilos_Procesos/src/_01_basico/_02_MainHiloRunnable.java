@@ -1,9 +1,9 @@
 package _01_basico;
 
-public class PruebaHilosRunnable {
+public class _02_MainHiloRunnable {
 	public static void main(String[] args) {
 		//Creamos un objeto que implemente Runnable
-		HiloRunnable hilo1 = new HiloRunnable("Valor 1");
+		_02_HiloRunnable hilo1 = new _02_HiloRunnable("Valor 1");
 		//Creamos un objeto de tipo Thread (que es realmente el objeto que 
 		//es capaz de crear hilos) y le pasamos un objeto de tipo Runnable
 		Thread t1 = new Thread(hilo1);
@@ -13,7 +13,7 @@ public class PruebaHilosRunnable {
 		t1.setName("Hilo1");//establecemos el nombre del hilo
 		
 		
-		HiloRunnable hilo2 = new HiloRunnable("Valor 2");
+		_02_HiloRunnable hilo2 = new _02_HiloRunnable("Valor 2");
 		//En vez de establecer el nombre por setName, lo podemos
 		//establecer por constructor
 		Thread t2 = new Thread(hilo2,"Hilo2");

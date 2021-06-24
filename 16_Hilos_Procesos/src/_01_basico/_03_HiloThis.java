@@ -5,11 +5,11 @@ package _01_basico;
 //tengamos que invocar el metodo start()
 
 //Este ejemplo tiene el mismo comportamiento que los otros ejemplos de hilos
-public class HiloThis implements Runnable{
+public class _03_HiloThis implements Runnable{
 	private String valorImprimir;
 
 	// String name
-	public HiloThis(String valorImprimir, String nombreHilo) {
+	public _03_HiloThis(String valorImprimir, String nombreHilo) {
 		this.valorImprimir = valorImprimir;
 		Thread t1 = new Thread(this,nombreHilo);//esto tambien vale
 		//t1.setName(nombreHilo);//esto vale
