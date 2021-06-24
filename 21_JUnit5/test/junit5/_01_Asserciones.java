@@ -26,22 +26,22 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
+import programa.Persona;
+
 class _01_Asserciones {
 
 	/*
-	 * Con esto buscamos hacer unas pruebas unitarias
-	 * Consisten en probar la correcta funcionalidad del módulo en 
-	 * cuestión como si actuara independiente de los demás.
-	 * Serían las pruebas más basicas y precederían a las pruebas de 
-	 * integración o las pruebas funcionales
-	 * 
 	 * Podemos ejecutarlas con boton derecho -> run as.. -> JUnit Test
+	 * 
 	 * Posibles colores al lanzar la prueba:
 	 * 
-	 * Verde, la prueba ha ido bien
-	 * Azul, la prueba ha ido mal, alguna aserción no se ha cumplido o se ha ejecutado
-	 * la funcion fail()
-	 * Rojo, ha habido algun error en la prueba, digamos que no es concluyente
+	 * 1) Verde, todas las pruebas han ido bien
+	 * 2) Azul, alguna prueba ha ido mal, alguna aserción no se ha 
+	 * cumplido o se ha ejecutado la función fail()
+	 * 3) Rojo, ha habido algun error en la prueba, digamos que no es 
+	 * concluyente y se debería revisar
+	 * 
+	 * Para dar por pasadas las pruebas debería se salir el color verde
 	 */
 	
 	@BeforeAll
@@ -64,23 +64,33 @@ class _01_Asserciones {
 		System.out.println("Se ejecuta DESPUES de cada test");
 	}
 
-
-	//Esta anotación sería un test unitario
 	@Test
 	public void acabaEnMundoTest() {
 		System.out.println("Test 1");
-		String cadena = new String("Hola mundo");
-		//Las funciones assert son funciones de aceptación
-		//Sirve para dar por valida una prueba, si no cumple un assert la prueba sera fallida
-		//si lo cumple, la prueba sera valida
-		//en este caso esperamos que sea cierta una condición
-		//En cuanto llegue a un assert y ese assert de FALLO, se acaba la prueba
-		//Si el assert no da fallo, seguiria con la ejecución de la prueba (pudiendo poner
-		//otros asserts)
+		//Este ejemplo es como si la clase String de java no se hubiera
+		//probado y la gente de oracle nos encargara que nos asegurarmos
+		//que sus metodos funcionan
+		String cadena = "hola mundo";
+		// Las funciones assert son funciones de aceptación
 		
-		//Normalmente estos metodos trabajan con clases y metodos del programa principal
-		//para probar su funcionamiento
-		assertTrue(cadena.endsWith("mundo"));//TRUE, dariamos la prueba por buena
+		// Sirven para dar por valida una prueba, si no cumple un assert 
+		//la prueba sera fallida
+		// Si lo cumple, la prueba sera valida
+
+		// Un assert es determinante para dar por buena una prueba. En 
+		//cuanto se ejecute un assert y ese assert de FALLO, se acaba la 
+		//prueba
+		
+		//Si el assert no da fallo, seguiria con la ejecución de la prueba 
+		//(pudiendo poner otros asserts)
+		
+		//Normalmente estos metodos trabajan con clases y metodos del 
+		//programa principal para probar su funcionamiento
+		
+		//Este assert comprueba que el resultado sea "true"
+		assertTrue(cadena.endsWith("mundo"));
+		//Este ejemplo sería como si yo estuviera testeando la clase
+		//String
 	}
 	
 	@Test
@@ -88,25 +98,30 @@ class _01_Asserciones {
 		System.out.println("Test 2");
 		String cadena = new String("Hola mundo");
 		//En este caso esperamos que sea falso
-		assertFalse(cadena.endsWith("hola"));//FASE, dariamos por buena la prueba
+		assertFalse(cadena.endsWith("hola"));//FALSE, dariamos por buena la prueba
 	}
 	
 	@Test
 	public void esIgualAHolaMundoTest() {
 		System.out.println("Test 3");
-		String cadena1 = "Hola mundo";
-		String cadena2 = new String("Hola mundo");
-		//En este caso esperamos que sean iguales (según el metodo equals())
-		assertEquals(cadena1,cadena2);
+		String cadena = "hola mundo";
+		//En este caso esperamos que sean iguales 
+		//(según el metodo equals())
+		
+		//Vamos a testear el metodo toUpperCase()
+		String resultadoEsperado = "HOLA MUNDO";
+		assertEquals(cadena.toUpperCase(),resultadoEsperado);
 		//No solo para String, para todos los primitivos, objetos, etc
 	}
 	
 	@Test
 	public void noEsIgualAPepeTest() {
 		System.out.println("Test 4");
-		String cadena = new String("Hola mundo");
+		String cadena = "Hola Mundo";
 		//Que no sean iguales (según el metodo equals())
-		assertNotEquals("Pepe",cadena);
+		//Vamos a testear el metodo toLowerCase
+		String resultadoNoEsperado = "HOLA MUNDO";
+		assertNotEquals(cadena.toLowerCase(), resultadoNoEsperado);
 	}
 
 	@Test
@@ -150,7 +165,7 @@ class _01_Asserciones {
 		System.out.println("Test 8");
 		String cadena = new String("Hola mundo");
 		
-		//Thread.sleep(150);
+		Thread.sleep(50);
 		//Si se demora más de 100ms no se ejecuta más codigo
 		//se parará la ejecución
 		System.out.println("Fin del Test 8");
@@ -165,33 +180,34 @@ class _01_Asserciones {
 		List<String> lista2 = new ArrayList<>();
 		lista2.add("Pepe");
 		lista2.add("Ana");
-		//Con esto comprobamos que sean igual y que tengan los mismos
-		//elementos 2 arrays
+		//Con esto comprobamos que sean igual y que tengan 
+		//los mismos elementos 2 arrays
 		assertArrayEquals(lista1.toArray(), lista2.toArray());
 	}
 	
 	@Test
 	public void assertSameTest() throws InterruptedException{
 		System.out.println("Test 10");
-		String s1 = new String("Hola");
+		Persona p1 = new Persona();
 		//s1 = "Hola";
-		String s2 = "Hola";
+		Persona p2 = new Persona();
+		
+		p1 = p2;
 		//Comprobamos si apuntan al mismo objeto(no invoca a equal, 
 		//es si la referencia apunta al mismo objeto)
-		assertNotSame(s1, s2);//este test falla, ya que son objetos diferentes
-		//tambien tenemos assertSame(s1,s2)
+		assertSame(p1, p2);//este test falla, ya que son objetos diferentes
+		//tambien tenemos assertNotSame(s1,s2)
 	}
 	
-	//Podemos usar esta etiqueta si queremos ignorar algun test en un momento
-	//dado
 	/*
-	@Ignore("De momento no la queremos pasar")
 	@Test
 	public void failTest() throws InterruptedException{
 		System.out.println("Test 11");
 		//podemos fallar el test bajo alguna cóndición, si se llega a ejecutar fail() en algun momento
 		//se da por fallada la prueba
-		if(true) fail("Con esto fallamos");
+		if(true) {
+			fail("Con esto fallamos");
+		}
 		System.out.println("Fin del Test 9");
 	}*/
 
