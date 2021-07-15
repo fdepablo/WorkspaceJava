@@ -139,7 +139,7 @@ class _01_Asserciones {
 		//Esperamos que no sea nulo
 		assertNotNull(cadena);
 	}
-	//Hasta aquí los más importantes
+	//Hasta aquí los asserts más importantes
 	
 	
 	//Podemos tambien que ocurra alguna excepcion

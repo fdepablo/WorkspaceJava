@@ -3,7 +3,8 @@ package entidad;
 /**
  * La direccion de la persona asociada
  * 
- * @author Felix de Pablo Lobo
+ * @author Tony Stark
+ * @version 1.5
  *
  */
 public class Direccion {

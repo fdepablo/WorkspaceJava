@@ -9,7 +9,9 @@ package programa;
  * para entender lo que hace el metodo, o meternos en el codigo y 
  * entender lo que hace la funcion
  * 
- * @author Felix
+ * 
+ * @author Tony Stark
+ * @version 1.5
  *
  */
 public class Persona {
@@ -25,6 +27,12 @@ public class Persona {
 	 * Posicion de la persona en el eje de las X dentro de una matriz
 	 */
 	private int posicion;
+	
+	/**
+	 * La direccion de la persona asociada
+	 * @see Direccion
+	 */
+	private Direccion direccion;
 	
 	/**
 	 * Constructor por defecto
@@ -74,11 +82,18 @@ public class Persona {
 	public void setPosicion(int posicion) {
 		this.posicion = posicion;
 	}		
+	public Direccion getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(Direccion direccion) {
+		this.direccion = direccion;
+	}
+	
 	public String getNombre() {
 		return nombre;
-	}	
+	}
 	
-	//Este en cambio si que haría falta probarlo y documentarolo, ya que lo hemos cambiado
+	//Este en cambio si que haría falta probarlo y documentarlo, ya que lo hemos cambiado
 	/**
 	 * Este metodo asiganará el nombre pasado por parametro a la 
 	 * propiedad nombre del objeto, pero unicamente cuando el nombre 
@@ -110,7 +125,7 @@ public class Persona {
 	
 	/**
 	 * Metodo que copia una persona atributo por atributo a un
-	 * nuevo objeto
+	 * nuevo objeto persona
 	 * 
 	 * @return el objeto con la persona copiada
 	 */
@@ -198,5 +213,6 @@ public class Persona {
 			return false;
 		return true;
 	}
+
 	
 }
