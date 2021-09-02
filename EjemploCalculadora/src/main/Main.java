@@ -9,6 +9,8 @@ import modelo.enumerados.TipoOperacion;
 
 public class Main {
 
+	private static Scanner sc = new Scanner(System.in);
+	
 	public static void main(String[] args) {
 		GestorOperaciones go = new GestorOperaciones();
 		
@@ -54,7 +56,7 @@ public class Main {
 
 	public static boolean continuar() {
 		System.out.println("Desea introducir otros numeros? S/N:");
-		Scanner sc = new Scanner(System.in);
+		
 		boolean continuar = false;
 		String texto = sc.nextLine();
 		if (texto.equalsIgnoreCase("S")) {
@@ -75,14 +77,12 @@ public class Main {
 		for(TipoOperacion tp : TipoOperacion.values()){
 			System.out.println(i++ + "-" + tp);
 		}
-		Scanner sc = new Scanner(System.in);
 		int opcion = sc.nextInt();
 		TipoOperacion tp = TipoOperacion.values()[opcion];
 		return tp;
 	}
 	
 	public static double pedirNumero(String numero) {
-		Scanner sc = new Scanner(System.in);
 		System.out.println("Introduzca el " + numero + ":");
 		double dNumero = sc.nextDouble();
 		return dNumero;

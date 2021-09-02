@@ -1,13 +1,9 @@
 package com.felix.pulsar;
 
-import java.applet.Applet;
 import java.awt.AWTException;
 import java.awt.Robot;
-import java.awt.event.KeyEvent;
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
-import java.util.Random;
 import java.util.TimerTask;
 
 import javax.sound.sampled.AudioSystem;

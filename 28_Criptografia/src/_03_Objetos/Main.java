@@ -1,7 +1,5 @@
 package _03_Objetos;
 
-import java.security.GeneralSecurityException;
-
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SealedObject;

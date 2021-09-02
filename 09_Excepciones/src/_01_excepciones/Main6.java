@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 public class Main6 {
 
+	static Scanner sc = new Scanner(System.in);
+	
 	public static void main(String[] args) {
 		boolean continuar = false;
 		do {
@@ -49,7 +51,7 @@ public class Main6 {
 
 		int numero = 0;
 		try {
-			Scanner sc = new Scanner(System.in);
+			
 			System.out.println("Introduzca el " + tipo);
 			numero = sc.nextInt();
 		} catch (Exception e) {

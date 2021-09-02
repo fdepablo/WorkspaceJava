@@ -8,11 +8,11 @@ import java.util.Scanner;
 public class Main2 {
 	public static void main(String[] args) {
 		boolean continuar = false;
+		Scanner sc = new Scanner(System.in);
 		
 		int numerador = 0;
 		do{
-			try{
-				Scanner sc = new Scanner(System.in);
+			try{				
 				System.out.println("Introduzca dos numero a dividir");
 				System.out.println("Introduzca el numerador");
 				numerador = sc.nextInt();
@@ -32,7 +32,6 @@ public class Main2 {
 		continuar = false;
 		do{
 			try{
-				Scanner sc = new Scanner(System.in);
 				System.out.println("Introduzca el denominador");
 				int denominador = sc.nextInt();
 				int resultado = numerador/denominador;
@@ -50,5 +49,6 @@ public class Main2 {
 		}while(continuar);
 		
 		System.out.println("Programa terminado");
+		sc.close();
 	}
 }

@@ -26,7 +26,7 @@ public class _02_Operaciones {
 		boolean b = true && false; 
 		System.out.println(b);
 		//OR (||)
-		boolean b1 = true || b;
+		boolean b1 = b || true;
 		System.out.println(b1);
 		//Negacion (!)
 		boolean b2 = !b1;

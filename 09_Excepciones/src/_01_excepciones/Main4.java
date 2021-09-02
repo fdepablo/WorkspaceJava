@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class Main4 {
 	public static void main(String[] args) {
 		boolean continuar = false;
+		Scanner sc = new Scanner(System.in);
 		do{
 			try{
-				System.out.println("Introduzca dos numero a dividir");
-				Scanner sc = new Scanner(System.in);
+				System.out.println("Introduzca dos numero a dividir");				
 				System.out.println("Introduzca el numerador");
 				int numerador = sc.nextInt();
 				System.out.println("Introduzca el denominador");
@@ -31,5 +31,6 @@ public class Main4 {
 
 		
 		System.out.println("Programa terminado");
+		sc.close();
 	}
 }

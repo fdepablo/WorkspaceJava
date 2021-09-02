@@ -47,12 +47,12 @@ public class Main {
 		}
 		
 		Integer iObjeto = 5;//boxing
-		int iPrimitivo = new Integer(5);//unboxing
-		
+		int iPrimitivo = iObjeto;//unboxing
+		System.out.println(iPrimitivo);
 		
 		
 		Map<Integer, String> mapaStrings = new HashMap<>();
-		mapaStrings.put(new Integer(1), "felix");
+		mapaStrings.put(1, "felix");
 		mapaStrings.put(2, "Maria");//new Integer(2);
 		mapaStrings.put(3, "Ramon");//new Integer(3);
 		//si ponemos una clave repetida, se sobreescribe

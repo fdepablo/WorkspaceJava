@@ -1,6 +1,5 @@
 package _01_simetrica;
 
-import java.io.FileWriter;
 import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;

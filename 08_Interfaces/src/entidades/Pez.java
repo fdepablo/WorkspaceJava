@@ -2,6 +2,7 @@ package entidades;
 
 public abstract class Pez extends Animal {
 	
+	private static final long serialVersionUID = 1L;
 	protected TipoAgua tipoAgua;
 
 	@Override

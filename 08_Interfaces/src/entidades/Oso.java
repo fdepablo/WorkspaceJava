@@ -2,6 +2,7 @@ package entidades;
 
 public class Oso extends Animal{
 
+	private static final long serialVersionUID = 1L;
 	private TipoOso tipoOso;
 	
 	public Oso(TipoOso tipoOso){

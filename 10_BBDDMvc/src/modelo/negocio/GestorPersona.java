@@ -3,7 +3,7 @@ package modelo.negocio;
 import java.util.List;
 
 import modelo.entidad.Persona;
-import modelo.persistencia.PersonaDaoDerby;
+//import modelo.persistencia.PersonaDaoDerby;
 import modelo.persistencia.PersonaDaoMySql;
 import modelo.persistencia.interfaces.PersonaDao;
 

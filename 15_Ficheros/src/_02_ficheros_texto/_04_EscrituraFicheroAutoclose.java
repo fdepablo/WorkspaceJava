@@ -4,7 +4,6 @@ package _02_ficheros_texto;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 public class _04_EscrituraFicheroAutoclose {
 

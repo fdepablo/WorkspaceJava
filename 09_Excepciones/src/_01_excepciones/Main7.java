@@ -8,11 +8,14 @@ import java.util.Scanner;
 public class Main7 {
 
 	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
 		boolean continuar = false;
 		do{
 			try{
 				System.out.println("Introduzca dos numero a dividir");
-				Scanner sc = new Scanner(System.in);
+				
 				System.out.println("Introduzca el numerador");
 				int numerador = sc.nextInt();
 				System.out.println("Introduzca el denominador");
@@ -37,7 +40,7 @@ public class Main7 {
 
 		
 		System.out.println("Programa terminado");
-
+		sc.close();
 	}
 
 }

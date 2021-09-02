@@ -1,8 +1,6 @@
 package _04_lambdas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.function.BinaryOperator;
-import java.util.function.Predicate;
 
 import javax.swing.JButton;
 

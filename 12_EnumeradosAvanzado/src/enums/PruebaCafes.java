@@ -5,7 +5,7 @@ public class PruebaCafes {
 		TipoCafe tc;
 		tc = TipoCafe.IRLANDES;
 		
-		//System.out.println(tc);
+		System.out.println(tc);
 		
 		for(TipoCafe tipoCafe : TipoCafe.values()){
 			System.out.println(tipoCafe);

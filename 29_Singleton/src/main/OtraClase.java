@@ -1,8 +1,5 @@
 package main;
 
-import java.util.List;
-
-import entidades.Coche;
 import negocio.CochesSingleton;
 
 public class OtraClase {

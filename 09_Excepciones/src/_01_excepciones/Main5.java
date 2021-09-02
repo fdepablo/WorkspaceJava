@@ -3,6 +3,9 @@ package _01_excepciones;
 import java.util.Scanner;
 
 public class Main5 {
+	
+	static Scanner sc = new Scanner(System.in);
+	
 	public static void main(String[] args) {
 		Main5 main3 = new Main5();
 		boolean continuar = false;
@@ -23,6 +26,7 @@ public class Main5 {
 		//podriamos hacer aqui tambien un try catch
 		//main3.genExcepcion();
 		System.out.println("Fin de programa");
+		sc.close();
 	}
 	
 	//si la excepcion arrojada es de tipo exception, entonces
@@ -31,7 +35,7 @@ public class Main5 {
 		
 		int numero = 0;
 		try {
-			Scanner sc = new Scanner(System.in);
+			
 			System.out.println("Introduzca el " + tipo);
 			numero = sc.nextInt();
 		} catch (Exception e) {

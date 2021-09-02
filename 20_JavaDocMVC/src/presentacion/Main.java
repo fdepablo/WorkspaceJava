@@ -54,6 +54,7 @@ public class Main {
 		} while (!opcion.equals("0"));
 		
 		System.out.println(" *** Gracias por utilizar nuestra aplicacion ***");
+		sc.close();
 	}
 	
 }

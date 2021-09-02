@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class ProgramaPrimos {
 
+	private static Scanner sc = new Scanner(System.in);
+	
 	public static void main(String[] args) {
 		int numero = pedirNumero();
 		if(esPrimo(numero)){
@@ -12,7 +14,6 @@ public class ProgramaPrimos {
 	}
 	
 	public static int pedirNumero(){
-		Scanner sc = new Scanner(System.in);
 		System.out.println("Introduzca el numero: ");
 		int numero = sc.nextInt();
 		return numero;

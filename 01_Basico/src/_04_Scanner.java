@@ -13,5 +13,6 @@ public class _04_Scanner {
 		System.out.println("Dime tu edad:");
 		int edad = sc.nextInt();
 		System.out.println("Tu edad es: " + edad);
+		sc.close();
 	}
 }

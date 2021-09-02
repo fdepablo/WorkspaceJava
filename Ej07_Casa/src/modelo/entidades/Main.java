@@ -78,6 +78,6 @@ public class Main {
 		int seleccion = sc.nextInt();
 		TipoHabitacion th = TipoHabitacion.values()[seleccion -1];
 		System.out.println("Ha seleccionado: " + th);
-		
+		sc.close();
 	}
 }

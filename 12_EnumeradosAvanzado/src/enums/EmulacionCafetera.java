@@ -16,6 +16,7 @@ public class EmulacionCafetera {
 		TipoCafe tipoCafe = TipoCafe.values()[opcionCafe];
 		TamanioCafe tamañoCafe = TamanioCafe.values()[opcionTamanio];
 		ec.procesandoCafe(tipoCafe,tamañoCafe);
+		sc.close();
 	}
 	
 	public void opcionesCafe(){

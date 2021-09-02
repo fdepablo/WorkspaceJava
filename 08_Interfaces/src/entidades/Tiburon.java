@@ -2,6 +2,8 @@ package entidades;
 
 public class Tiburon extends Pez{
 	
+	private static final long serialVersionUID = 1L;
+
 	public Tiburon(){
 		tamanio = Tamanio.GRANDE;
 		tipoAgua = TipoAgua.SALADA;

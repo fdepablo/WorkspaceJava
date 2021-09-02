@@ -6,6 +6,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Coliseo {
 	private List<Personaje> luchadores;
+	private Scanner sc = new Scanner(System.in);
 	
 	public Coliseo(List<Personaje> luchadores) {
 		this.luchadores = luchadores;
@@ -21,7 +22,7 @@ public class Coliseo {
 		int turno = 1;
 		do {
 			System.out.println("Pulse enter para continuar!");
-			new Scanner(System.in).nextLine();
+			sc.nextLine();
 			System.out.println("**************************");
 			System.out.println("LISTA DE SUPERVIVIENTES");
 			System.out.println(luchadores.size());
@@ -29,7 +30,6 @@ public class Coliseo {
 			for(Personaje p : luchadores) {
 				Personaje enfrentado = null;
 				do {
-					Random r = new Random();
 					int aleatorio = ThreadLocalRandom.current().nextInt(0, luchadores.size());
 					enfrentado = luchadores.get(aleatorio);
 				} while (p != enfrentado);//para evitar que alguien se ataque a si mismo

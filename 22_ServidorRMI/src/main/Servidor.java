@@ -6,7 +6,6 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
-import beans.Cancion;
 import negocio.MusicaRMI;
 
 public class Servidor {

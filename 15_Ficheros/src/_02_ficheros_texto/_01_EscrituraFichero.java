@@ -1,7 +1,6 @@
 
 package _02_ficheros_texto;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;

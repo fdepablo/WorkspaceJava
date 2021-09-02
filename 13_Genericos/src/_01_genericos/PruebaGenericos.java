@@ -27,6 +27,7 @@ public class PruebaGenericos {
 		almacen.setValorAlmacenado(p1);
 		Persona p3 = almacen.getValorAlmacenado();
 		System.out.println(p2);
+		System.out.println(p3);
 		
 		String s = "Valor";
 		

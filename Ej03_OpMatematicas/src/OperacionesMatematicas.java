@@ -1,6 +1,9 @@
 import java.util.Scanner;
 
 public class OperacionesMatematicas {
+	
+	private static Scanner sc = new Scanner(System.in);
+	
 	public static void main(String[] args) {
 		int contador = 1;
 		double numero1 = pedirNumero("Numero"+contador++);
@@ -45,7 +48,7 @@ public class OperacionesMatematicas {
 	}
 	
 	public static double pedirNumero(String numero){
-		Scanner sc = new Scanner(System.in);
+		
 		System.out.println("Introduzca el " + numero + ":");
 		double dNumero = sc.nextDouble();
 		return dNumero;

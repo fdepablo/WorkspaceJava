@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class PruebaArrays {
 	public static void main(String[] args) {
 		//El tamaño es fijo, y se inicializan a 0

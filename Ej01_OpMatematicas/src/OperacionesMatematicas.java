@@ -20,5 +20,6 @@ public class OperacionesMatematicas {
 		System.out.println("Resta: " + resta);
 		System.out.println("Multiplicacion: " + multiplicacion);
 		System.out.println("Division: " + division);
+		sc.close();
 	}
 }
