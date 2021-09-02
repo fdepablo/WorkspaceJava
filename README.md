@@ -6,7 +6,7 @@ La plataforma Java es el nombre de un entorno de computación originaria de Sun 
 Aqui vamos a encontrar un repositorio de eclipse con teoria y ejemplos sobre java
 
 # Versiones usadas en el repositorio
-Java 11
+Java 11 (aunque hay algún proyecto en la version 1.8)
 Tomcat 9.0
 
 # Instalación y configuración
