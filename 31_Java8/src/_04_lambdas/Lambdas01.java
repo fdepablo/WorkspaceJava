@@ -1,4 +1,4 @@
-package lambdas._04_lambdas;
+package _04_lambdas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.function.BinaryOperator;

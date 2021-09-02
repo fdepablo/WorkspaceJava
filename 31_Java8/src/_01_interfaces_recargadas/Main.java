@@ -1,4 +1,4 @@
-package lambdas._01_interfacesrecargadas;
+package _01_interfaces_recargadas;
 
 public class Main {
 

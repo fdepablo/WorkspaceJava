@@ -1,4 +1,4 @@
-package lambdas._03_interfaces_funcionales;
+package _03_interfaces_funcionales;
 
 /*
  * Interfaces funcionales

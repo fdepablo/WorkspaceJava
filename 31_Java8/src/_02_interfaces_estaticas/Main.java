@@ -1,4 +1,4 @@
-package lambdas._02_interfaces_estaticas;
+package _02_interfaces_estaticas;
 
 public class Main {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package lambdas._01_interfacesrecargadas;
+package _01_interfaces_recargadas;
 
 //En esta clase tenemos un problema ya que ambas interfaces tienen el metodo
 //saludar implementado, por lo que si lo dejamos asi dara error en tiempo de 

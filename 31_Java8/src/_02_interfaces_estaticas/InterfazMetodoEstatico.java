@@ -1,4 +1,4 @@
-package lambdas._02_interfaces_estaticas;
+package _02_interfaces_estaticas;
 
 /*
  * Tambien desde java 8 se permiten metodos estaticos en las interfaces
