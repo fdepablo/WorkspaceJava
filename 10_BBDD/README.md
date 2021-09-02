@@ -1,32 +1,30 @@
-Indicaciones
--
+# Indicaciones
 
 Para este ejemplo se ha usado una base de datos MySql, concretamente la que viene
-incluida en el all-in-one del XAMPP. https://www.apachefriends.org/es/download.html
+incluida en el all-in-one del [XAMPP](https://www.apachefriends.org/es/download.html)
 
 Se podría usar cualquier BBDD siempre y cuando se cambie el driver de conexión a dicha BBDD.
 
 El driver de conexion, en nuestro caso "mysql-connector-java-8.0.22.jar", que esta en la
 carpeta "lib" se debe de añadir al classpath del proyecto. Podemos descargarlo tambien 
-del repositorio central de maven 
-https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.22
+del repositorio central de [maven](https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.22)
 
 Para añadir el jar a nuestro proyecto debemos de:
 
-1) Pulsar boton derecho sobre el proyecto.
+1. Pulsar boton derecho sobre el proyecto.
 
-2) Build Path -> Configure Build Path
+2. Build Path -> Configure Build Path
 
-3) En la pestaña "libraries" pulsar el boton "Add Jar"
+3. En la pestaña "libraries" pulsar el boton "Add Jar"
 
-4) Buscar la carpeta lib de nuestro proyecto y elegir el fichero "mysql-connector-java-8.0.22.jar"
+4. Buscar la carpeta lib de nuestro proyecto y elegir el fichero "mysql-connector-java-8.0.22.jar"
 
-Configurar la BBDD para los ejemplos del paquete "test"
--
+# Configurar la BBDD para los ejemplos del paquete "test"
 
-1) Primero debemos de crear el esquema "bbdd" en nuestro MySQL
 
-2) A continuacion lanzar la siguiente instruccion sql
+1. Primero debemos de crear el esquema "bbdd" en nuestro MySQL
+
+2. A continuacion lanzar la siguiente instruccion sql
 
 CREATE TABLE `personas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -36,10 +34,10 @@ CREATE TABLE `personas` (
   PRIMARY KEY (`id`)
 );
 
-Configurar la BBDD para el ejemplo del paquete "transacciones"
--
+# Configurar la BBDD para el ejemplo del paquete "transacciones"
 
-1) Podemos lanzar directamente las siguientes instrucciones en nuestra BBDD
+
+1. Podemos lanzar directamente las siguientes instrucciones en nuestra BBDD
 
 CREATE SCHEMA FERRETERIA;
 USE FERRETERIA;

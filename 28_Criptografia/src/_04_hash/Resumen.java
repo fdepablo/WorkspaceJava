@@ -39,9 +39,5 @@ public class Resumen {
 		//Mejor pasarlo a Base64
 		String mensajeHashBase64 = Base64.getEncoder().encodeToString(resumen);
 		System.out.println(mensajeHashBase64);
-		
-		//O a Hexadecimal
-		String mensajeHashHex = javax.xml.bind.DatatypeConverter.printHexBinary(resumen);
-		System.out.println(mensajeHashHex);
 	}
 }

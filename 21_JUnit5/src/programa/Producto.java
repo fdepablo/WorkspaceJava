@@ -4,7 +4,9 @@ public class Producto{
 	//ATRIBUTOS DE LA CLASE
 	private int id;
 	private String nombre;
-	//pvc es el coste del producto al vendedor (antes de venderlo al cliente)
+	/**
+	 * pvc es el coste del producto al vendedor (antes de venderlo al cliente)
+	 */
 	private double pvc;
 	private int ref;
 	private int unidades;

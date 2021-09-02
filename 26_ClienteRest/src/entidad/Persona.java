@@ -3,12 +3,14 @@ package entidad;
 
 import java.io.Serializable;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
+//import javax.xml.bind.annotation.XmlAttribute;
+//import javax.xml.bind.annotation.XmlRootElement;
 
-//Atributo para convertir el objeto en xml en vez de en JSON.
-//solo se usa en caso de que se devuelva un xml
-@XmlRootElement
+// Atributo para convertir el objeto en xml en vez de en JSON.
+//solo se usa en caso de que se devuelva un xml.
+// Este atributo necesita de las librerías de JAXB que habría que 
+//incluir en nuestro proyecto. (Ver ejemplo 23_JAXBMaven)
+//@XmlRootElement
 public class Persona implements Serializable{
 	
 	private static final long serialVersionUID = 3575918590687798833L;
@@ -33,9 +35,7 @@ public class Persona implements Serializable{
 		this.edad = edad;
 	}
 
-	//Decimos que el ID vaya como atributo de la etiqueta persona en vez de 
-	//como elemento hijo
-	@XmlAttribute
+	//@XmlAttribute
 	public int getId() {
 		return id;
 	}
