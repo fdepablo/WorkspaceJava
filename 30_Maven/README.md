@@ -27,7 +27,7 @@ del proyecto y nombre del artefacto:
 	Ej: NombreProyecto
 		Minecraft
 		WhatsApp
-		43_Maven
+		30_Maven
 		
 La conbinación de nombre del grupo junto con el nombre del proyecto, debería de ser UNICA en el mundo
 
