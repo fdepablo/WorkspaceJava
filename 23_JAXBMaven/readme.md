@@ -6,7 +6,7 @@ Java JAXB  o Java XML API Binding nos permite trabajar con XML y JSON de una for
 Antes de Java 11, las librerías de JAXB estaban dentro de la JDK de Java, pero para esta versión las sacaron
 de ella, por lo que hay que descargarlas y añadirlas al classpath de nuestro proyecto.
 
-Usaremos maven para bajarnos las librerías y añadirlas al classpath (ver ejemplo 41 para usar maven)
+Usaremos maven para bajarnos las librerías y añadirlas al classpath (ver ejemplo 30_Maven para usar maven)
 
 ## Ayuda
 
