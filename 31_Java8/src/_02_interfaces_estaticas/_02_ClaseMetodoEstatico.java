@@ -1,10 +1,10 @@
 package _02_interfaces_estaticas;
 
 
-public class ClaseMetodoEstatico implements InterfazMetodoEstatico{
+public class _02_ClaseMetodoEstatico implements _01_InterfazMetodoEstatico{
 	public void metodo() {
 		//Pero aunque implemente la interfaz, no hereda los metodos
-		//estaticos, esto daría error
+		//estaticos, esto daria error
 		//ClaseMetodoEstatico.holaMundo();
 	}
 }

@@ -5,10 +5,10 @@ public class Main {
 	public static void main(String[] args) {
 		//La clase ClaseSaludoManiana solo tiene un metodo saludar
 		//por lo que no tendrermos problema
-		ClaseSaludoManiana csm = new ClaseSaludoManiana();
+		_02_ClaseSaludoManiana csm = new _02_ClaseSaludoManiana();
 		csm.saludo();
 		
-		ClaseVariosSaludos cvs = new ClaseVariosSaludos();
+		_04_ClaseVariosSaludos cvs = new _04_ClaseVariosSaludos();
 		cvs.saludo();
 	}
 
