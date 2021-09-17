@@ -3,6 +3,9 @@ package _03_sincronizado_01;
 public class MainSincronizado {
 	public static void main(String[] args){
 		Fiesta fiesta = new Fiesta();
+		// Si crearamos varios objetos fiestas, y asignaramos a cada persona
+		//una fiesta diferente, no existiria sincronización entre hilos los
+		//diferentes hilos.
 		//Fiesta fiesta2 = new Fiesta();
 		//Fiesta fiesta3 = new Fiesta();
 		Persona p1 = new Persona("Hey", "que tal estais?",fiesta);
@@ -16,7 +19,6 @@ public class MainSincronizado {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

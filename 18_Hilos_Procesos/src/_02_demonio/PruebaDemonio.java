@@ -13,6 +13,7 @@ public class PruebaDemonio {
 			e.printStackTrace();
 		}
 		
+		//Podemos parar el demonio cuando queramos
 		demonio.apagarDemonio();
 	}
 }

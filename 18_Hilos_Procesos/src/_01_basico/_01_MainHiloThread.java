@@ -24,13 +24,13 @@ public class _01_MainHiloThread {
 		
 		//arrancamos los dos hilos
 		//ojo no se ejecuta run()
-		//con start invocamos implicitamente el metodo run() pero arrancando un hilo nuevo en nuestra JVM
 		hilo1.start();		
 		hilo2.start();
 		
 		System.out.println("Programa principal parando");
 		//El hilo principal acaba aqui, pero mientras haya un hilo en ejecución,
-		//el programa serguiera existiendo
+		//el programa serguiera con vida. Cuando mueran todos los hilos que a
+		//arrancado un programa, sera entonces cuando el programa finalice
 	}
 
 }

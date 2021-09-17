@@ -23,7 +23,5 @@ public class Carrera {
 		t1.start();
 		t2.start();
 		t3.start();
-		
-		//System.out.println(meta.getLista());
 	}
 }

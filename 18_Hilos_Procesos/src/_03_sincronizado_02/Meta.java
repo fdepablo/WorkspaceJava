@@ -19,12 +19,12 @@ public class Meta {
 		System.out.println("El caballo " + caballo.getNombre() + " llego en : " + caballo.getTiempo().getTime());
 		orden.add(caballo);
 		
-		//Simulamos problemas de sincronizacion de hilos parando el hilo
-		//2 segundos, simulando una tarea de larga duracion
+		//Simulamos una tarea de larga duracion, como por ejemplo que tenemos
+		//que guardar la información en una base de datos remota o acceder
+		//a un servidor web remoto, de por ejemplo 2 segundos
 		try {
 			Thread.sleep(2000);//babieca rocinante
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -32,18 +32,18 @@ public class Meta {
 	}
 	
 	//Tambien podemos usar bloques sincronizados en lugar de metodos
-	//sincronizados
+	//sincronizados. Los metodos sincronizados bloquean todo el metodo,
+	//mientras que los bloques sincronizados solo sincronizan dicho bloque
+	//y no el metodo entero.
 	public void apuntarCaballo2(Caballo caballo){
 		
 		synchronized (this) {
 			orden.add(caballo);
 		}
-		
-		//Simulamos problemas de sincronizacion de hilos
+
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

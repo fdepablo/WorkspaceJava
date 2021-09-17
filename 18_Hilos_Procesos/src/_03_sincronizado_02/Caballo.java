@@ -26,18 +26,17 @@ public class Caballo implements Runnable {
 	public void run(){
 		//Simulamos que el caballo esta corriendo
 		for(int a = 0; a<=100;a++){
-			System.out.println(a+":"+nombre);
+			System.out.println(a + ":" + nombre);
 			try {
 				//el caballo se va a dormir aleatoriamente entre 1 y 10 milisegundos
 				int randomNum = ThreadLocalRandom.current().nextInt(1, 11);
 				Thread.sleep(randomNum);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 		tiempo = new Date();
-		//apuntamos al caballo a la meta
+		//apuntamos al caballo a la meta cuando termine de correr
 		meta.apuntarCaballo(this);
 	}
 

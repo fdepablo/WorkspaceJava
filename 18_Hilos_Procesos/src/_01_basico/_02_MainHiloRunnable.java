@@ -14,7 +14,7 @@ public class _02_MainHiloRunnable {
 		
 		
 		_02_HiloRunnable hilo2 = new _02_HiloRunnable("Valor 2");
-		//En vez de establecer el nombre por setName, lo podemos
+		//En vez de establecer el nombre por setter, lo podemos
 		//establecer por constructor
 		Thread t2 = new Thread(hilo2,"Hilo2");
 				
@@ -27,7 +27,6 @@ public class _02_MainHiloRunnable {
 		
 		//arrancamos los dos hilos
 		//ojo no se ejecuta run()
-		//con start invocamos implicitamente el metodo run()
 		t1.start();		
 		t2.start();
 		

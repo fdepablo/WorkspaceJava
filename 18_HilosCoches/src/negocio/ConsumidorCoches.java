@@ -2,12 +2,12 @@ package negocio;
 
 import entidad.Coche;
 
-public class Consumidor extends Thread{
+public class ConsumidorCoches extends Thread{
 
 	public String nombre;
 	public Cola cola;
 	
-	public Consumidor(String nombre, Cola cola){
+	public ConsumidorCoches(String nombre, Cola cola){
 		super();
 		this.nombre = nombre;
 		this.cola = cola;

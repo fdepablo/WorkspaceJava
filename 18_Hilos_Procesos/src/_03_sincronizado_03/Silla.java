@@ -4,8 +4,8 @@ public class Silla {
 	
 	//private boolean ocupada;
 	
-	//si no pusieramos el metodo como sincronizado, podrían
-	//entrar todos los obreros a la vez a descansar y entonces
+	//Si no pusieramos el metodo como sincronizado, podrían
+	//entrar todos los obreros a la vez a descansar. Entonces
 	//estariamos inclumpiendo la regla de que solo un obrero puede
 	//sentarse en esta silla a la vez
 	public synchronized void descansar(Obrero o) {

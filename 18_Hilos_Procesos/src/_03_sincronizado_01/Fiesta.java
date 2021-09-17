@@ -2,11 +2,11 @@ package _03_sincronizado_01;
 
 public class Fiesta {
 	
-	//hilo1 //hilo3// hilo2 
 	//La palabra reservada sychronized hace que solo pueda entrar un hilo a la 
 	//vez en este método, hasta que no termina de ejecutar este metodo un hilo, no puede entrar
 	//el siguiente hilo a ejecutarse
-	//OJO, que solo afecta a nivel de objeto
+	//OJO, al ser un metodo dinamico solo afecta a nivel de objeto, es decir, solo bloquea
+	//el objeto en cuestion
 	public synchronized void entrar(String palabra1, String palabra2){
 		System.out.println("Entrando en la fiesta!!");
 		System.out.println(palabra1);

@@ -7,7 +7,7 @@ public class Cola {
 	
 	public final static int MAX_ELEMENTOS = 3;
 	
-	//Una lista circular es ideal para implementar este ejemplo
+	//Una cola es ideal para implementar este ejemplo
 	//FIFO
 	private Queue<String> cola = new LinkedList<>();
 	

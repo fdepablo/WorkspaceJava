@@ -6,7 +6,6 @@ public class Obrero extends Thread{
 	private String nombre;
 	private Silla silla;
 	
-	//1, 100
 	public Obrero(int inicioLadrillo, int finLadrillo, String nombre) {
 		this.inicioLadrillo = inicioLadrillo;
 		this.finLadrillo = finLadrillo;
