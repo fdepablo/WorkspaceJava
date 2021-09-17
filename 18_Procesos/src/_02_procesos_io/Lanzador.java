@@ -1,4 +1,4 @@
-package _06_procesos_io;
+package _02_procesos_io;
 
 import java.io.File;
 import java.io.IOException;
