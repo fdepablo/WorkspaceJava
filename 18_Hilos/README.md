@@ -62,14 +62,44 @@ Existen dos maneras de crear hilos en Java:
 Ademas existen muchos metodos estaticos asociados a la clase Thread que nos van a ayudar:
 
 - sleep(X): Duerme el hilo por el que esta pasando el programa X milisegundos
-- currentThread().getName(): Nos da el nombre el hilo que esta psando por el programa.
+- start(): Arranca un hilo, ejecutando su metodo run(). El hilo acabará cuando salga del metodo run().
+- currentThread().getName(): Nos da el nombre el hilo que esta pasando por el programa.
+
 
 Existen muchos mas metodos que podemos ver en la documentacion oficial.
 
 En el paquete 01_basico podemos encontrar ejemplos sobre los hilos en java
 
+## Estados de un hilo
+
+![Estados Hilos](img/estadosHilos.png))
+
+La imagen refleja los distintos cambios de estados por los que pasa un hilo y los métodos que pueden provocar dichos cambios. Un hilo nuevo pasa a ejecutable por la invocación al método start(). Por otro lado, puede pasar de ejecutable a bloqueado por la invocación a los métodos sleep(), wait(), o a la espera de una operación de entrada/salida, volviendo de nuevo al estado ejecutable cuando llegue el momento.
+
+Un hilo pasa a estar muerto en la mayoría de los casos cuando ha terminado de ejecutarse el método run() y, por consiguiente, ya cumplió su misión, pero también podría pasar a estado muerto por la ejecución del método stop(), que interrumpe el hilo, o por otro tipo de interrupción inesperada.
+
 ## Hilos sincronizados en Java
 
 Cuando estamos trabajando con hilos podemos tener problemas de sincronización entre ellos o lo que es lo mismo problemas cuando dos hilos acceden simultaneamente a la misma posición de memoria.
 
+Varios hilos podrían compartir información accediendo a la misma variable, objeto, fichero, etc. Esto podría crear zonas críticas, es decir, áreas de código que podrían crear problemas de concurrencia.
+
+Para indicar que un fragmento de código está sincronizado, es decir, que solamente un hilo puede acceder a dicho método a la vez se utilizara el modificador "synchronized" que se utiliza para indicar que un fragmento de código está sincronizado, es decir, que solamente un hilo puede acceder a dicho método a la vez. 
+
+Se podría afirmar que un método sincronizado tiene una marca de abierto y cerrado: cuando está cerrado ningún otro hilo puede entrar en dicho método.
+
+La clave de la sincronización está en la palabra <b>monitor</b>. Como hemos comentado anteriormente, sólo un hilo de ejecución puede acceder a un método sincronizado al mismo tiempo; se dice que ese hilo es el que tiene el monitor y tendrá bloqueado el proceso hasta que finalice su ejecución y lo libere.
+
+Podemos ver los ejemplos 03 de este proyecto para ver ejemplos sobre la sincronización de hilos.
+
+## Wait y Notify
+
+Los métodos wait() y notify() pertenecen a la clase Object, por consiguiente, todos los objetos cuentan con ellos ya que todos las clases herendan de la clase Object.
+
+El método wait() deja bloqueado el hilo que lo llama, hasta que es liberado por otro hilo por medio de la ejecución del método notify(). El método wait() esta sobrecargado y admite tambien un parametro de entrada en el que le pasamos un número de milisegundos, en caso de que pase dicho numero de milisegundos y ningun hilo haya ejecutado un notify sobre el objeto, entonces el hilo seguira su ejecución.
+
+Podemos ver el ejemplo 04 para ver un sistema de productores y consumidores usando los metodos wait() y notify().
+
+## Bibliografia
+https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html
 
