@@ -8,7 +8,7 @@ Configuracion de proyecto con maven
 Para evitar problemas de dependecias, podemos hacer un proyecto maven y que sea este el que 
 nos lleve las dependencias del proyecto
 
-Para ello ver el proyecto 43_Maven
+Para ello ver el proyecto 30_Maven
 
 Una vez creado el proyecto maven, debemos de configurar y crear las clases de entidad
 y anotarlas adecuadamente (modelo.entidad). En este caso, la clase Persona
