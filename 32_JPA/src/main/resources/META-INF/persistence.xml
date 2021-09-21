@@ -11,8 +11,11 @@
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpa_persona"/>
 			<property name="javax.persistence.jdbc.user" value="root"/>
 			<property name="javax.persistence.schema-generation.database.action" value="create"/>
-			<!-- Sin en vez de "create" ponemos "drop-and-create", cada vez que arranquemos la app se
-			borraran y crearan las tablas desde cero -->
+			<!-- 
+			Si en vez de "create" ponemos "drop-and-create", cada vez que arranquemos la app se
+			borraran y crearan las tablas desde cero.
+			Tambien podemos poner "update" para solamente refrescar las tablas en caso de cambios
+			 -->
 		</properties>
 	</persistence-unit>
 </persistence>

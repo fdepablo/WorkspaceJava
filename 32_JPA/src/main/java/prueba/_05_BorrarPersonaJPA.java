@@ -19,7 +19,7 @@ public class _05_BorrarPersonaJPA {
 		//manager, no podemos borrar una persona directamente
 		//los objetos con los que trabajemos en el EntityManager
 		//Se van a quedar cacheados hasta que cerremos el entitymanager
-		int id = 5;
+		int id = 1;
 		Persona persona = em.find(Persona.class, id);
 		
 		//Abrimos transaccion, ya que vamos a cambiar la bbdd

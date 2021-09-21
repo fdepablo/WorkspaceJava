@@ -13,7 +13,7 @@ public class _03_ObtenerPersonaJPA {
 		
 		//Como ahora no vamos a modificar la BBDD no tenemos porque abrir un entorno de transaccionalidad
 		//las busquedas por defecto son por clave primaría
-		Persona p = em.find(Persona.class, 5);
+		Persona p = em.find(Persona.class, 1);
 		System.out.println(p);
 		
 		em.close();
