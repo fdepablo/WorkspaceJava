@@ -24,10 +24,12 @@ public class _01_CrearPersonaJPA {
 		//debemos de abrir un contexto de transaccionalidad
 		EntityTransaction et = em.getTransaction();
 		et.begin();//empezamos la transaccion
-		em.persist(persona);//con este metodo, guardo el objeto persona en la tabla de bbdd
-		et.commit();
+		em.persist(persona);//con este metodo, guardaremos el objeto persona en la tabla de bbdd
+		et.commit();//Persistimos los cambios
 		
 		em.close();//cerrar el entity manager
-		System.out.println("Persona creada");
+		
+		//Una vez salvada la persona podemos ver su id de BBDD		
+		System.out.println("Persona creada con id: " + persona.getId());
 	}
 }

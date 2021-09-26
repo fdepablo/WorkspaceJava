@@ -1,11 +1,7 @@
-Ejemplo JPA con varias relaciones
--
+# Ejemplo JPA con varias relaciones
 
-Ejemplo Maven de JPA con relaciones entre clases
+Ejemplo Maven de JPA con relaciones entre clases.
 
-Para que funcionen bien los ejemplos se debe configurar el fichero persistence.xml para que elimine 
-y cree las tablas en cada ejecución.
+Para que funcionen bien los ejemplos se debe configurar el fichero <b>persistence.xml</b> para que elimine y cree las tablas en cada ejecución.
 
-Lo haremos con la siguiente linea para una implementacion de Eclipse Link
-
-<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+En los ejemplos viene explicado el codigo y el significado de las anotaciones.

@@ -10,12 +10,24 @@
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpa_persona"/>
 			<property name="javax.persistence.jdbc.user" value="root"/>
-			<property name="javax.persistence.schema-generation.database.action" value="create"/>
 			<!-- 
-			Si en vez de "create" ponemos "drop-and-create", cada vez que arranquemos la app se
-			borraran y crearan las tablas desde cero.
-			Tambien podemos poner "update" para solamente refrescar las tablas en caso de cambios
+			Podemos poner los sigueintes parametros a la action de la generacion de la base
+			de datos:
+			create -> si queremos crear la bbdd cada vez que arranquemos la aplicacion.
+			drop-and-create -> cada vez que arranquemos la app se borraran y crearan las 
+			tablas desde cero.
+			update -> para solamente refrescar las tablas en caso de cambios de anotaciones
 			 -->
+			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+						 
+			<!-- Mostrar trazas de sql y establecer dialecto con hibernate -->
+			<property name = "hibernate.show_sql" value = "true" />
+			<property name = "hibernate.dialect" value = "org.hibernate.dialect.MySQL8Dialect" />
+			
+			<!-- Mostrar trazas sql con eclipselink 
+			<property name="eclipselink.logging.level.sql" value="FINE" />
+			<property name="eclipselink.logging.parameters" value="true" />
+			-->
 		</properties>
 	</persistence-unit>
 </persistence>

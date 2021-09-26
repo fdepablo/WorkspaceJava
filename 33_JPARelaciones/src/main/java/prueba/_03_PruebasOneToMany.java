@@ -62,7 +62,6 @@ public class _03_PruebasOneToMany {
 		//em.persist(p4);
 		//em.persist(p5);
 		//em.persist(db);
-
 		
 		//Como tenemos cascades en los dos extremos da igual el objeto
 		//que escojamos para hacer el persist...	
@@ -70,8 +69,7 @@ public class _03_PruebasOneToMany {
 		//multiples inserts en la BBDD
 		em.persist(c); 
 		System.out.println(" ----- Dando de alta el cliente, sus pedidos y sus datos bancarios ----- ");
-		
-		
+				
 		//El siguiente persist tambien funcionaria, de hecho al insertar cliente
 		//y detectar que tiene 4 pedidos mas, tambien se insertarian los pedidos en la
 		//BBDD. Todo esto es así por los cascades en ambos sentidos
@@ -90,7 +88,7 @@ public class _03_PruebasOneToMany {
 		em = emf.createEntityManager();
 
 		Cliente c2 = em.find(Cliente.class, 1);
-		System.out.println(c2.getNombre());
+		System.out.println("Nombre: " + c2.getNombre());
 		
 		//TIPOS DE CARGA DE OBJETOS AL ACCEDER A BBDD
 		//1- CARGA ANSIOSA (EAGER MODE)
@@ -99,7 +97,7 @@ public class _03_PruebasOneToMany {
 		//Las relaciones "one to one" son ansiosas por defecto
 		//En este caso, al buscar el objeto Cliente tambien nos ha 
 		//traido su objeto DatosBancarios de manera automatica. 
-		System.out.println(c2.getDatosBancarios().getBanco());
+		System.out.println("Banco: " + c2.getDatosBancarios().getBanco());
 
 		//2- CARGA PEREZOSA (LAZY MODE)
 		//Cuando SOLO nos traemos el objeto que hemos buscado en la base de datos
@@ -113,17 +111,18 @@ public class _03_PruebasOneToMany {
 		//En la siguiente linea, al acceder al size() de los pedidos, sera cuando
 		//JPA haga la query para traerse los pedidos. Los objetos que tenia antes
 		//asociados se llaman objetos PROXY
-		//System.out.println("Numero de pedidos " + c2.getPedidos().size());
-		
+				
 		//La carga por defecto de los objetos (LAZY o EAGER) se puede cambiar
 		//dento de las etiquetas correspondientes de la clase Cliente, por ejemplo:
 		//@OneToOne(mappedBy = "cliente", cascade=CascadeType.ALL,fetch = FetchType.LAZY)
 		//@OneToMany(mappedBy = "cliente", cascade=CascadeType.ALL, fetch = FetchType.EAGER) 
 		
-		//Nota para hibernate (NO APLICA A Eclipse LINK):
+		//Nota para Hibernate a la hora de acceder a los pedidos si esta configurado
+		//como lazy:
 		//Hay que acceder a los pedidos antes de cerrar el entity manager
 		//si no, daria error al intentar acceder a los pedidos más adelante.
 		//Si se utiliza eclipselink o toplink no haria falta hacerlo
+		//System.out.println("Numero de pedidos " + c2.getPedidos().size());
 		em.close();
 		
 		for(Pedido pAux: c2.getPedidos()){
