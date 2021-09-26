@@ -53,9 +53,9 @@ Por supuesto habría que tener en cuenta que nuestro ordenador a nivel de hardwar
 
 ## Hilos en Java
 
-Existen dos maneras de crear hilos en Java: 
+Existen dos maneras de declarar y configurar hilos en Java: 
 
-- Crear que exteinda de la clase Thread (herencia)
+- Crear una clase que extienda de la clase Thread (herencia)
 
 - Crear un clase que implemente la interfaz Runnable (interfaces)
 

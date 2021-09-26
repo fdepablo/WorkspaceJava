@@ -1,7 +1,7 @@
 package _01_basico;
 
 //Una manera de crear hilos en java, es extendiendo de
-//la clase Thread que ya esta implementada en la JRE
+//la clase Thread que ya esta implementada en la JDK
 public class _01_HiloThread extends Thread {
 
 	private String valorImprimir;
@@ -35,8 +35,5 @@ public class _01_HiloThread extends Thread {
 							+ " , dice: " + valorImprimir + " ciclo: " + i);
 		}
 		System.out.println("Hilo: " + Thread.currentThread().getName() + " acabado");
-		for(int i = 0; i<= 9;i++) {
-			
-		}		
-	}
+	}// El hilo muere en esta linea
 }

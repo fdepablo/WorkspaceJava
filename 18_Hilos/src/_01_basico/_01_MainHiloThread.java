@@ -27,7 +27,7 @@ public class _01_MainHiloThread {
 		hilo1.start();		
 		hilo2.start();
 		
-		System.out.println("Programa principal parando");
+		System.out.println("Hilo principal parando");
 		//El hilo principal acaba aqui, pero mientras haya un hilo en ejecución,
 		//el programa serguiera con vida. Cuando mueran todos los hilos que a
 		//arrancado un programa, sera entonces cuando el programa finalice

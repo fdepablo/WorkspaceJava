@@ -30,6 +30,6 @@ public class _02_MainHiloRunnable {
 		t1.start();		
 		t2.start();
 		
-		System.out.println("Programa principal parando");
+		System.out.println("Hilo principal parando");
 	}
 }

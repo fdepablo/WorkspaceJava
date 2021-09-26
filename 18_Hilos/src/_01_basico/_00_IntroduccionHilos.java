@@ -20,6 +20,6 @@ public class _00_IntroduccionHilos {
 					+ " , dice: " + i);
 		}
 		System.out.println("Hilo: " + Thread.currentThread().getName() + " acabado");
-		// aqui morira el hilo principal
-	}
+		
+	}// aqui morira el hilo principal
 }
