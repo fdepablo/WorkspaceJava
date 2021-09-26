@@ -67,6 +67,9 @@ public class MainRepaso {
 		
 		System.out.println(p5.getDireccion().getNombreVia());
 		
+		direccion = new Direccion();
+		
+		var s = new Persona();
 	}//fin programa
 	
 	public static void crearPersona() {
