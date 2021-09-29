@@ -2,15 +2,16 @@ package _03_sincronizado_01;
 
 public class MainSincronizado {
 	public static void main(String[] args){
-		Fiesta fiesta = new Fiesta();
+		Fiesta fiesta = new Fiesta("Blas","Calle Melancolia");
 		// Si crearamos varios objetos fiestas, y asignaramos a cada persona
 		//una fiesta diferente, no existiria sincronización entre hilos los
 		//diferentes hilos.
-		//Fiesta fiesta2 = new Fiesta();
-		//Fiesta fiesta3 = new Fiesta();
-		Persona p1 = new Persona("Hey", "que tal estais?",fiesta);
-		Persona p2 = new Persona("Hola!!", "como esta la peña?",fiesta);
-		Persona p3 = new Persona("Buenas!!!!", "llego el alma de la party!!!",fiesta);
+		//Fiesta fiesta2 = new Fiesta("Thor","Asgard");
+		//Fiesta fiesta3 = new Fiesta("Hulk","Nueva york");
+		Persona p1 = new Persona("Steve Rogers","Hey", "que tal estais?",fiesta);
+		Persona p2 = new Persona("Tony Stark","Hola!!", "como esta la peña?",fiesta);
+		Persona p3 = new Persona("Peter Parker","Buenas!!!!", 
+				"un poder implica responsabilidad ;)",fiesta);
 		
 		Thread t1 = new Thread(p1);
 		Thread t2 = new Thread(p2);

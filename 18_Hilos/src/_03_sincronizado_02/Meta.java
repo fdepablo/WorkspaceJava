@@ -21,7 +21,8 @@ public class Meta {
 		
 		//Simulamos una tarea de larga duracion, como por ejemplo que tenemos
 		//que guardar la información en una base de datos remota o acceder
-		//a un servidor web remoto, de por ejemplo 2 segundos
+		//a un servidor web remoto, de por ejemplo 2 segundos para mandar
+		//informacion del caballo
 		try {
 			Thread.sleep(2000);//babieca rocinante
 		} catch (InterruptedException e) {
