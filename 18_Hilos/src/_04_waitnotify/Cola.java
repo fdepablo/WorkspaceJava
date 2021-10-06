@@ -5,10 +5,11 @@ import java.util.Queue;
 
 public class Cola {
 	
+	//Numero maximo de strings que acepto en mi cola
 	public final static int MAX_ELEMENTOS = 3;
 	
 	//Una cola es ideal para implementar este ejemplo
-	//FIFO
+	//FIFO -> First in First out 
 	private Queue<String> cola = new LinkedList<>();
 	
 	//Si no hubiera condicion de numero maximo de elementos con esto bastaria
@@ -47,9 +48,10 @@ public class Cola {
 	}
 	
 	public synchronized String getMensaje(){
-		String s = null;
 		while(cola.size() == 0){
 			try {
+				//Cuando hacemos un wait() el hilo (consumidor) se que esperando a que
+				//alquien le haga un notify() y acto seguido, libera el monitor del hilo
 				wait();
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
@@ -57,7 +59,7 @@ public class Cola {
 			}
 		}
 		//Sacamos un elemento de la cola
-		s = cola.poll();
+		String s = cola.poll();
 		//Todos los hilos en estado wait asociados al objeto pasan a estado "elegido" 
 		//y cualquier hilo puede ser elegido de los que estan notificados 
 		//al azar

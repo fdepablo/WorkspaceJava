@@ -15,10 +15,6 @@ public class MainObreros {
 		//Tambien podemos probarlo dando a cada obrero su silla
 		//para ver que no hay problemas de sincronización
 		Silla silla = new Silla();
-		Silla silla2 = new Silla();
-		Silla silla3 = new Silla();
-		Silla silla4 = new Silla();
-		Silla silla5 = new Silla();
 		
 		//cada obrero se encarga de poner ladrillos en una
 		//valla, cada obrero cubre una porción de una valla
@@ -26,16 +22,16 @@ public class MainObreros {
 		obrero1.setSilla(silla);
 				
 		Obrero obrero2 = new Obrero(101,200,"Luis");
-		obrero2.setSilla(silla2);
+		obrero2.setSilla(silla);
 		
 		Obrero obrero3 = new Obrero(201,300,"Maria");
-		obrero3.setSilla(silla3);
+		obrero3.setSilla(silla);
 		
 		Obrero obrero4 = new Obrero(301,400,"Marta");
-		obrero4.setSilla(silla4);		
+		obrero4.setSilla(silla);		
 		
 		Obrero obrero5 = new Obrero(401,500,"Harry potter");
-		obrero5.setSilla(silla5);
+		obrero5.setSilla(silla);
 		
 		obrero1.start();
 		obrero2.start();
