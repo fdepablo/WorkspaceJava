@@ -1,4 +1,4 @@
-package clienteHilo;
+package cliente.hilo;
 
 import java.io.BufferedReader;
 import java.io.IOException;

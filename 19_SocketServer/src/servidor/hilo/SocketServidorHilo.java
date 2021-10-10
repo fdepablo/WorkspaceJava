@@ -1,4 +1,4 @@
-package servidorHilo;
+package servidor.hilo;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
