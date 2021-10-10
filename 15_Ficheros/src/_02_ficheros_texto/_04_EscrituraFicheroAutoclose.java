@@ -12,12 +12,13 @@ public class _04_EscrituraFicheroAutoclose {
 	public static void main(String[] args) {
 		System.out.println("Escritura de fichero " + NOMBRE_FICHERO);
 
-		//Desde la 1.7 podemos hacer que los recursos se autocierren
-		//siempre y cuando dicho recurso implemente la interfaz
-		//java.lang.AutoCloseable
+		//Desde la 1.7 podemos hacer que los recursos se autocierren siempre y cuando 
+		//dicho recurso implemente la interfaz java.lang.AutoCloseable
+		//Se llaman try-with-resources statement
+		
 		//El recurso se cerrará como si lo hubieramos puesto en la clausula "finally"
-		//esto ayuda a mantener el codigo más compacto y entendible
-		//los recursos van entre parentesis despues del bloque try
+		//esto ayuda a mantener el codigo más compacto y entendible.
+		//Los recursos van entre parentesis despues del bloque try
 		//si tenemos varios, podemos separararlos por ';'
 		try(FileWriter fw = new FileWriter(NOMBRE_FICHERO);
 				BufferedWriter pw = new BufferedWriter(fw);) {
