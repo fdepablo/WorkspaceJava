@@ -9,60 +9,67 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.Scanner;
 
-public class ClienteHilo {
+//En este ejemplo vamos a hacer que el cliente mande frases al servidor
+//y el servidor tendrá que contar el numero de letras que tiene la frase
+//La conexion se mantendra abierta hasta que el cliente mande la palabra
+//"FIN" al servidor.
+
+//En este caso se usara una misma conexion para todo el intercambio de mensajes
+//del cliente al servidor
+public class SocketClienteHilo {
+	
+	// IP y Puerto a la que nos vamos a conectar
+	public static final int PUERTO = 2018;
+	public static final String IP_SERVER = "localhost";
+	
 	public static void main(String[] args) {
-		System.out.println("        APLICACIÓN CLIENTE");
+		System.out.println("        APLICACIÓN CLIENTE         ");
 		System.out.println("-----------------------------------");
 
-		Scanner lector = new Scanner(System.in);
+		InetSocketAddress direccionServidor = new InetSocketAddress(IP_SERVER, PUERTO);
 		
-		InputStreamReader entrada = null;
-		PrintStream salida = null;
-		Socket socketCliente = null;
-		
-		try {
-			socketCliente = new Socket();
-			InetSocketAddress direccionServidor = new InetSocketAddress("localhost", 2001);
-			System.out.println("Esperando a que el servidor acepte la conexión");
+		try (Scanner sc = new Scanner(System.in)){
+						
+			System.out.println("CLIENTE: Esperando a que el servidor acepte la conexión");
+			Socket socketAlCliente = new Socket();
+			socketAlCliente.connect(direccionServidor);
+			System.out.println("CLIENTE: Conexion establecida... a " + IP_SERVER + 
+					" por el puerto " + PUERTO);
 
-			socketCliente.connect(direccionServidor);
-			System.out.println("Comunicación establecida con el servidor");
-
-			entrada = new InputStreamReader(socketCliente.getInputStream());
-			salida = new PrintStream(socketCliente.getOutputStream());
+			InputStreamReader entrada = new InputStreamReader(socketAlCliente.getInputStream());
 			BufferedReader entradaBuffer = new BufferedReader(entrada);
 			
+			PrintStream salida = new PrintStream(socketAlCliente.getOutputStream());
+			
 			String texto = "";
-			while (!texto.equals("FIN")) {
-				System.out.println("Escribe mensaje (FIN para terminar): ");
-				texto = lector.nextLine();//mensaje leido del usuario
-
+			boolean continuar = true;
+			do {
+				System.out.println("CLIENTE: Escribe mensaje (FIN para terminar): ");
+				texto = sc.nextLine();//frase que vamos a mandar para contar				
+				
 				salida.println(texto);
-				System.out.println("Esperando respuesta ...... ");
+				System.out.println("CLIENTE: Esperando respuesta ...... ");
 				
 				String respuesta = entradaBuffer.readLine();
-				System.out.println("Servidor responde: " + respuesta);
-			}
+				System.out.println("CLIENTE: Servidor responde: " + respuesta);
+				if("0".equalsIgnoreCase(respuesta)) {
+					continuar = false;
+				}				
+			}while(continuar);
+			//Cerramos la conexion
+			socketAlCliente.close();
 		} catch (UnknownHostException e) {
-			System.out.println("No se puede establecer comunicación con el servidor");
-			System.out.println(e.getMessage());
+			System.err.println("CLIENTE: No encuentro el servidor en la dirección" + IP_SERVER);
+			e.printStackTrace();
 		} catch (IOException e) {
-			System.out.println("Error de E/S");
-			System.out.println(e.getMessage());
-		} finally {
-			try {
-				if(salida != null && entrada != null){
-					salida.close();
-					entrada.close();
-					socketCliente.close();
-				}
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			System.err.println("CLIENTE: Error de entrada/salida");
+			e.printStackTrace();
+		} catch (Exception e) {
+			System.err.println("CLIENTE: Error -> " + e);
+			e.printStackTrace();
 		}
-
-		lector.close();
-		System.out.println("Comunicación cerrada");
+		
+		System.out.println("CLIENTE: Fin del programa");
 	}
+	
 }

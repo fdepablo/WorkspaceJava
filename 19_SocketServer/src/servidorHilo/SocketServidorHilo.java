@@ -5,45 +5,38 @@ import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class ServidorHilo {
+//En este caso, vamos a abrir un hilo por cada peticion que haga el servidor
+//para así poder procesar varias peticiones simultaneas de diferentes clientes
+public class SocketServidorHilo {
 	
-	public static final int PUERTO = 2001;
+	public static final int PUERTO = 2018;
 	public static final String IP_SERVER = "localhost";
 	
 	public static void main(String[] args) {
-		System.out.println("      APLICACIÓN DE SERVIDOR      ");
-		System.out.println("----------------------------------");
+		System.out.println("      APLICACIÓN DE SERVIDOR CON HILOS     ");
+		System.out.println("-------------------------------------------");		
 		
-		ServerSocket servidor = null;
+		int peticion = 0;
 		
-		try {
-			servidor = new ServerSocket();
+		try (ServerSocket servidor = new ServerSocket()){			
 			InetSocketAddress direccion = new InetSocketAddress(IP_SERVER,PUERTO);
-			//decimos al socket que escuche peticiones desde la IP y el puerto
 			servidor.bind(direccion);
 
-			System.out.println("Servidor creado por el puerto: " + PUERTO);
-			System.out.println("Servidor creado por la IP Local: " + direccion.getAddress());
+			System.out.println("SERVIDOR: Esperando peticion por el puerto " + PUERTO);
 			
 			while (true) {
-				//esperamos a que llegue un cliente
-				Socket enchufeAlCliente = servidor.accept();
-				System.out.println("Comunicación entrante");
-				new HiloEscuchador(enchufeAlCliente);//abrimos un hilo nuevo y liberamos el hilo principal
-			}
-			
+				Socket socketAlCliente = servidor.accept();
+				System.out.println("SERVIDOR: peticion numero " + ++peticion + " recibida");
+				//Abrimos un hilo nuevo y liberamos el hilo principal para que pueda
+				//recibir peticiones de otros clientes
+				new HiloContadorLetras(socketAlCliente);
+			}			
 		} catch (IOException e) {
-			System.err.println("main -> " + e.getMessage());
-		} finally {
-			if(servidor != null) {
-				try {
-					servidor.close();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
+			System.err.println("SERVIDOR: Error de entrada/salida");
+			e.printStackTrace();
+		} catch (Exception e) {
+			System.err.println("SERVIDOR: Error");
+			e.printStackTrace();
 		}
-
 	}
 }
