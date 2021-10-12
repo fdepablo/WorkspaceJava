@@ -63,6 +63,8 @@ public class HiloContadorLetras implements Runnable{
 			}
 			//Cerramos el socket
 			socketAlCliente.close();
+			//Notese que si no cerramos el socket ni en el servidor ni en el cliente, mantendremos
+			//la comunicacion abierta
 		} catch (IOException e) {
 			System.err.println("HiloContadorLetras: Error de entrada/salida");
 			e.printStackTrace();

@@ -23,10 +23,6 @@ public class SocketCliente {
 		System.out.println("-----------------------------------");
 		
 		//Socket -> es la clase que nos va a permitir comunicarnos con el servidor
-		//Aqui creamos un objeto socket con la IP y el puerto por el que vamos a 
-		//contectarnos al servidor. En el servidor se creara otro objeto socket
-		//que se enlazara con este mediante TCP/IP	
-		//Un socket es un punto de comunicacion entre dos maquinas
 
 		//InputStreamReader entrada -> Entrada de datos. Es el canal de entrada del 
 		//cliente, es decir, el canal por el cual el servidor nos va a mandar la 
@@ -44,7 +40,7 @@ public class SocketCliente {
 		//ya que sino deberíamos cerrarlos (ejecutar su metodo close()), dentro del bloque
 		//finally, creando muchas más lineas para ello.
 		try (Scanner sc = new Scanner(System.in);
-			Socket socketAlCliente = new Socket()){
+			Socket socketAlServidor = new Socket()){
 					
 			//Pedimos al usuario los numeros a sumar
 			System.out.println("CLIENTE: Introduzca los numeros a sumar");
@@ -61,18 +57,18 @@ public class SocketCliente {
 			//se mandan a traves de un socket se mandan SIEMPRE en formato cadena
 			
 			//Establecemos la conexión
-			socketAlCliente.connect(direccionServidor);
 			System.out.println("CLIENTE: Esperando a que el servidor acepte la conexión");
+			socketAlServidor.connect(direccionServidor);			
 			System.out.println("CLIENTE: Conexion establecida... a " + IP_SERVER 
 					+ " por el puerto " + PUERTO);		
 			
 			//Creamos el objeto que nos permite mandar informacion al servidor
-			PrintStream salida = new PrintStream(socketAlCliente.getOutputStream());
+			PrintStream salida = new PrintStream(socketAlServidor.getOutputStream());
 			//Mandamos la información por el Stream
 			salida.println(operandos);//3-4
 			
 			//Creamos el objeto que nos va a permitir leer la salida del servidor
-			InputStreamReader entrada = new InputStreamReader(socketAlCliente.getInputStream());
+			InputStreamReader entrada = new InputStreamReader(socketAlServidor.getInputStream());
 					
 			//Esta clase nos ayuda a leer datos del servidor linea a linea en vez de 
 			//caracter a caracter como la clase InputStreamReader

@@ -43,7 +43,7 @@ public class SocketServidor {
 		//sera el objeto ServerSocket el que nos crerara el objeto Socket por nosostros
 		try (ServerSocket serverSocket = new ServerSocket()){			
 			
-			//Decimos al socket que escuche peticiones desde el puerto
+			//Decimos al server socket que escuche peticiones desde el puerto
 			//que hayamos establecido
 			serverSocket.bind(direccion);
 			
@@ -98,5 +98,5 @@ public class SocketServidor {
 			System.err.println("SERVIDOR: Error -> " + e);
 			e.printStackTrace();
 		}
-	}
+	}//FIN DEL PROGRAMA
 }
