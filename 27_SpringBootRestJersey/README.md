@@ -27,7 +27,7 @@ Una vez instalado el plugin realizar los siguientes pasos
 
 # Estructura de un proyecto Spring boot con maven
 
-Este proyecto tiene estructura maven, ver el ejemplo 41 para más información.
+Este proyecto tiene estructura maven, ver el ejemplo 30_Maven para más información.
 
 1. src/main/java -> aqui van todos nuestros fuentes de la aplicacion, es decir, los .java
 2. src/main/resources -> aqui van todos nuestro ficheros de recursos de nuestra aplicacion, por ejemplo el context.mxl, banner.txt
