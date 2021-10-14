@@ -37,7 +37,7 @@ public class GeneradorCoches {
 		listaNombres.add("Recoge Cervezas");
 		listaNombres.add("Casado de por vida");
 		listaNombres.add("Arrebaña bateres");
-		listaNombres.add("Chciquito de la calzada");
+		listaNombres.add("Chiquito de la calzada");
 		
 		int numero = ThreadLocalRandom.current().nextInt(0, 5);
 		
