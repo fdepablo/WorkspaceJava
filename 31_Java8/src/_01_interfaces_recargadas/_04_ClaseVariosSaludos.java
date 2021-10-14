@@ -11,5 +11,6 @@ public class _04_ClaseVariosSaludos implements _01_InterfazSaludoManiana,_03_Int
 	public void saludo() {
 		// Podemos decir de esta manera cual queremos usar de los dos
 		_01_InterfazSaludoManiana.super.saludo();
+		_03_InterfazSaludoTarde.super.saludo();
 	}
 }

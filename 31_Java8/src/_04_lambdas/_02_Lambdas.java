@@ -22,11 +22,15 @@ public class _02_Lambdas {
 		//Podemos asignar todas las funciones que se nos ocurran
 		sup = () -> 3 + 4;
 		System.out.println(sup.get());
+		
+		//Generar un numero aleatorio
 		sup = () -> {
 			Random rd = new Random();
-			int i = rd.nextInt(21);//aleatorio entre el 1 y el 20
+			int i = rd.nextInt(21);//aleatorio entre el 0 y el 20
 			return i;
 		};
+		System.out.println(sup.get());
+		System.out.println(sup.get());
 		System.out.println(sup.get());
 		
 		//Podemos usar Supplier para generar objetos
@@ -38,7 +42,8 @@ public class _02_Lambdas {
 			p.setEdad(45);
 			return p;
 		};
-		System.out.println(supPersona.get());
+		Persona persona = supPersona.get();
+		System.out.println(persona);
 		
 		//Consumer, en este caso tenemos una entrada pero no tenemos salida
 		Consumer<Integer> con;
@@ -49,9 +54,9 @@ public class _02_Lambdas {
 		Consumer<Persona> conPersona;
 		//El siguiente ejemplo tambien valdría con (p) o con (Persona p)
 		conPersona = p -> {
-			System.out.println(p.getId());
-			System.out.println(p.getNombre());
-			System.out.println(p.getEdad());
+			System.out.println("imprimiendo: " + p.getId());
+			System.out.println("imprimiendo: " +p.getNombre());
+			System.out.println("imprimiendo: " +p.getEdad());
 		};
 		conPersona.accept(supPersona.get());
 		
@@ -60,9 +65,9 @@ public class _02_Lambdas {
 		func = s -> Integer.parseInt(s);
 		Integer numero2 = func.apply("50");
 		Integer numero3 = func.apply("100");
-		System.out.println(numero2);
-		System.out.println(numero3);
+		System.out.println(numero3 + numero2);
 		
+		//Funcion lambda que calcula el numero de caracteres
 		Function<String,Integer> sizeOf =  s -> s.length();
 		System.out.println(sizeOf.apply("Steve Rogers"));
 		
@@ -84,6 +89,7 @@ public class _02_Lambdas {
 			return false;
 		};
 		
+		//En programcion funcional es muy habitual orientar a funciones
 		System.out.println(predic.test(supPersona.get()));
 	}
 }
