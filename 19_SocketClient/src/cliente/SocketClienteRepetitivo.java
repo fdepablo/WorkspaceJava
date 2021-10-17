@@ -39,17 +39,17 @@ public class SocketClienteRepetitivo {
 				String numero2 = sc.nextLine();
 				String operandos = numero1 + "-" + numero2;	
 				
-				Socket socket = new Socket();
-				socket.connect(direccionServidor);
+				Socket socketAlServidor = new Socket();
+				socketAlServidor.connect(direccionServidor);
 				System.out.println("CLIENTE: Esperando a que el servidor acepte la conexión");
 				System.out.println("CLIENTE: Conexion establecida... a " + IP_SERVER 
 						+ " por el puerto " + PUERTO);	
 				
-				PrintStream salida = new PrintStream(socket.getOutputStream());
+				PrintStream salida = new PrintStream(socketAlServidor.getOutputStream());
 				salida.println(operandos);
 
 				System.out.println("CLIENTE: Esperando al resultado del servidor...");	
-				InputStreamReader entrada = new InputStreamReader(socket.getInputStream());
+				InputStreamReader entrada = new InputStreamReader(socketAlServidor.getInputStream());
 				BufferedReader bf = new BufferedReader(entrada);
 				String resultado = bf.readLine();				
 				System.out.println("CLIENTE: El resultado de la suma es: " + resultado);
@@ -63,7 +63,7 @@ public class SocketClienteRepetitivo {
 				//Cerramos el socket para cerrar las conexiones.
 				//Si cerramos un socket se cierran los inputStream y outputStream
 				//que tenga asociados
-				socket.close();
+				socketAlServidor.close();
 			} while (continuar);			
 		}catch (UnknownHostException e) {
 			System.err.println("CLIENTE: No encuentro el servidor en la dirección" + IP_SERVER);

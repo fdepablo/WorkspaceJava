@@ -19,10 +19,10 @@ public class HiloContadorLetras implements Runnable{
 	private static int numCliente = 0;
 	private Socket socketAlCliente;	
 	
-	public HiloContadorLetras(Socket cliente) {
+	public HiloContadorLetras(Socket socketAlCliente) {
 		numCliente++;
 		hilo = new Thread(this, "Cliente_"+numCliente);
-		this.socketAlCliente = cliente;
+		this.socketAlCliente = socketAlCliente;
 		hilo.start();
 	}
 	
@@ -46,10 +46,12 @@ public class HiloContadorLetras implements Runnable{
 			//Procesaremos entradas hasta que el texto del cliente sea FIN
 			while (continuar) {
 				texto = entradaBuffer.readLine();
+				//trim() es un metodo que quita los espacios en blanco del principio
+				//y del final
 				if (texto.trim().equalsIgnoreCase("FIN")) {
 					//Mandamos la señal de "0" para que el cliente sepa que vamos a cortar
 					//la comunicacion
-					salida.println("0");
+					salida.println("OK");
 					System.out.println(hilo.getName() + " ha cerrado la comunicacion");
 					continuar = false;
 				} else {
@@ -58,7 +60,7 @@ public class HiloContadorLetras implements Runnable{
 					System.out.println(hilo.getName() + " dice: " + texto + " y tiene " 
 							+ numeroLetras + " letras");
 					//Le mandamos la respuesta al cliente
-					salida.println(("Tu mensaje tiene " + numeroLetras + " caracteres"));
+					salida.println(numeroLetras);
 				}
 			}
 			//Cerramos el socket

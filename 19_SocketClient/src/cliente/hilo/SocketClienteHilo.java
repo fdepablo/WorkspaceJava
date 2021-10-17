@@ -31,15 +31,15 @@ public class SocketClienteHilo {
 		try (Scanner sc = new Scanner(System.in)){
 						
 			System.out.println("CLIENTE: Esperando a que el servidor acepte la conexión");
-			Socket socketAlCliente = new Socket();
-			socketAlCliente.connect(direccionServidor);
+			Socket socketAlServidor = new Socket();
+			socketAlServidor.connect(direccionServidor);
 			System.out.println("CLIENTE: Conexion establecida... a " + IP_SERVER + 
 					" por el puerto " + PUERTO);
 
-			InputStreamReader entrada = new InputStreamReader(socketAlCliente.getInputStream());
+			InputStreamReader entrada = new InputStreamReader(socketAlServidor.getInputStream());
 			BufferedReader entradaBuffer = new BufferedReader(entrada);
 			
-			PrintStream salida = new PrintStream(socketAlCliente.getOutputStream());
+			PrintStream salida = new PrintStream(socketAlServidor.getOutputStream());
 			
 			String texto = "";
 			boolean continuar = true;
@@ -48,16 +48,17 @@ public class SocketClienteHilo {
 				texto = sc.nextLine();//frase que vamos a mandar para contar				
 				
 				salida.println(texto);
-				System.out.println("CLIENTE: Esperando respuesta ...... ");
-				
+				System.out.println("CLIENTE: Esperando respuesta ...... ");				
 				String respuesta = entradaBuffer.readLine();
-				System.out.println("CLIENTE: Servidor responde: " + respuesta);
-				if("0".equalsIgnoreCase(respuesta)) {
+								
+				if("OK".equalsIgnoreCase(respuesta)) {
 					continuar = false;
+				}else {
+					System.out.println("CLIENTE: Servidor responde, numero de letras: " + respuesta);
 				}				
 			}while(continuar);
 			//Cerramos la conexion
-			socketAlCliente.close();
+			socketAlServidor.close();
 		} catch (UnknownHostException e) {
 			System.err.println("CLIENTE: No encuentro el servidor en la dirección" + IP_SERVER);
 			e.printStackTrace();
