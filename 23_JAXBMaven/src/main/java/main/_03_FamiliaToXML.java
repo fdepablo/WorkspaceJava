@@ -10,7 +10,7 @@ import beans.Direccion;
 import beans.Familia;
 import beans.Persona;
 
-public class FamiliaToXML {
+public class _03_FamiliaToXML {
 	public static void main(String[] args) {
 
 		JAXBContext contexto;
@@ -42,7 +42,7 @@ public class FamiliaToXML {
 			direccion.setCp("28054");
 			familia.getPersonas().get(0).setDireccion(direccion);
 
-			m.marshal(familia, new File("Simpson.xml"));
+			m.marshal(familia, new File("simpson.xml"));
 			System.out.println("El archivo Simpson.xml ha sido creado con éxito");
 		} catch (JAXBException e) {
 			System.out.println("Error convertiendo el objeto a formato XML");

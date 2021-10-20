@@ -9,7 +9,7 @@ import javax.xml.bind.Marshaller;
 import beans.Direccion;
 import beans.Persona;
 
-public class ObjectToXML {
+public class _01_ObjectToXML {
 	public static void main(String[] args) {
 
 		JAXBContext contexto;
@@ -58,7 +58,7 @@ public class ObjectToXML {
 			//Convertimos un objeto a xml y lo imprimimos por pantalla
 			m.marshal(p, System.out);
 			//tambien podemos crear un fichero
-			m.marshal(p, new File("Homer.xml"));
+			m.marshal(p, new File("homer.xml"));
 		} catch (JAXBException e) {
 			System.out.println("Error convertiendo el objeto a formato XML");
 			System.out.println(e.getMessage());
