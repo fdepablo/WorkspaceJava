@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 
 import beans.Persona;
 
-public class ObjectToJson {
+public class _01_ObjetoAJson {
 	public static void main(String[] args) {
 		Persona p1 = new Persona();
 		p1.setIdPersona(3);

@@ -4,12 +4,12 @@ import com.google.gson.Gson;
 
 import beans.Persona;
 
-public class JsonToObject {
+public class _02_JsonAObjeto {
 	public static void main(String[] args) {
 		String personaJson = "{'idPersona':5,'nombre':'Montgomery','apellido':'Burns','edad':80}";
 		
 		//si yo quiero convertir ese string a un objeto java, tendria que empezar a hacer
-		//splits, creaciones de objetos, y mil cosas más
+		//splits, creaciones de objetos, etc.
 		
 		//mejor utilizar la librería GSON
 		Gson gson = new Gson();

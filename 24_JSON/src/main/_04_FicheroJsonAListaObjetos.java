@@ -11,7 +11,7 @@ import com.google.gson.reflect.TypeToken;
 
 import beans.Persona;
 
-public class FileToObject {
+public class _04_FicheroJsonAListaObjetos {
 	public static void main(String[] args) {
 		File file = new File("Simpson.txt");
 		
