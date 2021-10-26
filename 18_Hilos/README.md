@@ -84,7 +84,7 @@ Cuando estamos trabajando con hilos podemos tener problemas de sincronización en
 
 Varios hilos podrían compartir información accediendo a la misma variable, objeto, fichero, etc. Esto podría crear zonas críticas, es decir, áreas de código que podrían crear problemas de concurrencia.
 
-Para indicar que un fragmento de código está sincronizado, es decir, que solamente un hilo puede acceder a dicho método a la vez se utilizara el modificador "synchronized" que se utiliza para indicar que un fragmento de código está sincronizado, es decir, que solamente un hilo puede acceder a dicho método a la vez. 
+Para indicar que un fragmento de código está sincronizado, es decir, que solamente un hilo puede acceder a dicho método a la vez se utilizara el modificador <b>"synchronized"</b> que se utiliza para indicar que un fragmento de código está sincronizado, es decir, que solamente un hilo puede acceder a dicho método a la vez. 
 
 Se podría afirmar que un método sincronizado tiene una marca de abierto y cerrado: cuando está cerrado ningún otro hilo puede entrar en dicho método.
 
@@ -94,7 +94,7 @@ Podemos ver los ejemplos 03 de este proyecto para ver ejemplos sobre la sincroni
 
 ## Wait y Notify
 
-Los métodos wait() y notify() pertenecen a la clase Object, por consiguiente, todos los objetos cuentan con ellos ya que todos las clases herendan de la clase Object.
+Los métodos <b>wait() y notify()</b> pertenecen a la clase Object, por consiguiente, todos los objetos cuentan con ellos ya que todos las clases herendan de la clase Object.
 
 El método wait() deja bloqueado el hilo que lo llama, hasta que es liberado por otro hilo por medio de la ejecución del método notify(). Siempre que se haga un notify() a un objeto despierta a todos los hilos que estan en estado de wait() dentro del mismo objeto.
 
@@ -102,8 +102,11 @@ Los metodos wait() y notify() solamente se pueden llamar dentro de un metodo o b
 
 El método wait() esta sobrecargado y admite tambien un parametro de entrada en el que le pasamos un número de milisegundos, en caso de que pase dicho numero de milisegundos y ningun hilo haya ejecutado un notify sobre el objeto, entonces el hilo seguira su ejecución.
 
+Por otro lado, es muy importante tambien saber que el metodo wait() además de parar indefinidamente el hilo, libera el bloque sincronizado (libera el monitor del hilo) y dejaría pasar a otro hilo que este esperando para entrar en dicho bloque sincronizado. De esta manera, permitiriamos entrar a otros hilos que quieran ejecutar el metodo notify() para desperatar a otros hilos parados con el metodo wait(). 
+
 Podemos ver el ejemplo 04 para ver un sistema de productores y consumidores usando los metodos wait() y notify().
 
 ## Bibliografia
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html
+- https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html
+- https://www.java67.com/2019/05/why-wait-and-notify-method-should-be-called-in-loop-not-if-block.html
 

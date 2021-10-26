@@ -16,56 +16,51 @@ public class Cola {
 	//Siempre que tengas un recurso compartido debes hacerte la pregunta de si dicho
 	//recurso es thread safe
 	public synchronized void addMensaje(String mensaje){
-		//Esto así solo no funcionaria, ya que si llega un productor y la cola esta 
-		//llena
-		//perderiamos un mensaje, debemos implementar una cola activa
-		/*if(cola.size() < MAX_ELEMENTOS){
-			cola.offer(mensaje);
-		}*/
+
 		//Si la cola esta llena no debemos introducir ningun elemento más
 		while(cola.size() == MAX_ELEMENTOS){//3
 			try {
-				//A diferencia del sleep no se activará pasado un tiempo, sino que se
-				//activaria cuando se le notifique, ADEMAS, liberamos el recurso por 
-				//lo que otro hilo que intente entrar en addMensaje podra hacerlo. 
-				//wait() solo se puede ejecutar en un bloque sincronizado y debe de 
-				//estar dentro de un while ya que cuando hacemos un notify desde 
-				//este metodo no solo despertamos a los hilos del metodo
-				//getMensaje, sino que tambien despertamos a los productores que esten 
-				//en este wait, por lo tanto un if no nos serviria ya que no se quedaria 
-				//en bucle
+			//A diferencia del sleep(), el hilo no se despertara pasado un tiempo,
+			//sino que se despertaria cuando se le notifique mediante notify(). 
+			//ADEMAS, liberamos el recurso por lo que otro hilo que intente 
+			//entrar en algun metodo sincronizado podra hacerlo.
+				
+			//El metodo wait() y notify() solo se puede invocar en un bloque 
+			//sincronizado 
+				
+			//El wait() debe estar dentro de un while, ya que cuando se 
+			//ejecuta un notify() desde cualquier metodo podemos despertar
+			//cualquier hilo en wait() que este dentro del objeto por lo 
+			//que debemos realizar de nuevo la comprobacion de si la lista
+			//esta llena para evitar problemas.
 				wait();
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		//Add un elemento a la cola
+		//Añadimos un elemento a la cola
 		cola.offer(mensaje);
 		//Notify, notificamos a todos los hilos que esten en estado wait que
-		//despierten(tanto los de addMensaje como los de getMensaje)
+		//despierten, pero solo se despertara 1 de los que esten en estado wait()
 		notify();
 	}
 	
 	public synchronized String getMensaje(){
 		while(cola.size() == 0){
 			try {
-				//Cuando hacemos un wait() el hilo (consumidor) se que esperando a que
-				//alquien le haga un notify() y acto seguido, libera el monitor del hilo
+				//Cuando hacemos un wait() el hilo (consumidor) se queda esperando 
+				//a que alquien le haga un notify() y acto seguido, libera el 
+				//monitor del hilo.
 				wait();
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 		//Sacamos un elemento de la cola
 		String s = cola.poll();
-		//Todos los hilos en estado wait asociados al objeto pasan a estado "elegido" 
-		//y cualquier hilo puede ser elegido de los que estan notificados 
-		//al azar
-		//El notifyAll saca a todos los hilos sin importar a que recurso(objeto) esta 
-		//asociado, un ejemplo puede ser
-		//el problema de los filosofos y los tenedores
+		//Notify, notificamos a todos los hilos que esten en estado wait que
+		//despierten, pero solo se despertara 1 de los que esten en estado wait()
 		notify();
 		return s;
 	}
