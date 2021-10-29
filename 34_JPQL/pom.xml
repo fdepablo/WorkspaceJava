@@ -5,8 +5,8 @@
   <version>0.0.1-SNAPSHOT</version>
   
   <properties>
-		<maven.compiler.target>1.11</maven.compiler.target>
-		<maven.compiler.source>1.11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+		<maven.compiler.source>11</maven.compiler.source>
 	</properties>
 
 	<dependencies>
@@ -15,7 +15,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.18</version>
+			<version>8.0.27</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.eclipse.persistence/eclipselink -->
