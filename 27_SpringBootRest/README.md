@@ -67,7 +67,7 @@ Para crear este proyecto debemos de crear un proyecto spring boot con algunos st
 2. En la opciones debemos de elegir la siguiente configuracion y pulsar next:
     - El nombre del proyecto
     - Elegir la version java que queramos (este caso 11)
-    - IMPORTANTE, empaquetar el proyecto en formato WAR
+    - Si vamos a desplegar el proyecto en un servidor de aplicaciones, debemos de empaquetar el proyecto en formato WAR
     - Podemos cambiar el paquete por defecto (en este caso "serviciorest")
 	
 4. En la siguiente pantalla debemos de elegir el starter web -> spring web
@@ -90,6 +90,12 @@ Para probar todos los verbos o metoso http necesitamos una app que nos lo permit
 Para arrancar una aplicacion Spring Boot debemos ejecutar el método main de la misma. En este caso debemos de ejecutar la clase "serviciorest.Application".
 
 Por defecto una aplicacion REST hecha con Spring Boot arranca en el mismo puerto del Tomcat, el 8080. Si quereis cambiar el puerto por defecto podeis hacerlo en "src/main/resources/applicatioin.properties". En este mismo proyecto hay un ejemplo.
+
+## Visualizacion del ejemplo
+
+Primero ver la clase "serviciorest.controlador.ControladorMensaje" que tiene ejemplos sencillos de uso de un servicio REST.
+
+Segundo ver la clase "serviciorest.controlador.ControladorPersona" que tiene un CRUD completo de la entidad Persona.
 
 ## Bibliografia:
 1. [Protocolo HTTP Mozilla](https://developer.mozilla.org/es/docs/Web/HTTP/Overview)

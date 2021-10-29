@@ -11,11 +11,7 @@ public class Persona {
 	private int edad;
 	
 	public Persona() {
-		
-	}
-	
-	public Persona(int id) {
-		this.id = id;
+		super();
 	}
 	
 	public Persona(int id, String nombre, String apellido, int edad) {

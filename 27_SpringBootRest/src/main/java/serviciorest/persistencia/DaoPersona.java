@@ -17,7 +17,10 @@ import serviciorest.entidad.Persona;
  * que el ID con el que se dan de alta las personas en la lista coincide exactamente
  * con la posicion del array que ocupan.
  * 
- * @author Felix
+ * Mediante la anotacion @Component, damos de alta un unico objeto de esta clase
+ * dentro del contexto de Spring, su ID sera el nombre de la case en notacion
+ * lowerCamelCase
+ * 
  */
 @Component
 public class DaoPersona {
@@ -25,7 +28,11 @@ public class DaoPersona {
 	public List<Persona> listaPersonas;
 	public int contador;
 	
-	//Inicializamos el DaoPersona con datos ya cargados
+	/**
+	 * Cuando se cree el objeto dentro del contexto de Spring, se ejecutara
+	 * su constructor, que creara las personas y las metera en una lista
+	 * para que puedan ser consumidas por nuestros clientes
+	 */
 	public DaoPersona() {
 		System.out.println("DaoPersona -> Creando la lista de personas!");
 		listaPersonas = new ArrayList<Persona>();
@@ -44,10 +51,16 @@ public class DaoPersona {
 	/**
 	 * Devuelve una persona a partir de su posicion del array
 	 * @param posicion la posicion del arrya que buscamos
-	 * @return la persona que ocupe en la posicion del array
+	 * @return la persona que ocupe en la posicion del array, null en caso de
+	 * que no exista o se haya ido fuera de rango del array
 	 */
 	public Persona get(int posicion) {
-		return listaPersonas.get(posicion);
+		try {
+			return listaPersonas.get(posicion);
+		} catch (IndexOutOfBoundsException iobe) {
+			System.out.println("Persona fuera de rango");
+			return null;
+		}
 	}
 	
 	/**
@@ -70,26 +83,38 @@ public class DaoPersona {
 	/**
 	 * Borramos una persona de una posicion del array
 	 * @param posicion la posicion a borrar
-	 * @return devolvemos la persona que hemos quitado del array
+	 * @return devolvemos la persona que hemos quitado del array, 
+	 * o null en caso de que no exista.
 	 */
 	public Persona delete(int posicion) {
-		return listaPersonas.remove(posicion);
+		try {
+			return listaPersonas.remove(posicion);
+		} catch (Exception e) {
+			System.out.println("delete -> Persona fuera de rango");
+			return null;
+		}
 	}
 	
 	/**
 	 * Metodo que modifica una persona de una posicion del array
 	 * @param p contiene todos los datos que queremos modificar, pero 
 	 * p.getId() contiene la posicion del array que queremos eliminar
-	 * @return la persona modificada
+	 * @return la persona modificada en caso de que exista, null en caso
+	 * contrario
 	 */
 	public Persona update(Persona p) {
-		Persona pAux = listaPersonas.get(p.getId());
-		if(pAux != null) {
-			pAux.setNombre(p.getNombre());
-			pAux.setApellido(p.getApellido());
-			pAux.setEdad(p.getEdad());
+		try {
+			Persona pAux = listaPersonas.get(p.getId());
+			if(pAux != null) {
+				pAux.setNombre(p.getNombre());
+				pAux.setApellido(p.getApellido());
+				pAux.setEdad(p.getEdad());
+			}
+			return pAux;
+		} catch (IndexOutOfBoundsException iobe) {
+			System.out.println("update -> Persona fuera de rango");
+			return null;
 		}
-		return pAux;
 	}
 	
 	/**

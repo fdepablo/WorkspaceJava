@@ -1,5 +1,6 @@
 package serviciorest.entidad;
 
+//Esta sera la entidad con la que vamos a trabajar en nuestro servicio REST
 public class Persona{
 	
 	private int id;
@@ -8,13 +9,9 @@ public class Persona{
 	private int edad;
 	
 	public Persona() {
-		
-	}
-	
-	public Persona(int id) {
-		this.id = id;
-	}
-	
+		super();
+	}	
+
 	public Persona(int id, String nombre, String apellido, int edad) {
 		this.id = id;
 		this.nombre = nombre;
