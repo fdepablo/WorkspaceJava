@@ -53,7 +53,7 @@ public class _03_ListaObjetosAFichero {
 		Gson gson = new Gson();
 		String json = gson.toJson(listaPersonas);
 		
-		File file = new File("Simpson.txt");
+		File file = new File("simpson.json");
 		
 		try(FileWriter fw = new FileWriter(file)){			
 			fw.write(json);

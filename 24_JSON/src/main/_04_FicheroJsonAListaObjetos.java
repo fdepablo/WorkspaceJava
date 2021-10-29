@@ -13,7 +13,7 @@ import beans.Persona;
 
 public class _04_FicheroJsonAListaObjetos {
 	public static void main(String[] args) {
-		File file = new File("Simpson.txt");
+		File file = new File("simpson.json");
 		
 		try(FileReader fr = new FileReader(file);
 		    BufferedReader br = new BufferedReader(fr)){

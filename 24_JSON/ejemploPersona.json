@@ -1,0 +1,27 @@
+{"persona":{
+   "id": "1",
+   "nombre": "Tony",
+   "apellido": "Stark",
+   "edad": 45,
+   "direcciones" :[
+		{"direccion1":{
+			"tipoVia": "Plaza",
+			"nombreVia": "Plaza de España",
+			"pais": "España"
+			}
+		},
+		{"direccion2":{
+			"tipoVia": "Calle",
+			"nombreVia": "Gran Via",
+			"pais": "España"
+			}
+		}
+   ],
+   "estaCasado": false,
+   "pareja": null,
+   "superpoder":{
+		"superinteligencia":100,
+		"superfuerza":50
+   }
+ }
+}
