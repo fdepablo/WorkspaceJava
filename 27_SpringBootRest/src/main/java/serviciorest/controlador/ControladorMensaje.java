@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 //nuestro servicio REST
 //Para dar de alta dicho objeto utilizaremos la anotacion @RestController
 
-//Los metodos anotados seran endpoints (puntos de entrada a nuestra aplicacion).
+//Los metodos anotados seran "endpoints" (puntos de entrada a nuestra aplicacion).
 //Estos metodos tendran que ser publicos y estar correctamente anotados
 
 @RestController
@@ -24,7 +24,7 @@ public class ControladorMensaje {
 	//para todos los verbos HTTP (@PostMapping, @PutMapping, @DeleteMapping,
 	//etc.)
 	
-	//La url completa sería "http://localhost:8080/mensaje"
+	//La url completa sería "http://localhost:8080/mensaje" con el metodo GET
 	
 	//Si la ponemos en la barra de un navegador nos hara una peticion GET, 
 	//ya que por defecto los navegadores hacen una peticion "GET" al recurso 
