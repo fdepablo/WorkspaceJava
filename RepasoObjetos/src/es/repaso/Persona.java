@@ -7,7 +7,8 @@ public class Persona {
 	private double peso;
 	private Direccion direccion;
 	
-	public Persona() {		
+	public Persona() {	
+		
 	}
 	
 	public String getNombre() {

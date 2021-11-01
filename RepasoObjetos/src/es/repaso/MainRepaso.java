@@ -50,6 +50,7 @@ public class MainRepaso {
 		p5.setNombre("Peter Parker");
 		p5.setEdad(17);
 		Direccion direccion = new Direccion();
+		//Inyectamos la dependecia por setter
 		p5.setDireccion(direccion);
 		p5.getDireccion().setNombreVia("Calle de la tia ross");
 		p5.getDireccion().setCp(28345);
