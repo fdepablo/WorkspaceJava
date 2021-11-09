@@ -50,12 +50,13 @@ public class Application implements CommandLineRunner{
 	public static void main(String[] args) {
 		System.out.println("Cliente -> Cargando el contexto de Spring");
 		SpringApplication.run(Application.class, args);
-		System.out.println("Cliente -> Contexto de Spring cargado!");
-		
+				
 		//Notese que como este metodo es estatico no podemos acceder
 		//a los metodos dinamicos de la clase, como el "spp" o "spm"
 		//Para solucionar esto, haremos que nuestra clase implemente
 		//"CommandLineRunner" e implementaremos el metodo "run"
+		
+		System.out.println("Cliente -> Fin de la aplicacion");
 	}
 	
 	@Override
@@ -88,6 +89,7 @@ public class Application implements CommandLineRunner{
 		
 		System.out.println("********* MODIFICAR PERSONA *************");	
 		Persona pModificar = new Persona();
+		pModificar.setId(pAlta.getId());
 		pModificar.setNombre("Obelix");
 		pModificar.setApellido("El del menhir");
 		pModificar.setEdad(40);

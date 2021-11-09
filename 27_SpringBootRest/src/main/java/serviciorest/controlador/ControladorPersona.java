@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import serviciorest.entidad.Persona;
-import serviciorest.persistencia.DaoPersona;
+import serviciorest.modelo.entidad.Persona;
+import serviciorest.modelo.persistencia.DaoPersona;
 
 //En este ejemplo vamos a realizar un CRUD completo contra la entidad
 //Persona. La bbdd esta simulado en memoria.
@@ -125,7 +125,7 @@ public class ControladorPersona {
 			listaPersonas = daoPersona.list();			
 		}else {
 			System.out.println("Listando las personas por nombre: " + nombre);
-			listaPersonas = daoPersona.listByName(nombre);
+			listaPersonas = daoPersona.listByNombre(nombre);
 		}
 		System.out.println(listaPersonas);
 		return new ResponseEntity<List<Persona>>(listaPersonas,HttpStatus.OK);

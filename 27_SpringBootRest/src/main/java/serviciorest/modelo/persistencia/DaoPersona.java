@@ -1,11 +1,11 @@
-package serviciorest.persistencia;
+package serviciorest.modelo.persistencia;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import serviciorest.entidad.Persona;
+import serviciorest.modelo.entidad.Persona;
 
 /**
  * Patron DAO (Data Access Object), objeto que se encarga de hacer las consultas
@@ -89,7 +89,7 @@ public class DaoPersona {
 	public Persona delete(int posicion) {
 		try {
 			return listaPersonas.remove(posicion);
-		} catch (Exception e) {
+		} catch (IndexOutOfBoundsException e) {
 			System.out.println("delete -> Persona fuera de rango");
 			return null;
 		}
@@ -105,11 +105,10 @@ public class DaoPersona {
 	public Persona update(Persona p) {
 		try {
 			Persona pAux = listaPersonas.get(p.getId());
-			if(pAux != null) {
-				pAux.setNombre(p.getNombre());
-				pAux.setApellido(p.getApellido());
-				pAux.setEdad(p.getEdad());
-			}
+			pAux.setNombre(p.getNombre());
+			pAux.setApellidos(p.getApellidos());
+			pAux.setEdad(p.getEdad());
+
 			return pAux;
 		} catch (IndexOutOfBoundsException iobe) {
 			System.out.println("update -> Persona fuera de rango");
@@ -126,10 +125,10 @@ public class DaoPersona {
 	 * @return una lista con las personas que coincidan en el nombre.
 	 * La lista estará vacia en caso de que no hay coincidencias
 	 */
-	public List<Persona> listByName(String nombre){
+	public List<Persona> listByNombre(String nombre){
 		List<Persona> listaPersonasAux = new ArrayList<Persona>();
 		for(Persona p : listaPersonas) {
-			if(p.getNombre().equalsIgnoreCase(nombre)) {
+			if(p.getNombre().equalsIgnoreCase(nombre)) {//contains()
 				listaPersonasAux.add(p);
 			}
 		}
