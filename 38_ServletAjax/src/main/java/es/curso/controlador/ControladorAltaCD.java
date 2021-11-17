@@ -38,5 +38,7 @@ public class ControladorAltaCD extends HttpServlet {
 		boolean insertado = daoCD.add(cd);
 		response.getWriter().append(Boolean.toString(insertado));
 	}
+	
+	
 
 }
