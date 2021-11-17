@@ -27,6 +27,11 @@ public class ServicioProxyMensaje {
 	 * del parametro de entrada
 	 */
 	public String obtener(String path){
+		//con el metodo getForObject del objeto restTemplate podemos hacer
+		//peticiones HTTP a un servicio REST. Tenemos que pasarle la URL
+		//Y el tipo que nos va a devolver
+		//URL Ej: http://localhost:8080/mensajeHTML
+		//Este metodo usara el verbo GET para hacer la request
 		String mensaje = restTemplate.getForObject(URL + path, String.class);
 		return mensaje;
 	}

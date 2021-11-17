@@ -50,15 +50,17 @@ public class Application implements CommandLineRunner{
 	public static void main(String[] args) {
 		System.out.println("Cliente -> Cargando el contexto de Spring");
 		SpringApplication.run(Application.class, args);
-				
+
 		//Notese que como este metodo es estatico no podemos acceder
 		//a los metodos dinamicos de la clase, como el "spp" o "spm"
 		//Para solucionar esto, haremos que nuestra clase implemente
 		//"CommandLineRunner" e implementaremos el metodo "run"
-		
-		System.out.println("Cliente -> Fin de la aplicacion");
+		//Cuando se acabe de arrancar el contexto, se llamara automaticamente
+		//al metodo run
 	}
 	
+	//Este metodo es dinamico por la tanto ya podemos acceder a los atributos
+	//dinamicos
 	@Override
 	public void run(String... args) throws Exception {
 		System.out.println("****** Arrancando el cliente REST ******");

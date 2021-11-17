@@ -39,9 +39,15 @@ public class ServicioProxyPersona {
 	 */
 	public Persona obtener(int id){
 		try {
+			//Como el servicio trabaja con objetos ResponseEntity, nosotros 
+			//tambien podemos hacerlo en el cliente
+			//Ej http://localhost:8080/personas/1 GET
 			ResponseEntity<Persona> re = restTemplate.getForEntity(URL + id, Persona.class);
 			HttpStatus hs= re.getStatusCode();
-			if(hs == HttpStatus.OK) {				
+			if(hs == HttpStatus.OK) {	
+				//Si la persona existe, la persona viene en formato JSON en el body
+				//Al ser el objeto ResponseEntity de tipo Persona, al obtener el 
+				//body me lo convierte automaticamente a tipo Persona
 				return re.getBody();
 			}else {
 				System.out.println("Respuesta no contemplada");
@@ -63,6 +69,10 @@ public class ServicioProxyPersona {
 	 */
 	public Persona alta(Persona p){
 		try {
+			//Para hacer un post de una entidad usamos el metodo postForEntity
+			//El primer parametro la URL
+			//El segundo parametros la persona que ira en body
+			//El tercer parametro el objeto que esperamos que nos envie el servidor
 			ResponseEntity<Persona> re = restTemplate.postForEntity(URL, p, Persona.class);
 			System.out.println("alta -> Codigo de respuesta " + re.getStatusCode());
 			return re.getBody();
@@ -84,6 +94,9 @@ public class ServicioProxyPersona {
 	 */
 	public boolean modificar(Persona p){
 		try {
+			//El metodo put de Spring no devuelve nada
+			//si no da error se ha dado de alta y si no daria una 
+			//excepcion
 			restTemplate.put(URL + p.getId(), p, Persona.class);
 			return true;
 		} catch (HttpClientErrorException e) {
@@ -103,6 +116,8 @@ public class ServicioProxyPersona {
 	 */
 	public boolean borrar(int id){
 		try {
+			//El metodo delete tampoco devuelve nada, por lo que si no 
+			//ha podido borrar el id, daría un excepcion
 			restTemplate.delete(URL + id);
 			return true;
 		} catch (HttpClientErrorException e) {
@@ -129,10 +144,11 @@ public class ServicioProxyPersona {
 		}
 		
 		try {
+			//Ej http://localhost:8080/personas?nombre=harry GET
 			ResponseEntity<Persona[]> response =
 					  restTemplate.getForEntity(URL + queryParams,Persona[].class);
 			Persona[] arrayPersonas = response.getBody();
-			return Arrays.asList(arrayPersonas);
+			return Arrays.asList(arrayPersonas);//convertimos el array en un arraylist
 		} catch (HttpClientErrorException e) {
 			System.out.println("listar -> Error al obtener la lista de personas");
 		    System.out.println("listar -> Codigo de respuesta: " + e.getStatusCode());
