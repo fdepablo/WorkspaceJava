@@ -167,7 +167,7 @@ public class ControladorPersona {
 	//La URL para acceder a este metodo sería: 
 	//"http://localhost:8080/personas/ID" y el metodo a usar seria DELETE
 	@DeleteMapping(path="personas/{id}")
-	public ResponseEntity<Persona> borrarPersona(@PathVariable int id) {
+	public ResponseEntity<Persona> borrarPersona(@PathVariable("id") int id) {
 		System.out.println("ID a borrar: " + id);
 		Persona p = daoPersona.delete(id);
 		if(p != null) {
