@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function accederDatosMusica() {
+
+    let xmlHttp = new XMLHttpRequest()
+
+    xmlHttp.onreadystatechange = function () {
+        if (this.readyState == 4) {
+            if (this.status == 200) {
+                procesarRespuesta(this.responseText)//Obtenemos el valor en texto
+            } else {
+                alert("ZASCA!")
+            }
+        }
+    }
+
+    xmlHttp.open('GET', "http://localhost:8080/38_ServletAjax/ControladorCD", true)
+    xmlHttp.send(null)
+}
+
+function altaDatosMusica() {
+
+    let xmlHttp = new XMLHttpRequest()
+
+    xmlHttp.onreadystatechange = function () {
+        if (this.readyState == 4) {
+            if (this.status == 200) {
+                alert(this.responseText)
+            } else {
+                alert("ZASCA!")
+            }
+        }
+    }
+
+    xmlHttp.open('POST', "http://localhost:8080/38_ServletAjax/ControladorAltaCD", true)
+    
+    objetoJsonBasico = JSON.stringify({"titulo" : titulo.value,"artista" : artista.value,"ciudad": ciudad.value})
+    
+    xmlHttp.send(objetoJsonBasico)//dentro del body le mandamos el json
+}
+
+function procesarRespuesta(jsonDoc) {
+    //Convertimos un texto a un objeto JSON
+    var objetoJson = JSON.parse(jsonDoc)
+    //Podemos hacer lo contrario con "JSON.stringify(obj)"
+    console.log(objetoJson)
+
+    //Lo suyo seria crear objetos con el DOM, esto esta regulín
+    //pero como ejemplo sencillo vale
+    var table = "<tr><th>Titulo</th><th>Artista</th><th>Ciudad</th></tr>";
+    
+    //Iteramos el array de CDs y formamos las filas y columnas
+    for(let cd of objetoJson){
+        table += "<tr><td>" + cd.titulo + "</td>" + 
+            "<td>" + cd.artista + "</td>"+ 
+            "<td>" + cd.ciudad + "</td></tr>";
+    }
+
+    tablaAjax.innerHTML = table;
+}
+</script>
+</head>
+<body>
+	<h1>Ejemplo de AJAX</h1>
+	<button id="traerDatos" onclick="accederDatosMusica()">Pulsa para cargar la tabla</button>
+	<table id="tablaAjax">
+		
+	</table>
+	<br/>
+	<input type="text" id="titulo">
+	<br/>
+	<input type="text" id="artista">	
+	<br/>
+	<input type="text" id="ciudad">
+	<br/>
+	<button id="traerDatos" onclick="altaDatosMusica()">Pulsa para dar de alta</button>
+	
+</body>
+</html>
