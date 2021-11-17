@@ -75,7 +75,7 @@ public class Application implements CommandLineRunner{
 		System.out.println("*********** ALTA PERSONA ***************");
 		Persona persona = new Persona();
 		persona.setNombre("Asterix");
-		persona.setApellido("El Galo");
+		persona.setApellidos("El Galo");
 		persona.setEdad(35);
 		
 		Persona pAlta = spp.alta(persona);
@@ -93,14 +93,14 @@ public class Application implements CommandLineRunner{
 		Persona pModificar = new Persona();
 		pModificar.setId(pAlta.getId());
 		pModificar.setNombre("Obelix");
-		pModificar.setApellido("El del menhir");
+		pModificar.setApellidos("El del menhir");
 		pModificar.setEdad(40);
 		boolean modificada = spp.modificar(pModificar);
 		System.out.println("run -> persona modificada? " + modificada);
 		
 		System.out.println("********* MODIFICAR PERSONA ERRONEA*************");			
 		pModificar.setNombre("Panoramix");
-		pModificar.setApellido("El de la pocion magica");
+		pModificar.setApellidos("El de la pocion magica");
 		pModificar.setId(20);
 		modificada = spp.modificar(pModificar);
 		System.out.println("run -> persona modificada? " + modificada);

@@ -7,17 +7,17 @@ public class Persona {
 	
 	private int id;
 	private String nombre;
-	private String apellido;
+	private String apellidos;
 	private int edad;
 	
 	public Persona() {
 		super();
 	}
 	
-	public Persona(int id, String nombre, String apellido, int edad) {
+	public Persona(int id, String nombre, String apellidos, int edad) {
 		this.id = id;
 		this.nombre = nombre;
-		this.apellido = apellido;
+		this.apellidos = apellidos;
 		this.edad = edad;
 	}
 
@@ -35,11 +35,11 @@ public class Persona {
 		this.nombre = nombre;
 	}
 
-	public String getApellido() {
-		return apellido;
+	public String getApellidos() {
+		return apellidos;
 	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
 	}
 
 	public int getEdad() {
@@ -51,7 +51,7 @@ public class Persona {
 	
 	@Override
 	public String toString() {
-		return "Persona [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + "]";
+		return "Persona [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", edad=" + edad + "]";
 	}
 
 	
