@@ -21,7 +21,7 @@ public class _02_MainAES {
 			
 			//Objeto que nos permitira encriptar o desencriptar a partir de una
 			//clave (o palo espartano)
-			Cipher cifrador = Cipher.getInstance("DES");
+			Cipher cifrador = Cipher.getInstance("AES");
 			System.out.println("Paso 3: Hemos obtenido el cifrador/descifrador");
 			
 			//Ahora el cifrador lo configuramos para que use la clave simetrica

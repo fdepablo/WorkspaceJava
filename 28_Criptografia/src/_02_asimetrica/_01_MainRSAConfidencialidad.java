@@ -20,9 +20,9 @@ public class _01_MainRSAConfidencialidad {
 			Cipher cifrador = Cipher.getInstance("RSA");
 			System.out.println("Paso 3: Hemos obtenido el descifrador");
 			
-			cifrador.init(Cipher.ENCRYPT_MODE, claves.getPrivate());
+			cifrador.init(Cipher.ENCRYPT_MODE, claves.getPublic());
 			System.out.println(claves.getPublic().getClass().getName());
-			System.out.println("Paso 4.1: Hemos configurado el descifrador para usar clave publica");
+			System.out.println("Paso 4.1: Hemos configurado el cifrador para usar clave publica");
 			System.out.println("Paso 4.2: Cifrando de esta manera garantizamos CONFIDENCIALIDAD");
 			
 			String mensajeOriginal = "Un gran poder implica una gran responsabilidad";

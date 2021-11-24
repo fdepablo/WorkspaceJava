@@ -21,8 +21,7 @@ public class _01_MainRSAAutenticidad {
 			System.out.println("Paso 3: Hemos obtenido el descifrador");
 			
 			cifrador.init(Cipher.ENCRYPT_MODE, claves.getPrivate());
-			System.out.println(claves.getPublic().getClass().getName());
-			System.out.println("Paso 4.1: Hemos configurado el descifrador para usar clave privada");
+			System.out.println("Paso 4.1: Hemos configurado el cifrador para usar clave privada");
 			System.out.println("Paso 4.2: Cifrando de esta manera garantizamos AUTENTICIDAD");
 			
 			String mensajeOriginal = "Un gran poder implica una gran responsabilidad";
@@ -34,8 +33,8 @@ public class _01_MainRSAAutenticidad {
 			System.out.println("Paso 5.2: Mensaje Original: " + mensajeOriginal);
 			System.out.println("Paso 5.3: Mensaje Cifrado: " + mensajeCifrado);
 			
-			System.out.println("Paso 6.1: Ahora vamos a descifrar el criptograma usando la clave privada");
-			cifrador.init(Cipher.DECRYPT_MODE, claves.getPrivate());
+			System.out.println("Paso 6.1: Ahora vamos a descifrar el criptograma usando la clave publica");
+			cifrador.init(Cipher.DECRYPT_MODE, claves.getPublic());
 			byte[] bytesMensajeDescifrado = cifrador.doFinal(bytesMensajeCifrado);
 			System.out.println("Paso 6.2: Mensaje Descifrado: " + new String(bytesMensajeDescifrado));
 			

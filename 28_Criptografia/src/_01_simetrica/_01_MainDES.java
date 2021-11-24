@@ -15,7 +15,7 @@ public class _01_MainDES {
 	public static void main(String[] args) throws IOException {
 		System.out.println("Probando sistema de encriptación con algoritmo DES");
 		try {
-			//generador de escítalas espartanas
+			//Generador de claves simetricas (escítalas espartanas)
 			KeyGenerator generador = KeyGenerator.getInstance("DES");
 			System.out.println("Paso 1: Se ha obtenido el generador de claves");
 			

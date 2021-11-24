@@ -60,7 +60,7 @@ Existen dos tipos de claves criptográficas, que son:
 
     2. <b>Cifrado con clave privada</b> Un mensaje firmado con la clave privada del remitente puede ser verificado por cualquier persona que tenga acceso a la clave pública de dicho remitente, lo que demuestra que este remitente tenía acceso a la clave privada (y por lo tanto, es probable que sea la persona asociada con la clave privada utilizada). Se utiliza para garantizar la autenticidad del mensaje. Este metodo es usado para las firmas digitales.
 
-Existe un tercer método conocido como <b>Clave mixta</b>,que no es un tipo de criptografía como tal, simplemente es una conbinación de clave simétrica y clave asimética. Un ejemplo sería el protocolo HTTP. La idea básica es usar la clave asimétrica para intercambiar la clave simetrica.
+Existe un tercer método conocido como <b>Clave mixta</b>,que no es un tipo de criptografía como tal, simplemente es una conbinación de clave simétrica y clave asimética. Un ejemplo sería el protocolo HTTPS. La idea básica es usar la clave asimétrica para intercambiar la clave simetrica.
 
 ## Trabajando con la criptografía en Java
 
