@@ -1,24 +1,11 @@
-package _03_Objetos;
+package _03_cifrando_objetos;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SealedObject;
 import javax.crypto.SecretKey;
 
-/*
- *  El mensaje a cifrar también se divide en bloques, pero esta vez cada bloque puede 
- *  ser de longitud variable, entre 128, 192 o 256 bits.
-
-    1- La clave también puede ser de 128, 192 o 256 bits.
-
-    2- Se trata de un algoritmo más rápido y seguro que el algoritmo DES.
-
-    3- En Java se implementa de la misma manera que vimos en el apartado anterior,
-    solo hay que modificar las siguientes líneas:
-    generador = KeyGenerator.getInstance("AES");
-    descifrador = Cipher.getInstance("AES");
- */
-public class Main {
+public class _01_CifradorObjetos {
 	public static void main (String args[]) {
 		System.out.println("Probando sistema de encriptación con algoritmo AES");
 		try {

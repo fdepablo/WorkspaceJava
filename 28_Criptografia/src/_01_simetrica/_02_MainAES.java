@@ -6,19 +6,6 @@ import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 
-/*
- *  El mensaje a cifrar también se divide en bloques, pero esta vez cada bloque puede 
- *  ser de longitud variable, entre 128, 192 o 256 bits.
-
-    1- La clave también puede ser de 128, 192 o 256 bits.
-
-    2- Se trata de un algoritmo más rápido y seguro que el algoritmo DES.
-
-    3- En Java se implementa de la misma manera que vimos en el apartado anterior,
-    solo hay que modificar las siguientes líneas:
-    generador = KeyGenerator.getInstance("AES");
-    descifrador = Cipher.getInstance("AES");
- */
 public class _02_MainAES {
 	public static void main (String args[]) {
 		System.out.println("Probando sistema de encriptación con algoritmo AES");
@@ -26,27 +13,41 @@ public class _02_MainAES {
 			KeyGenerator generador = KeyGenerator.getInstance("AES");
 			System.out.println("Paso 1: Se ha obtenido el generador de claves");
 			
+			//Generamos la clave simetrica. (Una escítala espartana)
 			SecretKey paloEspartano = generador.generateKey();
+			//Si se hiciera otra vez, obtendria otra clave DIFERENTE, por ejemplo
+			//otro palo espartano con otras medidas
 			System.out.println("Paso 2: Se ha obtenido la clave");
-
-			Cipher descifrador = Cipher.getInstance("AES");
-			System.out.println("Paso 3: Hemos obtenido el descifrador");
 			
-			descifrador.init(Cipher.ENCRYPT_MODE, paloEspartano);
-			System.out.println("Paso 4: Hemos configurado el descifrador");
+			//Objeto que nos permitira encriptar o desencriptar a partir de una
+			//clave (o palo espartano)
+			Cipher cifrador = Cipher.getInstance("DES");
+			System.out.println("Paso 3: Hemos obtenido el cifrador/descifrador");
 			
-			String mensajeOriginal = "La cripta mágica";
+			//Ahora el cifrador lo configuramos para que use la clave simetrica
+			//para encriptar
+			cifrador.init(Cipher.ENCRYPT_MODE, paloEspartano);
+			System.out.println("Paso 4: Hemos configurado el cifrador");
+						
+			String mensajeOriginal = "Un gran poder implica una gran responsabilidad";
+			//El cifrador trabaja con bytes, lo convertimos
 			byte[] bytesMensajeOriginal = mensajeOriginal.getBytes();
-			byte[] bytesMensajeCifrado = descifrador.doFinal(bytesMensajeOriginal);//cifrar el mensaje original
+			System.out.println("Paso 5.1: Ciframos el mensaje original");
+			//El cifrador devuelve una cadena de bytes
+			byte[] bytesMensajeCifrado = cifrador.doFinal(bytesMensajeOriginal);
 			String mensajeCifrado = new String(bytesMensajeCifrado);
-			System.out.println("Mensaje Original: " + mensajeOriginal);
-			System.out.println("Mensaje Cifrado: " + mensajeCifrado);
+			System.out.println("Paso 5.2: Mensaje Original: " + mensajeOriginal);
+			System.out.println("Paso 5.3: Mensaje Cifrado: " + mensajeCifrado);
 			
-			System.out.println("Desciframos el mensaje cifrado para comprobar que comprueba con el original");
-			descifrador.init(Cipher.DECRYPT_MODE, paloEspartano);
-			byte[] bytesMensajeDescifrado = descifrador.doFinal(bytesMensajeCifrado);
-			System.out.println("Mensaje Descifrado: " + new String(bytesMensajeDescifrado));
-			
+			System.out.println("Paso 6.1: Desciframos el criptograma:");
+			//Ahora el cifrador lo configuramos para que use la clave simetrica
+			//para desencriptar. Debemos de usar la MISMA clave para descifrar, NO
+			//PODEMOS usar/generar una diferente.
+			cifrador.init(Cipher.DECRYPT_MODE, paloEspartano);
+			byte[] bytesMensajeDescifrado = cifrador.doFinal(bytesMensajeCifrado);
+			System.out.println("Paso 6.2: Mensaje Descifrado: " + new String(bytesMensajeDescifrado));
+	
+		//Simplificamos las excepciones capturando GeneralSecurityException
 		} catch (GeneralSecurityException gse) {
 			System.out.println("Algo ha fallado.." + gse.getMessage());
 			gse.printStackTrace();

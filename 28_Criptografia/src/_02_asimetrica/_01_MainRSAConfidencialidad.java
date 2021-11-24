@@ -6,27 +6,7 @@ import java.security.KeyPairGenerator;
 
 import javax.crypto.Cipher;
 
-/*
- * En este apartado estudiaremos el algoritmo RSA, 
- * Desarrollado por Ron Rivest, Adi Shamir y Leonard Adleman 
- * cuyas iniciales dieron nombre al algoritmo. 
- * 
- *  La clave privada, que es distinta para cada usuario. 
-
-    La clave pública, que es la misma para todos los usuarios.
-
-	El procedimiento empleado para el cifrado es el siguiente:
-
-    Un proceso que desea enviar un mensaje utiliza la clave pública 
-    (conocida por todos los procesos) para cifrar el mensaje.
-
-    El proceso destinatario del mensaje podrá descifrarlo utilizando la 
-    clave privada, que solo él conoce, asegurando así la confidencialidad.
-
-    La clave privada es generada a partir de la clave pública, 
-    de modo que ambas están relacionadas.
- */
-public class _03_MainRSA {
+public class _01_MainRSAConfidencialidad {
 	public static void main(String[] args) {
 		try {
 			//En vez de KeyGenerator usamos KeyPairGenerator
@@ -42,21 +22,22 @@ public class _03_MainRSA {
 			
 			cifrador.init(Cipher.ENCRYPT_MODE, claves.getPrivate());
 			System.out.println(claves.getPublic().getClass().getName());
-			System.out.println("Paso 4: Hemos configurado el descifrador para usar clave publica");
+			System.out.println("Paso 4.1: Hemos configurado el descifrador para usar clave publica");
+			System.out.println("Paso 4.2: Cifrando de esta manera garantizamos CONFIDENCIALIDAD");
 			
-			String mensajeOriginal = "La cripta mágica";
+			String mensajeOriginal = "Un gran poder implica una gran responsabilidad";
 			byte[] bytesMensajeOriginal = mensajeOriginal.getBytes();
 			//ciframos el mensaje
 			byte[] bytesMensajeCifrado = cifrador.doFinal(bytesMensajeOriginal);
 			String mensajeCifrado = new String(bytesMensajeCifrado);
-			System.out.println("Paso 5: Hemos preparado y cifrado el mensaje original");
-			System.out.println("Mensaje Original: " + mensajeOriginal);
-			System.out.println("Mensaje Cifrado: " + mensajeCifrado);
+			System.out.println("Paso 5.1: Hemos cifrado el mensaje original");
+			System.out.println("Paso 5.2: Mensaje Original: " + mensajeOriginal);
+			System.out.println("Paso 5.3: Mensaje Cifrado: " + mensajeCifrado);
 			
-			System.out.println("AHORA VAMOS A DESCIFRAR EL MENSAJE CIFRADO USANDO LA CLAVE PRIVADA");
-			cifrador.init(Cipher.DECRYPT_MODE, claves.getPublic());
+			System.out.println("Paso 6.1: Ahora vamos a descifrar el criptograma usando la clave publica");
+			cifrador.init(Cipher.DECRYPT_MODE, claves.getPrivate());
 			byte[] bytesMensajeDescifrado = cifrador.doFinal(bytesMensajeCifrado);
-			System.out.println("Mensaje Descifrado: " + new String(bytesMensajeDescifrado));
+			System.out.println("Paso 6.2: Mensaje Descifrado: " + new String(bytesMensajeDescifrado));
 			
 		} catch (GeneralSecurityException e) {
 			System.out.println("Error al cifrar o descifrar el mensaje");
