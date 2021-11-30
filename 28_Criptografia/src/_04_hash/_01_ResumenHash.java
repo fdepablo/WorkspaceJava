@@ -4,7 +4,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 
-public class _01_GenerarResumenHash {
+public class _01_ResumenHash {
 
 	public static void main(String[] args) throws NoSuchAlgorithmException {
 		//Creamos el mensaje del cual queremos crear su resumen.
@@ -15,8 +15,6 @@ public class _01_GenerarResumenHash {
 		byte[] cancion2 = "Imagine".getBytes();
 		byte[] cancion3 = "We Are the Champions".getBytes();
 		byte[] cancion4 = "Hotel California".getBytes();
-		byte[] cancion5 = "".getBytes();
-		
 		
 		//Creamos un objeto MessageDigest a través del método estático 
 		//getInstance() al que se le pasa el tipo de algoritmo que vamos a 
@@ -26,19 +24,19 @@ public class _01_GenerarResumenHash {
 		md.update(cancion2);
 		md.update(cancion3);
 		md.update(cancion4);
-		md.update(cancion5);
 		
 		//El último paso será ejecutar el método "digest()" de nuestro 
 		//objeto MessageDigest para obtener el resumen, que también 
 		//será una cadena de bytes.
-		
+		System.out.println("Creando el resumen hash...");
 		byte[] resumen = md.digest();
 		String mensaje = new String(resumen);
 		System.out.println("Resumen hash: " + mensaje);
 		
-		//Mejor pasarlo a Base64, que es una codificación que nos puede dar
-		//menos problemas para trabajar con el
+		//Podemos pasarlo a la codificación BASE 64 si queremos reducir el alfa
+		//alfabeto resultante. Puede ser util si queremos guardar la información
+		//o enviar la información.
 		String mensajeHashBase64 = Base64.getEncoder().encodeToString(resumen);
-		System.out.println(mensajeHashBase64);
+		System.out.println("Resumen hash BASE 64: " + mensajeHashBase64);
 	}
 }

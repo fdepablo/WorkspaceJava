@@ -90,7 +90,7 @@ Además, un resumen hash tiene aplicaciones muy importantes:
 
 1. <b>Comprobar que un archivo no ha sido modificado y garantizar su integridad</b>. Cuando hay que transmitir mucha información a través de la red, dicha información puede transmitirse junto con el resumen y el tipo de algoritmo utilizado. Una vez que la información llega al destino, puede volverse a generar el resumen con el mismo algoritmo y comprobar si ha habido algún cambio durante la transmisión. 
 
-2. <b>Comprobar contraseñas de manera segura</b>. Las contraseás NUNCA se deben guardar encriptadas en base de datos, ya que cuando encriptamos un mensaje lo podemos desencriptar. Por ejemplo, un programador usa una clave para encriptar los passwords de los usuarios, por lo que al tener la clave puede en cualquier momento usar la misma clave para desencriptarlos. Los passwords en base de datos se guardan con el RESUMEN hash, que garantiza que nunca se podrá obtener la información original. La manera de entonces de proceder sería guardar el pasword "hasheado" en base de datos y cada vez que nos mande el usuario su password para autenticarlo sería "hasheando" tambien dicho password y compararlo con el resumen hash del password guardado en base de datos. Recordemos el el algoritmo hash nos garantiza que una misma entrada produce siempre la misma salida.
+2. <b>Comprobar contraseñas de manera segura</b>. Las contraseñas NUNCA se deben guardar encriptadas en base de datos, ya que cuando encriptamos un mensaje lo podemos desencriptar. Por ejemplo, un programador usa una clave para encriptar los passwords de los usuarios, por lo que al tener la clave puede en cualquier momento usar la misma clave para desencriptarlos. Los passwords en base de datos se guardan con el RESUMEN hash, que garantiza que nunca se podrá obtener la información original. La manera de entonces de proceder sería guardar el pasword "hasheado" en base de datos y cada vez que nos mande el usuario su password para autenticarlo sería "hasheando" tambien dicho password y compararlo con el resumen hash del password guardado en base de datos. Recordemos el el algoritmo hash nos garantiza que una misma entrada produce siempre la misma salida.
 
 ### Algoritmos Hash:
 
@@ -107,5 +107,7 @@ Pagina para crear resumenes hash a partir de ficheros o cadenas https://hash.onl
 Pagina con base de datos de resumenes hash https://crackstation.net/
 
 ## Bibliografía
+
 https://es.wikipedia.org/wiki/Criptografía
+
 https://es.wikipedia.org/wiki/Función_hash
