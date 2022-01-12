@@ -35,6 +35,7 @@ public class ControladorAltaCD extends HttpServlet {
 		Gson gson = new Gson();
 		CompactDisc cd = gson.fromJson(json, CompactDisc.class);
 		DaoCD daoCD = new DaoCD();
+		//Validaciones
 		boolean insertado = daoCD.add(cd);
 		response.getWriter().append(Boolean.toString(insertado));
 	}
