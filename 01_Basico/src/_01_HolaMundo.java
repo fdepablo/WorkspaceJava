@@ -8,7 +8,7 @@ public class _01_HolaMundo {
 	//entre un bloque "{}"
 	public static void main(String[] args) {
 		//los comentarios empiezan por doble barra
-		/*		 * 
+		/*
 		 * esto es un cometario
 		 * de mas de una linea
 		 */
