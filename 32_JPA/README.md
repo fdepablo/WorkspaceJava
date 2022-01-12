@@ -16,6 +16,7 @@ La más popular es <b>Hibernate</b>, que también se incluye en el servidor de apl
 
 Este proyecto esta hecho con JPA, EclipseLink y Maven. Aunque esta tambien preparado para funcionar con hibernate solamente cambiando las dependencias en el pom.xml.
 
+Si te da error este proyecto al importarlo hacer boton derecho sobre el proyecto -> Maven -> Update Maven Proyect para bajarte las librerías que necesita este proyecto de internet
 
 ## Configuracion de proyecto con maven
 
