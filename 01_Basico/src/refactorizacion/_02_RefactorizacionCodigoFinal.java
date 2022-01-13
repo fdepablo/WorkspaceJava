@@ -12,13 +12,16 @@ import java.util.Scanner;
 //pulsar botón derecho sobre el fichero. Se puede hacer tambien con "ctrl + V"
 
 //Podemos cambiar el nombre de una clase haciendo un "rename" del fichero
-public class _01_RefactorizacionCodigoOriginal {
+public class _02_RefactorizacionCodigoFinal {
+
+	private static final String VARIOS_ASTERISCOS = "*********";
+	private static int numero;
 
 	public static void main(String[] args) {
 		
 		//Aqui vamos a convertir la cadena "******" a una constante, 
 		//mediante la opción "Extract constant"
-		System.out.println("******" + "Bienvenidos a mi programa" + "******");
+		System.out.println(VARIOS_ASTERISCOS + "Bienvenidos a mi programa" + VARIOS_ASTERISCOS);
 				
 		//Podemos extraer esta cadena a una variable, para ello 
 		//haremos un "Extract local variable". Podriamos hacer lo  mismo 
@@ -26,27 +29,26 @@ public class _01_RefactorizacionCodigoOriginal {
 		
 		//Una vez que hayamos extraido la cadena a una variable local, 
 		//haremos un refactor del nombre con "rename"		
-		System.out.println("Thor");
+		String nombreAvenger = "Thor";
+		System.out.println(nombreAvenger);
 		
-		if("Thor".length() == 4) {
-			System.out.println("******" + "La longitud de Thor es 4" + "******");
+		if(nombreAvenger.length() == 4) {
+			System.out.println(VARIOS_ASTERISCOS + "La longitud de Thor es 4" + VARIOS_ASTERISCOS);
 		}else {
-			System.out.println("******" + "La longitud de Thor no es 4" + "******");
+			System.out.println(VARIOS_ASTERISCOS + "La longitud de Thor no es 4" + VARIOS_ASTERISCOS);
 		}		
 		
-		//Podemos convertir variables tambien en atributos con
-		//"Convert local variable to field"
-		int numero = 5;
+		numero = 5;
 		System.out.println(numero);
 		
 		System.out.println("*****************************");		
-		int resultado = sumar(10,2);
+		double resultado = sumarDosNumeros(10,2);
 		System.out.println(resultado);
 	}
 	
 	//Podemos cambiar la firma de un metodo con "Change Method Signature"
-	private static int sumar(int a, int b) {
-		int suma = a + b;
+	static double sumarDosNumeros(double a, double b) {
+		double suma = a + b;
 		return suma;
 	}
 	
@@ -55,16 +57,21 @@ public class _01_RefactorizacionCodigoOriginal {
 	public static void operar(int operacion) {
 		if(operacion == 0) {
 			System.out.println("Damos alta el nombre, opcion elegida " + operacion);
-			Scanner sc = new Scanner(System.in);
-			String nombre = sc.nextLine();
-			System.out.print("Dato recogido correctamente");
+			String nombre = pedirNombre();
 			System.out.println("Dando de alta el nombre " + nombre);
 		}else if(operacion == 1) {
 			System.out.println("Damos de baja el nombre, opcion elegida " + operacion);
 			Scanner sc = new Scanner(System.in);
-			String nombre = sc.nextLine();
+			String nombre = pedirNombre();
 			System.out.print("Dato recogido correctamente");
 			System.out.println("Dando de baja el nombre " + nombre);
 		}
+	}
+
+	private static String pedirNombre() {
+		Scanner sc = new Scanner(System.in);
+		String nombre = sc.nextLine();
+		System.out.print("Dato recogido correctamente");
+		return nombre;
 	}
 }
