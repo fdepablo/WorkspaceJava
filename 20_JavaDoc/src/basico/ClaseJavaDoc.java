@@ -70,15 +70,13 @@ public class ClaseJavaDoc {
 	}
 
 	/**
-	 * Aqui iría una descripción del metodo, pero como además tenemos parametros
+	 * Aquí iría una descripción del metodo, pero como además tenemos parametros
 	 * de entrada y de salida, deberiamos crear anotaciones que representen y
 	 * expliquen los parametros de entrada y el parametro de salida
 	 * 
-	 * @param numero
-	 *            Valor numerico del entero
-	 * @param fecha
-	 *            Valor fecha de nacimiento de la persona (por ejemplo...)
-	 * @return Cadena devuelta calculada despues de... (lo que sea)
+	 * @param numero aquí deberiamos explicar lo que representa este parametro
+	 * @param fecha idem anterior
+	 * @return explicar lo que devolvemos o los posibles valores de retorno
 	 */
 	public String metodoDos(Integer numero, Date fecha) {
 		//AQUI IRIA EL CODIGO DEL METODO

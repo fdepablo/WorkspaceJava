@@ -5,7 +5,7 @@ package entidad;
  * 
  * Esta clase sera usada para un videojuego de lucha
  * 
- * @author Peter Pan
+ * @author Steve Rogers
  * @version 1.0
  *
  */
@@ -59,7 +59,6 @@ public class Brujo {
 	}
 	
 	// Los getter y setters no hace falta documentarlos normalmente
-	// Tampoco hace falta probarlos con JUnit
 	public int getVida() {
 		return vida;
 	}

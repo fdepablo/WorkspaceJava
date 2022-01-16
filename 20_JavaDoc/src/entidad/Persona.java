@@ -1,17 +1,12 @@
 package entidad;
 
 /**
- * Una vez que creamos una clase deberiamos de probar que TODOS sus 
- * metodos funcionan adecuadamente, excepto los getters y setters que 
- * suelen ser muy sencillos
- * 
- * Para probar los metodos de una clase debemos de, o leer su javadoc
- * para entender lo que hace el metodo, o meternos en el codigo y 
- * entender lo que hace la funcion
- * 
+ * Entidad persona con un nombre, una edad, una posición y un objeto de tipo
+ * Direccion
  * 
  * @author Tony Stark
  * @version 1.5
+ * @see entidad.Direccion
  *
  */
 public class Persona {
@@ -21,6 +16,9 @@ public class Persona {
 	 * El nombre de la persona
 	 */
 	private String nombre;
+	/**
+	 * La edad de la persona
+	 */
 	private int edad;
 	
 	/**
@@ -93,7 +91,7 @@ public class Persona {
 		return nombre;
 	}
 	
-	//Este en cambio si que haría falta probarlo y documentarlo, ya que lo hemos cambiado
+	//Este en cambio si que haría falta documentarlo, ya que le hemos cambiado.
 	/**
 	 * Este metodo asiganará el nombre pasado por parametro a la 
 	 * propiedad nombre del objeto, pero unicamente cuando el nombre 
@@ -127,7 +125,7 @@ public class Persona {
 	 * Metodo que copia una persona atributo por atributo a un
 	 * nuevo objeto persona
 	 * 
-	 * @return el objeto con la persona copiada
+	 * @return un objeto nuevo con la persona copiada
 	 */
 	public Persona copiarPersona() {
 		Persona p1 = new Persona();
@@ -163,11 +161,12 @@ public class Persona {
 	 * No se admiten posiciones negativas
 	 * 
 	 * @param posicion representa una posicion en el eje de las X, es 
-	 * la posición con la que voy a comparar la persona
+	 * la posición con la que voy a comparar la persona. No se admite
+	 * valores negativos
 	 * 
 	 * @return la distancia en metros y absoluta de la posicion 
-	 * respecto al objeto. Devolvemos -1 en caso de que la posicion 
-	 * sea negativa
+	 * respecto al objeto. Devolvemos -1 en caso de que la posicion que le
+	 * pasemos por parametro sea negativa
 	 */
 	public int calcularDistancia(int posicion) {
 		if(posicion < 0) {
@@ -181,38 +180,5 @@ public class Persona {
 		}else {
 			return posicion - this.posicion;
 		}
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + edad;
-		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-		result = prime * result + posicion;
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Persona other = (Persona) obj;
-		if (edad != other.edad)
-			return false;
-		if (nombre == null) {
-			if (other.nombre != null)
-				return false;
-		} else if (!nombre.equals(other.nombre))
-			return false;
-		if (posicion != other.posicion)
-			return false;
-		return true;
-	}
-
-	
+	}	
 }

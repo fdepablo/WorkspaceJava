@@ -12,7 +12,6 @@ import java.util.Date;
  * 
  * En javadoc podemos poner anotaciones
  * 
- * Esta anotacion representará el autor que ha hecho esta clase
  * @author Bruce Banner
  * 
  * Esta anotacion representaria la version de la clase
