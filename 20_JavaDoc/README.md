@@ -1,7 +1,7 @@
-![Javadoc](img/javadoc.png "Javadoc")
-# Javadoc
+![JavaDoc](img/javadoc.png "JavaDoc")
+# JavaDoc
 
-Javadoc es una utilidad de Oracle para la generación de documentación de APIs en formato HTML a partir de código fuente Java. Javadoc es el estándar de la industria para documentar clases de Java. La mayoría de los IDEs los generan automáticamente.
+Javadoc es una utilidad de Oracle para la generación de documentación en formato HTML a partir de código fuente Java. Javadoc es el estándar de la industria para documentar clases de Java. La mayoría de los IDEs los generan automáticamente.
 
 
 ## Objetivos
@@ -20,7 +20,7 @@ A su vez, la documentación esta muy ligada con las pruebas unitarias, hasta tal 
 
 Una buena practica sería documentar el código antes de implementarlo.
 
-## Creacion de Javadoc
+## Creacion de JavaDoc
 
 El Javadoc se crea dentro de las clases de java y tendrá la siguiente forma:
 
@@ -35,7 +35,7 @@ El Javadoc se crea dentro de las clases de java y tendrá la siguiente forma:
 El Javadoc <b>DEBERA IR</b> al principio de cada clase, atributo, constructor o método, dependiendo de qué parte se quiera documentar.
 
 
-## Anotaciones Javadoc
+## Anotaciones en JavaDoc
 
 Para generar API con Javadoc podemos usar ciertas palabras reservadas precedidas por el carácter "@" que son llamadas <b>anotaciones</b>. El objetivo de las anotaciones es la de enriquecer la documentación y de organizarla de una manera estandar. Cada anotación representa un valor diferente y tenemos distinto tipos.
 
@@ -45,7 +45,7 @@ Veamos las principales anotaciones que existen:
  	<tr><th>ANOTACION</th><th style="text-align:left">DESCRIPCION</th></tr>
  	<tr><td style="font-weight:bold">@author</td><td>Nombre del desarrollador</td></tr>
 	<tr><td style="font-weight:bold">@version</td><td>Versión del método o clase</td></tr>
-	<tr><td style="font-weight:bold">@param</td><td>Definición de un parámetro de un método, es requerido para todos los parámetros del método</td></tr>
+	<tr><td style="font-weight:bold">@param</td><td>Definición de un parámetro de entrada de un método, es requerido para todos los parámetros del método</td></tr>
 	<tr><td style="font-weight:bold">@return</td><td>Informa de lo que devuelve el método, no se puede usar en constructores o métodos "void"</td></tr>
 	<tr><td style="font-weight:bold">@throws</td><td>Excepción lanzada por el método, primero la clase y luego la explicación</td></tr>
 	<tr><td style="font-weight:bold">@see</td><td>Asocia con un elemento externo como un método, una clase o cualquier recurso en la red. Varias maneras de hacer referencia -> #método(); clase#método(); paquete.clase; paquete.clase#método(). Tambien podemos usar la anotacion @link (ver más abajo)</td></tr>
@@ -62,8 +62,9 @@ Estas anotaciones se escriben dentro del Javadoc, Ej:
     *
     */
 
+Dentro del codigo veremos más ejemplos con mayor detalle.
 
-## Enriquecer el Javadoc con HTML
+## Enriquecer el JavaDoc con HTML
 
 Dento de un comentario de Javadoc, se pueden poner etiquetas HTML para enriquecer el formato. Javadoc acepta la mayoría de ellas.
 
@@ -115,10 +116,11 @@ Primero habría que documentar el metodo y luego poner las anotaciones que estime
 
 	 /**
 	  * Método que establece el valor al atributo titulo. El titulo pasado por parametro no pude 
-	  * ser nulo ni estar vacio. En caso de que sea nulo o vacio el método arrojara una excepción.
+	  * ser nulo ni estar vacio. En caso de que sea nulo, vacio o tenga espacios en blando
+	  * únicamente, el método arrojara una excepción.
 	  *
 	  * @param titulo El nuevo título que queremos establecer
-	  * @throws IllegalArgumentException Si titulo es <b>null</b>, está vacío o contiene sólo espacios.s	
+	  * @throws IllegalArgumentException Si titulo es <b>null</b>, está vacío o contiene sólo espacios en blanco	
 	  */
 	 public void setTitulo (String titulo) throws IllegalArgumentException
 	 {
@@ -132,7 +134,7 @@ Primero habría que documentar el metodo y luego poner las anotaciones que estime
 	   }
 	 }
 
-Notese que solo ponemos un <b<@param</b> porque solo hay un parámetro de entrada y no ponemos <b>@return</b> porque el metodo es void y no retorna nada. También observamos como la documentación esta justo encima del método que queremos documentar.
+Notese que solo ponemos un <b>@param</b> porque solo hay un parámetro de entrada y no ponemos <b>@return</b> porque el metodo es void y no retorna nada. También observamos como la documentación esta justo encima del método que queremos documentar.
 
 <b>IMPORTANTE!</b> Los setter y los getter normalmente NO se comentan. Solo se comentan en caso de que hagan alguna funcionalidad diferente a lo que hace por defecto (asingar o devolver valores de atributos). Un ejemplo podría ser el metodo anterior <b>setTitulo</b>, normalmente no se documentaría, pero en este caso SI que sería obligatorio hacerlo ya que hace una funcionalidad diferente al setTitulo por defecto que nos crearia un IDE como eclipse.
 
@@ -144,7 +146,7 @@ Los constructores tambien se pueden documentar. Siguen las mismas reglas que los
 
 Una vez aplicado el javadoc sobre el codigo, podemos generar documentos html de manera automática con toda la información que hemos puesto sobre dicho codigo. La documentación quedará como la documentación oficial de Oracle, [documentacion oficial String](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html) 
 
-Para hacerlo con eclipse debemos de realizar los siguientes casos.
+Para hacerlo con Eclipse debemos de realizar los siguientes casos.
 
 1. Ir a la siguiente pestaña de eclipse: Proyect -> Generate JavaDoc
 	
@@ -162,8 +164,6 @@ Para hacerlo con eclipse debemos de realizar los siguientes casos.
 
 ## Bibliografía
 
-[https://es.wikipedia.org/wiki/Javadoc](https://es.wikipedia.org/wiki/Javadoc)
-
-[https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html](https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html)
-
-[https://www.markdownguide.org/extended-syntax/#tables](https://www.markdownguide.org/extended-syntax/#tables)
+- [https://es.wikipedia.org/wiki/Javadoc](https://es.wikipedia.org/wiki/Javadoc)
+- [https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html](https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html)
+- [https://www.markdownguide.org/extended-syntax/#tables](https://www.markdownguide.org/extended-syntax/#tables)

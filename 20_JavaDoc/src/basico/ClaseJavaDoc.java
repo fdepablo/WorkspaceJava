@@ -63,6 +63,8 @@ public class ClaseJavaDoc {
 	 * Otro comentario de metodo simple. Al no tener parametros de entrada ni de 
 	 * salida, simplemente deberiamos aportar una descripción de lo que hace 
 	 * este método
+	 * 
+	 * @author Peter Parker
 	 */
 	public void metodoUno() {
 		// AQUI IRIA EL CODIGO DEL METODO
@@ -104,8 +106,7 @@ public class ClaseJavaDoc {
 	/**
 	 * Aqui iría una descripción del metodo y sus parametros de entrada y de salida
 	 * 
-	 * @param texto
-	 *            Valor texto.
+	 * @param texto Valor texto.
 	 * @return Valor numerico.
 	 * @since 1.0
 	 * @deprecated Establecemos como obsoleto el método, lo cual aparecera tachado.

@@ -3,12 +3,8 @@ package basico;
 import java.util.Date;
 
 /**
- * Esto seria un comentario java doc, que sirve para documetar, y empiezan por "/**"
- * y acaban por "*" y "/"
- * 
- * Podemos documentar principalmente clases, atributos y métodos
- * 
- * Aqui iria una descripcion de lo que hace clase, con todo el nivel de detalle que se precise
+ * Aqui iria una descripcion de lo que hace clase, con todo el nivel de detalle 
+ * que se precise
  * 
  * En javadoc podemos poner anotaciones
  * 

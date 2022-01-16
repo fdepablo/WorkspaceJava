@@ -22,13 +22,13 @@ public class Persona {
 	private int edad;
 	
 	/**
-	 * Posicion de la persona en el eje de las X dentro de una matriz
+	 * Posicion de la persona en el eje de las X dentro de una matriz, en metros
 	 */
 	private int posicion;
 	
 	/**
 	 * La direccion de la persona asociada
-	 * @see Direccion
+	 * @see entidad.Direccion
 	 */
 	private Direccion direccion;
 	
@@ -64,8 +64,7 @@ public class Persona {
 	}
 	
 	//GETTER Y SETTER
-	//Estos metodos no hace falta probarlos y tampoco hace falta
-	//hace javadoc
+	//Estos metodos no hace falta crear Javadoc
 	
 	
 	public int getEdad() {
@@ -92,6 +91,7 @@ public class Persona {
 	}
 	
 	//Este en cambio si que haría falta documentarlo, ya que le hemos cambiado.
+	
 	/**
 	 * Este metodo asiganará el nombre pasado por parametro a la 
 	 * propiedad nombre del objeto, pero unicamente cuando el nombre 
@@ -128,12 +128,12 @@ public class Persona {
 	 * @return un objeto nuevo con la persona copiada
 	 */
 	public Persona copiarPersona() {
-		Persona p1 = new Persona();
-		p1.setNombre(this.nombre);
-		p1.setEdad(this.edad);
-		p1.setPosicion(this.posicion);
+		Persona p = new Persona();
+		p.setNombre(this.nombre);
+		p.setEdad(this.edad);
+		p.setPosicion(this.posicion);
 		
-		return p1;
+		return p;
 	}
 	
 	/**
@@ -180,5 +180,11 @@ public class Persona {
 		}else {
 			return posicion - this.posicion;
 		}
-	}	
+	}
+
+	@Override
+	public String toString() {
+		return "Persona [nombre=" + nombre + ", edad=" + edad + ", posicion=" + posicion + ", direccion=" + direccion
+				+ "]";
+	}		
 }
