@@ -1,6 +1,7 @@
 package modelo.entidad;
 
 public class Persona {
+	
 	private int id;
 	private String nombre;
 	private int edad;

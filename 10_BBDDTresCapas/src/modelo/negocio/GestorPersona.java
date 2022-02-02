@@ -27,7 +27,6 @@ public class GestorPersona {
 	 * tenga menos de 3 caracteres
 	 */
 	public int alta(Persona p){
-		//aplicamos la regla de negocio
 		if(p.getNombre().length() >= 3) {
 			boolean alta = daoPersona.alta(p);
 			if(alta) {
@@ -35,8 +34,9 @@ public class GestorPersona {
 			}else {
 				return 1;
 			}
+		}else {
+			return 2;
 		}
-		return 2;
 	}
 	
 	public boolean baja(int id){
