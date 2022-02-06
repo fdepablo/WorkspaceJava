@@ -1,15 +1,15 @@
 public class PruebaArrays {
 	public static void main(String[] args) {
-		//El tamaño es fijo, y se inicializan a 0
+		//El tamaï¿½o es fijo, y se inicializan a 0
 		int[] arrayEnteros = new int[10];
 		arrayEnteros[0] = 4;
 		arrayEnteros[1] = 9;
-		int tamañoArray = arrayEnteros.length;
-		//el tamaño es con ell que se creo, no del numero de
+		int tamanioArray = arrayEnteros.length;
+		//el tamaï¿½o es con ell que se creo, no del numero de
 		//elementos
-		System.out.println("El tamaño del array es: " + tamañoArray);
+		System.out.println("El tamaÃ±o del array es: " + tamanioArray);
 		
-		for(int i = 0;i<tamañoArray;i++){
+		for(int i = 0;i<tamanioArray;i++){
 			System.out.println("El valor en la posicion "
 					+ i + " es " + arrayEnteros[i]);
 		}

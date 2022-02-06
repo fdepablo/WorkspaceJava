@@ -11,11 +11,11 @@ public class EmulacionCafetera {
 		ec.opcionesCafe();
 		Scanner sc = new Scanner(System.in);
 		int opcionCafe = sc.nextInt();
-		ec.opcionesTamaño();
+		ec.opcionesTamanio();
 		int opcionTamanio = sc.nextInt();
 		TipoCafe tipoCafe = TipoCafe.values()[opcionCafe];
-		TamanioCafe tamañoCafe = TamanioCafe.values()[opcionTamanio];
-		ec.procesandoCafe(tipoCafe,tamañoCafe);
+		TamanioCafe tamanioCafe = TamanioCafe.values()[opcionTamanio];
+		ec.procesandoCafe(tipoCafe,tamanioCafe);
 		sc.close();
 	}
 	
@@ -29,8 +29,8 @@ public class EmulacionCafetera {
 		System.out.println("Seleccione un tipo de cafe");
 	}
 	
-	public void opcionesTamaño(){
-		System.out.println(" Tamaño de Cafe ");
+	public void opcionesTamanio(){
+		System.out.println(" Tamaï¿½o de Cafe ");
 		System.out.println("------------------");
 		for(TamanioCafe tamanioCafe : TamanioCafe.values()){
 			System.out.println(" " + tamanioCafe.ordinal() 
@@ -38,12 +38,12 @@ public class EmulacionCafetera {
 					+ "(" + tamanioCafe.getCapacidad()
 					+ " cl)");
 		}
-		System.out.println("Seleccione un tamaño de cafe");
+		System.out.println("Seleccione un tamaï¿½o de cafe");
 	}
 	
 	public void procesandoCafe(TipoCafe tipoCafe, TamanioCafe tamCafe){
 		System.out.println("Gracias por elegir nuestro cafe");
 		System.out.println("Disfrute su cafe " + tipoCafe + 
-				" de tamaño " + tamCafe);
+				" de tamaï¿½o " + tamCafe);
 	}
 }

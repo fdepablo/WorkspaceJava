@@ -10,7 +10,7 @@ public class PruebaGestorLenguaje {
 		
 		System.out.println(gl.getLiteral("aplicacion.saludo.breve"));
 		
-		GestorLenguaje.getInstance().setEspañol();
+		GestorLenguaje.getInstance().setEspaniol();
 		
 		System.out.println(gl.getLiteral("aplicacion.saludo.largo"));
 		

@@ -54,9 +54,9 @@ public class Main {
 		}
 		
 		System.out.println("********** Carrera ************");
-		Persona carlegüis = new Persona();
-		carlegüis.setNombre("carlegüis");
-		carlegüis.setCapacidadMovimiento(15);
+		Persona carl = new Persona();
+		carl.setNombre("carl");
+		carl.setCapacidadMovimiento(15);
 		
 		//Clases anonimas
 		Movible coche = new Movible() {			
@@ -73,7 +73,7 @@ public class Main {
 		};
 		
 		ArrayList<Movible> listaParticipantes = new ArrayList<>();
-		listaParticipantes.add(carlegüis);
+		listaParticipantes.add(carl);
 		listaParticipantes.add(ballena);
 		listaParticipantes.add(oso);
 		listaParticipantes.add(tiburon);

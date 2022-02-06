@@ -26,7 +26,7 @@ public class Main {
 		
 		Direccion direccionCasa = new Direccion();
 		direccionCasa.setTipoVia(TipoVia.AVENIDA);
-		direccionCasa.setNombreVia("jogüards");
+		direccionCasa.setNombreVia("jogï¿½ards");
 		direccionCasa.setCP("09876");
 		direccionCasa.setNumero(1);
 		
@@ -52,12 +52,12 @@ public class Main {
 		habitacionSalon.setTipoHabitacion(TipoHabitacion.SALON);
 		habitacionSalon.setMetros(200);
 		
-		Habitacion habitacionBaño = new Habitacion();
-		habitacionBaño.setTipoHabitacion(TipoHabitacion.BAÑO);
-		habitacionBaño.setMetros(10);
+		Habitacion habitacionBanio = new Habitacion();
+		habitacionBanio.setTipoHabitacion(TipoHabitacion.BANIO);
+		habitacionBanio.setMetros(10);
 		
 		listaHabitaciones.add(habitacionSalon);
-		listaHabitaciones.add(habitacionBaño);
+		listaHabitaciones.add(habitacionBanio);
 		
 		Casa joguard = new Casa();
 		joguard.setPrecio(20000);

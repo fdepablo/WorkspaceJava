@@ -1,7 +1,7 @@
 package enums;
 
 public enum TamanioCafe {
-	PEQUEÑO(5),
+	PEQUENIO(5),
 	MEDIANO(10),
 	GRANDE(20);
 	

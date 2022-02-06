@@ -25,7 +25,7 @@ public class GestorLenguaje {
 		return rb.getString(literal);
 	}
 	
-	public void setEspañol(){
+	public void setEspaniol(){
 		rb = ResourceBundle.getBundle(NOMBRE_BASE,new Locale("es","ES"));
 	}
 	
