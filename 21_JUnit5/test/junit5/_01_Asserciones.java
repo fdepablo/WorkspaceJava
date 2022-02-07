@@ -31,17 +31,7 @@ import programa.Persona;
 class _01_Asserciones {
 
 	/*
-	 * Podemos ejecutarlas con boton derecho -> run as.. -> JUnit Test
-	 * 
-	 * Posibles colores al lanzar la prueba:
-	 * 
-	 * 1) Verde, todas las pruebas han ido bien
-	 * 2) Azul, alguna prueba ha ido mal, alguna aserción no se ha 
-	 * cumplido o se ha ejecutado la función fail()
-	 * 3) Rojo, ha habido algun error en la prueba, digamos que no es 
-	 * concluyente y se debería revisar
-	 * 
-	 * Para dar por pasadas las pruebas debería se salir el color verde
+	 * Podemos ejecutarlas con boton derecho | run as | JUnit Test
 	 */
 	
 	@BeforeAll
