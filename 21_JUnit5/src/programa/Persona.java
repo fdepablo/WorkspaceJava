@@ -93,11 +93,11 @@ public class Persona {
 		return nombre;
 	}
 	
-	//Este en cambio si que haría falta probarlo y documentarlo, ya que lo hemos cambiado
+	//Este en cambio si que harÃ­a falta probarlo y documentarlo, ya que lo hemos cambiado
 	/**
-	 * Este metodo asiganará el nombre pasado por parametro a la 
+	 * Este metodo asiganarÃ¡ el nombre pasado por parametro a la 
 	 * propiedad nombre del objeto, pero unicamente cuando el nombre 
-	 * pasado tenga más de 3 caracteres. En caso contrario (menor o 
+	 * pasado tenga mÃ¡s de 3 caracteres. En caso contrario (menor o 
 	 * igual que 3 caracteres) se le pondra el valor de vacio ("")
 	 * 
 	 * @param nombre representa el nombre a dar de alta
@@ -163,7 +163,7 @@ public class Persona {
 	 * No se admiten posiciones negativas
 	 * 
 	 * @param posicion representa una posicion en el eje de las X, es 
-	 * la posición con la que voy a comparar la persona
+	 * la posiciï¿½n con la que voy a comparar la persona
 	 * 
 	 * @return la distancia en metros y absoluta de la posicion 
 	 * respecto al objeto. Devolvemos -1 en caso de que la posicion 
@@ -172,7 +172,7 @@ public class Persona {
 	public int calcularDistancia(int posicion) {
 		if(posicion < 0) {
 			return -1;//error, no se aceptan posiciones negativas
-			//Tambien valdría y sería una mejor opción, arrojar 
+			//Tambien valdrÃ­a y serÃ­a una mejor opciÃ³n, arrojar 
 			//Excepciones
 		}
 		

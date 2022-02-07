@@ -16,15 +16,6 @@ public class _01_TestPersona {
 	
 	private Persona p1;
 	
-	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
-		
-	}
-
-	@AfterAll
-	static void tearDownAfterClass() throws Exception {
-	}
-
 	@BeforeEach
 	void setUp() throws Exception {
 		//Me interesa antes de cada test tener un objeto persona 
@@ -35,36 +26,10 @@ public class _01_TestPersona {
 
 	@AfterEach
 	void tearDown() throws Exception {
+		p1 = null;
 	}
 
 	/**
-	 * En esta prueba unitaria debemos de probar que nuestro metodo 
-	 * "setNombre" de la clase persona funciona adecuadamente. 
-	 * 
-	 * Un metodo funciona adecuadamente cuando hace lo que
-	 * tiene que hacer, es decir, cuando nos devuelve lo que nosotros
-	 * esperamos que nos devuelva
-	 * 
-	 * Para probar un metodo adecuadamente tenemos dos opciones:
-	 * 
-	 * opcion 1, si la documentacion esta bien hecha, con leer la 
-	 * documentación y hacer todos los casos que me dice sería 
-	 * suficiente
-	 * 
-	 * opcion 2, si la dccumentacion no está bien hecha o no existe
-	 * entonces no nos queda más remedio que entender el metodo para
-	 * poder probarlo.
-	 * 
-	 * Para probar que "setNombre" funciona bien, debemos de pasar 
-	 * por todos los casos del metodo (o por todas las lineas)
-	 * 
-	 * Una buena regla para desarrollar código es hacer el metodo, 
-	 * solo la definicion, luego hacer la documentacion del método 
-	 * (Java doc), luego implementarlo y por ultimo hacer su prueba 
-	 * unitaria. De hecho esto se retroalimenta y es muy probable que 
-	 * al pasar la prueba tengas que cambiar la documentacion y la 
-	 * implementacion
-	 * 
 	 * En esta prueba unitaria vamos a probar el metodo "setNombre"
 	 */
 	@Test
@@ -72,7 +37,7 @@ public class _01_TestPersona {
 		//No hace falta crear el objeto porque  lo creamos en el 
 		//metodo anotado con @BeforeEach
 		p1.setNombre("Goku");
-		//el nombre tiene que estar puesto a Goku
+		//el nombre en el objeto tiene que estar puesto a Goku
 		
 		//Espero que el nombre sea Goku, y lo compruebo con el nombre 
 		//que hay en el objeto
@@ -85,7 +50,7 @@ public class _01_TestPersona {
 		//que hay en el objeto
 		assertEquals("", p1.getNombre());
 		
-		//Podemos pasar mas pruebas, no tienen porque estar de más
+		//Podemos pasar mas pruebas, no tienen porque estar de mï¿½s
 		p1.setNombre("az");
 		assertEquals("", p1.getNombre());
 		
@@ -134,13 +99,14 @@ public class _01_TestPersona {
 		assertEquals(p1.getEdad(), p2.getEdad());
 		assertEquals(p1.getPosicion(), p2.getPosicion());
 		
-		//para dar por buena la prueba tengo que comprobar que
+		//Para dar por buena la prueba tengo que comprobar que
 		//ambos objetos no son el mismo
 		
 		//System.out.println(p1);
 		//System.out.println(p2);
-		assertNotSame(p1, p2);//no nos valdría el assertNotEquals ya que el metodo equal esta
-							//sobreescrito en la clase Persona
+		//No nos valdrÃ­a el assertNotEquals ya que el metodo equal esta
+		//sobreescrito en la clase Persona
+		assertNotSame(p1, p2);
 	}
 	
 	@Test
@@ -171,7 +137,7 @@ public class _01_TestPersona {
 	
 	@Test
 	public void testCalcularDistacia() {
-		// Para este test, al menos habría que probar 3 casos
+		// Para este test, al menos habrÃ­a que probar 3 casos
 		p1.setPosicion(100);
 		
 		int distancia = p1.calcularDistancia(-50);
@@ -190,7 +156,7 @@ public class _01_TestPersona {
 		distancia = p1.calcularDistancia(50);
 		assertEquals(50, distancia);// 100 - 50 = 50
 		
-		//Tercer caso, la posición pasada es mayor que la posicion
+		//Tercer caso, la posiciï¿½n pasada es mayor que la posicion
 		//del objeto
 		distancia = p1.calcularDistancia(150);
 		

@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-//import org.junit.Ignore;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -32,55 +31,19 @@ class _01_Asserciones {
 
 	/*
 	 * Podemos ejecutarlas con boton derecho | run as | JUnit Test
+	 * 
+	 * En este caso no vamos a crear el resto de metodos del ciclo de vida
 	 */
 	
-	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
-		System.out.println("Esto se ejecuta UNA sola vez, al PRINCIPIO de todos los test");
-	}
-
-	@AfterAll
-	static void tearDownAfterClass() throws Exception {
-		System.out.println("Esto se ejecuta UNA sola vez, al FINAL de todo");
-	}
-
-	@BeforeEach
-	void setUp() throws Exception {
-		System.out.println("Se ejecuta ANTES de cada test");
-	}
-
-	@AfterEach
-	void tearDown() throws Exception {
-		System.out.println("Se ejecuta DESPUES de cada test");
-	}
-
 	@Test
 	public void acabaEnMundoTest() {
 		System.out.println("Test 1");
 		//Este ejemplo es como si la clase String de java no se hubiera
-		//probado y la gente de oracle nos encargara que nos asegurarmos
-		//que sus metodos funcionan
+		//probado y la gente de oracle nos encargara de asegurarnos
+		//de que sus metodos funcionan. Para ello debemos de leer su
+		//documentaci√≥n.
 		String cadena = "hola mundo";
-		// Las funciones assert son funciones de aceptaciÛn
-		
-		// Sirven para dar por valida una prueba, si no cumple un assert 
-		//la prueba sera fallida
-		// Si lo cumple, la prueba sera valida
-
-		// Un assert es determinante para dar por buena una prueba. En 
-		//cuanto se ejecute un assert y ese assert de FALLO, se acaba la 
-		//prueba
-		
-		//Si el assert no da fallo, seguiria con la ejecuciÛn de la prueba 
-		//(pudiendo poner otros asserts)
-		
-		//Normalmente estos metodos trabajan con clases y metodos del 
-		//programa principal para probar su funcionamiento
-		
-		//Este assert comprueba que el resultado sea "true"
 		assertTrue(cadena.endsWith("mundo"));
-		//Este ejemplo serÌa como si yo estuviera testeando la clase
-		//String
 	}
 	
 	@Test
@@ -92,33 +55,31 @@ class _01_Asserciones {
 	}
 	
 	@Test
-	public void esIgualAHolaMundoTest() {
+	public void esIgualTest() {
 		System.out.println("Test 3");
 		String cadena = "hola mundo";
-		//En este caso esperamos que sean iguales 
-		//(seg˙n el metodo equals())
 		
-		//Vamos a testear el metodo toUpperCase()
+		//Vamos a testear el metodo toUpperCase() de String
 		String resultadoEsperado = "HOLA MUNDO";
-		assertEquals(cadena.toUpperCase(),resultadoEsperado);
+		String resultadoObtenido = cadena.toUpperCase();
+		assertEquals(resultadoEsperado,resultadoObtenido);
 		//No solo para String, para todos los primitivos, objetos, etc
 	}
 	
 	@Test
-	public void noEsIgualAPepeTest() {
+	public void noEsIgualTest() {
 		System.out.println("Test 4");
 		String cadena = "Hola Mundo";
-		//Que no sean iguales (seg˙n el metodo equals())
-		//Vamos a testear el metodo toLowerCase
 		String resultadoNoEsperado = "HOLA MUNDO";
-		assertNotEquals(cadena.toLowerCase(), resultadoNoEsperado);
+		String resultadoObtenido = cadena.toLowerCase();
+		assertNotEquals(resultadoNoEsperado,resultadoObtenido);
 	}
 
 	@Test
 	public void esNullTest() {
 		System.out.println("Test 5");
 		String cadena = null;
-		//esperamos que sea nulo
+
 		assertNull(cadena);
 	}
 	
@@ -126,11 +87,9 @@ class _01_Asserciones {
 	public void noEsNullTest() {
 		System.out.println("Test 6");
 		String cadena = new String("Hola mundo");
-		//Esperamos que no sea nulo
+
 		assertNotNull(cadena);
 	}
-	//Hasta aquÌ los asserts m·s importantes
-	
 	
 	//Podemos tambien que ocurra alguna excepcion
 	@Test
@@ -139,13 +98,11 @@ class _01_Asserciones {
 		
 		String cadena = new String("Hola mundo");
 		
-		//Hay que hacer una funcion lambda
-		Exception exception = assertThrows(
+		//Hay que hacer una funcion lambda sobre el metodo que
+		//queremos probar si lanza una excepci√≥n concreta.
+		assertThrows(
 				IndexOutOfBoundsException.class, 
 				() -> cadena.charAt(20));
-		
-		//la excepcion capturada es IndexOutOfBoundsException
-		//por lo que el mensaje que tendr· ser· el siguiente
 	}
 	
 	//Tiempo maximo para que se ejecute el test (en ms)
@@ -156,8 +113,7 @@ class _01_Asserciones {
 		String cadena = new String("Hola mundo");
 		
 		Thread.sleep(50);
-		//Si se demora m·s de 100ms no se ejecuta m·s codigo
-		//se parar· la ejecuciÛn
+		//Si se demora m√°s de 100ms el test no ser√° valido
 		System.out.println("Fin del Test 8");
 	}
 	
@@ -170,8 +126,8 @@ class _01_Asserciones {
 		List<String> lista2 = new ArrayList<>();
 		lista2.add("Pepe");
 		lista2.add("Ana");
-		//Con esto comprobamos que sean igual y que tengan 
-		//los mismos elementos 2 arrays
+		//Con esto comprobamos que dos arrays tengan los mismos elementos
+		//y sean iguales
 		assertArrayEquals(lista1.toArray(), lista2.toArray());
 	}
 	
@@ -183,22 +139,19 @@ class _01_Asserciones {
 		Persona p2 = new Persona();
 		
 		p1 = p2;
-		//Comprobamos si apuntan al mismo objeto(no invoca a equal, 
-		//es si la referencia apunta al mismo objeto)
+		//Comprobamos si apuntan al mismo objeto(no invoca al m√©todo "equal"), 
+		//es decir, que ambas referencias apunten al mismo objeto.
 		assertSame(p1, p2);//este test falla, ya que son objetos diferentes
-		//tambien tenemos assertNotSame(s1,s2)
 	}
 	
-	/*
+	
 	@Test
 	public void failTest() throws InterruptedException{
 		System.out.println("Test 11");
-		//podemos fallar el test bajo alguna cÛndiciÛn, si se llega a ejecutar fail() en algun momento
-		//se da por fallada la prueba
-		if(true) {
-			fail("Con esto fallamos");
+		//Podemos hacer fallar el test bajo alguna c√≥ndicion
+		boolean haFallado = "pepe".isEmpty();
+		if(haFallado) {
+			fail("Test Fallado!");
 		}
-		System.out.println("Fin del Test 9");
-	}*/
-
+	}
 }

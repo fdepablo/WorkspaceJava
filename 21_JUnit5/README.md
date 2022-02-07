@@ -126,7 +126,32 @@ Entre las anotaciones más importantes podemos encontrar:
 - **@BeforeAll**, se ejecuta una vez, antes de comenzar todos los tests. Esto métodos deben definirse como static.
 - **@AfterAll**, se ejecuta una vez, cuando los tests han finalizado. Estos métodos deben definirse como static para trabajar con JUnit.
 
-**NO** es necesario contar con todas las anotaciones, pero al menos debe haber un método anotado con **@Test**
+**NO** es necesario crear la clase de pruebas con todas las anotaciones, pero al menos debe haber un método anotado con **@Test**, las demás son optativas.
+
+## Aserciones en JUnit
+
+Las aserciones nos permiten verificar el valor del resultado esperado con el valor de retorno obtenido del metodo probado. Son funciones de aceptación y fundamentales para trabajar con JUnit. Las aserciones se colocan dentro de los métodos etiquetados con @Test, es decir, métodos de prueba. Si la aserción se cumple, la prueba se dará por valida, si la aserción no se cumple, la prueba fallará.
+
+Una prueba puede tener muchas aserciones, pero en cuanto una aserción no se cumpla, la prueba se dara por fallada y se dejará de ejecutar el método de la prueba.
+
+Las aserciones van dentro de los métodos de pruebas y pueden haber todas las aserciones que se necesiten para pasar la prueba.
+
+JUnit proporciona varios métodos de aserción para escribir pruebas de JUnit, las más importantes los ponemos en negrita:
+
+- **assertFalse(boolean condición)**. Verifica si la condición es falsa
+- **assertTrue(boolean condition)**. Verifica si la condición es verdadera
+- **assertEquals(valor_esperado , valor_obtenerido)**. Comprueba si los valores son iguales. Los valores pueden ser objetos o primitivos. Si son objetos, la igualdad se hará por el método **equals**
+- **assertNotEquals(valor_esperado , valor_obtenerido)**. Comprueba si los valores **NO** son iguales
+- **assertNull(java.lang.Object obtenido)**. Comprueba que la referencia sea nula.
+- **assertNotNull(java.lang.Object obtenido)**. Comprueba que la referencia **NO** sea nula.
+- assertSame(java.lang.Object expected, java.lang.Object obtenido). Comprueba que ambas referencias apuntan al mismo objeto.
+- assertNotSame(java.lang.Object expected, java.lang.Object obtenido). Comprueba que ambas referencias **NO** apuntan al mismo objeto.
+- assertArrayEquals(Array1, Array2). Comprueba que ambos arrays tengan los mismos elementos.
+- assertThrows(Exception, función lambda). Comprueba a partir de una función lambda si ha ocurrido una excepción específica.
+
+Ademas de las aserciones, JUnit nos proporciona algún método adicional.
+
+- **fail()**, si se llega a ejecutar este método, la prueba fallará. Suele ir dentro de condicionales.
 
 ## Ejecución de una clase de pruebas en Eclipse
 
@@ -134,21 +159,29 @@ Pulsaremos el botón derecho sobre la clase que queremos ejecutar | run as | JUn
 
 Se abrirá una pestaña nueva **JUnit** donde se presentarán los resultados en función de los colores mostrados:
 
-1. **Verde**, todas las pruebas han ido bien, es decir, los resultados esperados eran iguales a los resultados obtenidos o todas las aserciones se han cumplido.
-2. **Azul**, alguna prueba NO ha ido bien, es decir, alguna aserción NO se ha cumplido o se ha ejecutado la función **fail()**.
-3. **Rojo**, ha habido algún tipo de error o excepción en la prueba. En este caso no es concluyente el resultado y se debería revisar.
+1. **Verde**, todas las pruebas han ido bien, es decir, los resultados esperados eran iguales a los resultados obtenidos. Dicho de otra manera, todas las aserciones se han cumplido y estamos en el estado ideal.
+2. **Azul**, alguna prueba NO ha ido bien, es decir, alguna aserción NO se ha cumplido o se ha ejecutado la función **fail()**. En este caso también nos dira que test no se han cumplido de todos los ejecutados.
+3. **Rojo**, ha habido algún tipo de error o excepción en los test. En este caso no es concluyente el resultado y se debería revisar la prueba.
 
-Para dar por pasadas las pruebas debe de salir el color **verde**
+Para dar por satisfactorias las pruebas debe de salir el color **verde** al ejecutarlas.
 
-## Aserciones en JUnit
+## Tips de desarrollo
 
+Unos buenos pasos para desarrollar código son los siguientes:
 
+1. Definir la clase y documentarla
+2. Definir los atributos de clase y documentarlos.
+3. Definir los métodos a medida que los vayamos necesitando, y antes de codificarlos, realizar su documentación.
+4. Implementar el método basandose en la documentación hecha. Podriamos cambiar la documentación si lo vemos necesario.
+5. Realizar la prueba unitaria (JUnit) del método
+6. En caso de que falle la prueba, debermos de arreglar el códido. Volvemos al punto 5.
+7. Es posible que al pasar la prueba, nos veamos en la necesidad de volver a cambiar la documentación hecha, en el caso de darnos cuenta de algunos casos que no contemplamos.
+	 
+## Ejemplos JUnit
 
-## Ejemplos sobre JUnit
+Dentro de este proyecto, en la carpeta **test/junit5** podemos encontrar ejemplos numerados sobre JUnit. 
 
-Dentro la carpeta test/junit5 están los primero ejemplos 
-
-##Bibliografía
+## Bibliografía
 
 - <https://junit.org/junit5/>
 

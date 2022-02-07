@@ -37,7 +37,7 @@ public class _02_TestBrujo {
 	}
 	
 	/** 
-	 * Este no sería 100% necesario, ya que realmente estaria incluido en el 
+	 * Este no serÃ­a 100% necesario, ya que realmente estaria incluido en el 
 	 * metodo testPoderPositivo, pero en las pruebas podemos probar todos
 	 * los casos que se nos ocurran, no hay un limite
 	 */
@@ -71,7 +71,7 @@ public class _02_TestBrujo {
 
 	/**
 	 * Aqui vamos a probar que el brujo tenga la vida positiva
-	 * pero no tengan alma. Según la documentación, el brujo
+	 * pero no tengan alma. SegÃºn la documentaciÃ³n, el brujo
 	 * tiene que estar muerto
 	 */
 	@Test
@@ -86,7 +86,7 @@ public class _02_TestBrujo {
 	
 	/**
 	 * Aqui vamos a probar que el brujo tenga la vida positiva
-	 * y tengan alma, ya que según la documentación el brujo
+	 * y tengan alma, ya que segÃºn la documentaciï¿½n el brujo
 	 * tiene que estar vivo
 	 */
 	@Test
@@ -101,7 +101,7 @@ public class _02_TestBrujo {
 	}
 	
 	/**
-	 * En este caso no estaría tampoco de más probar que el brujo
+	 * En este caso no estarÃ­a tampoco de mÃ¡s probar que el brujo
 	 * con vida negativa y alma esta muerto tambien
 	 */
 	@Test
