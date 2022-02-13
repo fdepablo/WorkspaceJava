@@ -10,12 +10,16 @@ import org.junit.jupiter.api.Test;
  * @author Felix
  *
  * Para generar una clase de pruebas, boton derecho | new | other | JUnit Test Case
+ * 
+ * El nombre de los métodos es arbitrario pero se recomienda que sea
+ * representativo, lo importante es la anotación que lleve el método.
  *
  */
 class _00_Anotaciones {
 	
 	//Este método con la anotacion @BeforeAll se va a ejecutar ANTES de TODOS 
 	//los TEST (métodos anotados con @Test). Solo se pone una vez esta anotación
+
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		System.out.println("Este metodo se ejecuta una unica vez y al principio");

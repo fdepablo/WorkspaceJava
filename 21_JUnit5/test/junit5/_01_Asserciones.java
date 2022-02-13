@@ -1,7 +1,8 @@
 package junit5;
 
-//OJO con la manera de importar los asserts, son metodos estaticos de la clase
-//Assert y por tanto hay que importarlos de manera estatica (import static)
+//OJO con la manera de importar los asserts, son metodos estaticos de 
+//la clase Assert y por tanto hay que importarlos de manera 
+//estatica (import static)
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -18,10 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
@@ -52,6 +49,9 @@ class _01_Asserciones {
 		String cadena = new String("Hola mundo");
 		//En este caso esperamos que sea falso
 		assertFalse(cadena.endsWith("hola"));//FALSE, dariamos por buena la prueba
+		
+		//Probamos que cuando sea cadena vacia devuelve true
+		assertTrue(cadena.endsWith(""));
 	}
 	
 	@Test
@@ -103,6 +103,14 @@ class _01_Asserciones {
 		assertThrows(
 				IndexOutOfBoundsException.class, 
 				() -> cadena.charAt(20));
+		
+		assertThrows(
+				IndexOutOfBoundsException.class, 
+				() -> cadena.charAt(-1));
+		
+		char caracterEsperado = 'o';
+		char caracterObtenido = cadena.charAt(1);
+		assertEquals(caracterEsperado, caracterObtenido);
 	}
 	
 	//Tiempo maximo para que se ejecute el test (en ms)
@@ -135,8 +143,9 @@ class _01_Asserciones {
 	public void assertSameTest() throws InterruptedException{
 		System.out.println("Test 10");
 		Persona p1 = new Persona();
-		//s1 = "Hola";
+		p1.setNombre("Tony");
 		Persona p2 = new Persona();
+		p2.setNombre("Tony");
 		
 		p1 = p2;
 		//Comprobamos si apuntan al mismo objeto(no invoca al método "equal"), 
@@ -149,8 +158,8 @@ class _01_Asserciones {
 	public void failTest() throws InterruptedException{
 		System.out.println("Test 11");
 		//Podemos hacer fallar el test bajo alguna cóndicion
-		boolean haFallado = "pepe".isEmpty();
-		if(haFallado) {
+		boolean vacio = "".isEmpty();
+		if(!vacio) {
 			fail("Test Fallado!");
 		}
 	}

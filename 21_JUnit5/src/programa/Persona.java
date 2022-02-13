@@ -2,12 +2,12 @@ package programa;
 
 /**
  * Una vez que creamos una clase deberiamos de probar que TODOS sus 
- * metodos funcionan adecuadamente, excepto los getters y setters que 
+ * métodos funcionan adecuadamente, excepto los getters y setters que 
  * suelen ser muy sencillos
  * 
- * Para probar los metodos de una clase debemos de, o leer su javadoc
- * para entender lo que hace el metodo, o meternos en el codigo y 
- * entender lo que hace la funcion
+ * Para probar los métodos de una clase debemos de, o leer su JavaDoc
+ * para entender lo que hace el método, o meternos en el codigo y 
+ * entender lo que hace dicho método
  * 
  * 
  * @author Tony Stark
@@ -93,7 +93,8 @@ public class Persona {
 		return nombre;
 	}
 	
-	//Este en cambio si que haría falta probarlo y documentarlo, ya que lo hemos cambiado
+	//setNombre() en cambio si que haría falta probarlo y documentarlo, ya que 
+	//lo hemos cambiado
 	/**
 	 * Este metodo asiganará el nombre pasado por parametro a la 
 	 * propiedad nombre del objeto, pero unicamente cuando el nombre 
@@ -113,7 +114,8 @@ public class Persona {
 	//METODOS
 	
 	/**
-	 * Metodo que aumenta el atributo posicion actual en un numero 
+	 * Metodo que mueve a la persona un número de metros dado, 
+	 * aumentando el atributo posicion actual en un numero 
 	 * entero de metros.
 	 * 
 	 * @param metros representa el numero de metros que queremos 
@@ -124,7 +126,7 @@ public class Persona {
 	}
 	
 	/**
-	 * Metodo que copia una persona atributo por atributo a un
+	 * Metodo que copia la persona atributo por atributo a un
 	 * nuevo objeto persona
 	 * 
 	 * @return el objeto con la persona copiada
@@ -139,14 +141,14 @@ public class Persona {
 	}
 	
 	/**
-	 * Este metodo devuelve una referencia de que persona es mayor. 
-	 * Si es mayor la persona que esta ejecutando el metodo, o es 
-	 * mayor la persona que se le pasa por parametro
+	 * Este metodo compará la edad de la persona que invoca el método con la
+	 * edad de la persona que se pasa por parametro, devolviendo la referencia
+	 * de la persona que sea mayor de las dos
 	 * 
 	 * @param p persona pasada por parametro
-	 * @return this en caso de que esta persona sea mayor o p en caso 
-	 * de que p sea la mayor. En caso de que sean iguales devuelvo 
-	 * la refrencia p
+	 * @return la persona que invoca el método en caso de que esta persona sea 
+	 * mayor. p en caso de que p sea la mayor. En caso de que sean iguales se 
+	 * devuelve la refrencia p
 	 */
 	public Persona personaMayor(Persona p) {
 		if(this.edad > p.edad) {
@@ -163,7 +165,7 @@ public class Persona {
 	 * No se admiten posiciones negativas
 	 * 
 	 * @param posicion representa una posicion en el eje de las X, es 
-	 * la posici�n con la que voy a comparar la persona
+	 * la posición con la que voy a comparar la persona
 	 * 
 	 * @return la distancia en metros y absoluta de la posicion 
 	 * respecto al objeto. Devolvemos -1 en caso de que la posicion 

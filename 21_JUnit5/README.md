@@ -123,10 +123,10 @@ Entre las anotaciones más importantes podemos encontrar:
 - **@Test**, el principal y más importante ya que identifica un método como método test. Todos los métodos anotados con **@Test** se considerará una prueba unitaria que tiene que ser correcta.
 - **@BeforeEach**, se ejecuta antes de cada test. Normalmente se utiliza para preparar el entorno de testing (por ejemplo: inicialización de clases o lectura de datos de entrada).
 - **@AfterEach**, se ejecuta después de cada test. Normalmente se utiliza para limpiar el entorno de testing.
-- **@BeforeAll**, se ejecuta una vez, antes de comenzar todos los tests. Esto métodos deben definirse como static.
-- **@AfterAll**, se ejecuta una vez, cuando los tests han finalizado. Estos métodos deben definirse como static para trabajar con JUnit.
+- **@BeforeAll**, se ejecuta una vez, antes de comenzar todos los tests. Este método debe definirse como static.
+- **@AfterAll**, se ejecuta una vez, cuando los tests han finalizado. Este método deben definirse como static para trabajar con JUnit.
 
-**NO** es necesario crear la clase de pruebas con todas las anotaciones, pero al menos debe haber un método anotado con **@Test**, las demás son optativas.
+**NO** es necesario crear la clase de pruebas con todas las anotaciones, pero al menos debe haber un método anotado con **@Test**.
 
 ## Aserciones en JUnit
 
@@ -134,7 +134,7 @@ Las aserciones nos permiten verificar el valor del resultado esperado con el val
 
 Una prueba puede tener muchas aserciones, pero en cuanto una aserción no se cumpla, la prueba se dara por fallada y se dejará de ejecutar el método de la prueba.
 
-Las aserciones van dentro de los métodos de pruebas y pueden haber todas las aserciones que se necesiten para pasar la prueba.
+Las aserciones van dentro de los métodos de pruebas y podemos poner todas las aserciones que se necesiten para pasar la prueba.
 
 JUnit proporciona varios métodos de aserción para escribir pruebas de JUnit, las más importantes los ponemos en negrita:
 
@@ -160,20 +160,25 @@ Pulsaremos el botón derecho sobre la clase que queremos ejecutar | run as | JUn
 Se abrirá una pestaña nueva **JUnit** donde se presentarán los resultados en función de los colores mostrados:
 
 1. **Verde**, todas las pruebas han ido bien, es decir, los resultados esperados eran iguales a los resultados obtenidos. Dicho de otra manera, todas las aserciones se han cumplido y estamos en el estado ideal.
-2. **Azul**, alguna prueba NO ha ido bien, es decir, alguna aserción NO se ha cumplido o se ha ejecutado la función **fail()**. En este caso también nos dira que test no se han cumplido de todos los ejecutados.
-3. **Rojo**, ha habido algún tipo de error o excepción en los test. En este caso no es concluyente el resultado y se debería revisar la prueba.
+2. **Rojo**, alguna prueba ha fallado, se debe de revisar la prueba y el método probado.
 
 Para dar por satisfactorias las pruebas debe de salir el color **verde** al ejecutarlas.
+
+También podemos ver en detalle los métodos de test lanzados, aquí podemos encontrar 3 colores.
+
+1. **Verde**, la prueba ha ido bien.
+2. **Azul**, la prueba ha fallado, es decir, alguna aserción NO se ha cumplido o se ha ejecutado la función **fail()**.
+3. **Rojo**, ha habido algún tipo de error o excepción en el test. En este caso no es concluyente el resultado y se debería revisar la prueba.
 
 ## Tips de desarrollo
 
 Unos buenos pasos para desarrollar código son los siguientes:
 
 1. Definir la clase y documentarla
-2. Definir los atributos de clase y documentarlos.
+2. Definir los atributos de clase y documentarlos (si es necesario).
 3. Definir los métodos a medida que los vayamos necesitando, y antes de codificarlos, realizar su documentación.
 4. Implementar el método basandose en la documentación hecha. Podriamos cambiar la documentación si lo vemos necesario.
-5. Realizar la prueba unitaria (JUnit) del método
+5. Realizar la prueba unitaria (JUnit) del método.
 6. En caso de que falle la prueba, debermos de arreglar el códido. Volvemos al punto 5.
 7. Es posible que al pasar la prueba, nos veamos en la necesidad de volver a cambiar la documentación hecha, en el caso de darnos cuenta de algunos casos que no contemplamos.
 	 
