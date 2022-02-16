@@ -7,19 +7,20 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<!-- Mediante la siguiente propiedad le decimos a maven que queremos usar 
-		la versión 1.11 de java en nuestro proyecto, podriamos elegir la versión que 
-		quisieramos Importante una vez que pongamos esta propiedad en nuestro proyecto 
+		la versión 11 de java en nuestro proyecto, podriamos elegir la versión que 
+		quisieramos. Importante! una vez que pongamos esta propiedad en nuestro proyecto 
 		debemos actualizar nuestro proyecto para queu coja los cambios, para ello: 
-		- Boton derecho sobre el proyecto -> Maven -> Update proyect Debremos observar 
+		- Boton derecho sobre el proyecto -> Maven -> Update proyect. Debremos observar 
 		que la JRE system library de nuestro proyecto se cambia de la version 1.5 
 		(version por defecto de java para maven) por la que hayamos puesto (en este 
-		caso la 1.11) El significado de las propiedades es el siguiente maven.compiler.target 
-		-> propiedad que establece la versión de java de la maquina donde se va a 
-		ejecutar maven.compiler.source -> propiedad que establece la version de java 
+		caso la 11) El significado de las propiedades es el siguiente 
+		1. maven.compiler.target -> propiedad que establece la versión de java de la maquina 
+		donde se va a ejecutar 
+		2. maven.compiler.source -> propiedad que establece la version de java 
 		del codigo fuente. -->
 	<properties>
-		<maven.compiler.target>1.11</maven.compiler.target>
-		<maven.compiler.source>1.11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+		<maven.compiler.source>11</maven.compiler.source>
 	</properties>
 
 	<!-- Esta parte es de las más importantes de nuestro proyecto maven y es 
