@@ -2,6 +2,7 @@ package junit5.programa;
 
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertSame;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.AfterAll;
@@ -39,20 +40,26 @@ public class _01_TestPersona {
 		p1.setNombre("Goku");
 		//el nombre en el objeto tiene que estar puesto a Goku
 		
-		//Espero que el nombre sea Goku, y lo compruebo con el nombre 
-		//que hay en el objeto
-		assertEquals("Goku", p1.getNombre());
+		String resultadoEsperado = "Goku";
+		String resultadoObtenido = p1.getNombre();
+		
+		assertEquals(resultadoEsperado, resultadoObtenido);
 		
 		p1.setNombre("ana");
 		//el nombre tiene que estar puesto a Goku
 		
-		//Espero que el nombre sea "", y lo compruebo con el nombre 
-		//que hay en el objeto
-		assertEquals("", p1.getNombre());
+		resultadoEsperado = "";
+		resultadoObtenido = p1.getNombre();
 		
-		//Podemos pasar mas pruebas, no tienen porque estar de m�s
+		assertEquals(resultadoEsperado, resultadoObtenido);
+		
+		//Podemos pasar mas pruebas, no tienen porque estar de más
 		p1.setNombre("az");
-		assertEquals("", p1.getNombre());
+		
+		resultadoEsperado = "";
+		resultadoObtenido = p1.getNombre();
+		
+		assertEquals(resultadoEsperado, resultadoObtenido);
 		
 		p1.setNombre("a");
 		assertEquals("", p1.getNombre());
@@ -65,7 +72,11 @@ public class _01_TestPersona {
 	public void testConstructores() {
 		Persona p = new Persona("Tony", 23, 45);
 		
-		assertEquals("Tony", p.getNombre());
+		String resultadoEsperadoNombre = "Tony";
+		String resultadoObtenidoNombre = p.getNombre();
+		
+		assertEquals(resultadoEsperadoNombre, resultadoObtenidoNombre);
+		
 		assertEquals(23, p.getEdad());
 		assertEquals(45, p.getPosicion());
 	}
@@ -76,11 +87,17 @@ public class _01_TestPersona {
 		
 		p1.caminar(30);
 		
-		assertEquals(30, p1.getPosicion());
+		int resultadoEsperado = 30;
+		int resultadoObtenido = p1.getPosicion();
+		
+		assertEquals(resultadoEsperado, resultadoObtenido);
 		
 		p1.caminar(50);
 		
-		assertEquals(80, p1.getPosicion());
+		resultadoEsperado = 80;
+		resultadoObtenido = p1.getPosicion();
+		
+		assertEquals(resultadoEsperado, resultadoObtenido);
 		
 		p1.caminar(100);
 		
@@ -89,9 +106,9 @@ public class _01_TestPersona {
 
 	@Test
 	public void testCopiaPersona() {
-		p1.setNombre("Vegeta");
-		p1.setEdad(35);
-		p1.setPosicion(100);
+		p1.setNombre("Tony");
+		p1.setEdad(23);
+		p1.setPosicion(0);
 		
 		Persona p2 = p1.copiarPersona();
 		
@@ -118,49 +135,47 @@ public class _01_TestPersona {
 		
 		Persona p3 = p1.personaMayor(p2);
 		
-		assertEquals(p3, p1);
+		assertSame(p3, p1);
 		
 		p1.setEdad(22);
 		p2.setEdad(50);
 		
 		p3 = p1.personaMayor(p2);
 		
-		assertEquals(p3, p2);
+		assertSame(p3, p2);
 		
 		p1.setEdad(30);
 		p2.setEdad(30);
 		
 		p3 = p1.personaMayor(p2);
 		
-		assertEquals(p3, p2);
+		assertSame(p3, p2);
 	}
 	
 	@Test
 	public void testCalcularDistacia() {
 		// Para este test, al menos habría que probar 3 casos
-		p1.setPosicion(100);
+		p1.setPosicion(10);
 		
-		int distancia = p1.calcularDistancia(-50);
+		int resultadoObtenido = p1.calcularDistancia(-5);
+		int resultadoEsperado = -1;
 		
 		//Primer caso, espero -1
-		assertEquals(-1, distancia);
-		
-		//Vulelvo a probar el primer caso con otro numero negativo
-		distancia = p1.calcularDistancia(-100);
-		
-		//Tambien esperamos -1
-		assertEquals(-1, distancia);
+		assertEquals(resultadoEsperado, resultadoObtenido);
 		
 		//Segundo caso, la posicion pasada es menor que la posicion
 		//del objeto
-		distancia = p1.calcularDistancia(50);
-		assertEquals(50, distancia);// 100 - 50 = 50
+		resultadoObtenido = p1.calcularDistancia(7);
+		resultadoEsperado = 3;
 		
-		//Tercer caso, la posici�n pasada es mayor que la posicion
+		assertEquals(resultadoObtenido,resultadoEsperado);// 10 - 7 = 3
+		
+		//Tercer caso, la posición pasada es mayor que la posicion
 		//del objeto
-		distancia = p1.calcularDistancia(150);
+		resultadoObtenido = p1.calcularDistancia(13);
+		resultadoEsperado = 3;
 		
-		assertEquals(50, distancia);//150 - 100 = 50
-		assertNotEquals(-50, distancia);
+		assertEquals(resultadoObtenido, resultadoEsperado);
+
 	}
 }

@@ -67,8 +67,7 @@ public class Persona {
 	
 	//GETTER Y SETTER
 	//Estos metodos no hace falta probarlos y tampoco hace falta
-	//hace javadoc
-	
+	//hace javadoc	
 	
 	public int getEdad() {
 		return edad;
