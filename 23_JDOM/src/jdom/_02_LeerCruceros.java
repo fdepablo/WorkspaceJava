@@ -29,11 +29,11 @@ public class _02_LeerCruceros {
 		//aunque solo haya 2 nodos "crucero" nos pinta 5 LOL!
 		//porque? porque los saltos de linea que hay entre las etiquetas se cuentan
 		//como nodos texto :) :) :)
-		System.out.println("Elementos en el nodo ra�z: " + nodos.getLength());
+		System.out.println("Elementos en el nodo raíz: " + nodos.getLength());
 		//Aqui queremos pintar todos los elementos, pero evitando los nodos texto
 		//que son nodos hijos directos de "cruceros"
 		for (int i=0; i<nodos.getLength();i++) {//5
-			// Iteraci�n por los elementos crucero.
+			// Iteración por los elementos crucero.
 			Node nodoHijo = nodos.item(i);
 			//Solo accedemos a los nodos elemento, evitamos los nodos texto
 			//otra manera if(nodoHijo.item(i).getNodeName().equals("crucero"))
@@ -46,6 +46,9 @@ public class _02_LeerCruceros {
 				Node destino = nodoHijo.getChildNodes().item(1);
 				System.out.println("  Destino: " + destino.getTextContent());
 				Node detalles = nodoHijo.getChildNodes().item(3);
+				//Lo suyo sería recorrer los nodos hijos de los detalles para
+				//sacar toda la información
+				//detalles.getChildNodes();
 				System.out.println("  Detalles: " + detalles.getTextContent());
 			}	
 		}

@@ -22,17 +22,17 @@ public class _04_CrearAgendaXml {
 		
 		try {
 			analizador = fabrica.newDocumentBuilder();
-			// Creamos nuevo documento
+			// Creamos nuevo documento vacio
 			doc = analizador.newDocument();
-			// Añadimos elemento raiz
+			// AÃ±adimos elemento raiz
 			Element agenda = doc.createElement("agenda");
 			doc.appendChild(agenda);
-			// Añadimos tres contactos al elemento raíz agenda.
+			// Aï¿½adimos tres contactos al elemento raÃ­z agenda.
 			agregarContactos(agenda, doc);
 			// Guardamos en disco el nuevo documento XML.
 			guardar(doc);
 			
-			System.out.println("El archivo se ha creado con éxito");
+			System.out.println("El archivo se ha creado con Ã©xito");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -46,6 +46,7 @@ public class _04_CrearAgendaXml {
 		Text textoTony = doc.createTextNode("Tony Stark");
 		nombre.appendChild(textoTony);
 		contacto.appendChild(nombre);
+		
 		Element telefono = doc.createElement("telefono");
 		//lo hacemos de manera directa
 		telefono.appendChild(doc.createTextNode("612333333"));

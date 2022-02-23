@@ -10,13 +10,14 @@ import org.w3c.dom.Node;
  */
 public class _01_LeerXmlCruceros {
 	public static void main(String[] args) {
-		//Lo primero necestimos una factoria que nos cree los objetos
-		//el patron factoria es un patron de diseño creacional, en la cual
+		//Lo primero necesitamos una factoria que nos cree los objetos.
+		//El patron factorÃ­a es un patron de diseï¿½o creacional, en la cual
 		//su funcion es evitar el acoplamiento de clases, y de esta manera,
 		//centralizar la creacion de los objetos en una unica clase
 		
 		DocumentBuilderFactory fabrica = DocumentBuilderFactory.newInstance();
-		//Sigue el patron de diseño builder y cuya funcion es crear objetos
+
+		//Sigue el patron de diseï¿½o builder y cuya funcion es crear objetos
 		//complejos de manera simple
 		DocumentBuilder analizador;
 		//el nodo documento
@@ -26,7 +27,7 @@ public class _01_LeerXmlCruceros {
 		
 		try {
 			analizador = fabrica.newDocumentBuilder();
-			//Lo primero es parsear el fichero cruceros.xml para
+			//Lo primero es deserializar el fichero cruceros.xml para
 			//convertilo en un arbol DOM, basicamente lo que hacen los navegadores
 			//El arbol DOM seran objetos con una jerarquia en forma de arbol
 			dom = analizador.parse("cruceros.xml");

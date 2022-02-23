@@ -27,7 +27,7 @@ public class _03_LeerEscalas {
 	private static void recorrerNodos(Node raiz) {
 		NodeList nodos = raiz.getChildNodes();
 		for (int i=0; i<nodos.getLength();i++) {
-			// Iteración por los elementos crucero.
+			// Iteraciï¿½n por los elementos crucero.
 			Node nodoHijo = nodos.item(i);
 			if (nodoHijo.getNodeType() == Node.ELEMENT_NODE) {
 				Node destino = nodoHijo.getChildNodes().item(1);
@@ -54,7 +54,7 @@ public class _03_LeerEscalas {
 				Node llegada = escala.getChildNodes().item(3);
 				Node salida = escala.getChildNodes().item(5);
 				System.out.print("                        ");
-				System.out.print("Día " + dia + ": ");
+				System.out.print("DÃ­a " + dia + ": ");
 				System.out.print(parada.getTextContent() + " ");
 				System.out.print(llegada.getTextContent() + " - ");
 				System.out.println(salida.getTextContent());
