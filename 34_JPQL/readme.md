@@ -1,4 +1,5 @@
 # JPQL
+
 JPQL es un lenguaje intermedio entre POO y SQL, usado por JPA para hacer consultas
 a la BBDD
 
@@ -10,7 +11,10 @@ Tiene el siguiente formato:
 		HAVING criterio
 		ORDER BY atributos
 		
-Es muy importante tener en cuenta que todos los atributos hacen referencia a las propiedades de las clases de entidad.
+Es muy importante tener en cuenta que:
+
+1. Se trabaja con clases, no con tablas.
+2. Todos los atributos hacen referencia a las propiedades de las clases, no con los campos de las tablas
 
 ## Bibliografía
 1. <https://docs.oracle.com/html/E13946_04/ejb3_langref.html>
