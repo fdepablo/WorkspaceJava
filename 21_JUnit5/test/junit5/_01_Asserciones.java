@@ -12,7 +12,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
-//import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
@@ -118,8 +117,7 @@ class _01_Asserciones {
 	@Timeout(value = 100, unit = TimeUnit.MILLISECONDS)
 	public void timeTest() throws InterruptedException{
 		System.out.println("Test 8");
-		String cadena = new String("Hola mundo");
-		
+				
 		Thread.sleep(50);
 		//Si se demora más de 100ms el test no será valido
 		System.out.println("Fin del Test 8");

@@ -1,28 +1,28 @@
 ![JavaDoc](img/javadoc.png "JavaDoc")
 # JavaDoc
 
-Javadoc es una utilidad de Oracle para la generación de documentación en formato HTML a partir de código fuente Java. Javadoc es el estándar de la industria para documentar clases de Java. La mayoría de los IDEs los generan automáticamente.
+Javadoc es una utilidad de Oracle para la generaciÃ³n de documentaciÃ³n en formato HTML a partir de cÃ³digo fuente Java. Javadoc es el estÃ¡ndar de la industria para documentar clases de Java. La mayorÃ­a de los IDEs los generan automÃ¡ticamente.
 
 
 ## Objetivos
 
 El objetivo de Javadoc es el de proporcionar informacion a otro desarrolladores de como tienen que utilizar nuestros clases y metodos. Esta documentacion no es para nosotros (que tambien) es principalmente para los programadores que usen nuestro codigo.
 
-Es fundamental entender que con la documentación queremos dar a conocer la función que realizan nuestras clases y metodos sin necesidad de meternos en el codigo fuente de las clases para entender lo que hace.
+Es fundamental entender que con la documentaciÃ³n queremos dar a conocer la funciÃ³n que realizan nuestras clases y metodos sin necesidad de meternos en el codigo fuente de las clases para entender lo que hace.
 
-No confundir Javadoc con los comentarios normales de java, que estos empiezan por /* y suelen ir dentro de los métodos para explicar el código. 
+No confundir Javadoc con los comentarios normales de java, que estos empiezan por /* y suelen ir dentro de los mÃ©todos para explicar el cÃ³digo. 
 
-Es muy importante entender la diferencia entre los comentarios normales y Javadoc. El objetivo de los comentarios normales es explicar lineas de código a programadores que se meten a ver el código fuente, el objetivo de Javadoc es explicar a otros programadores como deben de usar las clases y los métodos que hemos realizado, sin necesidad de ver el codigo fuente ni de entenderlo.
+Es muy importante entender la diferencia entre los comentarios normales y Javadoc. El objetivo de los comentarios normales es explicar lineas de cÃ³digo a programadores que se meten a ver el cÃ³digo fuente, el objetivo de Javadoc es explicar a otros programadores como deben de usar las clases y los mÃ©todos que hemos realizado, sin necesidad de ver el codigo fuente ni de entenderlo.
 
-En el siguiente enlace podemos ver un ejemplo resultante de una documentacion hecha para la clase [String](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html). En esta documentación, realizada con Javadoc por la gente de Oracle, podemos ver como se nos explica perfectamente toda la clase String y todos los métodos que tiene. Este sería nuestro objetivo cuando realizamos Javadoc en nuestras clases.
+En el siguiente enlace podemos ver un ejemplo resultante de una documentacion hecha para la clase [String](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html). En esta documentaciÃ³n, realizada con Javadoc por la gente de Oracle, podemos ver como se nos explica perfectamente toda la clase String y todos los mÃ©todos que tiene. Este serÃ¡ nuestro objetivo cuando realizamos Javadoc en nuestras clases.
 
-A su vez, la documentación esta muy ligada con las pruebas unitarias, hasta tal punto de que si la documentación esta bien hecha, podemos hacer las pruebas unitarias sin necesidad de entender el código.
+A su vez, la documentaciÃ³n esta muy ligada con las pruebas unitarias, hasta tal punto de que si la documentaciÃ³n esta bien hecha, podemos hacer las pruebas unitarias sin necesidad de entender el cÃ³digo.
 
-Una buena practica sería documentar el código antes de implementarlo.
+Una buena practica serÃ­a documentar el cÃ³digo antes de implementarlo.
 
 ## Creacion de JavaDoc
 
-El Javadoc se crea dentro de las clases de java y tendrá la siguiente forma:
+El Javadoc se crea dentro de las clases de java y tendrï¿½ la siguiente forma:
 
 	/** 
 	* DOCUMENTACION
@@ -32,26 +32,26 @@ El Javadoc se crea dentro de las clases de java y tendrá la siguiente forma:
     
 	Notese que Javadoc empieza con "/**", es decir, una barra y dos asteriscos. El cierre de Javadoc es con "*/"
 
-El Javadoc <b>DEBERA IR</b> al principio de cada clase, atributo, constructor o método, dependiendo de qué parte se quiera documentar.
+El Javadoc <b>DEBERA IR</b> al principio de cada clase, atributo, constructor o metodo, dependiendo de quÃ© parte se quiera documentar.
 
 
 ## Anotaciones en JavaDoc
 
-Para generar API con Javadoc podemos usar ciertas palabras reservadas precedidas por el carácter "@" que son llamadas <b>anotaciones</b>. El objetivo de las anotaciones es la de enriquecer la documentación y de organizarla de una manera estandar. Cada anotación representa un valor diferente y tenemos distinto tipos.
+Para generar API con Javadoc podemos usar ciertas palabras reservadas precedidas por el caracter "@" que son llamadas <b>anotaciones</b>. El objetivo de las anotaciones es la de enriquecer la documentaciÃ³n y de organizarla de una manera estandar. Cada anotaciÃ³n representa un valor diferente y tenemos distinto tipos.
 
 Veamos las principales anotaciones que existen:
 
 <table style="border: 1px solid">
  	<tr><th>ANOTACION</th><th style="text-align:left">DESCRIPCION</th></tr>
  	<tr><td style="font-weight:bold">@author</td><td>Nombre del desarrollador</td></tr>
-	<tr><td style="font-weight:bold">@version</td><td>Versión del método o clase</td></tr>
-	<tr><td style="font-weight:bold">@param</td><td>Definición de un parámetro de entrada de un método, es requerido para todos los parámetros del método</td></tr>
-	<tr><td style="font-weight:bold">@return</td><td>Informa de lo que devuelve el método, no se puede usar en constructores o métodos "void"</td></tr>
-	<tr><td style="font-weight:bold">@throws</td><td>Excepción lanzada por el método, primero la clase y luego la explicación</td></tr>
-	<tr><td style="font-weight:bold">@see</td><td>Asocia con un elemento externo como un método, una clase o cualquier recurso en la red. Varias maneras de hacer referencia -> #método(); clase#método(); paquete.clase; paquete.clase#método(). Tambien podemos usar la anotacion @link (ver más abajo)</td></tr>
-	<tr><td style="font-weight:bold">@since</td><td>Usado principalmente en metodos. Nos dice desde que versión de la clase se encuentra el metodo en dicha clase</td></tr>
+	<tr><td style="font-weight:bold">@version</td><td>VersiÃ³n del mÃ©todo o clase</td></tr>
+	<tr><td style="font-weight:bold">@param</td><td>DefiniciÃ³n de un parÃ¡metro de entrada de un mÃ©todo, es requerido para todos los parÃ¡metros del mÃ©todo</td></tr>
+	<tr><td style="font-weight:bold">@return</td><td>Informa de lo que devuelve el mÃ©todo, no se puede usar en constructores o mÃ©todos "void"</td></tr>
+	<tr><td style="font-weight:bold">@throws</td><td>ExcepciÃ³n lanzada por el mÃ©todo, primero la clase y luego la explicaciÃ³n</td></tr>
+	<tr><td style="font-weight:bold">@see</td><td>Asocia con un elemento externo como un mï¿½todo, una clase o cualquier recurso en la red. Varias maneras de hacer referencia -> #metodo(); clase#metodo(); paquete.clase; paquete.clase#metodo(). Tambien podemos usar la anotacion @link (ver mï¿½s abajo)</td></tr>
+	<tr><td style="font-weight:bold">@since</td><td>Usado principalmente en metodos. Nos dice desde que versiÃ³n de la clase se encuentra el metodo en dicha clase</td></tr>
 	<tr><td style="font-weight:bold">@link</td><td>Para crear un hipervinculo sobre un texto dentro del mismo programa. Si queremos usar hiperviculos externos podemos usar la etiqueta A de HTML.</td></tr>
-	<tr><td style="font-weight:bold">@deprecated</td><td>Indica que el método o clase es antigua y que no se recomienda su uso porque posiblemente desaparecerá en versiones posteriores</td></tr>
+	<tr><td style="font-weight:bold">@deprecated</td><td>Indica que el mÃ©todo o clase es antigua y que no se recomienda su uso porque posiblemente desaparecerÃ¡ en versiones posteriores</td></tr>
 </table>
 
 Estas anotaciones se escriben dentro del Javadoc, Ej:
@@ -62,31 +62,31 @@ Estas anotaciones se escriben dentro del Javadoc, Ej:
     *
     */
 
-Dentro del codigo veremos más ejemplos con mayor detalle.
+Dentro del cÃ³digo veremos mÃ¡s ejemplos con mayor detalle.
 
 ## Enriquecer el JavaDoc con HTML
 
-Dento de un comentario de Javadoc, se pueden poner etiquetas HTML para enriquecer el formato. Javadoc acepta la mayoría de ellas.
+Dento de un comentario de Javadoc, se pueden poner etiquetas HTML para enriquecer el formato. Javadoc acepta la mayorÃ­a de ellas.
 
     /**
-    * El objetivo de esta clase es proporcionar una <b>comunicación con una impresora</b>
+    * El objetivo de esta clase es proporcionar una <b>comunicaciÃ³n con una impresora</b>
     *
     * @author Steven Grant Rogers
     *
     */
 
-## Documentación de una clase
+## DocumentaciÃ³n de una clase
 
 El objetivo de documentar una clase es informar de la funcionalidad y la finalidad de dicha clase.
 
 Son importantes anotaciones como <b>@author o @version</b>.
 
-Primero habría que documentar la clase y luego poner las anotaciones que estimemos oportunas.
+Primero habrÃ­a que documentar la clase y luego poner las anotaciones que estimemos oportunas.
 
     /**
-    * El objetivo de esta clase es proporcionar una <b>comunicación con una impresora</b>
+    * El objetivo de esta clase es proporcionar una <b>comunicaciï¿½n con una impresora</b>
     *
-    * Tendrá diferentes métodos para realizar acciones con la impresora, tales como
+    * TendrÃ¡ diferentes mÃ©todos para realizar acciones con la impresora, tales como
     * <u>imprimir, scanear o fotocopiar</u>.
        
     * @author Steven Grant Rogers
@@ -98,35 +98,35 @@ Primero habría que documentar la clase y luego poner las anotaciones que estimem
     
     }
 
-Notese como la documentación esta justo arriba de la clase que queremos documentar
+Notese como la documentaciÃ³n esta justo arriba de la clase que queremos documentar
 
-## Documentación de atributos
+## Documentaciï¿½n de atributos
 
-El objetivo de documentar atibutos es la de informar de lo que representa el atributo. Se puede añadir posibles valores, unidades, etc.
+El objetivo de documentar atibutos es la de informar de lo que representa el atributo. Se puede aï¿½adir posibles valores, unidades, etc.
 
-Para cada uno de los atributos, primero habría que documentar el atributo y luego poner las anotaciones que estimemos oportunas.
+Para cada uno de los atributos, primero habrï¿½a que documentar el atributo y luego poner las anotaciones que estimemos oportunas.
 
-## Documentación de un método
+## Documentaciï¿½n de un mï¿½todo
 
-Documentar métodos es de las partes más importantes de Javadoc, y el objetivo es el de explicar perfectamente lo que hace el método, con todas sus casuisticas posibles o resultados.
+Documentar mÃ©todos es de las partes mÃ¡s importantes de Javadoc, y el objetivo es el de explicar perfectamente lo que hace el mÃ©todo, con todas sus casuisticas posibles o resultados.
 
-Son muy importantes las anotaciones <b>@param</b> para cada uno de sus parámetros o <b>@return</b> para explicar los posibles valores que devuelve. Puede haber varios <b>@param</b> (uno para cada parámetro de entrada), pero como máximo habrá UN SOLO <b>@return</b> (y no lo habrá en caso de que el método devuelva <b>void</b>).
+Son muy importantes las anotaciones <b>@param</b> para cada uno de sus parÃ¡metros o <b>@return</b> para explicar los posibles valores que devuelve. Puede haber varios <b>@param</b> (uno para cada parï¿½metro de entrada), pero como mÃ¡ximo habrÃ¡ UN SOLO <b>@return</b> (y no lo habrï¿½ en caso de que el mÃ©todo devuelva <b>void</b>).
 
-Primero habría que documentar el metodo y luego poner las anotaciones que estimemos oportunas.
+Primero habrÃ­a que documentar el metodo y luego poner las anotaciones que estimemos oportunas.
 
 	 /**
-	  * Método que establece el valor al atributo titulo. El titulo pasado por parametro no pude 
+	  * Mï¿½todo que establece el valor al atributo titulo. El titulo pasado por parametro no pude 
 	  * ser nulo ni estar vacio. En caso de que sea nulo, vacio o tenga espacios en blando
-	  * únicamente, el método arrojara una excepción.
+	  * Ãºnicamente, el mÃ©todo arrojara una excepciÃ³n.
 	  *
-	  * @param titulo El nuevo título que queremos establecer
-	  * @throws IllegalArgumentException Si titulo es <b>null</b>, está vacío o contiene sólo espacios en blanco	
+	  * @param titulo El nuevo tï¿½tulo que queremos establecer
+	  * @throws IllegalArgumentException Si titulo es <b>null</b>, estÃ¡ vacÃ­o o contiene sÃ³lo espacios en blanco	
 	  */
 	 public void setTitulo (String titulo) throws IllegalArgumentException
 	 {
 	   if (titulo == null || titulo.trim().equals(""))
 	   {
-	       throw new IllegalArgumentException("El título no puede ser nulo o vacío");
+	       throw new IllegalArgumentException("El tÃ­tulo no puede ser nulo o vacï¿½o");
 	   }
 	   else
 	   {
@@ -134,35 +134,35 @@ Primero habría que documentar el metodo y luego poner las anotaciones que estime
 	   }
 	 }
 
-Notese que solo ponemos un <b>@param</b> porque solo hay un parámetro de entrada y no ponemos <b>@return</b> porque el metodo es void y no retorna nada. También observamos como la documentación esta justo encima del método que queremos documentar.
+Notese que solo ponemos un <b>@param</b> porque solo hay un parÃ¡metro de entrada y no ponemos <b>@return</b> porque el metodo es void y no retorna nada. TambiÃ©n observamos como la documentaciÃ³n esta justo encima del mÃ©todo que queremos documentar.
 
-<b>IMPORTANTE!</b> Los setter y los getter normalmente NO se comentan. Solo se comentan en caso de que hagan alguna funcionalidad diferente a lo que hace por defecto (asingar o devolver valores de atributos). Un ejemplo podría ser el metodo anterior <b>setTitulo</b>, normalmente no se documentaría, pero en este caso SI que sería obligatorio hacerlo ya que hace una funcionalidad diferente al setTitulo por defecto que nos crearia un IDE como eclipse.
+<b>IMPORTANTE!</b> Los setter y los getter normalmente NO se comentan. Solo se comentan en caso de que hagan alguna funcionalidad diferente a lo que hace por defecto (asingar o devolver valores de atributos). Un ejemplo podrÃ­a ser el metodo anterior <b>setTitulo</b>, normalmente no se documentarï¿½a, pero en este caso SI que serÃ­a obligatorio hacerlo ya que hace una funcionalidad diferente al setTitulo por defecto que nos crearia un IDE como eclipse.
 
-## Documentación de constructores
+## DocumentaciÃ³n de constructores
 
-Los constructores tambien se pueden documentar. Siguen las mismas reglas que los métodos pero teniendo en cuenta que no se puede poner la anotación <b>@return</b> ya que los constructores no devuelven nada. 
+Los constructores tambien se pueden documentar. Siguen las mismas reglas que los mÃ©todos pero teniendo en cuenta que no se puede poner la anotaciÃ³n <b>@return</b> ya que los constructores no devuelven nada. 
 
-## Generar ficheros de documentación de manera automática (HTML)
+## Generar ficheros de documentaciï¿½n de manera automï¿½tica (HTML)
 
-Una vez aplicado el javadoc sobre el codigo, podemos generar documentos html de manera automática con toda la información que hemos puesto sobre dicho codigo. La documentación quedará como la documentación oficial de Oracle, [documentacion oficial String](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html) 
+Una vez aplicado el javadoc sobre el codigo, podemos generar documentos html de manera automÃ¡tica con toda la informaciï¿½n que hemos puesto sobre dicho codigo. La documentaciÃ³n quedarï¿½ como la documentaciÃ³n oficial de Oracle, [documentacion oficial String](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html) 
 
 Para hacerlo con Eclipse debemos de realizar los siguientes casos.
 
-1. Ir a la siguiente pestaña de eclipse: Proyect -> Generate JavaDoc
+1. Ir a la siguiente pestaÃ±a de eclipse: Proyect -> Generate JavaDoc
 	
-2. Elegiremos el proyecto el cual queremos generar su documentación. Nos dan muchas opciones de creación de javadoc, normalmente con elegir las opciones por defecto son suficientes.
+2. Elegiremos el proyecto el cual queremos generar su documentaciÃ³n. Nos dan muchas opciones de creaciÃ³n de javadoc, normalmente con elegir las opciones por defecto son suficientes.
 
-3. Si nos da un error de tipo "javadoc command does not exist" debemos de buscar en dicha pantalla la ruta del ejecutable para que nos genere la documentación. El ejecutable que podemos escoger por defecto seria "javadoc.exe" que se encuentra donde tengamos instalado nuesta jdk de java. Un ejemplo de la ruta por defecto podría ser -> C:\Program Files\Java\jdk-11.0.11\bin
+3. Si nos da un error de tipo "javadoc command does not exist" debemos de buscar en dicha pantalla la ruta del ejecutable para que nos genere la documentaciÃ³n. El ejecutable que podemos escoger por defecto seria "javadoc.exe" que se encuentra donde tengamos instalado nuesta jdk de java. Un ejemplo de la ruta por defecto podrÃ­a ser -> C:\Program Files\Java\jdk-11.0.11\bin
 
 ## Como ver los ejemplos
 
-1. Ver la clase <b>basico/ClaseJavaDoc</b> para ejemplos teoricos de como hacer documentación
+1. Ver la clase <b>basico/ClaseJavaDoc</b> para ejemplos teoricos de como hacer documentaciÃ³n
 
-2. En la clase <b>basico/MainJavaDoc</b> hay ejemplos de como usar la clase anterior y como podemos ver el javadoc hecho poniendo el cursor encima de la clase o los métodos
+2. En la clase <b>basico/MainJavaDoc</b> hay ejemplos de como usar la clase anterior y como podemos ver el javadoc hecho poniendo el cursor encima de la clase o los mï¿½todos
 
-3. En el paquete <b>entidad</b> hay ejemplos más practicos de como hacer documentación
+3. En el paquete <b>entidad</b> hay ejemplos mÃ¡s practicos de como hacer documentaciÃ³n
 
-## Bibliografía
+## Bibliografï¿½a
 
 - [https://es.wikipedia.org/wiki/Javadoc](https://es.wikipedia.org/wiki/Javadoc)
 - [https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html](https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html)

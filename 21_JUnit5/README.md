@@ -97,7 +97,7 @@ Con las pruebas unitarias se busca también dar un **porcentaje de cobertura** a
 Lo primero que tenemos que hacer para pasar las pruebas unitarias de nuestra aplicación es crear un módulo donde declararlas. Para ello debemos de:
 
 - Importar las librerías de JUnit a nuestro proyecto. JUnit5 no viene incluido en Java 11 por lo que hay que agregar las librerías al classpath. Además, JUnit 5 esta fragmentado en 3 proyectos, pero nosotros nos centraremos en **JUnit Jupiter**. Los otros dos serán **Junit vintage** con las características de JUnit4, y el otro **Junit platform**, principalmente para pruebas con la JVM.
-- Crear una clase Java. Esta clase tendrá� pruebas unitarias para ejecutar nuestra aplicación. Podemos tener tantas clases como queramos para pasar las pruebas.
+- Crear una clase Java. Esta clase tendrá pruebas unitarias para ejecutar nuestra aplicación. Podemos tener tantas clases como queramos para pasar las pruebas.
 
 Podemos ejecutar estas tareas de la siguiente manera:
 
