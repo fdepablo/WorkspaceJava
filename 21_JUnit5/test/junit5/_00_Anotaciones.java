@@ -4,6 +4,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -56,7 +57,10 @@ class _00_Anotaciones {
 		System.out.println("Test1. Esto es una prueba unitaria de palo :P");
 	}
 
+	//Con la anotación @DisplayName podemos cambiar el nombre por defecto
+	//del nombre del test (por defecto, el nombre del método)
 	@Test
+	@DisplayName("Descripción del test que estamos pasando")
 	void test2() {
 		System.out.println("Test2. Esto es otra prueba unitaria de palo :)");
 	}
