@@ -1,27 +1,33 @@
-# JSON (JavaScript Object Notation - NotaciÛn de Objetos de JavaScript) 
+![json](img/json_logo.png "Aprende JSON!")
 
-Es un formato ligero de intercambio de datos. Leerlo y escribirlo es simple para humanos, mientras que para las m·quinas es simple interpretarlo y generarlo. Est· basado en un subconjunto del Lenguaje de ProgramaciÛn JavaScript, 
+# JSON (JavaScript Object Notation - Notaci√≥n de Objetos de JavaScript) 
 
-Actualmente es un formato de intercambio de texto m·s popular que XML ya que ocupa menos espacio respecto a XML transmitiendo la misma informaciÛn.
+Es un formato ligero de intercambio de datos. Leerlo y escribirlo es simple para humanos, mientras que para las m√°quinas es simple interpretarlo y generarlo. Est√° basado en un subconjunto del Lenguaje de Programaci√≥n JavaScript, 
 
-JSON est· constituÌdo por dos estructuras:
+Actualmente es un formato de intercambio de texto m√°s popular que XML ya que ocupa menos espacio respecto a XML transmitiendo la misma informaci√≥n.
 
-1. Una colecciÛn de pares de <b>clave/valor</b>. En varios lenguajes esto es conocido como un <b>objeto</b>, pero tambien como registro, estructura, diccionario, tabla hash, lista de claves o un array asociativo. El nombre tiene que ser una cadena entre comillas dobles. El valor puede ser de cualquier tipo (ver m·s abajo). Ejemplo: {"id": 1, "nombre": "Stark"}
+JSON est√° constituido por dos estructuras:
 
-2. Una lista ordenada de valores. En la mayorÌa de los lenguajes, esto se implementa como array, vectores, listas o sequencias. Representa una lista ordenada de cero o m·s valores los cuales pueden ser de cualquier tipo. Los valores se separan por comas y el vector se mete entre corchetes. Ejemplo ["juan","pedro","jacinto"]
+1. Una colecci√≥n de pares de <b>clave/valor</b>. En varios lenguajes esto es conocido como un <b>objeto</b>, pero tambi√©n como registro, estructura, diccionario, tabla hash, lista de claves o un array asociativo. El nombre tiene que ser una cadena entre comillas dobles. El valor puede ser de cualquier tipo (ver m√°s abajo). Ejemplo: 
 
-Un objeto es un conjunto desordenado de pares clave/valor. Un objeto comienza con "{" llave de apertura y termine con "}" llave de cierre. Cada clave esta representada por un String y va seguido por ":" dos puntos. El valor puede ser de uno de los 6 tipos de datos de json. Los diferentes pares de clave/valor est·n separados por "," coma.
+        {"id": 1, "nombre": "Stark"}
+
+2. Una lista ordenada de valores. En la mayor√≠a de los lenguajes, esto se implementa como array, vectores, listas o secuencias. Representa una lista ordenada de cero o m√°s valores los cuales pueden ser de cualquier tipo. Los valores se separan por comas y el vector se mete entre corchetes. Ejemplo:
+
+        ["juan","pedro","jacinto"]
+
+Un objeto es un conjunto desordenado de pares clave/valor. Un objeto comienza con "{" llave de apertura y termine con "}" llave de cierre. Cada clave est√° representada por una cadena de texto y va seguido por ":" dos puntos. El valor puede ser de uno de los 6 tipos de datos de JSON. Los diferentes pares de clave/valor est√°n separados por "," coma.
 
 Los <b>tipos de datos</b> o valores disponibles con JSON son:
 
-1. N˙meros: Se permiten n˙meros negativos y opcionalmente pueden contener parte fraccional separada por puntos. Ejemplo: 123.456
-2. Cadenas: Representan secuencias de cero o m·s caracteres. Se ponen entre doble comilla y se permiten cadenas de escape. Ejemplo: "Hola"
+1. N√∫meros: Se permiten n√∫meros negativos y opcionalmente pueden contener parte fraccional separada por puntos. Ejemplo: 123.456
+2. Cadenas: Representan secuencias de cero o m√°s caracteres. Se ponen entre doble comilla y se permiten cadenas de escape. Ejemplo: "Hola"
 3. Booleanos: Representan valores booleanos y pueden tener dos valores: true y false
 4. null: Representan el valor nulo.
 5. Array
 6. Objeto
 
-Notese como un array puede por ejemplo tener como valores otros arrays u otros objetos, o un objeto puede tener como valores un array u otros objetos. 
+N√≥tese como un array puede por ejemplo tener como valores otros arrays u otros objetos, o un objeto puede tener como valores un array u otros objetos. 
 
 ## Ejemplos de JSON
 
@@ -33,7 +39,7 @@ Va a ver ejemplos de objetos validos en formato JSON
      
 ### Objeto complejo
 
-	{
+    {
         "latitude": 40.416875,
         "longitude": -3.703308,
         "city": "Madrid",
@@ -43,14 +49,14 @@ Va a ver ejemplos de objetos validos en formato JSON
       }
 ### Array simple
 
-	[0,1,1,2,3,5,8,13]
-	[true,false]
-	[1,1,null,"steve"]
+    [0,1,1,2,3,5,8,13]
+    [true,false]
+    [1,1,null,"steve"]
 
      
 ### Objeto complejo con array
 
-	{
+    {
         "latitude": 40.416875,
         "longitude": -3.703308,
         "city": "Madrid",
@@ -62,7 +68,7 @@ Va a ver ejemplos de objetos validos en formato JSON
       
 ### Array de objetos
 
-	[
+    [
       {
         "latitude": 40.416875,
         "longitude": -3.703308,
@@ -79,81 +85,83 @@ Va a ver ejemplos de objetos validos en formato JSON
         "latitude": 40.407015,
         "longitude": -3.691163,
         "city": "Madrid",
-        "description": "EstaciÛn de Atocha"
+        "description": "Estaci√≥n de Atocha"
       }
      ]
      
 ### Objeto con array
 
-	{"numeros de fibonacci" : [0,1,1,2,3,5,8,13]}
+    {"numeros de fibonacci" : [0,1,1,2,3,5,8,13]}
 
      
 ### Objeto con array de objetos
 
-	{
-	    "marcadores": [
-	      {
-	        "latitude": 40.416875,
-	        "longitude": -3.703308,
-	        "city": "Madrid",
-	        "description": "Puerta del Sol"
-	      },
-	      {
-	        "latitude": 40.417438,
-	        "longitude": -3.693363,
-	        "city": "Madrid",
-	        "description": "Paseo del Prado"
-	      },
-	      {
-	        "latitude": 40.407015,
-	        "longitude": -3.691163,
-	        "city": "Madrid",
-	        "description": "EstaciÛn de Atocha"
-	      }
-	    ]
-	}
+    {
+        "marcadores": [
+          {
+            "latitude": 40.416875,
+            "longitude": -3.703308,
+            "city": "Madrid",
+            "description": "Puerta del Sol"
+          },
+          {
+            "latitude": 40.417438,
+            "longitude": -3.693363,
+            "city": "Madrid",
+            "description": "Paseo del Prado"
+          },
+          {
+            "latitude": 40.407015,
+            "longitude": -3.691163,
+            "city": "Madrid",
+            "description": "Estaci√≥n de Atocha"
+          }
+        ]
+    }
 
-### Ejemplo con objetos y arrays complejo
+### Ejemplo con objetos y arrays complejo (Es el ejemplo 01_JSON.json)
 
-	{"persona":{
-	   "id": "1",
-	   "nombre": "Tony",
-	   "apellido": "Stark",
-	   "edad": 45,
-	   "direcciones" :[
-			{"direccion1":{
-				"tipoVia": "Plaza",
-				"nombreVia": "Plaza de EspaÒa",
-				"pais": "EspaÒa"
-				}
-			},
-			{"direccion2":{
-				"tipoVia": "Calle",
-				"nombreVia": "Gran Via",
-				"pais": "EspaÒa"
-				}
-			}
-	   ],
-	   "estaCasado": false,
-	   "pareja": null,
-	   "superpoder":{
-			"superinteligencia":100,
-			"superfuerza":50
-	   }
-	 }
-	}
-	
+    {"persona":{
+       "id": "1",
+       "nombre": "Tony",
+       "apellido": "Stark",
+       "edad": 45,
+       "direcciones" :[
+            {"direccion1":{
+                "tipoVia": "Avenida",
+                "nombreVia": "Avenger",
+                "ciudad": "New York"
+                }
+            },
+            {"direccion2":{
+                "tipoVia": "Calle",
+                "nombreVia": "Gran Via",
+                "ciudad": "Madrid"
+                }
+            }
+       ],
+       "estaCasado": false,
+       "pareja": null,
+       "superpoder":{
+            "superinteligencia":100,
+            "superfuerza":50
+       }
+     }
+    }
+    
 Son ejemplos, pero tenemos infinitas combinaciones entre ellos.
-
-## Conversores
-
-- [https://www.site24x7.com/es/tools/json-a-xml.html](https://www.site24x7.com/es/tools/json-a-xml.html)
-
-- [https://www.freeformatter.com/xml-to-json-converter.html](https://www.freeformatter.com/xml-to-json-converter.html)
 
 ## Ejemplo practico con Java
 
-En este ejemplo vamos a usar unas librerÌas de google para hacer la transformaciÛn de objeto a json (serializacion) y de json a objeto (deserializacion). La libreria se llama <b>GSON</b>, aunque hay otras implementaciones en el mercado igual de validas (como Jackson), teniendo todas sus pros y sus contras. En este caso se ha elegido GSON por su simplicidad de usar de manera simple.
+En este ejemplo vamos a usar unas librer√≠as de Google para hacer la transformaci√≥n de objeto a JSON (serializaci√≥n) y de JSON a objeto (deserializaci√≥n). La librer√≠a se llama <b>GSON</b>, aunque hay otras implementaciones en el mercado igual de validas (como Jackson), teniendo todas sus pros y sus contras. En este caso se ha elegido **GSON** por su simplicidad de usar.
 
-## Bibliografia
-[https://www.json.org/json-es.html](https://www.json.org/json-es.html)
+## Conversores de XML a JSON y viceversa
+
+- <https://www.site24x7.com/es/tools/json-a-xml.html>
+
+- <https://www.freeformatter.com/xml-to-json-converter.html>
+
+## Bibliograf√≠a
+
+- <https://www.json.org/json-es.html>
+
