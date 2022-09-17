@@ -4,24 +4,24 @@ package _01_basico;
 //la clase Thread que ya esta implementada en la JDK
 public class _01_HiloThread extends Thread {
 
-	private String valorImprimir;
+	private String saludoDesdeHilo;
 
 	// String name
-	public _01_HiloThread(String valorImprimir) {
-		this.valorImprimir = valorImprimir;
+	public _01_HiloThread(String saludoDesdeHilo) {
+		this.saludoDesdeHilo = saludoDesdeHilo;
 	}
 
-	// Una vez que arranquemos el hilo, inmediantamente despues ejecutará el 
+	// Una vez que arranquemos el hilo, inmediantamente despues ejecutarï¿½ el 
 	// metodo "run". Un hilo siempre se debe arrancar con el metodo "start"
-	// que esta implementado en la clase Tread, y sera este el que llame a su
+	// que esta implementado en la clase Thread, y sera este el que llame a su
 	// vez al metodo "run"
 	// Este metodo lo podemos entender como un "main"
-	// La ciclo de vida de este hilo sería desde el inicio del metodo hasta el 
+	// La ciclo de vida de este hilo serï¿½a desde el inicio del metodo hasta el 
 	// final del mismo
 	@Override
 	public void run() {
 		System.out.println("Arrancando hilo: " + Thread.currentThread().getName());
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 10; i++) {
 
 			try {
 				Thread.sleep(500);//simulacion de tarea que tarda 500 milisegungdos
@@ -32,7 +32,7 @@ public class _01_HiloThread extends Thread {
 
 			System.out
 					.println("Hilo: " + Thread.currentThread().getName() 
-							+ " , dice: " + valorImprimir + " ciclo: " + i);
+							+ " , dice: " + saludoDesdeHilo + " ciclo: " + i);
 		}
 		System.out.println("Hilo: " + Thread.currentThread().getName() + " acabado");
 	}// El hilo muere en esta linea

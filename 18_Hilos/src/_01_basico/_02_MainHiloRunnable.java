@@ -8,7 +8,7 @@ public class _02_MainHiloRunnable {
 		//es capaz de crear hilos) y le pasamos un objeto de tipo Runnable
 		Thread t1 = new Thread(hilo1);
 		
-		//ahora trabajos con el objeto de tipo Thread de igual manera que en el ejemplo
+		//ahora trabajamos con el objeto de tipo Thread, de igual manera que en el ejemplo
 		//de HiloThread
 		t1.setName("Hilo1");//establecemos el nombre del hilo
 		
