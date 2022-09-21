@@ -1,14 +1,19 @@
 package es.repaso;
 
-//Estructura JavaBean. Clase que tiene atributos privados y getters y setters publicos
+//JavaBean
 public class Persona {
-	private String nombre;
-	private int edad;
+	private String nombre;//null
+	private int edad;//0
 	private double peso;
-	private Direccion direccion;
+	private Direccion direccion;//null
 	
-	public Persona() {	
-		
+	public Persona() {
+		super();
+	}
+	
+	public Persona(String nombre) {
+		super();
+		this.nombre = nombre;
 	}
 	
 	public String getNombre() {
@@ -28,17 +33,14 @@ public class Persona {
 	}
 	public void setPeso(double peso) {
 		this.peso = peso;
-	}	
+	}
+
 	public Direccion getDireccion() {
 		return direccion;
 	}
+
 	public void setDireccion(Direccion direccion) {
 		this.direccion = direccion;
 	}
-	@Override
-	public String toString() {
-		return "Persona [nombre=" + nombre + ", edad=" + edad + ", peso=" + peso + ", direccion=" + direccion + "]";
-	}
 	
-
-}	
+}

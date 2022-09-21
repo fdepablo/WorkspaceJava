@@ -1,25 +1,28 @@
 package es.repaso;
 
 public class Direccion {
+	private String tipoVia;
 	private String nombreVia;
-	private int cp;
+	private String cp;
 	
+	public String getTipoVia() {
+		return tipoVia;
+	}
+	public void setTipoVia(String tipoVia) {
+		this.tipoVia = tipoVia;
+	}
 	public String getNombreVia() {
 		return nombreVia;
 	}
 	public void setNombreVia(String nombreVia) {
 		this.nombreVia = nombreVia;
 	}
-	public int getCp() {
+	public String getCp() {
 		return cp;
 	}
-	public void setCp(int cp) {
+	public void setCp(String cp) {
 		this.cp = cp;
 	}
 	
-	@Override
-	public String toString() {
-		return "Direccion [nombreVia=" + nombreVia + ", cp=" + cp + "]";
-	}
 	
 }

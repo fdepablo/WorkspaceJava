@@ -3,89 +3,77 @@ package es.repaso;
 public class MainRepaso {
 
 	public static void main(String[] args) {
-		System.out.println("arrancando");
-		//El ciclo de vida de un objeto en java es:
-		//1- nace cuando hacemos un new del objeto
-		//2- y muere cuando no haya ninguna referencia apuntandolo ojo!!!
 		
-		//La siguiente pregunta sería cuanto tiempo vive una referencia en stack
-		//Una referencia vive desde que se crea hasta que sale del bloque donde
-		//se creo
+		//Un objeto nacera con "new"
+		Persona p1 = new Persona();
+		//Un objeto desaparecera cuando no tenga ninguna referencia
+		//apuntandole
+		p1 = null;
+		
 		new Persona();
+		System.gc();//da orden a la JVM de que pase el GC, pero ya os digo
+					//que la JVM Hotspot no funciona muy bien. Os puede hacer caso o no
 		
-		Persona p = new Persona();
-		p.setNombre("Tony Stark");
-		p.setEdad(43);
-		p.setPeso(85.6);
-		p = null;
+		Persona p2 = new Persona();
+		p2.setNombre("Tony Stark");
+		Persona p3 = p2;
+		System.out.println(p3.getNombre());
+		System.out.println(p2.getNombre());
 		
-		{
-			Persona p1 = new Persona();
-		}
-		
-		if(true) {
-			Persona p2 = new Persona();
-		}
-		
-		crearPersona();
-		crearPersona();
-		crearPersona();
-		
-		Persona p3 = crearPersona2();
-		
+		p2 = null;
 		Persona p4 = p3;
+		p3 = null;
 		
-		p4.setEdad(55);
+		Persona p5  = new Persona();
+		p5.setNombre("Tony Stark");
 		
-		System.out.println(p3.getEdad());//55 90 55 55 90 55
-		System.out.println(p4.getEdad());
-		
-		p4 = new Persona();
-		p3.setEdad(66);
-		
-		System.out.println(p3.getEdad());//66 66 66 0
-		System.out.println(p4.getEdad());
-		
-		Persona p5 = new Persona();
-		p5.setNombre("Peter Parker");
-		p5.setEdad(17);
-		Direccion direccion = new Direccion();
-		//Inyectamos la dependecia por setter
-		p5.setDireccion(direccion);
-		p5.getDireccion().setNombreVia("Calle de la tia ross");
-		p5.getDireccion().setCp(28345);
+		System.out.println(p4 == p5);
+		System.out.println(p4);
 		System.out.println(p5);
 		
-		direccion.setNombreVia("Howards");
+		Persona p6 = new Persona();
+		p6.setEdad(55);
 		
-		System.out.println(p5);
+		Persona p7 = new Persona();
+		p7.setEdad(66);
 		
-		p5.getDireccion().setNombreVia("Tatuin");
-		System.out.println(direccion.getNombreVia());
+		p6 = p7;
 		
-		Direccion direcion2 = new Direccion();
-		direcion2.setNombreVia("Segovia");
+		p6.setEdad(44);//55 66 // 44 44 // 44 66
+		System.out.println(p6.getEdad());
+		System.out.println(p7.getEdad());
 		
-		System.out.println(p5.getDireccion().getNombreVia());
+		Persona p8 = p7;
+		Persona p9 = p6;
+		Persona p10 = p8;
+		p10.setEdad(100);
+		System.out.println(p6.getEdad());//100 // 44
+		System.out.println(p7.getEdad());//100 // 44
+		System.out.println(p8.getEdad());//100 // 44
 		
-		direccion = new Direccion();
+		int cp = 03456;//los numeros en java que empiezan por 0 estan en base octal
+		System.out.println(cp);
+		cp = 0xFFEE;//en base hexadecimal
+		System.out.println(cp);
+		cp = 0b101;//base binaria
+		System.out.println(cp);
 		
-		var s = new Persona();
-	}//fin programa
-	
-	public static void crearPersona() {
-		Persona p1 = new Persona();
-		p1.setNombre("Tony Stark");
-		p1.setEdad(43);
-		p1.setPeso(85.6);
-	}
-	
-	public static Persona crearPersona2() {
-		Persona p1 = new Persona();
-		p1.setNombre("Steve Rogers");
-		p1.setEdad(90);
-		p1.setPeso(91);
-		return p1;
+		Direccion d1 = null;
+		//System.out.println(d1.getNombreVia());//nullpointer exception
+		
+		Persona p11 = new Persona();
+		p11.setNombre("Steve Rogers");
+		d1 = new Direccion();
+		p11.setDireccion(d1);
+		p11.getDireccion().setNombreVia("Avengers");
+		System.out.println(p11.getDireccion().getNombreVia());
+		
+		System.out.println(d1.getNombreVia());//null // Avengers
+		
+		d1 = null;//he perdido el objeto direccion que cree en la linea 66?
+		System.out.println(p11.getDireccion().getNombreVia());
+		
+		p11 = null;//he perdido algun objeto?
 	}
 
 }
