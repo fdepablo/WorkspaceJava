@@ -1,11 +1,11 @@
 package _01_basico;
 
 // La otra manera de crear hilos en java es implementando la
-//interfaz runnable. Este ejemplo es un funcionalmente igual
+//interfaz Runnable. Este ejemplo es funcionalmente igual
 //al HiloThread
 // Usaremos esta manera cuando la clase que queramos convertirla
 //en un hilo ya extienda de otra, ya que recordemos que java no
-//permiete la herencia multiple
+//permite la herencia múltiple
 public class _02_HiloRunnable implements Runnable{
 	
 	private String valorImprimir;
@@ -15,12 +15,12 @@ public class _02_HiloRunnable implements Runnable{
 		this.valorImprimir = valorImprimir;
 	}
 
-	// Una vez que arranquemos el hilo, inmediantamente despues ejecutar� el 
-	// metodo "run". Un hilo siempre se debe arrancar con el metodo "start"
-	// que esta implementado en la clase Tread, y sera este el que llame a su
-	// vez al metodo "run"
-	// Este metodo lo podemos entender como un "main"
-	// La ciclo de vida de este hilo ser�a desde el inicio del metodo hasta el 
+	// Una vez que arranquemos el hilo, inmediatamente después ejecutará el 
+	// método "run". Un hilo siempre se debe arrancar con el método "start"
+	// que esta implementado en la clase Tread, y será este el que llame a su
+	// vez al método "run"
+	// Este método lo podemos entender como un "main"
+	// La ciclo de vida de este hilo será desde el inicio del método hasta el 
 	// final del mismo
 	@Override
 	public void run() {
@@ -28,7 +28,7 @@ public class _02_HiloRunnable implements Runnable{
 		for (int i = 0; i < 20; i++) {
 
 			try {
-				Thread.sleep(500);//simulacion de tarea que tarda 500 milisegungdos
+				Thread.sleep(500);//simulación de tarea que tarda 500 milisegungdos
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -44,3 +44,4 @@ public class _02_HiloRunnable implements Runnable{
 		}		
 	}
 }
+

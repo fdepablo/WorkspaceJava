@@ -4,9 +4,9 @@ public class Silla {
 	
 	//private boolean ocupada;
 	
-	//Si no pusieramos el metodo como sincronizado, podrÌan
+	//Si no pusieramos el m√©todo como sincronizado, podr√≠an
 	//entrar todos los obreros a la vez a descansar. Entonces
-	//estariamos inclumpiendo la regla de que solo un obrero puede
+	//estar√≠amos inclumpiendo la regla de que solo un obrero puede
 	//sentarse en esta silla a la vez
 	public synchronized void descansar(Obrero o) {
 		System.out.println("******* Soy el obrero " + o.getNombre() + " y me voy a sentar 10 segundos");
@@ -18,6 +18,6 @@ public class Silla {
 			e.printStackTrace();
 		}
 		
-		System.out.println("∑∑∑∑∑∑∑ Soy el obrero " + o.getNombre() + " y ya he descansado! A CURRAR!!");
+		System.out.println("****** Soy el obrero " + o.getNombre() + " y ya he descansado! A CURRAR!!");
 	}
 }

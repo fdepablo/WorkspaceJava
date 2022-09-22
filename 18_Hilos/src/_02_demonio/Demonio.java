@@ -1,7 +1,7 @@
 package _02_demonio;
 
 /*
- * Se entiende como demonio aquel programa que esta ejecutandose continuamente
+ * Se entiende como demonio aquel programa que esta ejecutándose continuamente
  * sin parar
  */
 public class Demonio implements Runnable {
@@ -13,9 +13,9 @@ public class Demonio implements Runnable {
 		System.out.println("Arrancado Demonio: " + Thread.currentThread().getName());
 		int contador = 0;
 		//Estrictamente hablando, para que fuera un demonio autentico, el
-		//siguiente while tendria que ser de la forma "while(true)" para hacerlo
+		//siguiente while tendría que ser de la forma "while(true)" para hacerlo
 		//bucle infinito. En este caso le ponemos un booleano para poder pararlo
-		//mandandole una se�al con el metodo "apagarDemonio" de m�s abajo
+		//mandandole una señal con el método "apagarDemonio" de más abajo
 		while(encendido){
 			System.out.println("Demonio: " + Thread.currentThread().getName()+ " dice: " + contador);
 			contador++;
@@ -32,5 +32,4 @@ public class Demonio implements Runnable {
 		this.encendido = false;
 		System.out.println("Apagando demonio...");
 	}
-
 }

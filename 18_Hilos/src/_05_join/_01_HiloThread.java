@@ -15,7 +15,7 @@ public class _01_HiloThread extends Thread {
 		for (int i = 0; i < 20; i++) {
 
 			try {
-				Thread.sleep(500);//simulacion de tarea que tarda 500 milisegungdos
+				Thread.sleep(500);//simulación de tarea que tarda 500 milisegungdos
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

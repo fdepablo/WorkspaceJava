@@ -15,7 +15,8 @@ public class Obrero extends Thread{
 	//Esto es excatamente "igual" a un main de java
 	@Override
 	public void run() {
-		ponerLadrillos();//los obreros cuando se ejecuta su start, se ponen a poner ladridos como locos!
+		// Los obreros, cuando se ejecuta su start, se ponen a poner ladridos como locos!
+		ponerLadrillos();
 	}
 	
 	

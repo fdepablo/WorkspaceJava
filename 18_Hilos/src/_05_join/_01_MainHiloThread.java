@@ -1,7 +1,7 @@
 
 package _05_join;
 
-//Este ejemplo es para ver el método join(), que se utiliza cuando queremos
+//Este ejemplo es para ver el método 'join()', que se utiliza cuando queremos
 //que un hilo espere a que otro hilo termine
 
 //Este ejemplo es igual que el del paquete _01_basico pero el hilo main
@@ -20,8 +20,8 @@ public class _01_MainHiloThread {
 		hilo2.start();
 		
 		//Si necesitamos que algun hilo se quede esperando a que otros hilos mueran para
-		//poder continuar su ejecución, podemos usar el metodo join().
-		//Este método hace que el hilo que pase por esa linea se quede esperando
+		//poder continuar su ejecución, podemos usar el método join().
+		//Este método hace que el hilo que pase por esa línea se quede esperando
 		//a que el hilo que invoca el método join() haya muerto
 		
 		try {

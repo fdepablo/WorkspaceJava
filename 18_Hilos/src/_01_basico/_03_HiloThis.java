@@ -2,7 +2,7 @@ package _01_basico;
 
 //Este ejemplo sirve en caso de que queramos arrancar el hilo cuando
 //creamos un objeto de este tipo, es decir, sin que en el hilo main
-//tengamos que invocar el metodo start()
+//tengamos que invocar el método start()
 
 //Este ejemplo tiene el mismo comportamiento que los otros ejemplos de hilos
 public class _03_HiloThis implements Runnable{

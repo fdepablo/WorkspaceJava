@@ -11,20 +11,20 @@ public class Fiesta {
 	}
 	
 	//La palabra reservada sychronized hace que solo pueda entrar un hilo a la 
-	//vez en este m�todo, hasta que no termina de ejecutar este metodo un hilo, no puede entrar
-	//el siguiente hilo a ejecutarse
-	//OJO, al ser un metodo dinamico solo afecta a nivel de objeto, es decir, solo bloquea
-	//el objeto en cuestion
+	//vez en este método, hasta que no termina de ejecutar este método el hilo
+	//que ha entrado, no puede entrar el siguiente hilo a ejecutarse
+	//OJO, al ser un método dinámico solo afecta a nivel de objeto, es decir, solo bloquea
+	//el objeto en cuestión
 	public synchronized void entrar(String nombrePersona,String frase1, String frase2){
-		System.out.println(nombrePersona +" esta entrando en la fiesta de " + this.nombre + "!!!");
+		System.out.println(nombrePersona +" está entrando en la fiesta de " + this.nombre + "!!!");
 		System.out.println("La fiesta se encuentra en: " + direccion);
 		System.out.println(nombrePersona + " is in the house!");
 		System.out.println(frase1);
 		
 		try {
-			//Simulamos que entra el hilo dice una frase y luego 
-			//se queda un tiempo chocando las manos, esto ser�a
-			//una tarea de larga duracion
+			//Simulamos que entra el hilo, dice una frase y luego 
+			//se queda un tiempo chocando las manos, esto sería
+			//una tarea de larga duración
 			System.out.println("(Chocando manos), (Saludando)");
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {

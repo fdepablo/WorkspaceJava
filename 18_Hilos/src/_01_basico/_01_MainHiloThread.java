@@ -5,7 +5,7 @@ public class _01_MainHiloThread {
 
 	public static void main(String[] args) {
 		
-		//Este objeto sera capaz de arrancar un hilo
+		//Este objeto será capaz de arrancar un hilo
 		_01_HiloThread hilo1 = new _01_HiloThread("Valor 1");
 		hilo1.setName("Hilo1");//establecemos el nombre del hilo
 		
@@ -13,8 +13,8 @@ public class _01_MainHiloThread {
 		hilo2.setName("Hilo2");
 		
 		try {
-			//Duerme el hilo que passe por aqui durante un tiempo
-			//En este caso, siempre sera el main
+			//Duerme el hilo que pase por aquí durante un tiempo
+			//En este caso, siempre será el main
 			System.out.println("Esperando 5 segundos a arrancar los hilos... :), que nervios...");
 			Thread.sleep(5000);//5 seg
 		} catch (InterruptedException e) {
@@ -28,9 +28,9 @@ public class _01_MainHiloThread {
 		hilo2.start();
 		
 		System.out.println("Hilo principal parando");
-		//El hilo principal acaba aqui, pero mientras haya un hilo en ejecuci�n,
-		//el programa serguiera con vida. Cuando mueran todos los hilos que a
-		//arrancado un programa, sera entonces cuando el programa finalice
+		//El hilo principal acaba aquí, pero mientras haya un hilo en ejecución,
+		//el programa seguirá con vida. Cuando mueran todos los hilos que a
+		//arrancado un programa, será entonces cuando el programa finalice
 	}
 
 }

@@ -1,7 +1,7 @@
 package _01_basico;
 
 //Una manera de crear hilos en java, es extendiendo de
-//la clase Thread que ya esta implementada en la JDK
+//la clase Thread que ya está implementada en la JDK
 public class _01_HiloThread extends Thread {
 
 	private String valorImprimir;
@@ -11,12 +11,12 @@ public class _01_HiloThread extends Thread {
 		this.valorImprimir = valorImprimir;
 	}
 
-	// Una vez que arranquemos el hilo, inmediantamente despues ejecutar� el 
-	// metodo "run". Un hilo siempre se debe arrancar con el metodo "start"
-	// que esta implementado en la clase Tread, y sera este el que llame a su
-	// vez al metodo "run"
-	// Este metodo lo podemos entender como un "main"
-	// La ciclo de vida de este hilo ser�a desde el inicio del metodo hasta el 
+	// Una vez que arranquemos el hilo, inmediatamente después ejecutará el 
+	// método "run". Un hilo siempre se debe arrancar con el método "start"
+	// que esta implementado en la clase Tread, y será este el que llame a su
+	// vez al método "run"
+	// Este método lo podemos entender como un "main"
+	// La ciclo de vida de este hilo sería desde el inicio del método hasta el 
 	// final del mismo
 	@Override
 	public void run() {
@@ -24,7 +24,7 @@ public class _01_HiloThread extends Thread {
 		for (int i = 0; i < 20; i++) {
 
 			try {
-				Thread.sleep(500);//simulacion de tarea que tarda 500 milisegungdos
+				Thread.sleep(500);//simulación de tarea que tarda 500 milisegungdos
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -35,5 +35,5 @@ public class _01_HiloThread extends Thread {
 							+ " , dice: " + valorImprimir + " ciclo: " + i);
 		}
 		System.out.println("Hilo: " + Thread.currentThread().getName() + " acabado");
-	}// El hilo muere en esta linea
+	}// El hilo muere en esta línea
 }

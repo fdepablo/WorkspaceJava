@@ -24,7 +24,7 @@ public class Caballo implements Runnable {
 	}
 	
 	public void run(){
-		//Simulamos que el caballo esta corriendo
+		//Simulamos que el caballo está corriendo
 		for(int a = 0; a<=100;a++){
 			System.out.println(a + " : " + nombre);
 			try {

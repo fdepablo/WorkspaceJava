@@ -12,8 +12,9 @@ public class Consumidor extends Thread{
 	}
 	
 	public void run(){
-		//leemos por siempre mensajes, el programa nunca se parara
+		//leemos por siempre mensajes, el programa nunca se parará
 		while(true) {
+		//Podemos sustituir el 'while' por el 'for' si queremos que manda X mensajes
 		//for(int i = 1;i <= 10;i++){
 			String mensaje = cola.getMensaje();
 			System.out.println(nombre + " ha consumido el mensaje: " + mensaje);

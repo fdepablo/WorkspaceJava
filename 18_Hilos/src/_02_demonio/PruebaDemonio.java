@@ -2,8 +2,8 @@ package _02_demonio;
 
 public class PruebaDemonio {
 	public static void main(String[] args){
-		Demonio demonio = new Demonio();//implementa la interfaz runnable
-		Thread hilo = new Thread(demonio);//le pasemos un objeto runnable
+		Demonio demonio = new Demonio();//implementa la interfaz Runnable
+		Thread hilo = new Thread(demonio);//le pasemos un objeto Runnable
 		hilo.start();
 		
 		try {

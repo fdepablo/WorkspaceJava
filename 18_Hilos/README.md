@@ -1,72 +1,72 @@
 # Hilos
 
-Los hilos estan asociados a un <b>proceso</b> de nuestro sistema operativo. La definiciÛn de proceso es un programa en ejecuciÛn. Puesto que un proceso est· en ejecuciÛn, est· consumiendo recursos del sistema. Por ejemplo, cuando abrimos un navegador, ejecutamos dicho programa por lo que se abrir· un proceso en nuestro sistema.
+Los hilos est√°n asociados a un <b>proceso</b> de nuestro sistema operativo. La definici√≥n de proceso es un programa en ejecuci√≥n. Puesto que un proceso est√° en ejecuci√≥n, est√° consumiendo recursos del sistema. Por ejemplo, cuando abrimos un navegador, ejecutamos dicho programa por lo que se abrir√° un proceso en nuestro sistema.
 
 Crear un proceso en un ordenador implica los siguientes cambios:
 
 - La reserva de una determinada memoria de trabajo.
-- Carga de trabajo para el procesador, que tendr· que ir ejecutando las instrucciones incluidas en el proceso.
+- Carga de trabajo para el procesador, que tendr√° que ir ejecutando las instrucciones incluidas en el proceso.
 - Cambios de estado del proceso, que se reflejan en los valores de los registros de la CPU.
 
-Los procesos se pueden ver en ejecucion en el sistema operativo, en windows por ejemplo los podemos ver dentro del administrador de tareas.
+Los procesos se pueden ver en ejecuci√≥n en el sistema operativo, en Windows por ejemplo los podemos ver dentro del administrador de tareas.
 
-Un <b>hilo</b> es la unidad mÌnima de procesamiento y se encuentra dentro de un proceso. Es decir, un conjunto de instrucciones en ejecuciÛn dentro del contexto de un proceso. 
+Un <b>hilo</b> es la unidad m√≠nima de procesamiento y se encuentra dentro de un proceso. Es decir, un conjunto de instrucciones en ejecuci√≥n dentro del contexto de un proceso. 
 
-Todo proceso tendr· al menos un hilo en ejecuciÛn, aunque podrÌa tener varios simult·neos, creando lo que se denomina multitarea.
+Todo proceso tendr√° al menos un hilo en ejecuci√≥n, aunque podr√° tener varios simultaneo, creando lo que se denomina multitarea.
 
 Hay que tener claro que el sistema operativo tiene control sobre los procesos, pero NO sobre las hilos de una manera directa
 
 Esto nos lleva a distinguir entre los conceptos de multiproceso y multitarea.
 
 - <b>Multiproceso</b>: varios procesos que se ejecutan de manera concurrente y que son gestionados por el sistema operativo.
-- <b>Multitarea</b>: varios hilos de ejecuciÛn simult·neos dentro del mismo proceso.
+- <b>Multitarea</b>: varios hilos de ejecuci√≥n simulraneos dentro del mismo proceso.
 
-Nosotros en esta lecciÛn nos vamos a centrar en los sistemas multitarea.
+Nosotros en esta lecci√≥n nos vamos a centrar en los sistemas multitarea.
 
 ## Sistemas multitarea 
 
-Estos sistemas tienen una serie de caracterÌsticas:
+Estos sistemas tienen una serie de caracter√≠sticas:
 
-- Varios hilos en ejecuciÛn dentro del mismo proceso.
+- Varios hilos en ejecuci√≥n dentro del mismo proceso.
 
-- Todos los hilos comparten los recurso que el sistema operativo haya asignado al proceso. La incorporaciÛn de un hilo m·s no supone la asignaciÛn de m·s recursos del sistema. 
+- Todos los hilos comparten los recurso que el sistema operativo haya asignado al proceso. La incorporaci√≥n de un hilo m√°s no supone la asignaci√≥n de m√°s recursos del sistema. 
 
-- Si el ordenador dispone de varios n˙cleos, cada hilo en ejecuciÛn puede aprovechar un n˙cleo distinto, produciÈndose asÌ la multitarea en el sentido estricto de la palabra.
+- Si el ordenador dispone de varios n√∫cleos, cada hilo en ejecuci√≥n puede aprovechar un n√∫cleo distinto, produci√©ndose as√≠ la multitarea en el sentido estricto de la palabra.
 
-- El uso de varios hilos de ejecuciÛn en un proceso es especialmente interesante en los programas en red de tipo cliente/servidor. Un hilo de ejecuciÛn puede estar atendiendo peticiones y, si el procesamiento de la respuesta es largo, podrÌa generarse un hilo independiente para cada respuesta. De este modo, se podrÌa estar atendiendo varias peticiones al mismo tiempo.
+- El uso de varios hilos de ejecuci√≥n en un proceso es especialmente interesante en los programas en red de tipo cliente/servidor. Un hilo de ejecuci√≥n puede estar atendiendo peticiones y, si el procesamiento de la respuesta es largo, podr√° generarse un hilo independiente para cada respuesta. De este modo, se podr√° estar atendiendo varias peticiones al mismo tiempo.
 
 ## Beneficios de un sistema multitarea
 
-Uno de los mayores beneficios que tiene la programaciÛn multitarea es el poder reducir de manera considerada los tiempos de ejecuciÛn de una aplicaciÛn.
+Uno de los mayores beneficios que tiene la programaci√≥n multitarea es el poder reducir de manera considerada los tiempos de ejecuci√≥n de una aplicaci√≥n.
 
-Supongamos que estamos haciendo una aplicaciÛn que para acabar tiene que hacer 3 tareas:
+Supongamos que estamos haciendo una aplicaci√≥n que para acabar tiene que hacer 3 tareas:
 
-- Tarea A: Procesar unos ficheros de texto para guardar la informaciÛn en base de datos. Supongamos que el tiempo de duracion de esta tarea es de 25 segundos.
-- Tarea B: Mandar un numero indeterminado de emails a nuestros clientes. Supongamos que el tiempo de duracion de esta tarea es de 20 segundos.
-- Tarea C: Hacer calculos estadisticos e informes para enviar a nuestros directores. Supongamos que el tiempo de duracion de esta tarea es de 15 segundos.
+- Tarea A: Procesar unos ficheros de texto para guardar la informaci√≥n en base de datos. Supongamos que el tiempo de duraci√≥n de esta tarea es de 25 segundos.
+- Tarea B: Mandar un n√∫mero indeterminado de emails a nuestros clientes. Supongamos que el tiempo de duraci√≥n de esta tarea es de 20 segundos.
+- Tarea C: Hacer c√°lculos estad√≠sticos e informes para enviar a nuestros directores. Supongamos que el tiempo de duraci√≥n de esta tarea es de 15 segundos.
 
-En una situacion normal en la que no hay multitarea (una aplicaciÛn normal en Java), es decir, en la que solo hay un hilo de ejecuciÛn, la duraciÛn total de la aplicaciÛn serÌa de 60 segundos. En esta situaciÛn irian ejecutandose las tareas de manera secuencial (no empezarÌa la tarea B a ejecutarse hasta que no acabe la tarea A).
+En una situaci√≥n normal en la que no hay multitarea (una aplicaci√≥n normal en Java), es decir, en la que solo hay un hilo de ejecuci√≥n, la duraci√≥n total de la aplicaci√≥n ser√° de 60 segundos. En esta situaci√≥n ir√≠an ejecut√°ndose las tareas de manera secuencial (no empezar√° la tarea B a ejecutarse hasta que no acabe la tarea A).
 
-En una situaciÛn en que que hay multitarea, es decir, en que hay creamos varios hilos de ejecuciÛn (en este caso 3 hilos, cada uno asociado a una tarea), la duraciÛn total seria la de la tarea con mayor duraciÛn, en este caso 25 segundos, habiendo reducido el tiempo a menos de la mitad. En esta situaciÛn irian ejecutandose las tareas de manera paralela.
+En una situaci√≥n en que hay multitarea, es decir, en que hay creamos varios hilos de ejecuci√≥n (en este caso 3 hilos, cada uno asociado a una tarea), la duraci√≥n total ser√≠a la de la tarea con mayor duraci√≥n, en este caso 25 segundos, habiendo reducido el tiempo a menos de la mitad. En esta situaci√≥n ir√≠an ejecut√°ndose las tareas de manera paralela.
 
-Por supuesto habrÌa que tener en cuenta que nuestro ordenador a nivel de hardware tuviera hilos suficientes para ejecutar todos nuestros hilos en paralelo, de nada serviria hacer programaciÛn multitarea si ejecutamos el codigo en un ordenador antiguo con un solo hilo de procesamiento.
+Por supuesto habr√° que tener en cuenta que nuestro ordenador a nivel de hardware tuviera hilos suficientes para ejecutar todos nuestros hilos en paralelo, de nada servir√≠a hacer programaci√≥n multitarea si ejecutamos el c√≥digo en un ordenador antiguo con un solo hilo de procesamiento.
 
 ## Hilos en Java
 
 Existen dos maneras de declarar y configurar hilos en Java: 
 
-- Crear una clase que extienda de la clase Thread (herencia)
+- Crear una clase que extienda de la clase **Thread** (herencia)
 
-- Crear un clase que implemente la interfaz Runnable (interfaces)
+- Crear un clase que implemente la interfaz **Runnable** (interfaces)
 
-Ademas existen muchos metodos estaticos asociados a la clase Thread que nos van a ayudar:
+Adem√°s, existen muchos m√©todos est√°ticos asociados a la clase Thread que nos van a ayudar:
 
-- sleep(X): Duerme el hilo por el que esta pasando el programa X milisegundos
-- start(): Arranca un hilo, ejecutando su metodo run(). El hilo acabar· cuando salga del metodo run().
-- currentThread().getName(): Nos da el nombre el hilo que esta pasando por el programa.
+- sleep(X): Duerme el hilo por el que est√° pasando el programa X milisegundos
+- start(): Arranca un hilo, ejecutando su m√©todo run(). El hilo acabar√° cuando salga del m√©todo run().
+- currentThread().getName(): Nos da el nombre el hilo que est√° pasando por el programa.
 
 
-Existen muchos mas metodos que podemos ver en la documentacion oficial.
+Existen muchos m√°s metodos que podemos ver en la documentacion oficial.
 
 En el paquete 01_basico podemos encontrar ejemplos sobre los hilos en java
 
@@ -74,39 +74,38 @@ En el paquete 01_basico podemos encontrar ejemplos sobre los hilos en java
 
 ![Estados Hilos](img/estadosHilos.png))
 
-La imagen refleja los distintos cambios de estados por los que pasa un hilo y los mÈtodos que pueden provocar dichos cambios. Un hilo nuevo pasa a ejecutable por la invocaciÛn al mÈtodo start(). Por otro lado, puede pasar de ejecutable a bloqueado por la invocaciÛn a los mÈtodos sleep(), wait(), o a la espera de una operaciÛn de entrada/salida, volviendo de nuevo al estado ejecutable cuando llegue el momento.
+La imagen refleja los distintos cambios de estados por los que pasa un hilo y los m√©todos que pueden provocar dichos cambios. Un hilo nuevo pasa a ejecutable por la invocaci√≥n al m√©todo **start()**. Por otro lado, puede pasar de ejecutable a bloqueado por la invocaci√≥n a los m√©todos sleep(), wait(), o a la espera de una operaci√≥n de entrada/salida, volviendo de nuevo al estado ejecutable cuando llegue el momento.
 
-Un hilo pasa a estar muerto en la mayorÌa de los casos cuando ha terminado de ejecutarse el mÈtodo run() y, por consiguiente, ya cumpliÛ su misiÛn, pero tambiÈn podrÌa pasar a estado muerto por la ejecuciÛn del mÈtodo stop(), que interrumpe el hilo, o por otro tipo de interrupciÛn inesperada.
+Un hilo pasa a estar muerto en la mayor√≠a de los casos cuando ha terminado de ejecutarse el m√©todo **run()** y, por consiguiente, ya cumplir√° su misi√≥n, pero tambi√©n podr√° pasar a estado muerto por la ejecuci√≥n del m√©todo stop(), que interrumpe el hilo, o por otro tipo de interrupci√≥n inesperada.
 
 ## Hilos sincronizados en Java
 
-Cuando estamos trabajando con hilos podemos tener problemas de sincronizaciÛn entre ellos o lo que es lo mismo problemas cuando dos hilos acceden simultaneamente a la misma posiciÛn de memoria.
+Cuando estamos trabajando con hilos podemos tener problemas de sincronizaci√≥n entre ellos o lo que es lo mismo problemas cuando dos hilos acceden simult√°neamente a la misma posici√≥n de memoria.
 
-Varios hilos podrÌan compartir informaciÛn accediendo a la misma variable, objeto, fichero, etc. Esto podrÌa crear zonas crÌticas, es decir, ·reas de cÛdigo que podrÌan crear problemas de concurrencia.
+Varios hilos podr√°n compartir informaci√≥n accediendo a la misma variable, objeto, fichero, etc. Esto podr√° crear zonas cr√≠ticas, es decir, ÔøΩreas de c√≥digo que podr√°n crear problemas de concurrencia.
 
-Para indicar que un fragmento de cÛdigo est· sincronizado, es decir, que solamente un hilo puede acceder a dicho mÈtodo a la vez se utilizara el modificador <b>"synchronized"</b> que se utiliza para indicar que un fragmento de cÛdigo est· sincronizado, es decir, que solamente un hilo puede acceder a dicho mÈtodo a la vez. 
+Para indicar que un fragmento de c√≥digo est√° sincronizado, es decir, que solamente un hilo puede acceder a dicho m√©todo a la vez se utilizara el modificador <b>"synchronized"</b> que se utiliza para indicar que un fragmento de c√≥digo est√° sincronizado, es decir, que solamente un hilo puede acceder a dicho m√©todo a la vez. 
 
-Se podrÌa afirmar que un mÈtodo sincronizado tiene una marca de abierto y cerrado: cuando est· cerrado ning˙n otro hilo puede entrar en dicho mÈtodo.
+Se podr√° afirmar que un m√©todo sincronizado tiene una marca de abierto y cerrado: cuando est√° cerrado ning√∫n otro hilo puede entrar en dicho m√©todo.
 
-La clave de la sincronizaciÛn est· en la palabra <b>monitor</b>. Como hemos comentado anteriormente, sÛlo un hilo de ejecuciÛn puede acceder a un mÈtodo sincronizado al mismo tiempo; se dice que ese hilo es el que tiene el monitor y tendr· bloqueado el proceso hasta que finalice su ejecuciÛn y lo libere.
+La clave de la sincronizaci√≥n est√° en la palabra <b>monitor</b>. Como hemos comentado anteriormente, s√≥lo un hilo de ejecuci√≥n puede acceder a un m√©todo sincronizado al mismo tiempo; se dice que ese hilo es el que tiene el monitor y tendr√° bloqueado el proceso hasta que finalice su ejecuci√≥n y lo libere.
 
-Podemos ver los ejemplos 03 de este proyecto para ver ejemplos sobre la sincronizaciÛn de hilos.
+Podemos ver los ejemplos 03 de este proyecto para ver ejemplos sobre la sincronizaci√≥n de hilos.
 
 ## Wait y Notify
 
-Los mÈtodos <b>wait() y notify()</b> pertenecen a la clase Object, por consiguiente, todos los objetos cuentan con ellos ya que todos las clases herendan de la clase Object.
+Los m√©todos <b>wait() y notify()</b> pertenecen a la clase Object, por consiguiente, todos los objetos cuentan con ellos ya que todos las clases heredan de la clase Object.
 
-El mÈtodo wait() deja bloqueado el hilo que lo llama, hasta que es liberado por otro hilo por medio de la ejecuciÛn del mÈtodo notify(). Siempre que se haga un notify() a un objeto despierta a todos los hilos que estan en estado de wait() dentro del mismo objeto.
+El m√©todo **wait()** deja bloqueado el hilo que lo llama, hasta que es liberado por otro hilo por medio de la ejecuci√≥n del m√©todo notify(). Siempre que se haga un notify() a un objeto despierta a todos los hilos que est√°n en estado de wait() dentro del mismo objeto.
 
-Los metodos wait() y notify() solamente se pueden llamar dentro de un metodo o bloque sincronizado. En caso de que se usen fuera de bloques o metodos sincronizados darÌa la excepcion <b>java.lang.IllegalMonitorStateException</b>
+Los m√©todos wait() y notify() solamente se pueden llamar dentro de un m√©todo o bloque sincronizado. En caso de que se usen fuera de bloques o m√©todos sincronizados dar√° la excepci√≥n <b>java.lang.IllegalMonitorStateException</b>
 
-El mÈtodo wait() esta sobrecargado y admite tambien un parametro de entrada en el que le pasamos un n˙mero de milisegundos, en caso de que pase dicho numero de milisegundos y ningun hilo haya ejecutado un notify sobre el objeto, entonces el hilo seguira su ejecuciÛn.
+El m√©todo wait() esta sobrecargado y admite tambi√©n un par√°metro de entrada en el que le pasamos un n√∫mero de milisegundos, en caso de que pase dicho n√∫mero de milisegundos y ning√∫n hilo haya ejecutado un **notify** sobre el objeto, entonces el hilo seguir√° su ejecuci√≥n.
 
-Por otro lado, es muy importante tambien saber que el metodo wait() adem·s de parar indefinidamente el hilo, libera el bloque sincronizado (libera el monitor del hilo) y dejarÌa pasar a otro hilo que este esperando para entrar en dicho bloque sincronizado. De esta manera, permitiriamos entrar a otros hilos que quieran ejecutar el metodo notify() para desperatar a otros hilos parados con el metodo wait(). 
+Por otro lado, es muy importante tambi√©n saber que el m√©todo **wait()** adem√°s de parar indefinidamente el hilo, libera el bloque sincronizado (libera el monitor del hilo) y dejar√° pasar a otro hilo que este esperando para entrar en dicho bloque sincronizado. De esta manera, permitir√≠amos entrar a otros hilos que quieran ejecutar el m√©todo **notify()** para despertar a otros hilos parados con el m√©todo **wait()**. 
 
-Podemos ver el ejemplo 04 para ver un sistema de productores y consumidores usando los metodos wait() y notify().
+Podemos ver el ejemplo 04 para ver un sistema de productores y consumidores usando los m√©todos **wait() y notify()**.
 
 ## Bibliografia
-- https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html
-- https://www.java67.com/2019/05/why-wait-and-notify-method-should-be-called-in-loop-not-if-block.html
-
+- <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html>
+- <https://www.java67.com/2019/05/why-wait-and-notify-method-should-be-called-in-loop-not-if-block.html>
