@@ -9,7 +9,7 @@ public class Cola {
 	public final static int MAX_ELEMENTOS = 3;
 	
 	//Una cola es ideal para implementar este ejemplo
-	//FIFO -> First in First out 
+	//FIFO -> First In First Out 
 	private Queue<String> cola = new LinkedList<>();
 	
 	//Si no hubiera condición de numero máximo de elementos con esto bastaría

@@ -11,6 +11,7 @@ public class Productor extends Thread{
 		this.cola = cola;
 	}
 	
+	//Cada productor produce 10 mensajes
 	public void run(){
 		for(int i = 1;i <= 10;i++){
 			String mensaje = nombre + " - " + i;//Productor 1 - 1
