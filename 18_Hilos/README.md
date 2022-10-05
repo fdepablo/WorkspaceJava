@@ -96,7 +96,7 @@ Podemos ver los ejemplos 03 de este proyecto para ver ejemplos sobre la sincroni
 
 Los métodos <b>wait() y notify()</b> pertenecen a la clase Object, por consiguiente, todos los objetos cuentan con ellos ya que todos las clases heredan de la clase Object.
 
-El método **wait()** deja bloqueado el hilo que lo llama, hasta que es liberado por otro hilo por medio de la ejecución del método notify(). Siempre que se haga un notify() a un objeto despierta a todos los hilos que están en estado de wait() dentro del mismo objeto.
+El método **wait()** deja bloqueado el hilo que lo llama, hasta que es liberado por otro hilo por medio de la ejecución del método notify(). Siempre que se haga un notify() a un objeto despierta a un hilo que esté en estado de wait().
 
 Los métodos wait() y notify() solamente se pueden llamar dentro de un método o bloque sincronizado. En caso de que se usen fuera de bloques o métodos sincronizados dará la excepción <b>java.lang.IllegalMonitorStateException</b>
 
