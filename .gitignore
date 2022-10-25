@@ -125,12 +125,13 @@ local.properties
 *.zip
 *.tar.gz
 *.rar
-# Decimos que evite no sincronizar las librerias que usamos en nuestros proyectos
-# para que funcionen
-# librerias proyectos normales
+# Decimos que las librerias que usamos en nuestros proyectos las versione tambien:
+# incluimos librerias de proyectos normales
 !*/lib/*.jar
-# librerias proyectos web
+# incluimos librerias de proyectos web antiguos
 !*/WebContent/WEB-INF/lib/*.jar
+# incluimos librerias de proyectos web modernos
+!*/src/main/webapp/WEB-INF/lib/*.jar
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
