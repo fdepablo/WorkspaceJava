@@ -1,6 +1,5 @@
 package modelo.entidad;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,17 +20,7 @@ public class DatosBancarios {
 	@Column(name = "numero_cuenta")
 	private Integer numeroTC;
 
-	// Relación de uno a uno
-	//-----------------------
-	// Al ser una relacion bidireccional, tambien ponemos la anotacion @OneToOne sobre
-	// este atributo
-	// Este cascade no lo ponemos, ya que no queremos actuar sobre el cliente en caso de hacer 
-	// alguna accion con los datos bancarios
-	@OneToOne/*(cascade= CascadeType.ALL)*/ 
-		
-	// Mediante @JoinColumn establecemos que la FK estará en esta tabla (datos_bancarios).
-	// Le podemos dar el nombre de la columna y a que columna de la tabla
-	// cliente estamos referenciando, que normalmente es la Primary Key (PK)
+	@OneToOne
 	@JoinColumn(name = "fk_id_cliente", referencedColumnName = "id")
 	private Cliente cliente;
 

@@ -19,14 +19,7 @@ public class Comercial {
 	private Integer id;
 	private String nombre;
 
-	//Solo hacemos cascade cuando damos de alta
 	@ManyToMany(cascade=CascadeType.PERSIST)
-	//En este caso @JoinTable daremos instrucciones para crear la tabla intermedia
-	//que JPA creara para hacer la realcion "Many to Many" 
-	//Usa los siguientes parametros
-	//1. name -> El nombre de la tabla intermedia
-	//2. joinColumns -> las columnas FK y PK que aporta esta entidad (COMERCIAL)
-	//3. inverseJoinColumns -> las columnas FK y PK que me aporta la otra Entidad (CLIENTE)
 	@JoinTable(name="comerciales_clientes",
 			   joinColumns= { @JoinColumn(name="fk_id_comercial", referencedColumnName="id") }, //FK que aporta Comercial
 			   inverseJoinColumns= { @JoinColumn(name="fk_id_cliente", referencedColumnName="id")}) //FKs que aportan el resto de entidades

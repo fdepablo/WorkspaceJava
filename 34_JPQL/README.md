@@ -1,6 +1,6 @@
 # JPQL
 
-JPQL es un lenguaje intermedio entre POO y SQL, usado por JPA para hacer consultas
+JPQL es un lenguaje intermedio entre POO y SQL, usado normalmente por JPA para hacer consultas
 a la BBDD
 
 Tiene el siguiente formato:
