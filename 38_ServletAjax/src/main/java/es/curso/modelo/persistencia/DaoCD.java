@@ -9,10 +9,13 @@ public class DaoCD {
 	
 	private static List<CompactDisc> listaCD;
 	
-	//Los bloques estaticos son bloque de codigo que se ejecutan antes
-	//de arrancar cualquier aplicacion
+	//Los bloques estáticos son bloques de código que se ejecutan 
+	//la primera vez que se invoca a un objeto de la clase
+	//y no se vuelve a ejecutar más durante todo el programa
 	static {
+		System.out.println("Inicializando bloque static");
 		listaCD = new ArrayList<CompactDisc>();
+		
 		CompactDisc cd = new CompactDisc();
 		cd.setArtista("Bob Dylan");
 		cd.setTitulo("Empire Burlesque");

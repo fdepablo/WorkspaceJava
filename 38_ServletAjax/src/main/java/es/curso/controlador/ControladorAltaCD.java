@@ -27,16 +27,27 @@ public class ControladorAltaCD extends HttpServlet {
        
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		//Para leer el mensaje del body de la petición HTTP debemos de recurrir
+		//a las siguientes clases
 		InputStream inputStream = request.getInputStream();	
-		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-		String json = bufferedReader.readLine();
-		System.out.println("Cadena entrante: " + json);
+		InputStreamReader isr = new InputStreamReader(inputStream);
+		BufferedReader bufferedReader = new BufferedReader(isr);
 		
+		String json = bufferedReader.readLine();
+		System.out.println("ControladorAltaCD -> Cadena entrante: " + json);
+		
+		//Con las librerías GSON podemos convertir JSON a objetos
+		//Java facilmente, siempre y cuando tengan la misma estructura
 		Gson gson = new Gson();
 		CompactDisc cd = gson.fromJson(json, CompactDisc.class);
+			
+		//Nos comunicamos con la capa DAO para "persistir" la información
 		DaoCD daoCD = new DaoCD();
-		//Validaciones
 		boolean insertado = daoCD.add(cd);
+		
+		//Mandamos la respuesta al cliente
+		response.setStatus(200);
+		response.setContentType("text/plain");
 		response.getWriter().append(Boolean.toString(insertado));
 	}
 	
