@@ -21,46 +21,49 @@ public class Application implements CommandLineRunner{
 	//Primero inyectaremos todos los objetos que necesitamos para
 	//acceder a nuestro ServicioRest, el ServicioProxyPersona y el
 	//ServicioProxyMensaje
-	@Autowired
-	private ServicioProxyPersona spp;
 	
 	@Autowired
 	private ServicioProxyMensaje spm;
 	
-	//Tambien necesitaremos acceder al contexto de Spring para parar
-	//la aplicacion, ya que esta app al ser una aplicacion web se
-	//lanzará en un tomcat. De esta manera le decimos a Spring que
+	@Autowired
+	private ServicioProxyPersona spp;
+	
+	//También necesitaremos acceder al contexto de Spring para parar
+	//la aplicación, ya que esta app al ser una aplicación web se
+	//lanzará en un Tomcat. De esta manera le decimos a Spring que
 	//nos inyecte su propio contexto.
 	@Autowired
 	private ApplicationContext context;
 	
-	//En este metodo daremos de alta un objeto de tipo RestTemplate que sera
-	//el objeto mas importante de esta aplicacion. Sera usado por los 
+	//En este método daremos de alta un objeto de tipo RestTemplate que será
+	//el objeto más importante de esta aplicación. Será usado por los 
 	//objetos ServicioProxy para hacer las peticiones HTTP a nuestro
-	//servicio REST. Como no podemos anotar la clase RestTemplate porque
-	//no la hemos creado nosotros, usaremos la anotacion @Bean para decirle
-	//a Spring que ejecute este metodo y meta el objeto devuelto dentro
-	//del contexto de Spring con ID "restTemplate" (el nombre del metodo)
+	//servicio REST. 
+	//Como no podemos anotar la clase RestTemplate para dar un objeto
+	//de este tipo, porque no la hemos creado nosotros, usaremos la anotación 
+	//@Bean para decirle a Spring que cuando arranque la app ejecute este 
+	//método y meta el objeto devuelto dentro del contexto de Spring con ID 
+	//"restTemplate" (el nombre del método)
 	@Bean
 	public RestTemplate restTemplate(RestTemplateBuilder builder) {
 		return builder.build();
 	}
 	
-	//Metodo main que lanza la aplicacion
+	//Método main que lanza la aplicación
 	public static void main(String[] args) {
 		System.out.println("Cliente -> Cargando el contexto de Spring");
 		SpringApplication.run(Application.class, args);
 
-		//Notese que como este metodo es estatico no podemos acceder
-		//a los metodos dinamicos de la clase, como el "spp" o "spm"
+		//Nótese que como este método es estático no podemos acceder
+		//a los métodos dinámicos de la clase, como el "spp" o "spm"
 		//Para solucionar esto, haremos que nuestra clase implemente
-		//"CommandLineRunner" e implementaremos el metodo "run"
-		//Cuando se acabe de arrancar el contexto, se llamara automaticamente
-		//al metodo run
+		//"CommandLineRunner" e implementaremos el método "run"
+		//Cuando se acabe de arrancar el contexto, se llamará automáticamente
+		//al método run
 	}
 	
-	//Este metodo es dinamico por la tanto ya podemos acceder a los atributos
-	//dinamicos
+	//Este método es dinámico por la tanto ya podemos acceder a los atributos
+	//dinámicos (spm y spp respectivamente)
 	@Override
 	public void run(String... args) throws Exception {
 		System.out.println("****** Arrancando el cliente REST ******");
@@ -116,7 +119,7 @@ public class Application implements CommandLineRunner{
 		System.out.println("********** LISTAR PERSONAS ***************");
 		List<Persona> listaPersonas = spp.listar(null);
 		//Recorremos la lista y la imprimimos con funciones lambda
-		//Tambien podriamos haber usado un for-each clasico de java
+		//Tambien podríamos haber usado un for-each clásico de java
 		listaPersonas.forEach((v) -> System.out.println(v));
 		
 		System.out.println("******* LISTAR PERSONAS POR NOMBRE *******");
@@ -125,22 +128,22 @@ public class Application implements CommandLineRunner{
 		
 		System.out.println("******************************************");		
 		System.out.println("******** Parando el cliente REST *********");	
-		//Mandamos parar nuestra aplicacion Spring Boot
+		//Mandamos parar nuestra aplicación Spring Boot
 		pararAplicacion();
 	}
 	
 	public void pararAplicacion() {
-		//Esta aplicacion levanta un servidor web, por lo que tenemos que darle 
-		//la orden de pararlo cuando acabemos. Para ello usamos el metodo exit, 
-		//de la clase SpringApplication, que necesita el contexto de Spring y 
-		//un objeto que implemente la interfaz ExitCodeGenerator. 
-		//Podemos usar la funcion lambda "() -> 0" para simplificar 
+		//Esta aplicacion levanta un servidor web, por lo que tenemos que dar 
+		//la orden de pararlo cuando acabemos. Para ello usamos el método exit, 
+		//de la clase SpringApplication, que necesita tanto el contexto de 
+		//Spring como un objeto que implemente la interfaz ExitCodeGenerator. 
+		//Podemos usar la función lambda "() -> 0" para simplificar 
 		
 		SpringApplication.exit(context, () -> 0);
 		
-		//Podriamos hacerlo tambien de una manera clasica, es decir, creando
-		//la clase anonima a partir de la interfaz. 
-		//El codigo de abajo sería equivalente al de arriba
+		//Podemos hacerlo también de una manera clásica, es decir, creando
+		//la clase anónima a partir de la interfaz. 
+		//El código de abajo sería equivalente al de arriba
 		//(pero mucho más largo)
 		/*
 		SpringApplication.exit(context, new ExitCodeGenerator() {

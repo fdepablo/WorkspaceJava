@@ -1,6 +1,5 @@
 package serviciorest.cliente.servicio;
 
-import java.net.URI;
 import java.util.Arrays;
 import java.util.List;
 
@@ -9,12 +8,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import serviciorest.cliente.entidad.Persona;
 
-//Con esta anotacion damos de alta un objeto de tipo
+//Con esta anotación damos de alta un objeto de tipo
 //ServicioProxyPersona dentro del contexto de Spring
 @Service
 public class ServicioProxyPersona {
@@ -22,19 +20,19 @@ public class ServicioProxyPersona {
 	//La URL base del servicio REST de personas
 	public static final String URL = "http://localhost:8080/personas/";
 	
-	//Inyectamos el objeto de tipo RestTemplate que nos ayudara
+	//Inyectamos el objeto de tipo RestTemplate que nos ayudará
 	//a hacer las peticiones HTTP al servicio REST
 	@Autowired
 	private RestTemplate restTemplate;
 	
 	/**
-	 * Metodo que obtiene una persona del servicio REST a partir de un id
-	 * En caso de que el id no exita arrojaria una expcepcion que se captura
+	 * Método que obtiene una persona del servicio REST a partir de un id
+	 * En caso de que el id no exita arrojaria una expcepción que se captura
 	 * para sacar el codigo de respuesta
 	 * 
 	 * @param id que queremos obtener
 	 * @return retorna la persona que estamos buscando, null en caso de que la
-	 * persona no se encuentre en el servidor (devuelva 404) o haya habido algun
+	 * persona no se encuentre en el servidor (devuelva 404) o haya habido algún
 	 * otro error.
 	 */
 	public Persona obtener(int id){
@@ -48,12 +46,13 @@ public class ServicioProxyPersona {
 				//Si la persona existe, la persona viene en formato JSON en el body
 				//Al ser el objeto ResponseEntity de tipo Persona, al obtener el 
 				//body me lo convierte automaticamente a tipo Persona
+				//(Spring utiliza librerías por debajo para pasar de JSON a objeto)
 				return re.getBody();
 			}else {
-				System.out.println("Respuesta no contemplada");
+				System.out.println("obtener -> Respuesta no contemplada");
 				return null;
 			}
-		}catch (HttpClientErrorException e) {
+		}catch (HttpClientErrorException e) {//Errores 4XX
 			System.out.println("obtener -> La persona NO se ha encontrado, id: " + id);
 		    System.out.println("obtener -> Codigo de respuesta: " + e.getStatusCode());
 		    return null;
@@ -61,7 +60,7 @@ public class ServicioProxyPersona {
 	}
 	
 	/**
-	 * Metodo que da de alta una persona en el servicio REST
+	 * Método que da de alta una persona en el servicio REST
 	 * 
 	 * @param p la persona que vamos a dar de alta
 	 * @return la persona con el id actualizado que se ha dado de alta en el
@@ -76,7 +75,7 @@ public class ServicioProxyPersona {
 			ResponseEntity<Persona> re = restTemplate.postForEntity(URL, p, Persona.class);
 			System.out.println("alta -> Codigo de respuesta " + re.getStatusCode());
 			return re.getBody();
-		} catch (HttpClientErrorException e) {
+		} catch (HttpClientErrorException e) {//Errores 4XX
 			System.out.println("alta -> La persona NO se ha dado de alta, id: " + p);
 		    System.out.println("alta -> Codigo de respuesta: " + e.getStatusCode());
 		    return null;
@@ -118,6 +117,7 @@ public class ServicioProxyPersona {
 		try {
 			//El metodo delete tampoco devuelve nada, por lo que si no 
 			//ha podido borrar el id, daría un excepcion
+			//Ej http://localhost:8080/personas/1 DELETE
 			restTemplate.delete(URL + id);
 			return true;
 		} catch (HttpClientErrorException e) {
@@ -148,7 +148,7 @@ public class ServicioProxyPersona {
 			ResponseEntity<Persona[]> response =
 					  restTemplate.getForEntity(URL + queryParams,Persona[].class);
 			Persona[] arrayPersonas = response.getBody();
-			return Arrays.asList(arrayPersonas);//convertimos el array en un arraylist
+			return Arrays.asList(arrayPersonas);//convertimos el array en un ArrayList
 		} catch (HttpClientErrorException e) {
 			System.out.println("listar -> Error al obtener la lista de personas");
 		    System.out.println("listar -> Codigo de respuesta: " + e.getStatusCode());

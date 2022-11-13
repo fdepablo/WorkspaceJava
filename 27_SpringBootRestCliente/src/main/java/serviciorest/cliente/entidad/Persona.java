@@ -1,8 +1,5 @@
 package serviciorest.cliente.entidad;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Persona {
 	
 	private int id;
