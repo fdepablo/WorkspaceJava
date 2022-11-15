@@ -8,7 +8,7 @@ Actualmente es un formato de intercambio de texto más popular que XML ya que oc
 
 JSON está constituido por dos estructuras:
 
-1. Una colección de pares de <b>clave/valor</b>. En varios lenguajes esto es conocido como un <b>objeto</b>, pero también como registro, estructura, diccionario, tabla hash, lista de claves o un array asociativo. El nombre tiene que ser una cadena entre comillas dobles. El valor puede ser de cualquier tipo (ver más abajo). Ejemplo: 
+1. Una colección de pares de <b>clave/valor</b>. En varios lenguajes esto es conocido como un <b>objeto</b>, pero también como registro, estructura, diccionario, tabla hash, lista de claves o un array asociativo. La clave tiene que ser una cadena entre comillas dobles. El valor puede ser de cualquier tipo (ver más abajo). Ejemplo: 
 
         {"id": 1, "nombre": "Stark"}
 
