@@ -1,74 +1,88 @@
-# CriptografÌa
+# Criptograf√≠a
 
-La criptografÌa es la ciencia que estudia las distintas tÈcnicas que se pueden utilizar para proteger documentos y datos, transform·ndolos por medio de alg˙n tipo de codificaciÛn secreta.
+La criptograf√≠a es la ciencia que estudia las distintas t√©cnicas que se pueden utilizar para proteger documentos y datos, transform√°ndolos por medio de alg√∫n tipo de codificaci√≥n secreta.
 
-La palabra criptografÌa proviene de la uniÛn de dos palabras de la lengua griega:
+La palabra criptograf√≠a proviene de la uni√≥n de dos palabras de la lengua griega:
 - Kryptos: oculto.
 - Graphia: escritura.
 
-Para los sistemas inform·ticos, la criptografÌa tiene como objetivo ocultar la informaciÛn a personas o programas no autorizados, que no sÛlo podrÌan leerla, sino incluso manipularla con objeto de modificar su contenido.
+Para los sistemas inform√°ticos, la criptograf√≠a tiene como objetivo ocultar la informaci√≥n a personas o programas no autorizados, que no s√≥lo podr√°n leerla, sino incluso manipularla con objeto de modificar su contenido.
 
-## Usos de la criptografÌa
+## Usos de la criptograf√≠a
 
-La criptografÌa se viene empleando desde tiempos inmemoriales. En las antigua Grecia y Roma ya se creaban criptogramas (mensajes cifrados) para cuestiones diplom·ticas, Ûrdenes militares, informes sobre actividades de espionaje o documentos de Ìndole polÌtica. A lo largo de la historia el hombre ha inventado varios sistemas criptogr·ficos. Veamos a continuaciÛn algunos ejemplos:
+La criptograf√≠a se viene empleando desde tiempos inmemoriales. En las antigua Grecia y Roma ya se creaban criptogramas (mensajes cifrados) para cuestiones diplom√°ticas, √≥rdenes militares, informes sobre actividades de espionaje o documentos de pol√≠ticos. A lo largo de la historia el hombre ha inventado varios sistemas criptogr√°ficos. Veamos a continuaci√≥n algunos ejemplos:
 
-### La escÌtala espartana. 
+### La esc√≠tala espartana. 
 
-Fue el primer metodo de encriptaciÛn de la historia. La idea consistia en enrollar un papiro en una escÌtala (una palo con muescas) y escribir un mensaje por una de sus caras. Luego se desenrollaba el papiro y se enviaba a un receptor. Dicho receptor enrollaba el mensaje en una escitala exactamente igual que la primera para poder leer el mensaje.
+Fue el primer m√©todo de encriptaci√≥n de la historia. La idea consist√≠a en enrollar un papiro en una esc√≠tala (una palo con muescas) y escribir un mensaje por una de sus caras. Luego se desenrollaba el papiro y se enviaba a un receptor. Dicho receptor enrollaba el mensaje en una esc√≠tala exactamente igual que la primera para poder leer el mensaje.
 
-![Escitala espartana](img/escitala.jfif)
+![Esc√≠tala espartana](img/escitala.jfif)
 
-### El mÈtodo CÈsar. 
+### El m√©todo C√©sar. 
 
-Se denomina asÌ porque fue utilizado por Julio CÈsar. Es muy sencillo: consiste en sustituir cada letra por otra situada varias posiciones m·s adelante dentro del alfabeto. El n˙mero de posiciones es lo que llamamos desplazamiento.
+Se denomina as√≠ porque fue utilizado por Julio C√©sar. Es muy sencillo: consiste en sustituir cada letra por otra situada varias posiciones m√°s adelante dentro del alfabeto. El n√∫mero de posiciones es lo que llamamos desplazamiento.
 
-![Metodo Cesar](img/metodo_cesar.png)
+![M√©todo Cesar](img/metodo_cesar.png)
 
-### La m·quina enigma
+### La m√°quina enigma
 
-La m·quina Enigma comenzÛ a utilizarse en la Segunda Guerra Mundial por los alemanes para cifrar sus mensajes secretos. Con cada tecla pulsada, unos rotores giraban, modificando dicha tecla por otra distinta seleccionada por la m·quina a travÈs de diferentes reglas complejas.
+La m√°quina Enigma comenz√≥ a utilizarse en la Segunda Guerra Mundial por los alemanes para cifrar sus mensajes secretos. Con cada tecla pulsada, unos rotores giraban, modificando dicha tecla por otra distinta seleccionada por la m√°quina a trav√©s de diferentes reglas complejas.
 
-![maquina enigma](img/maquina_enigma.jpg)
+![m√°quina enigma](img/maquina_enigma.jpg)
 
-Fue Alan Turing, un cientÌfico brit·nico, quien logro descifrar los cÛdigos alemanes utilizados en la m·quina Enigma, contribuyendo asÌ a la derrota nazi.
+Fue Alan Turing, un cient√≠fico brit√°nico, quien logro descifrar los c√≥digos alemanes utilizados en la m√°quina Enigma, contribuyendo as√≠ a la derrota nazi.
 
-### HTTPS
 
-Dentro del protocolo HTTP tenemos tambien la versiÛn segura, el cual se cifra la comunicaciÛn entre el cliente y el servidor.
+## Concepto de encriptaci√≥n
 
-## Concepto de encriptacion
+La encriptaci√≥n es el proceso que hace posible la criptograf√≠a, es decir, el proceso necesario para volver ilegible dicha informaci√≥n para terceros. Aqu√≠ tenemos varios conceptos:
 
-La encriptaciÛn es el proceso que hace posible la criptografÌa, es decir, el proceso necesario para volver ilegible dicha informaciÛn para terceros. AquÌ tenemos varios conceptos:
-
-1. <b>Encriptar.</b> Proceso por el cual volvemos ilegible una informaciÛn. Tambien llamado cifrar.
-2. <b>Desencriptar.</b> Proceso de obtener el mensaje original a traves del mensaje encriptado. Tambien llamado descifrar.
+1. <b>Encriptar.</b> Proceso por el cual volvemos ilegible una informaci√≥n. Tambi√©n llamado **cifrar**.
+2. <b>Desencriptar.</b> Proceso de obtener el mensaje original a trav√©s del mensaje encriptado. Tambi√©n llamado **descifrar**.
 3. <b>Criptograma.</b> El mensaje secreto, es decir, el mensaje escrito en clave o cifrado.
 
-Tanto para encriptar como para desencriptar utilizaremos una <b>CLAVE</b> para realizar la transformaciÛn.
+Tanto para encriptar como para desencriptar utilizaremos una <b>CLAVE</b> para realizar la transformaci√≥n.
 
 ![cifrar descifrar](img/cifrar_descifrar.png)
 
-## Tipos de clave Criptogr·fica
+## Tipos de clave Criptogr√°fica
 
-Existen dos tipos de claves criptogr·ficas, que son:
+Existen dos tipos de claves criptogr√°ficas, que son:
 
-- <b>Clave simÈtrica.</b> Se utiliza la misma llave (o clave) para el cifrado y el descifrado. TambiÈn se denomina mÈtodo de clave privada. Este mÈtodo es el que primero se inventÛ y ha sido usado durante toda la historia de la humanidad. Como ejemplos podrÌamos encontrar la escitala espartana, el metodo cesar o la m·quina Enigma. Este mÈtodo, aunque fiable y robusto, representa un grave problema: øCÛmo transferimos o distribuimos la clave entre el emisor o el receptor? Es aquÌ donde entra tambien el concepto de <b>canal seguro</b>, que es un canal el cual podemos mandar informaciÛn sin miedo a que sea interceptada. Este problema lo podemos encontrar tanto si el emisor y el receptor son personas como si nos movemos en un entorno de cliente y servidor.
+- <b>Clave sim√©trica.</b> Se utiliza la misma llave (o clave) para el cifrado y el descifrado. Tambi√©n se denomina m√©todo de clave privada. Este m√©todo es el que primero se invent√≥ y ha sido usado durante toda la historia de la humanidad. Como ejemplos podr√≠amos encontrar la esc√≠tala espartana, el m√©todo cesar o la m√°quina Enigma. Este m√©todo, aunque fiable y robusto, representa un grave problema: ¬øC√≥mo transferimos o distribuimos la clave entre el emisor o el receptor? Es aqu√≠ donde entra tambi√©n el concepto de <b>canal seguro</b>, que es un canal el cual podemos mandar informaci√≥n sin miedo a que sea interceptada. Este problema lo podemos encontrar tanto si el emisor y el receptor son personas como si nos movemos en un entorno de cliente y servidor.
 
-- <b>Clave asimÈtrica.</b> Se utiliza una clave para el cifrado y otra distinta para el descifrado. TambiÈn se conoce como mÈtodo de clave p˙blica. En este mÈtodo tenemos dos llaves (o claves), una se conoce como clave p˙blica (A) y la otra se conoce como clave privada (B). La idea b·sica es que lo que ciframos con la clave p˙blica SOLAMENTE lo podemos descifrar con la clave privada, y lo que ciframos con la clave privada SOLAMENTE lo podemos descifrar con la clave publica. NUNCA lo que ciframos con una clave lo podemos descifrar con la misma (a diferencia de los metodos con clave simÈtrica). Tenemos dos principales ramas en la criptografÌa de clave simÈtrica, en funciÛn de si usamos la clave publica o la clave privada para cifrar, estos son: 
+- <b>Clave asim√©rica.</b> Se utiliza una clave para el cifrado y otra distinta para el descifrado. Tambi√©n se conoce como m√©todo de clave p√∫blica. En este m√©todo tenemos dos llaves (o claves), una se conoce como clave p√∫blica (A) y la otra se conoce como clave privada (B). La idea b√°sica es que lo que ciframos con la clave p√∫blica SOLAMENTE lo podemos descifrar con la clave privada, y lo que ciframos con la clave privada SOLAMENTE lo podemos descifrar con la clave p√∫blica. NUNCA lo que ciframos con una clave lo podemos descifrar con la misma (a diferencia de los m√©todos con clave sim√©trica). Tenemos dos principales ramas en la criptograf√≠a de clave sim√©trica, en funci√≥n de si usamos la clave publica o la clave privada para cifrar, estos son: 
 
-    1. <b>Cifrado con clave p˙blica.</b> Un mensaje cifrado con la clave p˙blica de un destinatario no puede ser descifrado por nadie (incluyendo al que lo cifrÛ), excepto un poseedor de la clave privada correspondiente, presumiblemente su propietario y la persona asociada con la clave p˙blica utilizada. Su funciÛn es garantizar la confidencialidad del mensaje.
+    1. <b>Cifrado con clave p√∫blica.</b> Un mensaje cifrado con la clave p√∫blica de un destinatario no puede ser descifrado por nadie, excepto un poseedor de la clave privada correspondiente. Su funci√≥n es **garantizar la confidencialidad del mensaje**.
 
-    2. <b>Cifrado con clave privada</b> Un mensaje firmado con la clave privada del remitente puede ser verificado por cualquier persona que tenga acceso a la clave p˙blica de dicho remitente, lo que demuestra que este remitente tenÌa acceso a la clave privada (y por lo tanto, es probable que sea la persona asociada con la clave privada utilizada). Se utiliza para garantizar la autenticidad del mensaje. Este metodo es usado para las firmas digitales.
+    2. <b>Cifrado con clave privada.</b> Un mensaje firmado con la clave privada del remitente puede ser verificado por cualquier persona que tenga acceso a la clave p√∫blica de dicho remitente, lo que demuestra que este remitente ten√≠a acceso a la clave privada. Se utiliza para **garantizar la autenticidad del mensaje**. Este m√©todo es usado para las firmas digitales y es de vital importancia que la clave privada nunca se comparta.
 
-Existe un tercer mÈtodo conocido como <b>Clave mixta</b>,que no es un tipo de criptografÌa como tal, simplemente es una conbinaciÛn de clave simÈtrica y clave asimÈtica. Un ejemplo serÌa el protocolo HTTPS. La idea b·sica es usar la clave asimÈtrica para intercambiar la clave simetrica.
+- <b>Clave mixta</b>, realmente no es un tipo de criptograf√≠a como tal, simplemente es una combinaci√≥n de clave sim√©trica y clave asim√©trica. Un ejemplo ser√≠a el protocolo **HTTPS**.
 
-## Trabajando con la criptografÌa en Java
 
-Java cuenta con mecanismos para encriptaciÛn de informaciÛn mediante uso de claves. Las clases que permiten desarrollar dichos mecanismos est·n distribuidas en las siguientes clases Java:
+### HTTPS
+
+Dentro del protocolo HTTP tenemos tambi√©n la versi√≥n segura, el cual cifra la comunicaci√≥n entre el cliente y el servidor. La idea b√°sica es usar la clave asim√©trica para intercambiar la clave sim√©trica.
+
+![HTTPS](img/how_works_https.png)
+
+1. El cliente intenta establecer una comunicaci√≥n con el servidor. El servidor responde que solo acepta comunicaci√≥n segura (HTTPS).
+2. El servidor env√≠a su clave p√∫blica al cliente (y su certificado).
+3. El cliente **genera una clave sim√©trica** (que ser√° la que se use para encriptar los futuros mensajes), y la env√≠a al servidor **encript√°ndola** con la clave publica que le mando el servidor en el paso 2.
+4. El servidor recibe el mensaje encriptado con la clave publica y lo desencripta con la clave privada. El servidor es el √∫nico que puede desencriptar el mensaje ya que es el √∫nico que posee la clave privada, si alguien intercepta el mensaje **no podr√°** desencriptarlo, ya que como mucho tendr√°n la clave p√∫blica. Despu√©s de desencriptar el mensaje, guarda la clave sim√©trica para encriptar los mensajes que enviar√° al cliente. Ahora mismo el cliente y el servidor son los √∫nicos que tienen la clave sim√©trica (session 243 en el dibujo)
+5. La transferencia de informaci√≥n comienza. Todos los mensajes se encriptar√°n con la clave sim√©trica (session 243).
+6. Para evitar que los atacantes puedan intentar adivinar la clave sim√©trica, cada cierto tiempo se suele regenerar la clave.
+
+Habr√≠a que a√±adir que, en este proceso, **el servidor env√≠a tanto la clave publica como su certificado digital al cliente** en el paso 2. De esta manera, el cliente puede comprobar que el certificado es v√°lido y que puede confiar en el servidor para intercambiar informaci√≥n. Los navegadores comprueban el certificado consultando a **empresas certificadoras**, si ninguna empresa reconoce el certificado, entonces se avisar√° al cliente para que el decida si quiere intercambiar informaci√≥n con el servidor.
+
+
+## Trabajando con la criptograf√≠a en Java
+
+Java cuenta con mecanismos para encriptaci√≥n de informaci√≥n mediante uso de claves. Las clases que permiten desarrollar dichos mecanismos est√°n distribuidas en las siguientes clases Java:
     
-- La interfaz <b>java.security.Key</b> representa una clave que puede ser utilizada en la funciÛn de cifrado y de descifrado. 
+- La interfaz <b>java.security.Key</b> representa una clave que puede ser utilizada en la funci√≥n de cifrado y de descifrado. 
 
-- La interfaz <b>javax.crypto.SecretKey</b> es otra interfaz m·s concreta que implementa a la interfaz Key.
+- La interfaz <b>javax.crypto.SecretKey</b> es otra interfaz m√°s concreta que implementa a la interfaz Key.
 
 - La clase <b>javax.crypto.spec.SecretKeySpec</b> es una clase que implementa la interfaz SecretKey.
 
@@ -76,38 +90,42 @@ Java cuenta con mecanismos para encriptaciÛn de informaciÛn mediante uso de clav
 
 ## Hash: funciones de resumen
 
-Las funciones de resumen, o funciones hash, disponen de un algoritmo capaz de crear, a partir de una determinada informaciÛn de longitud variable (entrada), una cadena de longitud fija (salida) que resume dicha informaciÛn.
+Las funciones de resumen, o funciones hash, disponen de un algoritmo capaz de crear, a partir de una determinada informaci√≥n de longitud variable (entrada), una cadena de longitud fija (salida) que resume dicha informaci√≥n.
 
 Los algoritmos hash garantizan que:
 
-1. La cadena de salida obtenida representa un resumen del mensaje original. A partir de dicho resumen NUNCA se podr· obtener el mensaje original (a diferencia de cuando ciframos, que se puede descifrar). Lo que "hasheamos" no se puede "deshashear".
+1. La cadena de salida obtenida representa un resumen del mensaje original. A partir de dicho resumen NUNCA se podr√° obtener el mensaje original (a diferencia de cuando ciframos, que se puede descifrar). Lo que "hasheamos" no se puede "deshashear" o, dicho de otra manera, a partir del resumen hash, nunca podremos obtener el mensaje original.
 
-2. Para la misma informaciÛn de entrada, se obtendr· <b>SIEMPRE</b> el mismo resumen hash. Esta regla se cumple siempre y cuando se utilice le mismo tipo de algoritmo.
+2. Para la misma informaci√≥n de entrada, se obtendr√° <b>SIEMPRE</b> el mismo resumen hash. Esta regla se cumple siempre y cuando se utilice le mismo tipo de algoritmo.
 
-Podemos pasar un algoritmo hash a cualquier informaciÛn, ya sea un texto, un fichero excel, un fichero .zip, etc.
+Para estas t√©cnicas se aplican algoritmos matem√°ticos. Por ejemplo, si sumamos el n√∫mero 123 al n√∫mero 77, el resultado siempre ser√≠a 200, pero si intent√°ramos sacar los 2 n√∫meros originales a partir del 200 no podr√≠amos hacerlo.
 
-Adem·s, un resumen hash tiene aplicaciones muy importantes:
+Podemos pasar un algoritmo hash a cualquier informaci√≥n, ya sea un texto, un fichero Excel, un fichero .zip, etc.
 
-1. <b>Comprobar que un archivo no ha sido modificado y garantizar su integridad</b>. Cuando hay que transmitir mucha informaciÛn a travÈs de la red, dicha informaciÛn puede transmitirse junto con el resumen y el tipo de algoritmo utilizado. Una vez que la informaciÛn llega al destino, puede volverse a generar el resumen con el mismo algoritmo y comprobar si ha habido alg˙n cambio durante la transmisiÛn. 
+Adem√°s, un resumen hash tiene aplicaciones muy importantes:
 
-2. <b>Comprobar contraseÒas de manera segura</b>. Las contraseÒas NUNCA se deben guardar encriptadas en base de datos, ya que cuando encriptamos un mensaje lo podemos desencriptar. Por ejemplo, un programador usa una clave para encriptar los passwords de los usuarios, por lo que al tener la clave puede en cualquier momento usar la misma clave para desencriptarlos. Los passwords en base de datos se guardan con el RESUMEN hash, que garantiza que nunca se podr· obtener la informaciÛn original. La manera de entonces de proceder serÌa guardar el pasword "hasheado" en base de datos y cada vez que nos mande el usuario su password para autenticarlo serÌa "hasheando" tambien dicho password y compararlo con el resumen hash del password guardado en base de datos. Recordemos el el algoritmo hash nos garantiza que una misma entrada produce siempre la misma salida.
+1. <b>Comprobar que un archivo no ha sido modificado y garantizar su integridad</b>. Cuando hay que transmitir mucha informaci√≥n a trav√©s de la red, dicha informaci√≥n puede transmitirse junto con el resumen y el tipo de algoritmo utilizado. Una vez que la informaci√≥n llega al destino, puede volverse a generar el resumen con el mismo algoritmo y comprobar si ha habido alg√∫n cambio durante la transmisi√≥n. 
+
+2. <b>Comprobar contrase√±as de manera segura</b>. Las contrase√±as NUNCA se deben guardar encriptadas en base de datos, ya que cuando encriptamos un mensaje lo podemos desencriptar. Por ejemplo, un programador usa una clave para encriptar las contrase√±as de los usuarios, por lo que al tener la clave puede en cualquier momento usar la misma clave para desencriptarlos. Las contrase√±as en base de datos se guardan con el RESUMEN hash, que garantiza que nunca se podr√° obtener la informaci√≥n original. La manera de entonces de proceder ser√≠a guardar la contrase√±a "hasheada" en base de datos, y cada vez que nos mande el usuario su password para autenticarlo, generamos tambi√©n el resumen hash de dicho password y lo comparamos con el resumen hash del password guardado en base de datos. Recordemos el algoritmo hash nos garantiza que una misma entrada produce siempre la misma salida.
 
 ### Algoritmos Hash:
 
 Podemos encontrar distintos algoritmos hash:
 
-1. <b>MD5</b> (Message-Digest Algorithm 5) es un algoritmo de resumen criptogr·fico creado por el profesor Ronald Rivest del Instituto TecnolÛgico de Massachusetts en 1991. Actualmente esta obsoleto ya que genera colisiones. En los algoritmos hash, se denomina colisiÛn a la ocurrencia de dos mensajes de entrada distintos que generan la misma cadena de salida de resumen.
+1. <b>MD5</b> (Message-Digest Algorithm 5) es un algoritmo de resumen criptogr√°fico creado por el profesor Ronald Rivest del Instituto Tecnol√≥gico de Massachusetts en 1991. Actualmente est√° obsoleto ya que genera colisiones. En los algoritmos hash, se denomina colisi√≥n a la ocurrencia de dos mensajes de entrada distintos que generan la misma cadena de salida de resumen.
 
-2. <b>SHA</b> (Secure Hash Algorithm), cuya primera versiÛn fue lanzada en 1993 por el Instituto Nacional de Normas y TecnologÌa de EEUU. Este algoritmo ha ido evolucionando para su mejora seg˙n se han ido detectando vulnerabilidades, y dando lugar a diferentes versiones como pueden ser SHA-256, SHA-512 o SH-1024. Es el m·s utilizados actualmente ya que las versiones m·s modernas de SHA son consideradas resistentes a las colisiones.e
+2. <b>SHA</b> (Secure Hash Algorithm), cuya primera versi√≥n fue lanzada en 1993 por el Instituto Nacional de Normas y Tecnolog√≠a de EE.UU. Este algoritmo ha ido evolucionando para su mejora seg√∫n se han ido detectando vulnerabilidades, y dando lugar a diferentes versiones como pueden ser SHA-256, SHA-512 o SH-1024. Es el m√°s utilizados actualmente ya que las versiones m√°s modernas de SHA son consideradas resistentes a las colisiones.
 
-## P·ginas de interes
+## P√°ginas de inter√©s
 
-Pagina para crear resumenes hash a partir de ficheros o cadenas https://hash.online-convert.com/es/generador-sha512
+- [Crear res√∫menes hash a partir de ficheros o cadenas](https://hash.online-convert.com/es/generador-sha512)
 
-Pagina con base de datos de resumenes hash https://crackstation.net/
+- [Base de datos de res√∫menes hash](https://crackstation.net/)
 
-## BibliografÌa
+## Bibliograf√≠a
 
-https://es.wikipedia.org/wiki/CriptografÌa
+- <https://es.wikipedia.org/wiki/Criptograf√≠a>
 
-https://es.wikipedia.org/wiki/FunciÛn_hash
+- <https://sid-500.com/2017/11/01/how-does-https-ssl-encryption-works/>
+
+- <https://es.wikipedia.org/wiki/Funci√≥n_hash>
