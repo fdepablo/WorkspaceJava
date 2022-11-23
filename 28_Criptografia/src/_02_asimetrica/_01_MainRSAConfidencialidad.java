@@ -3,6 +3,8 @@ package _02_asimetrica;
 import java.security.GeneralSecurityException;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
+import java.security.PrivateKey;
+import java.security.PublicKey;
 
 import javax.crypto.Cipher;
 
@@ -13,15 +15,19 @@ public class _01_MainRSAConfidencialidad {
 			KeyPairGenerator generador = KeyPairGenerator.getInstance("RSA");
 			System.out.println("Paso 1: Se ha obtenido el generador de claves");
 			
-			//Obtenemos el par de claves (publica y privada)
+			//Obtenemos el par de claves (publica y privada). Solamente
+			//se generaran una vez en la vida
 			KeyPair claves = generador.generateKeyPair();
+			PrivateKey clavePrivada = claves.getPrivate();
+			PublicKey clavePublica = claves.getPublic();
+			
 			System.out.println("Paso 2: Se ha obtenido el par de claves");
 			
 			Cipher cifrador = Cipher.getInstance("RSA");
 			System.out.println("Paso 3: Hemos obtenido el descifrador");
 			
-			cifrador.init(Cipher.ENCRYPT_MODE, claves.getPublic());
-			System.out.println(claves.getPublic().getClass().getName());
+			cifrador.init(Cipher.ENCRYPT_MODE, clavePublica);
+			System.out.println(clavePublica.getClass().getName());
 			System.out.println("Paso 4.1: Hemos configurado el cifrador para usar clave publica");
 			System.out.println("Paso 4.2: Cifrando de esta manera garantizamos CONFIDENCIALIDAD");
 			
@@ -35,13 +41,14 @@ public class _01_MainRSAConfidencialidad {
 			System.out.println("Paso 5.3: Mensaje Cifrado: " + mensajeCifrado);
 			
 			System.out.println("Paso 6.1: Ahora vamos a descifrar el criptograma usando la clave publica");
-			cifrador.init(Cipher.DECRYPT_MODE, claves.getPrivate());
-			byte[] bytesMensajeDescifrado = cifrador.doFinal(bytesMensajeCifrado);
+			Cipher descifrador = Cipher.getInstance("RSA");
+			descifrador.init(Cipher.DECRYPT_MODE, clavePrivada);
+			byte[] bytesMensajeDescifrado = descifrador.doFinal(bytesMensajeCifrado);
 			System.out.println("Paso 6.2: Mensaje Descifrado: " + new String(bytesMensajeDescifrado));
 			
 		} catch (GeneralSecurityException e) {
 			System.out.println("Error al cifrar o descifrar el mensaje");
-			System.out.println("Excepción de tipo: " + e.getClass().getName());
+			System.out.println("ExcepciÃ³n de tipo: " + e.getClass().getName());
 			System.out.println(e.getMessage());
 		}
 	}

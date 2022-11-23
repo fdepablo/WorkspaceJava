@@ -5,8 +5,8 @@ diferente
 
 En este ejemplo vamos a estudiar el algoritmo <b>RSA</b>, desarrollado por Ron Rivest, Adi Shamir y Leonard Adleman cuyas iniciales dieron nombre al algoritmo. Nos vasamos en lo siguiente:
 
-- La clave privada, que es distinta para cada usuario. 
-- La clave p�blica, que es la misma para todos los usuarios.
+- La clave privada, que solo la tendrá una persona y no podrá ser compartida a nadie más- 
+- La clave pública, que la puede tener cualquiera.
 
 El procedimiento empleado para el cifrado y descifrado en los ejemplos es el siguiente:
 

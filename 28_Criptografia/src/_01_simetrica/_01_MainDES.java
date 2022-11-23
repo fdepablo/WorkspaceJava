@@ -13,13 +13,13 @@ import javax.crypto.SecretKey;
 
 public class _01_MainDES {
 	public static void main(String[] args) throws IOException {
-		System.out.println("Probando sistema de encriptación con algoritmo DES");
+		System.out.println("Probando sistema de encriptaciÃ³n con algoritmo DES");
 		try {
-			//Generador de claves simetricas (escítalas espartanas)
+			//Generador de claves simetricas (escÃ­talas espartanas)
 			KeyGenerator generador = KeyGenerator.getInstance("DES");
 			System.out.println("Paso 1: Se ha obtenido el generador de claves");
 			
-			//Generamos la clave simetrica. (Una escítala espartana)
+			//Generamos la clave simetrica. (Una escÃ­tala espartana)
 			SecretKey paloEspartano = generador.generateKey();
 			//Si se hiciera otra vez, obtendria otra clave DIFERENTE, por ejemplo
 			//otro palo espartano con otras medidas
@@ -46,27 +46,28 @@ public class _01_MainDES {
 			System.out.println("Paso 5.3: Mensaje Cifrado: " + mensajeCifrado);
 			
 			System.out.println("Paso 6.1: Desciframos el criptograma:");
-			//Ahora el cifrador lo configuramos para que use la clave simetrica
+			//Ahora configuramos un descifrador para que use la clave simetrica
 			//para desencriptar. Debemos de usar la MISMA clave para descifrar, NO
 			//PODEMOS usar/generar una diferente.
-			cifrador.init(Cipher.DECRYPT_MODE, paloEspartano);
-			byte[] bytesMensajeDescifrado = cifrador.doFinal(bytesMensajeCifrado);
+			Cipher descifrador = Cipher.getInstance("DES");
+			descifrador.init(Cipher.DECRYPT_MODE, paloEspartano);
+			byte[] bytesMensajeDescifrado = descifrador.doFinal(bytesMensajeCifrado);
 			System.out.println("Paso 6.2: Mensaje Descifrado: " + new String(bytesMensajeDescifrado));
 	
 			//Todas estas excepciones extienden de GeneralSecurityException
-			//por lo que se puede simplificar simplemente capturando esa excepción
+			//por lo que se puede simplificar simplemente capturando esa excepciï¿½n
 		} catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException e) {
 			//NoSuchAlgorithmException: se produce cuando se especifica un algoritmo de cifrado 
 			//que no existe.
-			//NoSuchPaddingException: cuando la clave no tiene la configuración correcta
-			//InvalidKeyException: la clave es inválida (codificación incorrecta, 
-			//longitud incorrecta o no está inicializada)
+			//NoSuchPaddingException: cuando la clave no tiene la configuraciï¿½n correcta
+			//InvalidKeyException: la clave es invï¿½lida (codificaciï¿½n incorrecta, 
+			//longitud incorrecta o no estï¿½ inicializada)
 			System.out.println("Error al crear y configurar el descifrador");
 			System.out.println(e.getMessage());
 		} catch (IllegalBlockSizeException | BadPaddingException e) {
 			//IllegalBlockSizeException: longitud incorrecta de alguno de los bloques de 
 			//cifrado por un error durante el algoritmo.
-			//BadPaddingException: cuando la clave no tiene la configuración correcta
+			//BadPaddingException: cuando la clave no tiene la configuraciï¿½n correcta
 			System.out.println("Error al cifrar el mensaje");
 			System.out.println(e.getMessage());
 		}

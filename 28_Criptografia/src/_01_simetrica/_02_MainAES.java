@@ -8,12 +8,12 @@ import javax.crypto.SecretKey;
 
 public class _02_MainAES {
 	public static void main (String args[]) {
-		System.out.println("Probando sistema de encriptación con algoritmo AES");
+		System.out.println("Probando sistema de encriptaciÃ³n con algoritmo AES");
 		try {
 			KeyGenerator generador = KeyGenerator.getInstance("AES");
 			System.out.println("Paso 1: Se ha obtenido el generador de claves");
 			
-			//Generamos la clave simetrica. (Una escítala espartana)
+			//Generamos la clave simetrica. (Una escÃ­tala espartana)
 			SecretKey paloEspartano = generador.generateKey();
 			//Si se hiciera otra vez, obtendria otra clave DIFERENTE, por ejemplo
 			//otro palo espartano con otras medidas
@@ -40,13 +40,14 @@ public class _02_MainAES {
 			System.out.println("Paso 5.3: Mensaje Cifrado: " + mensajeCifrado);
 			
 			System.out.println("Paso 6.1: Desciframos el criptograma:");
-			//Ahora el cifrador lo configuramos para que use la clave simetrica
+			//Ahora configuramos un descifrador para que use la clave simetrica
 			//para desencriptar. Debemos de usar la MISMA clave para descifrar, NO
 			//PODEMOS usar/generar una diferente.
-			cifrador.init(Cipher.DECRYPT_MODE, paloEspartano);
-			byte[] bytesMensajeDescifrado = cifrador.doFinal(bytesMensajeCifrado);
+			Cipher descifrador = Cipher.getInstance("AES");
+			descifrador.init(Cipher.DECRYPT_MODE, paloEspartano);
+			byte[] bytesMensajeDescifrado = descifrador.doFinal(bytesMensajeCifrado);
 			System.out.println("Paso 6.2: Mensaje Descifrado: " + new String(bytesMensajeDescifrado));
-	
+				
 		//Simplificamos las excepciones capturando GeneralSecurityException
 		} catch (GeneralSecurityException gse) {
 			System.out.println("Algo ha fallado.." + gse.getMessage());
