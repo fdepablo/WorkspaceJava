@@ -1,4 +1,4 @@
-![JAVA](java.jpg "JAVA")
+![JAVA](img/java.jpg "JAVA")
 
 # Java
 La plataforma Java es el nombre de un entorno de computación originaria de Sun Microsystems, capaz de ejecutar aplicaciones desarrolladas usando el lenguaje de programación Java u otros lenguajes que compilen a bytecode y un conjunto de herramientas de desarrollo. En este caso, la plataforma no es un hardware específico o un sistema operativo, sino más bien una máquina virtual encargada de la ejecución de las aplicaciones, y un conjunto de bibliotecas estándar que ofrecen una funcionalidad común.
@@ -57,6 +57,18 @@ queramos. En principio podemos coger "Workpace default JRE" que sería la versi�
 eclipse para este workspace en concreto. Repetiriamos este paso para todos los proyectos que lo necesitemos.
 
 Si algun proyecto aparece con errores, debemos leer su README.md para solucionarlo
+
+## Codificación de caracteres en Eclipse
+
+La mayoría de este workspace está codificado en **UTF-8** por lo que es posible que si se usa otra codificación las tildes u otros caracteres se vean mal. Eclipse, por ejemplo, usa la codificación **Cp1252** por defecto en todos los workspace.
+
+Para cambiar la codificación de un workspace en eclipse realizar los siguientes pasos:
+
+	Window -> Preferences -> General -> Workspace : Text file encoding
+	
+Una vez ahí, seleccionar el de su preferencia (UTF-8 en este caso)
+	
+![UTF8](img/UTF8.png "UTF8")
 
 ## Bibliografia
 
