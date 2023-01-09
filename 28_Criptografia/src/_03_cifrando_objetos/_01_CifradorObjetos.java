@@ -7,7 +7,7 @@ import javax.crypto.SecretKey;
 
 public class _01_CifradorObjetos {
 	public static void main (String args[]) {
-		System.out.println("Probando sistema de encriptación con algoritmo AES");
+		System.out.println("Probando sistema de encriptaciÃ³n con algoritmo AES");
 		try {
 			KeyGenerator generador = KeyGenerator.getInstance("AES");
 			System.out.println("Paso 1: Se ha obtenido el generador de claves");

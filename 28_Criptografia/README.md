@@ -126,6 +126,8 @@ Podemos encontrar distintos algoritmos hash:
 
 - <https://es.wikipedia.org/wiki/Criptografía>
 
+- <https://docs.oracle.com/javase/8/docs/technotes/guides/security/crypto/CryptoSpec.html>
+
 - <https://sid-500.com/2017/11/01/how-does-https-ssl-encryption-works/>
 
 - <https://es.wikipedia.org/wiki/Función_hash>
