@@ -7,9 +7,9 @@ public class _01_EscrituraObjetoFichero {
 	public static void main(String args[]) {
 		// Crear objeto Alumno
 		Alumno alu1 = new Alumno("Pedro", 25);
-		alu1.calificar("Matem·ticas", 50);
-		alu1.calificar("InglÈs", 75);
-		alu1.calificar("Inform·tica", 95);
+		alu1.calificar("Matem√°ticas", 50);
+		alu1.calificar("Ingl√©s", 75);
+		alu1.calificar("Inform√°tica", 95);
 		alu1.calificar("Lengua", 60);
 		
 		// Abrir fichero para escritura
@@ -17,7 +17,7 @@ public class _01_EscrituraObjetoFichero {
 		try(FileOutputStream file = new FileOutputStream("alumno.dat");
 				ObjectOutputStream escritor = new ObjectOutputStream(file);) {
 			escritor.writeObject(alu1);
-			System.out.println("El objeto se ha grabado con Èxito");
+			System.out.println("El objeto se ha grabado con √©xito");
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.out.println("No se ha podido abrir el fichero");
