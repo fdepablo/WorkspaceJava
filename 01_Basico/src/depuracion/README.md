@@ -1,8 +1,8 @@
 # Depuración
 
-La depuracion es una herramienta que nos ayuda a los programadores a detectar errores y a  ejecutar un programa linea por linea para poder ver los resultados parciales que se van ejecutando en los programas.
+La depuración es una herramienta que nos ayuda a los programadores a detectar errores y a ejecutar un programa línea por línea para poder ver los resultados parciales que se van ejecutando en los programas.
 
-Es una herramienta importantisima a la hora de desarrollar software y es usada por los programadores en la mayor parte de la creación de los programas.
+Es una herramienta importantísima a la hora de desarrollar software y es usada por los programadores en la mayor parte de la creación de los programas.
 
 ## Errores de programación
 
@@ -12,8 +12,8 @@ Los errores que se producen en el desarrollo de software suelen estar asociados 
 
 1. <b>Momento</b>: Estos errores se clasifican dependiendo del momento en el que se producen. Podemos encontrar dos tipos:
 
-    - <b>Errores en tiempo de compilación</b> Suelen ser errores principalmente de sintaxis, como puede ser no seguir las reglas de Java, y provocan la no compilación del código. Estos errores son faciles de detectar ya que nos avisa el IDE en cuestión y los podemos solucionar de una manera sencilla. Se llaman en tiempo de compilación porque hacen que el programa no compile (no generó adecuadamente los ficheros con extensión .class)
-    - <b>Errores en tiempo de ejecución</b> Suelen ser errores de procesos no validos o lógicos. Estos errores no suelen ser detectados por el IDE, por lo que muchas veces la depuración del código nos van a ayudar a detectarlos. En este caso, el código compila, pero cuando se ejecuta, el comportamiento no es el esperado en algunos o en todos los casos. Un ejemplo podrá ser un error de cuando intentamos dividir un número por cero, en tiempo de compilación no habrá problema, pero cuando ejecutamos el código dará una excepción. 
+    - <b>Errores en tiempo de compilación</b> Suelen ser errores principalmente de sintaxis, como puede ser no seguir las reglas de Java, y provocan la no compilación del código. Estos errores son fáciles de detectar ya que nos avisa el IDE en cuestión y los podemos solucionar de una manera sencilla. Se llaman en tiempo de compilación porque hacen que el programa no compile (no generó adecuadamente los ficheros con extensión .class)
+    - <b>Errores en tiempo de ejecución</b> Suelen ser errores de procesos no validos o lógicos. Estos errores no suelen ser detectados por el IDE, por lo que muchas veces la depuración del código nos va a ayudar a detectarlos. En este caso, el código compila, pero cuando se ejecuta, el comportamiento no es el esperado en algunos o en todos los casos. Un ejemplo podrá ser un error de cuando intentamos dividir un número por cero, en tiempo de compilación no habrá problema, pero cuando ejecutamos el código dará una excepción. 
 
 2. <b>Consecuencia</b>: Estos errores se clasifican dependiendo si la ejecución del programa es suspendida o no. Este tipo de errores no suelen ser detectados por el IDE.
 
@@ -40,17 +40,17 @@ Las funciones generales que esta aplicación debe soportar serían las siguiente
 
 La ejecución del programa principal del proyecto se ejecuta normalmente hasta que el depurador detiene su ejecución, permitiendo al usuario examinar la situación. El depurador se parará en donde el programador haya indicado un punto de parada o ruptura llamado **breakpoint**.
 
-Para poner un "breakpoint" debemos de hacer doble click sobre el lateral de la linea donde queremos que se para nuestro programa, donde viene el número de linea. La función del punto de ruptura es que cuando la maquina virtual de Java llegue a dicho punto, detenga la ejecución del programa justo en esa linea, para que el programador pueda ver el estado del programa en esa linea.
+Para poner un "breakpoint" debemos de hacer “doble click” sobre el lateral de la línea donde queremos que se para nuestro programa, donde viene el número de línea. La función del punto de ruptura es que cuando la máquina virtual de Java llegue a dicho punto, detenga la ejecución del programa justo en esa linea, para que el programador pueda ver el estado del programa en esa linea.
 
 ## Uso del depurador con Eclipse
 
-Para que el programa se detenga en los puntos de ruptura, debemos arrancar el programa en modo depuración, para ello pulsaremos el fichero que tenga el método <b>main</b> con boton derecho -> debug as -> Java Application. Una vez hecho, nos aparecerá una pop-up donde se nos preguntará si queremos cambiar la perspectiva de eclipse a modo depuración. Esta perspectiva nos ayudará para ver ciertos valores que no podemos ver en una perspectiva normal de "java", tales como los hilos de ejecución (a la derecha) o el valor de las variables (a la izquierda).
+Para que el programa se detenga en los puntos de ruptura, debemos arrancar el programa en modo depuración, para ello pulsaremos el fichero que tenga el método <b>main</b> con botón derecho -> debug as -> Java Application. Una vez hecho, nos aparecerá una pop-up donde se nos preguntará si queremos cambiar la perspectiva de eclipse a modo depuración. Esta perspectiva nos ayudará para ver ciertos valores que no podemos ver en una perspectiva normal de "java", tales como los hilos de ejecución (a la derecha) o el valor de las variables (a la izquierda).
 
-Una vez que hayamos ejecutado el programa en modo depuración, el programa deberá pararse en un punto de ruptura cuando llegue a el. A partir de ahí podemos tomar una serie de opciones para continuar con la ejecución de nuestro programa, todas esas opciones las podemos ver en la pestaña <b>run</b>, las más importantes:
+Una vez que hayamos ejecutado el programa en modo depuración, el programa deberá pararse en un punto de ruptura cuando llegue a él. A partir de ahí podemos tomar una serie de opciones para continuar con la ejecución de nuestro programa, todas esas opciones las podemos ver en la pestaña <b>run</b>, las más importantes:
 
 1. <b>F8 - Resume</b>: Continua con la ejecución del programa. Se parará en el siguiente punto de interrupción si hubiera.
-2. <b>F6 - Step Over</b>: Pasa a la siguiente linea de ejecución del programa y se detiene en dicha linea. Podremos pulsar repetidamente F6 para ir ejecutando el programa linea a linea.
-3. <b>F5 - Step Into</b>: Si la linea en la que estamos es un método, entonces nos meteremos dentro de dicho método. Es muy util cuando queremos ver como actua el metodo en cuestión.
+2. <b>F6 - Step Over</b>: Pasa a la siguiente línea de ejecución del programa y se detiene en dicha línea. Podremos pulsar repetidamente F6 para ir ejecutando el programa línea a línea.
+3. <b>F5 - Step Into</b>: Si la línea en la que estamos es un método, entonces nos meteremos dentro de dicho método. Es muy útil cuando queremos ver como actúa el método en cuestión.
 
 ## Bibliografía
 
