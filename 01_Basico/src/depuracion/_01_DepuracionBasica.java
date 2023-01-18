@@ -1,13 +1,13 @@
 package depuracion;
 
 public class _01_DepuracionBasica {
-	//Para depurar el codigo en vez de ejecutar con run as -> run 
+	//Para depurar el cÃ³digo en vez de ejecutar con run as -> run 
 	//se hara con debug as -> debug
 	public static void main(String[] args) {
-		//Podemos poner puntos de interrupcion, haciendo doble click sobre la linea que 
+		//Podemos poner puntos de interrupciÃ³n, haciendo doble click sobre la linea que 
 		//queremos
 		//En cualquier momento podemos pulsar F8 para hacer que el programa ejecute hasta 
-		//el siguiente punto de interrupción, si no hubiera mas, hasta el fin del programa
+		//el siguiente punto de interrupciÃ³n, si no hubiera mas, hasta el fin del programa
 		System.out.println("Hola mundo!!");
 		//si pulsamos F6 iremos a la siguiente linea
 		System.out.println("Estoy depurando el codigo");
@@ -26,7 +26,7 @@ public class _01_DepuracionBasica {
 		nombre = "Steve Rogers";
 		
 		System.out.println(nombre);
-		//si pulsamos F5 pasaremos dentro del método, F6 para siguiente linea
+		//si pulsamos F5 pasaremos dentro del mï¿½todo, F6 para siguiente linea
 		int resultado = sumar(110, 90);		
 		System.out.println(resultado);
 		
