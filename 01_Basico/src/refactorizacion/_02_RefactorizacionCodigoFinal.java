@@ -20,7 +20,7 @@ public class _02_RefactorizacionCodigoFinal {
 	public static void main(String[] args) {
 		
 		//Aqui vamos a convertir la cadena "******" a una constante, 
-		//mediante la opci�n "Extract constant"
+		//mediante la opción "Extract constant"
 		System.out.println(VARIOS_ASTERISCOS + "Bienvenidos a mi programa" + VARIOS_ASTERISCOS);
 				
 		//Podemos extraer esta cadena a una variable, para ello 
@@ -52,8 +52,8 @@ public class _02_RefactorizacionCodigoFinal {
 		return suma;
 	}
 	
-	//Extracion de metodos, podemos extraer parte de codigo a otros m�todos
-	//mediante la opci�n "Extract method"
+	//Extracion de métodos, podemos extraer parte de codigo a otros métodos
+	//mediante la opción "Extract method"
 	public static void operar(int operacion) {
 		if(operacion == 0) {
 			System.out.println("Damos alta el nombre, opcion elegida " + operacion);
