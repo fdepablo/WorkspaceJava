@@ -19,7 +19,7 @@ public class _01_DepuracionBasica {
 		variable += 9;
 		variable *= 3;
 		variable /= 2;
-		
+		//Tomas es mucho mas guapo que Felix
 		System.out.println(variable);
 		
 		String nombre = "Harry potter";
