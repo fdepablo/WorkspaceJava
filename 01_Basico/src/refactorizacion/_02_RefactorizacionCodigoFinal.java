@@ -2,14 +2,14 @@ package refactorizacion;
 
 import java.util.Scanner;
 
-//Podemos mover el fichero a otra localización con "move" o arrastrando el
+//Podemos mover el fichero a otra localizaciï¿½n con "move" o arrastrando el
 //fichero
 
-//Podemos copiar el fichero a otra localización con "copy". Esta opción está al
-//pulsar botón derecho sobre el fichero. Se puede hacer tambien con "ctrl + C"
+//Podemos copiar el fichero a otra localizaciï¿½n con "copy". Esta opciÃ³n estÃ¡ al
+//pulsar botÃ³n derecho sobre el fichero. Se puede hacer tambien con "ctrl + C"
 
-//Podemos pegar el fichero una vez compiado. Esta opción está al
-//pulsar botón derecho sobre el fichero. Se puede hacer tambien con "ctrl + V"
+//Podemos pegar el fichero una vez compiado. Esta opciÃ³n estÃ¡ al
+//pulsar botÃ³n derecho sobre el fichero. Se puede hacer tambien con "ctrl + V"
 
 //Podemos cambiar el nombre de una clase haciendo un "rename" del fichero
 public class _02_RefactorizacionCodigoFinal {
@@ -20,12 +20,12 @@ public class _02_RefactorizacionCodigoFinal {
 	public static void main(String[] args) {
 		
 		//Aqui vamos a convertir la cadena "******" a una constante, 
-		//mediante la opción "Extract constant"
+		//mediante la opciï¿½n "Extract constant"
 		System.out.println(VARIOS_ASTERISCOS + "Bienvenidos a mi programa" + VARIOS_ASTERISCOS);
 				
 		//Podemos extraer esta cadena a una variable, para ello 
 		//haremos un "Extract local variable". Podriamos hacer lo  mismo 
-		//si fuera un número u otro valor.
+		//si fuera un nï¿½mero u otro valor.
 		
 		//Una vez que hayamos extraido la cadena a una variable local, 
 		//haremos un refactor del nombre con "rename"		
@@ -52,8 +52,8 @@ public class _02_RefactorizacionCodigoFinal {
 		return suma;
 	}
 	
-	//Extracion de metodos, podemos extraer parte de codigo a otros métodos
-	//mediante la opción "Extract method"
+	//Extracion de metodos, podemos extraer parte de codigo a otros mï¿½todos
+	//mediante la opciï¿½n "Extract method"
 	public static void operar(int operacion) {
 		if(operacion == 0) {
 			System.out.println("Damos alta el nombre, opcion elegida " + operacion);
