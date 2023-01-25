@@ -2,10 +2,10 @@ package refactorizacion;
 
 import java.util.Scanner;
 
-//Podemos mover el fichero a otra localizaci�n con "move" o arrastrando el
+//Podemos mover el fichero a otra localización con "move" o arrastrando el
 //fichero
 
-//Podemos copiar el fichero a otra localizaci�n con "copy". Esta opción está al
+//Podemos copiar el fichero a otra localización con "copy". Esta opción está al
 //pulsar botón derecho sobre el fichero. Se puede hacer tambien con "ctrl + C"
 
 //Podemos pegar el fichero una vez compiado. Esta opción está al
@@ -68,6 +68,7 @@ public class _02_RefactorizacionCodigoFinal {
 		}
 	}
 
+	//Método
 	private static String pedirNombre() {
 		Scanner sc = new Scanner(System.in);
 		String nombre = sc.nextLine();
