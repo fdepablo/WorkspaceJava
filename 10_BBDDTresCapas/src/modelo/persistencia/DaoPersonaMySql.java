@@ -1,6 +1,5 @@
 package modelo.persistencia;
 
-import java.net.ConnectException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -209,9 +208,9 @@ public class DaoPersonaMySql implements DaoPersona{
 			//Esta sentencia carga del jar que hemos importado
 			//una clase que se llama Driver que esta en el paqueta
 			//com.mysql.jdbc. Esta clase se carga previamente en
-			//java para más adelante ser llamada
-			//Esto SOLO es necesario si utilizamos una versión java anterior
-			//a la 1.7 ya que desde esta versión java busca automaticamente 
+			//java para mï¿½s adelante ser llamada
+			//Esto SOLO es necesario si utilizamos una versiï¿½n java anterior
+			//a la 1.7 ya que desde esta versiï¿½n java busca automaticamente 
 			//los drivers
 			Class.forName("com.mysql.jdbc.Driver");
 			System.out.println("Driver cargado");

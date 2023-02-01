@@ -23,8 +23,8 @@ public class MainTresCapas {
 				String nombre = sc.next();
 				int edad = sc.nextInt();
 				double peso = sc.nextDouble();
+				
 				Persona p = new Persona();
-				p.setId(0);
 				p.setNombre(nombre);
 				p.setEdad(edad);
 				p.setPeso(peso);
@@ -33,7 +33,7 @@ public class MainTresCapas {
 				if(alta == 0) {
 					System.out.println("Persona dada de alta");
 				}else if(alta == 1) {
-					System.out.println("Error de conexión con la BBDD");
+					System.out.println("Error de conexiÃ³n con la BBDD");
 				}else if(alta == 2){
 					System.out.println("El usuario tiene menos de tres carateres");
 				}
@@ -50,7 +50,7 @@ public class MainTresCapas {
 	}
 
 	private static void menu() {
-		System.out.println("Elija una opción:");
+		System.out.println("Elija una opciï¿½n:");
 		System.out.println("1- Alta de persona");
 		System.out.println("0- Salir del programa");
 	}
