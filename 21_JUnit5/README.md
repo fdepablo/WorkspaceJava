@@ -55,7 +55,7 @@ Cuando vamos a probar un método, es fundamental para dar la prueba por valida r
 Por ejemplo, supongamos que leyendo la documentación de un método nos dice lo siguiente
 
 	/**
-	* Método que comparar dos numero para ver cual de los dos es mayor
+	* Método que comparar dos números para ver cuál de los dos es mayor
 	*
 	* @param numero1 primer número a comparar
 	* @param numero2 segundo número a comparar
@@ -86,7 +86,7 @@ Una posible batería de pruebas sería la siguiente (que no única):
        
 Esto sería lo mínimo para dar por valida una prueba, probar todos los casos que vengan en la documentación o en su defecto, todos los casos o caminos que tengamos codificados en el método. Podríamos hacer más sin problema, pero al menos, todos los casos posibles.
 
-**JUnit** nos ayudará es a crear esa batería de pruebas y a automatizarla, pero pensar las pruebas, los resultados esperados y los resultados obtenidos, correra de nuestra parte.
+**JUnit** nos ayudará es a crear esa batería de pruebas y a automatizarla, pero pensar las pruebas, los resultados esperados y los resultados obtenidos, correrá de nuestra parte.
 
 Como podemos apreciar, la documentación y las pruebas unitarias están bastante unidas. Si la documentación está bien hecha, podemos pasar las pruebas simplemente entendiéndola, no necesitaremos bucear en el código.
 
@@ -124,15 +124,15 @@ Entre las anotaciones más importantes podemos encontrar:
 - **@BeforeEach**, se ejecuta antes de cada test. Normalmente se utiliza para preparar el entorno de testing (por ejemplo: inicialización de clases o lectura de datos de entrada).
 - **@AfterEach**, se ejecuta después de cada test. Normalmente se utiliza para limpiar el entorno de testing.
 - **@BeforeAll**, se ejecuta una vez, antes de comenzar todos los tests. Este método debe definirse como static.
-- **@AfterAll**, se ejecuta una vez, cuando los tests han finalizado. Este método deben definirse como static para trabajar con JUnit.
+- **@AfterAll**, se ejecuta una vez, cuando los tests han finalizado. Este método debe definirse como “static” para trabajar con JUnit.
 
 **NO** es necesario crear la clase de pruebas con todas las anotaciones, pero al menos debe haber un método anotado con **@Test**.
 
 ## Aserciones en JUnit
 
-Las aserciones nos permiten verificar el valor del resultado esperado con el valor de retorno obtenido del metodo probado. Son funciones de aceptación y fundamentales para trabajar con JUnit. Las aserciones se colocan dentro de los métodos etiquetados con @Test, es decir, métodos de prueba. Si la aserción se cumple, la prueba se dará por valida, si la aserción no se cumple, la prueba fallará.
+Las aserciones nos permiten verificar el valor del resultado esperado con el valor de retorno obtenido del método probado. Son funciones de aceptación y fundamentales para trabajar con JUnit. Las aserciones se colocan dentro de los métodos etiquetados con @Test, es decir, métodos de prueba. Si la aserción se cumple, la prueba se dará por valida, si la aserción no se cumple, la prueba fallará.
 
-Una prueba puede tener muchas aserciones, pero en cuanto una aserción no se cumpla, la prueba se dara por fallada y se dejará de ejecutar el método de la prueba.
+Una prueba puede tener muchas aserciones, pero en cuanto una aserción no se cumpla, la prueba se dará por fallada y se dejará de ejecutar el método de la prueba.
 
 Las aserciones van dentro de los métodos de pruebas y podemos poner todas las aserciones que se necesiten para pasar la prueba.
 
@@ -149,7 +149,7 @@ JUnit proporciona varios métodos de aserción para escribir pruebas de JUnit, l
 - assertArrayEquals(Array1, Array2). Comprueba que ambos arrays tengan los mismos elementos.
 - assertThrows(Exception, función lambda). Comprueba a partir de una función lambda si ha ocurrido una excepción específica.
 
-Ademas de las aserciones, JUnit nos proporciona algún método adicional.
+Además de las aserciones, JUnit nos proporciona algún método adicional.
 
 - **fail()**, si se llega a ejecutar este método, la prueba fallará. Suele ir dentro de condicionales.
 
@@ -177,10 +177,10 @@ Unos buenos pasos para desarrollar código son los siguientes:
 1. Definir la clase y documentarla
 2. Definir los atributos de clase y documentarlos (si es necesario).
 3. Definir los métodos a medida que los vayamos necesitando, y antes de codificarlos, realizar su documentación.
-4. Implementar el método basandose en la documentación hecha. Podriamos cambiar la documentación si lo vemos necesario.
+4. Implementar el método basándose en la documentación hecha. Podríamos cambiar la documentación si lo vemos necesario.
 5. Realizar la prueba unitaria (JUnit) del método.
-6. En caso de que falle la prueba, debermos de arreglar el códido. Volvemos al punto 5.
-7. Es posible que al pasar la prueba, nos veamos en la necesidad de volver a cambiar la documentación hecha, en el caso de darnos cuenta de algunos casos que no contemplamos.
+6. En caso de que falle la prueba, debemos de arreglar el código. Volvemos al punto 5.
+7. Es posible que, al pasar la prueba, nos veamos en la necesidad de volver a cambiar la documentación hecha, en el caso de darnos cuenta de algunos casos que no contemplamos.
 	 
 ## Ejemplos JUnit
 
@@ -189,4 +189,5 @@ Dentro de este proyecto, en la carpeta **test/junit5** podemos encontrar ejemplo
 ## Bibliografía
 
 - <https://junit.org/junit5/>
+
 

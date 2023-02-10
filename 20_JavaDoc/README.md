@@ -14,7 +14,7 @@ No confundir JavaDoc con los comentarios normales de java, que estos empiezan po
 
 Es muy importante entender la diferencia entre los comentarios normales y JavaDoc. El objetivo de los comentarios normales es explicar líneas de código a programadores que se meten a ver el código fuente, el objetivo de JavaDoc es explicar a otros programadores como deben de usar las clases y los métodos que hemos realizado, sin necesidad de ver el Código fuente ni de entenderlo.
 
-En el siguiente enlace podemos ver un ejemplo resultante de una documentación hecha para la clase [String](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html). En esta documentación, realizada con JavaDoc por la gente de Oracle, podemos ver como se nos explica perfectamente toda la clase String y todos los métodos que tiene. Este será nuestro objetivo cuando realizamos JavaDoc en nuestras clases.
+En el siguiente enlace podemos ver un ejemplo resultante de una documentación hecha para la clase [String](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html). En esta documentación, realizada con JavaDoc por la gente de Oracle, podemos ver como se nos explica perfectamente toda la clase **String** y todos los métodos que tiene. Este será nuestro objetivo cuando realizamos JavaDoc en nuestras clases.
 
 A su vez, la documentación está muy ligada con las pruebas unitarias, hasta tal punto de que, si la documentación está bien hecha, podemos hacer las pruebas unitarias sin necesidad de entender el código.
 
@@ -110,7 +110,7 @@ Para cada uno de los atributos, primero habrá que documentar el atributo y lueg
 
 Documentar métodos es de las partes más importantes de JavaDoc, y el objetivo es el de explicar perfectamente lo que hace el método, con todas sus casuísticas posibles o resultados.
 
-Son muy importantes las anotaciones <b>@param</b> para cada uno de sus parámetros o <b>@return</b> para explicar los posibles valores que devuelve. Puede haber varios <b>@param</b> (uno para cada parámetro de entrada), pero como máximo habrá UN SOLO <b>@return</b> (y no lo habrá en caso de que el método devuelva <b>void</b>).
+Son muy importantes las anotaciones <b>@param</b> para cada uno de sus parámetros o <b>@return</b> para explicar los posibles valores que devuelve. Puede haber varios <b>@param</b> (uno para cada parámetro de entrada), pero como máximo habrá UN SOLO <b>@return</b> (y no lo habrá en caso de que el método devuelva <b>”void”</b>).
 
 Primero habría que documentar el método y luego poner las anotaciones que estimemos oportunas.
 
@@ -134,9 +134,9 @@ Primero habría que documentar el método y luego poner las anotaciones que esti
 	   }
 	 }
 
-Nótese que solo ponemos un <b>@param</b> porque solo hay un parámetro de entrada y no ponemos <b>@return</b> porque el método es void y no retorna nada. También observamos como la documentación esta justo encima del método que queremos documentar.
+Nótese que solo ponemos un <b>@param</b> porque solo hay un parámetro de entrada y no ponemos <b>@return</b> porque el método es “void” y no retorna nada. También observamos como la documentación esta justo encima del método que queremos documentar.
 
-<b>IMPORTANTE!</b> Los setter y los getter normalmente NO se comentan. Solo se comentan en caso de que hagan alguna funcionalidad diferente a lo que hace por defecto (asignar o devolver valores de atributos). Un ejemplo podría ser el método anterior <b>setTitulo</b>, normalmente no se documentará, pero en este caso SI que sería obligatorio hacerlo ya que hace una funcionalidad diferente al setTitulo por defecto que nos crearía un IDE como eclipse.
+<b>¡IMPORTANTE!</b> Los setter y los getter normalmente NO se comentan. Solo se comentan en caso de que hagan alguna funcionalidad diferente a lo que hace por defecto (asignar o devolver valores de atributos). Un ejemplo podría ser el método anterior <b>setTitulo</b>, normalmente no se documentará, pero en este caso SI que sería obligatorio hacerlo ya que hace una funcionalidad diferente al “setTitulo” por defecto que nos crearía un IDE como eclipse.
 
 ## Documentación de constructores
 
@@ -158,7 +158,7 @@ Para hacerlo con Eclipse debemos de realizar los siguientes casos.
 
 1. Ver la clase <b>basico/ClaseJavaDoc</b> para ejemplos teóricos de cómo hacer documentación
 
-2. En la clase <b>basico/MainJavaDoc</b> hay ejemplos de cómo usar la clase anterior y cómo podemos ver el javadoc hecho poniendo el cursor encima de la clase o los métodos
+2. En la clase <b>basico/MainJavaDoc</b> hay ejemplos de cómo usar la clase anterior y cómo podemos ver el JavaDoc hecho poniendo el cursor encima de la clase o los métodos
 
 3. En el paquete <b>entidad</b> hay ejemplos más prácticos de cómo hacer documentación
 
@@ -167,3 +167,4 @@ Para hacerlo con Eclipse debemos de realizar los siguientes casos.
 - [https://es.wikipedia.org/wiki/Javadoc](https://es.wikipedia.org/wiki/Javadoc)
 - [https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html](https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html)
 - [https://www.markdownguide.org/extended-syntax/#tables](https://www.markdownguide.org/extended-syntax/#tables)
+

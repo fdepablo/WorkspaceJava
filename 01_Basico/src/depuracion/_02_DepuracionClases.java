@@ -3,7 +3,7 @@ package depuracion;
 /*
  * En este ejemplo vamos a seguir depurando pero esta vez también vamos a 
  * depurar una clase importada, la clase Persona. Al ejecutar el programa
- * dar� una seríe de errores que tendremos que corregir.
+ * dará una seríe de errores que tendremos que corregir.
  */
 public class _02_DepuracionClases {
 	public static void main(String[] args) {
@@ -26,7 +26,7 @@ public class _02_DepuracionClases {
 			//Podemos poner un breakpoint condicional, lo ponemos
 			//con doble click y a continuacion en la pestaña de breakpoints
 			//escogemos la opcion Conditional y dentro le damos el valor (Ej: i==5)
-			//Para ver la pesta�a de breakpoint debemos de estar en perspectiva de debug
+			//Para ver la pestaña de breakpoint debemos de estar en perspectiva de debug
 			System.out.println(i);
 		}
 	}

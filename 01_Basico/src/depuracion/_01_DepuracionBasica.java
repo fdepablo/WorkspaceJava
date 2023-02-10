@@ -26,7 +26,7 @@ public class _01_DepuracionBasica {
 		nombre = "Steve Rogers";
 		
 		System.out.println(nombre);
-		//si pulsamos F5 pasaremos dentro del m�todo, F6 para siguiente linea
+		//si pulsamos F5 pasaremos dentro del método, F6 para siguiente linea
 		int resultado = sumar(110, 90);		
 		System.out.println(resultado);
 		
