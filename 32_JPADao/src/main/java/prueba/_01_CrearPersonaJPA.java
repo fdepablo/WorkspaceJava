@@ -1,11 +1,12 @@
 package prueba;
 
 import modelo.entidad.Persona;
-import modelo.persistencia.PersonaDao;
+import modelo.persistencia.DaoPersonaJPA;
+import modelo.persistencia.interfaces.DaoPersona;
 
 public class _01_CrearPersonaJPA {
 	public static void main(String[] args) {
-		PersonaDao pd = new PersonaDao();
+		DaoPersona pd = new DaoPersonaJPA();
 		
 		Persona persona = new Persona();
 		persona.setNombre("Bud Spencer Dao");

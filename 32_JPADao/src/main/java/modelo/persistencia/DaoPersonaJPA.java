@@ -9,8 +9,9 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import modelo.entidad.Persona;
+import modelo.persistencia.interfaces.DaoPersona;
 
-public class PersonaDao {
+public class DaoPersonaJPA implements DaoPersona{
 
 	private EntityManager em;
 	
