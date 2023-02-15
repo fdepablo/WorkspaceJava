@@ -28,10 +28,11 @@ public class _01_TestPersona {
 	}
 
 	/**
-	 * En esta prueba unitaria vamos a probar el metodo "setNombre"
+	 * En esta prueba unitaria vamos a probar el metodo "setNombre" con más
+	 * de tres caracteres
 	 */
 	@Test
-	public void testSetNombre(){
+	public void testSetNombreMayorTresCaracteres(){
 		//No hace falta crear el objeto porque  lo creamos en el 
 		//metodo anotado con @BeforeEach
 		p1.setNombre("Goku");
@@ -40,21 +41,28 @@ public class _01_TestPersona {
 		String resultadoEsperado = "Goku";
 		String resultadoObtenido = p1.getNombre();
 		
-		assertEquals(resultadoEsperado, resultadoObtenido);
-		
+		//Comparamos que sean iguales
+		assertEquals(resultadoEsperado, resultadoObtenido);	
+	}
+	
+	@Test
+	public void testSetNombreMayorMenorOIgualTresCaracteres() {
 		p1.setNombre("ana");
 		//el nombre tiene que estar puesto a Goku
 		
-		resultadoEsperado = "";
-		resultadoObtenido = p1.getNombre();
+		String resultadoEsperado = "";
+		String resultadoObtenido = p1.getNombre();
 		
-		assertEquals(resultadoEsperado, resultadoObtenido);
-		
+		assertEquals(resultadoEsperado, resultadoObtenido);		
+	}
+	
+	@Test
+	public void testSetNombreMasPruebas() {
 		//Podemos pasar mas pruebas, no tienen porque estar de más
 		p1.setNombre("az");
 		
-		resultadoEsperado = "";
-		resultadoObtenido = p1.getNombre();
+		String resultadoEsperado = "";
+		String resultadoObtenido = p1.getNombre();
 		
 		assertEquals(resultadoEsperado, resultadoObtenido);
 		
@@ -96,9 +104,9 @@ public class _01_TestPersona {
 		
 		assertEquals(resultadoEsperado, resultadoObtenido);
 		
-		p1.caminar(100);
+		p1.caminar(-40);
 		
-		assertEquals(180, p1.getPosicion());
+		assertEquals(40, p1.getPosicion());
 	}
 
 	@Test
@@ -123,6 +131,7 @@ public class _01_TestPersona {
 		assertNotSame(p1, p2);
 	}
 	
+	//Lo ideal sería dividirlo en 3 test
 	@Test
 	public void testPersonaMayor() {
 		Persona p2 = new Persona();
@@ -144,9 +153,7 @@ public class _01_TestPersona {
 		p1.setEdad(30);
 		p2.setEdad(30);
 		
-		p3 = p1.personaMayor(p2);
-		
-		assertSame(p3, p2);
+		assertSame(p2, p1.personaMayor(p2));
 	}
 	
 	@Test
@@ -160,14 +167,14 @@ public class _01_TestPersona {
 		//Primer caso, espero -1
 		assertEquals(resultadoEsperado, resultadoObtenido);
 		
-		//Segundo caso, la posicion pasada es menor que la posicion
+		//Segundo caso, la posicion pasada es menor que la posición
 		//del objeto
 		resultadoObtenido = p1.calcularDistancia(7);
 		resultadoEsperado = 3;
 		
 		assertEquals(resultadoObtenido,resultadoEsperado);// 10 - 7 = 3
 		
-		//Tercer caso, la posición pasada es mayor que la posicion
+		//Tercer caso, la posición pasada es mayor que la posición
 		//del objeto
 		resultadoObtenido = p1.calcularDistancia(13);
 		resultadoEsperado = 3;

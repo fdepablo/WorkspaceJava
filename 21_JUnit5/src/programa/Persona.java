@@ -6,7 +6,7 @@ package programa;
  * suelen ser muy sencillos
  * 
  * Para probar los métodos de una clase debemos de, o leer su JavaDoc
- * para entender lo que hace el método, o meternos en el codigo y 
+ * para entender lo que hace el método, o meternos en el código y 
  * entender lo que hace dicho método
  * 
  * 
@@ -24,7 +24,7 @@ public class Persona {
 	private int edad;
 	
 	/**
-	 * Posicion de la persona en el eje de las X dentro de una matriz
+	 * Posición de la persona en el eje de las X dentro de una matriz
 	 */
 	private int posicion;
 	
@@ -94,13 +94,14 @@ public class Persona {
 	
 	//setNombre() en cambio si que haría falta probarlo y documentarlo, ya que 
 	//lo hemos cambiado
+	
 	/**
-	 * Este metodo asiganará el nombre pasado por parametro a la 
-	 * propiedad nombre del objeto, pero unicamente cuando el nombre 
+	 * Este método asiganará el nombre pasado por parámetro a la 
+	 * propiedad nombre del objeto, pero únicamente cuando el nombre 
 	 * pasado tenga más de 3 caracteres. En caso contrario (menor o 
-	 * igual que 3 caracteres) se le pondra el valor de vacio ("")
+	 * igual que 3 caracteres) se le pondrá el valor de vacio ("")
 	 * 
-	 * @param nombre representa el nombre a dar de alta
+	 * @param nombre representa el nombre a cambiar en el atibuto nombre
 	 */
 	public void setNombre(String nombre) {
 		if(nombre.length() > 3) {
@@ -113,11 +114,11 @@ public class Persona {
 	//METODOS
 	
 	/**
-	 * Metodo que mueve a la persona un número de metros dado, 
-	 * aumentando el atributo posicion actual en un numero 
+	 * Método que mueve a la persona un número de metros dado, 
+	 * aumentando el atributo posición actual en un número 
 	 * entero de metros.
 	 * 
-	 * @param metros representa el numero de metros que queremos 
+	 * @param metros representa el número de metros que queremos 
 	 * incrementar
 	 */
 	public void caminar(int metros) {
@@ -140,14 +141,14 @@ public class Persona {
 	}
 	
 	/**
-	 * Este metodo compará la edad de la persona que invoca el método con la
-	 * edad de la persona que se pasa por parametro, devolviendo la referencia
-	 * de la persona que sea mayor de las dos
+	 * Este método compara la edad de la persona que invoca el método, con la
+	 * edad de la persona que se pasa por parámetro, devolviendo la referencia
+	 * de la persona que sea de mayor edad de las dos
 	 * 
 	 * @param p persona pasada por parametro
-	 * @return la persona que invoca el método en caso de que esta persona sea 
-	 * mayor. p en caso de que p sea la mayor. En caso de que sean iguales se 
-	 * devuelve la refrencia p
+	 * @return this en caso de que esta persona sea 
+	 * mayor. p en caso de que el parametro de entrada p sea la mayor. 
+	 * En caso de que sean iguales se devuelve el parametro de entrada
 	 */
 	public Persona personaMayor(Persona p) {
 		if(this.edad > p.edad) {
@@ -159,16 +160,15 @@ public class Persona {
 	
 	/**
 	 * Calcula la distancia de un objeto persona respecto a una 
-	 * posicion en metros en valor absoluto
+	 * posición en metros en valor absoluto.
 	 * 
-	 * No se admiten posiciones negativas
+	 * @param posicion representa una posición en el eje de las X, es 
+	 * la posición con la que voy a comparar la posición de la persona.
+	 * No se admiten números negativos.
 	 * 
-	 * @param posicion representa una posicion en el eje de las X, es 
-	 * la posición con la que voy a comparar la persona
-	 * 
-	 * @return la distancia en metros y absoluta de la posicion 
-	 * respecto al objeto. Devolvemos -1 en caso de que la posicion 
-	 * sea negativa
+	 * @return la distancia en metros y absoluta de la posición 
+	 * respecto al objeto persona. Devolvemos -1 en caso de que el parámetro 
+	 * posición que pasamos sea negativo
 	 */
 	public int calcularDistancia(int posicion) {
 		if(posicion < 0) {
