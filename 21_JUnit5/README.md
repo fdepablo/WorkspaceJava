@@ -189,5 +189,6 @@ Dentro de este proyecto, en la carpeta **test/junit5** podemos encontrar ejemplo
 ## Bibliografía
 
 - <https://junit.org/junit5/>
+- [Cambiar charset en JavaDoc a UTF8](https://stackoverflow.com/questions/13302881/where-can-i-specify-my-javadoc-document-charset)
 
 
