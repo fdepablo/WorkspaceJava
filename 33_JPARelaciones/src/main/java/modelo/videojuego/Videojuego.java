@@ -23,15 +23,15 @@ public class Videojuego {
 	private String nombre;
 	private double nota;
 	
-	@ManyToOne
-	@JoinColumn(name="fk_id_empresa", referencedColumnName="id")
-	private Empresa empresa;
-	
 	@ManyToMany(cascade=CascadeType.PERSIST)
 	@JoinTable(name="vid_usu",
 	   joinColumns= { @JoinColumn(name="fk_id_videojuego", referencedColumnName="id") }, //FK que aporta Comercial
 	   inverseJoinColumns= { @JoinColumn(name="fk_id_usuario", referencedColumnName="id")}) //FKs que aportan el resto de entidades
 	private List<Usuario> listaUsuarios;
+	
+	@ManyToOne
+	@JoinColumn(name="fk_id_empresa", referencedColumnName="id")
+	private Empresa empresa;	
 
 	public int getId() {
 		return id;

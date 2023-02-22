@@ -2,7 +2,6 @@ package modelo.videojuego;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,11 +19,11 @@ public class Empresa {
 	private int id;
 	private String nombre;
 	
-	@OneToOne(mappedBy = "empresa")
-	private Direccion direccion;
-	
 	@OneToMany(mappedBy="empresa")
 	private List<Videojuego> listaVideojuegos;
+	
+	@OneToOne(mappedBy = "empresa")
+	private Direccion direccion;
 
 	public int getId() {
 		return id;
