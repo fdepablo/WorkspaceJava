@@ -31,7 +31,7 @@ public class _03_PruebasOneToMany {
 		//Aqui no tenemos el id del cliente
 		System.out.println("Id del cliente: " + c.getId());
 		
-		//Añadimos los pedidos asociados al cliente, no nos olvidamos de cruzar las
+		//Aï¿½adimos los pedidos asociados al cliente, no nos olvidamos de cruzar las
 		//referencias para hacerlo bidireccional, a los pedidos le asignamos su cliente
 		List<Pedido> pedidos = new ArrayList<>();
 		Pedido p1 = new Pedido(null,"PED-1",new Date(),c);
@@ -72,7 +72,7 @@ public class _03_PruebasOneToMany {
 				
 		//El siguiente persist tambien funcionaria, de hecho al insertar cliente
 		//y detectar que tiene 4 pedidos mas, tambien se insertarian los pedidos en la
-		//BBDD. Todo esto es así por los cascades en ambos sentidos
+		//BBDD. Todo esto es asï¿½ por los cascades en ambos sentidos
 		//em.persist(p2); 
 		
 		em.getTransaction().commit(); 
@@ -105,9 +105,9 @@ public class _03_PruebasOneToMany {
 		
 		//Las relaciones "one to many" y "many to many" son perezosas por defecto
 		//En este caso, al buscar el objeto Cliente NO nos ha traido de manera
-		//automatica los objetos Pedido asociados a él.
+		//automatica los objetos Pedido asociados a ï¿½l.
 		
-		//Cuando queramos acceder a los pedidos, será cuando se haga la query
+		//Cuando queramos acceder a los pedidos, serï¿½ cuando se haga la query
 		//En la siguiente linea, al acceder al size() de los pedidos, sera cuando
 		//JPA haga la query para traerse los pedidos. Los objetos que tenia antes
 		//asociados se llaman objetos PROXY
@@ -120,7 +120,7 @@ public class _03_PruebasOneToMany {
 		//Nota para Hibernate a la hora de acceder a los pedidos si esta configurado
 		//como lazy:
 		//Hay que acceder a los pedidos antes de cerrar el entity manager
-		//si no, daria error al intentar acceder a los pedidos más adelante.
+		//si no, daria error al intentar acceder a los pedidos mï¿½s adelante.
 		//Si se utiliza eclipselink o toplink no haria falta hacerlo
 		//System.out.println("Numero de pedidos " + c2.getPedidos().size());
 		em.close();
