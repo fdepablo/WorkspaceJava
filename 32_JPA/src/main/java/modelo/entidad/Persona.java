@@ -5,23 +5,24 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
-//Con esta anotacion podemos decirle a JPA que esta clase sera
-//una tabla de base de datos, por defecto la tabla se llamar�
+//Con esta anotación podemos decirle a JPA que esta clase será
+//una tabla de base de datos, por defecto la tabla se llamará
 //como la clase en lowercamelcase (persona). 
-//La clase debe de seguir la convenci�n JavaBean
+//La clase debe de seguir la convención JavaBean
 @Entity
 //Si queremos cambiar el nombre de la tabla, podemos hacerlo
-//con la siguiente anotacion (no ser�a obligatorio)
+//con la siguiente anotacion (no sería obligatorio)
 @Table(name = "personas")
 public class Persona {
-	//la entidad debe de tener un id, en este caso sera 
+	//la entidad debe de tener un id, en este caso será 
 	//la propiedad id, esto lo hacemos poniendo @Id jusnto
 	//encima de la propiedad que queremos que sea primary key
 	@Id
 	//Podemos decirle al motor de bbdd que nos autogenere 
-	//el id cada vez que mandemos un objeto para persistir
-	//suele ser la mejor opcion
+	//el id cada vez que mandemos un objeto para persistir.
+	//Suele ser la mejor opción
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nombre;
