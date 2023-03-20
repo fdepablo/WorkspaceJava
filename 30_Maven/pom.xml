@@ -21,6 +21,8 @@
 	<properties>
 		<maven.compiler.target>11</maven.compiler.target>
 		<maven.compiler.source>11</maven.compiler.source>
+		<!-- Con la siguiente propiedad cambiamos la codificación de caracteres a UTF-8-->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<!-- Esta parte es de las más importantes de nuestro proyecto maven y es 
