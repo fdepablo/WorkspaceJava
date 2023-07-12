@@ -12,11 +12,11 @@ public class _01_ObjetoAJson {
 		p1.setEdad(18);
 		p1.setApellido("Potter");
 		
-		//podriamos convertir el json a mano... (estas flipando, ni de coña)		
+		//Podriamos convertir el json a mano... (estÃ¡s flipando...)		
 		//System.out.println("{\"idpersona\" : " + p1.getIdPersona() + 
 		//		",\"nombre\" : " + p1.getEdad());
 		
-		//mejor usar la librerias de GSON que hacen eso por nosotros
+		//Mejor usar la librerias de GSON que hace eso por nosotros
 		Gson gson = new Gson();
 		String json = gson.toJson(p1);
 		System.out.println(json);
