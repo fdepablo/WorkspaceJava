@@ -22,7 +22,7 @@ public class _01_ObjectToXML {
 			 * contener las anotaciones necesarias y no cuenta con un constructor 
 			 * sin argumentos.
 			 */
-			contexto = JAXBContext.newInstance(Persona.class);//inyeccion de dependecia
+			contexto = JAXBContext.newInstance(Persona.class);
 		} catch (JAXBException e) {
 			System.out.println("Error creando el contexto");
 			System.out.println(e.getMessage());
@@ -47,7 +47,7 @@ public class _01_ObjectToXML {
 			 */
 			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 			
-			//creamos la Persona y su Direccion
+			//Creamos el objeto Persona y su Direccion
 			Persona p = new Persona(1, "Homer", "Simpson", 37);
 			Direccion direccion = new Direccion();
 			direccion.setNombreVia("Gran Via");
@@ -57,10 +57,10 @@ public class _01_ObjectToXML {
 			
 			//Convertimos un objeto a xml y lo imprimimos por pantalla
 			m.marshal(p, System.out);
-			//tambien podemos crear un fichero
+			//También podemos crear un fichero
 			m.marshal(p, new File("homer.xml"));
 		} catch (JAXBException e) {
-			System.out.println("Error convertiendo el objeto a formato XML");
+			System.out.println("Error convirtiendo el objeto a formato XML");
 			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}

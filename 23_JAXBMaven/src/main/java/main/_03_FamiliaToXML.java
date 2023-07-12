@@ -50,7 +50,7 @@ public class _03_FamiliaToXML {
 
 			m.marshal(familia, new File("simpson.xml"));
 			System.out.println("El archivo Simpson.xml ha sido creado con exito,"
-					+ " refresque su eclipse :)");
+					+ " refresque su Eclipse :)");
 		} catch (JAXBException e) {
 			System.out.println("Error convertiendo el objeto a formato XML");
 			e.printStackTrace();

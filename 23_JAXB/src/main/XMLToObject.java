@@ -13,7 +13,7 @@ public class XMLToObject {
 		try {
 			JAXBContext contexto = JAXBContext.newInstance(Persona.class);
 			//Esta vez creamos un objeto que nos permite pasar
-			//de XML a Object, es decir deserializar
+			//de XML a Object, es decir deserializar la información
 			Unmarshaller u = contexto.createUnmarshaller();
 			File fichero = new File("Homer.xml");
 			if (fichero.exists()) {

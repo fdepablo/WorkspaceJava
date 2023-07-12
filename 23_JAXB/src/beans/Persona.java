@@ -3,17 +3,22 @@ package beans;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
-//Estas anotaciones sirven para que JAXB que es el motor de java para
-//convertir objetos a XML y a la inversa, sepa como hacerlo
-//serializar y deserializar
+//El objetivo de JAXB es convertir 
 
-//esta etiqueta estamos estableciendo el nombre de el nodo raiz en xml
-//etiqueta obligatoria
+//Cuando trabajamos con JAXB para serializar y deserializar objetos necesitamos
+//utilizar anotaciones para realizar la funcionalidad.
+
+//Primero de todo, tenemos anotaciones a nivel de clase.
+
+//Con esta anotación estamos estableciendo el nombre de el nodo raíz en el XML
+//Es una anotación obligatoria
 @XmlRootElement(name="persona")
-//Podemos hacer que las etiquetas salgan en un determinado orden
-//etiqueta opcional
+//Por defecto, cuando serializamos un objeto, el orden de los nodos elemento
+//Podemos hacer que las etiquetas salgan en un determinado orden con la siguiente
+//anotación. Es opcional
 @XmlType(propOrder = {
 		"idPersona",
 	    "nombre",
@@ -22,6 +27,8 @@ import javax.xml.bind.annotation.XmlType;
 	    "direccion"
 	})
 public class Persona {
+	//Por defecto, JAXB convertirá todos los atributos en nodos elemento en el
+	//XML. El nombre del nodo elemento será el del atributo.
 	private int idPersona;
 	private String nombre;
 	private String apellido;
@@ -40,8 +47,13 @@ public class Persona {
 		this.edad = edad;
 	}
 
-	//etiqueta que hace que el id de la persona se serialize como atributo de persona
-	//etiqueta opcional
+	//Además de anotaciones a nivel de clase, tenemos anotaciones a nivel de 
+	//métodos como @XmlAttribute, @XmlElement y @XmlTransient
+	//Siempre las pondremos en el método "get"
+	
+	//Esta anotación hace que el atributo de la persona se serialize 
+	//como atributo en el XML
+	//Ej: <persona id="1">
 	@XmlAttribute(name = "id")
 	public int getIdPersona() {
 		return idPersona;
@@ -50,8 +62,6 @@ public class Persona {
 		this.idPersona = idPersona;
 	}
 
-	//etiqueta opcional
-	@XmlElement
 	public String getNombre() {
 		return nombre;
 	}
@@ -59,6 +69,9 @@ public class Persona {
 		this.nombre = nombre;
 	}
 
+	//Esta anotación es opcional, sirve para cambiar el nombre del nodo elemento
+	//cuando se serialice la información. En este ejemplo, el nodo elemento
+	//resultante se llamará "apellidos" en lugar de "apellido"
 	@XmlElement(name="apellidos")
 	public String getApellido() {
 		return apellido;
@@ -68,7 +81,9 @@ public class Persona {
 		this.apellido = apellido;
 	}
 
-	@XmlElement
+	//Esta anotación es opcional, sirve para si en algún momento no queremos 
+	//serializar un atributo, es decir, el nodo no aparecerá en el XML resultante.
+	//@XmlTransient
 	public int getEdad() {
 		return edad;
 	}
@@ -89,7 +104,5 @@ public class Persona {
 	public String toString() {
 		return "Persona [idPersona=" + idPersona + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad
 				+ ", direccion=" + direccion + "]";
-	}
-	
-	
+	}	
 }

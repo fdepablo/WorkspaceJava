@@ -7,6 +7,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
+// En este ejemplo vamos a suponer que queremos serializar una lista
+//de objetos Persona al siguiente formato.
+
 /*
  * <personas>
  * 	<persona>
@@ -32,12 +35,12 @@ public class Familia {
 		personas = new ArrayList<Persona>();
 	}
 	
-	//Establezco que cada elemento del array se serialice a una etiqueta xml cuyo nombre
-	//sea "persona"
+	//Establecemos que cada elemento del array se serialice a una etiqueta XML
+	//cuyo nombre sea "persona"
 	@XmlElement(name = "miembro")
-	//Podemos crear una etiqueta que envuelva las etiquetas persona, si no la ponemos saldran
-	//las etiquetas "persona" al mismo nivel que la familia, de esta manera agrupamos todos
-	//los "miembro" en la etiqueta "miembros"
+	//Podemos crear una anotación que envuelva las etiquetas persona, si no la 
+	//ponemos, las etiquetas "persona" saldrán al mismo nivel que la familia, de 
+	//esta manera agrupamos todos los "miembro" en la etiqueta "miembros"
 	@XmlElementWrapper(name = "miembros")
 	public List<Persona> getPersonas() {
 		return personas;

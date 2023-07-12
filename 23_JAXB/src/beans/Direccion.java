@@ -2,7 +2,6 @@ package beans;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-//si solo ponemos esta anotacion, el root element sera el nombre de la clase
 @XmlRootElement
 public class Direccion {
 	private String tipoVia;

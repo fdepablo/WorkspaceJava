@@ -17,12 +17,12 @@ public class ObjectToXML {
 			/*
 			 * Obtiene el contexto asociado a la clase Persona, con dicho
 			 * contexto podremos convertir el objeto a un xml y a la inversa. 
-			 * Provoca una excepción de tipo JAXBException si la clase Persona 
-			 * no cumple los requisitos para la conversión a XML, es decir, 
+			 * Provoca una excepciÃ³n de tipo JAXBException si la clase Persona 
+			 * no cumple los requisitos para la conversiÃ³n a XML, es decir, 
 			 * contener las anotaciones necesarias y no cuenta con un constructor 
 			 * sin argumentos.
 			 */
-			contexto = JAXBContext.newInstance(Persona.class);//inyeccion de dependecia
+			contexto = JAXBContext.newInstance(Persona.class);
 		} catch (JAXBException e) {
 			System.out.println("Error creando el contexto");
 			System.out.println(e.getMessage());
@@ -40,8 +40,8 @@ public class ObjectToXML {
 			m = contexto.createMarshaller();
 			/*
 			 * stablecer la propiedad JAXB_FORMATTED_OUTPUT con el valor true 
-			 * permite que en la conversión a formato XML se incluyan retornos 
-			 * de carro e indentación (sangrado del texto). 
+			 * permite que en la conversiï¿½n a formato XML se incluyan retornos 
+			 * de carro e indentaciï¿½n (sangrado del texto). 
 			 * Prueba a ejecutar el programa con los valores true y 
 			 * false para ver la diferencia.
 			 */

@@ -43,7 +43,7 @@ public class FamiliaToXML {
 			familia.getPersonas().get(0).setDireccion(direccion);
 
 			m.marshal(familia, new File("Simpson.xml"));
-			System.out.println("El archivo Simpson.xml ha sido creado con éxito");
+			System.out.println("El archivo Simpson.xml ha sido creado con Ã©xito");
 		} catch (JAXBException e) {
 			System.out.println("Error convertiendo el objeto a formato XML");
 			System.out.println(e.getMessage());
