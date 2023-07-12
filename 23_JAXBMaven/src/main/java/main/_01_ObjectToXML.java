@@ -17,8 +17,8 @@ public class _01_ObjectToXML {
 			/*
 			 * Obtiene el contexto asociado a la clase Persona, con dicho
 			 * contexto podremos convertir el objeto a un xml y a la inversa. 
-			 * Provoca una excepci髇 de tipo JAXBException si la clase Persona 
-			 * no cumple los requisitos para la conversi髇 a XML, es decir, 
+			 * Provoca una excepci贸n de tipo JAXBException si la clase Persona 
+			 * no cumple los requisitos para la conversi贸n a XML, es decir, 
 			 * contener las anotaciones necesarias y no cuenta con un constructor 
 			 * sin argumentos.
 			 */
@@ -39,15 +39,15 @@ public class _01_ObjectToXML {
 			 */
 			m = contexto.createMarshaller();
 			/*
-			 * stablecer la propiedad JAXB_FORMATTED_OUTPUT con el valor true 
-			 * permite que en la conversi髇 a formato XML se incluyan retornos 
-			 * de carro e indentaci髇 (sangrado del texto). 
+			 * Establecer la propiedad JAXB_FORMATTED_OUTPUT con el valor true 
+			 * permite que en la conversi贸n a formato XML se incluyan retornos 
+			 * de carro e indentaci贸n (sangrado del texto). 
 			 * Prueba a ejecutar el programa con los valores true y 
 			 * false para ver la diferencia.
 			 */
 			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 			
-			//creamos la persona y su direccion
+			//creamos la Persona y su Direccion
 			Persona p = new Persona(1, "Homer", "Simpson", 37);
 			Direccion direccion = new Direccion();
 			direccion.setNombreVia("Gran Via");

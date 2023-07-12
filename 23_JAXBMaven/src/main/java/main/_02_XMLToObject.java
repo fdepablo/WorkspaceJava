@@ -1,6 +1,7 @@
 package main;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -17,10 +18,11 @@ public class _02_XMLToObject {
 			Unmarshaller u = contexto.createUnmarshaller();
 			File fichero = new File("homer.xml");
 			if (fichero.exists()) {
-				Persona p = (Persona) u.unmarshal(fichero);
+				Object o = u.unmarshal(fichero);
+				Persona p = (Persona) o;
 				System.out.println(p.getApellido());
 				System.out.println(p.getNombre());
-				System.out.println(p);
+				System.out.println(o);
 			} else {
 				System.out.println("Fichero XML Homer.xml no encontrado");
 			}
