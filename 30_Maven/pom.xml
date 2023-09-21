@@ -12,15 +12,15 @@
 		debemos actualizar nuestro proyecto para queu coja los cambios, para ello: 
 		- Boton derecho sobre el proyecto -> Maven -> Update proyect. Debremos observar 
 		que la JRE system library de nuestro proyecto se cambia de la version 1.5 
-		(version por defecto de java para maven) por la que hayamos puesto (en este 
-		caso la 11) El significado de las propiedades es el siguiente 
+		(version por defecto de java para maven) por la que hayamos puesto.
+		El significado de las propiedades es el siguiente 
 		1. maven.compiler.target -> propiedad que establece la versión de java de la maquina 
 		donde se va a ejecutar 
 		2. maven.compiler.source -> propiedad que establece la version de java 
 		del codigo fuente. -->
 	<properties>
-		<maven.compiler.target>11</maven.compiler.target>
-		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+		<maven.compiler.source>17</maven.compiler.source>
 		<!-- Con la siguiente propiedad cambiamos la codificación de caracteres a UTF-8-->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>

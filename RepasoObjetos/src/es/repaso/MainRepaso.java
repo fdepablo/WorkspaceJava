@@ -4,15 +4,15 @@ public class MainRepaso {
 
 	public static void main(String[] args) {
 		
-		//Un objeto nacera con "new"
+		//Un objeto nacerá con "new"
 		Persona p1 = new Persona();
-		//Un objeto desaparecera cuando no tenga ninguna referencia
+		//Un objeto desaparecerá cuando no tenga ninguna referencia
 		//apuntandole
 		p1 = null;
 		
 		new Persona();
-		System.gc();//da orden a la JVM de que pase el GC, pero ya os digo
-					//que la JVM Hotspot no funciona muy bien. Os puede hacer caso o no
+		System.gc();//da orden a la JVM de que pase el GC, pero 
+					//JVM Hotspot no funciona muy bien. Os puede hacer caso o no
 		
 		Persona p2 = new Persona();
 		p2.setNombre("Tony Stark");
@@ -51,7 +51,7 @@ public class MainRepaso {
 		System.out.println(p7.getEdad());//100 // 44
 		System.out.println(p8.getEdad());//100 // 44
 		
-		int cp = 03456;//los numeros en java que empiezan por 0 estan en base octal
+		int cp = 03456;
 		System.out.println(cp);
 		cp = 0xFFEE;//en base hexadecimal
 		System.out.println(cp);
