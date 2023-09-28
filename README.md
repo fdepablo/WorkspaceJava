@@ -6,7 +6,7 @@ La plataforma Java es el nombre de un entorno de computación originaria de Sun 
 Aqui vamos a encontrar un repositorio de eclipse con teoria y ejemplos sobre java
 
 # Versiones usadas en el repositorio
-- Java 11 (aunque hay algún proyecto en la version 1.8 por compatibilidades)
+- Java 17 (aunque hay algún proyecto en la version 1.8)
 - Tomcat 9.0
 
 # Instalación y configuración
@@ -17,9 +17,9 @@ ventana de linea de comandos "cmd"
 
     java -version
 	
-En caso de que no tengas instalada la versión 11 puedes bajartela del siguiente enlace:
+En caso de que no tengas instalada la versión 17 puedes bajartela del siguiente enlace:
 
-- [https://www.oracle.com/es/java/technologies/javase/jdk11-archive-downloads.html](https://www.oracle.com/es/java/technologies/javase/jdk11-archive-downloads.html)
+- [https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 
 El siguiente paso es decargarte este workspace desde git. Puedes hacerlo clonando el repositorio o puedes hacerlo simplemente bajandote el .zip y descomprimirlo.
 

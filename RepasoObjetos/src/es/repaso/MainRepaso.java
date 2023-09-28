@@ -4,6 +4,13 @@ public class MainRepaso {
 
 	public static void main(String[] args) {
 		
+		if(true){
+			int numero1 = 5;
+			System.out.println(numero1);System.out.println("sdafsdaf");
+		}
+
+		
+		
 		//Un objeto nacerá con "new"
 		Persona p1 = new Persona();
 		//Un objeto desaparecerá cuando no tenga ninguna referencia
@@ -16,6 +23,7 @@ public class MainRepaso {
 		
 		Persona p2 = new Persona();
 		p2.setNombre("Tony Stark");
+		
 		Persona p3 = p2;
 		System.out.println(p3.getNombre());
 		System.out.println(p2.getNombre());
@@ -74,6 +82,6 @@ public class MainRepaso {
 		System.out.println(p11.getDireccion().getNombreVia());
 		
 		p11 = null;//he perdido algun objeto?
-	}
+	}//Acaba el hilo principal de ejección del programa
 
 }
