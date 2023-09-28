@@ -1,13 +1,11 @@
-package _03_sincronizado_02;
+package _03_sincronizado_03;
 
-import java.util.Date;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Caballo implements Runnable {
 	
 	private String nombre;
 	private Meta meta;	
-	private Date tiempo;
 	
 	public Caballo(String nombre, Meta meta){
 		super();
@@ -19,10 +17,6 @@ public class Caballo implements Runnable {
 		return nombre;
 	}
 
-	public Date getTiempo() {
-		return tiempo;
-	}
-	
 	public void run(){
 		//Simulamos que el caballo está corriendo
 		for(int a = 0; a<=100;a++){
@@ -35,8 +29,8 @@ public class Caballo implements Runnable {
 				e.printStackTrace();
 			}
 		}
-		tiempo = new Date();
-		//apuntamos al caballo a la meta cuando termine de correr
+
+		//Apuntamos al caballo a la meta cuando termine de correr
 		meta.apuntarCaballo(this);
 	}
 

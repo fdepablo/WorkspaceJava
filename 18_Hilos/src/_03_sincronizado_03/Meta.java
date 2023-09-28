@@ -1,4 +1,4 @@
-package _03_sincronizado_02;
+package _03_sincronizado_03;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,11 +12,13 @@ public class Meta {
 		return orden;
 	}
 	
-	// Tenemos que conseguir que la operación sea atómica con el 
-	// 'synchronized'. Sino al final del método saldría que todos los 
-	// caballos han llegado en la posicion 3
+	// Tenemos que conseguir que solo un hilo pueda entrar a la vez con 
+	// la palabra 'synchronized'. Sino al final del método saldría que  
+	// todos los caballos han llegado en la posicion 3
 	public synchronized void apuntarCaballo(Caballo caballo){
-		System.out.println("El caballo " + caballo.getNombre() + " llego en : " + caballo.getTiempo().getTime());
+		System.out.println("El caballo " + caballo.getNombre() + 
+				" llego a la meta!");
+		
 		orden.add(caballo);
 		
 		//Simulamos una tarea de larga duración, como por ejemplo que tenemos
@@ -24,7 +26,7 @@ public class Meta {
 		//a un servidor web remoto, que tarde por ejemplo 2 segundos en procesar
 		//la información del caballo
 		try {
-			Thread.sleep(2000);//babieca rocinante
+			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -35,9 +37,10 @@ public class Meta {
 	//También podemos usar bloques sincronizados en lugar de métodos
 	//sincronizados. Los métodos sincronizados bloquean todo el método,
 	//mientras que los bloques sincronizados solo sincronizan dicho bloque
-	//y no el metodo entero.
+	//y no el método entero.
 	public void apuntarCaballo2(Caballo caballo){
 		
+		//Los bloques sincronizados empiezan con 'synchronized'
 		synchronized (this) {
 			orden.add(caballo);
 		}

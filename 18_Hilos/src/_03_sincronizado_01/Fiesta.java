@@ -10,29 +10,32 @@ public class Fiesta {
 		this.direccion = direccion;
 	}
 	
-	//La palabra reservada sychronized hace que solo pueda entrar un hilo a la 
+	//La palabra reservada 'sychronized' hace que solo pueda entrar un hilo a la 
 	//vez en este método, hasta que no termina de ejecutar este método el hilo
 	//que ha entrado, no puede entrar el siguiente hilo a ejecutarse
-	//OJO, al ser un método dinámico solo afecta a nivel de objeto, es decir, solo bloquea
-	//el objeto en cuestión
-	public synchronized void entrar(String nombrePersona,String frase1, String frase2){
-		System.out.println(nombrePersona +" está entrando en la fiesta de " + this.nombre + "!!!");
+	//OJO, al ser un método dinámico afecta a nivel de objeto, es decir, solo bloquea
+	//el objeto en cuestión.
+	public synchronized void entrar(String nombreAvenger,String saludo, String frase){
 		System.out.println("La fiesta se encuentra en: " + direccion);
-		System.out.println(nombrePersona + " is in the house!");
-		System.out.println(frase1);
+		
+		System.out.println(nombreAvenger +" está entrando en la fiesta '" 
+				+ this.nombre + "'");		
+		
+		//Nada más entrar en la fiesta, el avenger dice su saludo
+		System.out.println(nombreAvenger + " saluda: " + saludo);
 		
 		try {
 			//Simulamos que entra el hilo, dice una frase y luego 
-			//se queda un tiempo chocando las manos, esto sería
-			//una tarea de larga duración
-			System.out.println("(Chocando manos), (Saludando)");
+			//se queda un tiempo posando y recibiendo aplausos, esto sería
+			//una tarea de 'larga' duración
+			System.out.println(nombreAvenger + " (Está posando para las fotos)");
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		System.out.println(frase2);
-		System.out.println(nombrePersona + " ha acabado de saludar!");
+		//Cuando acaba su saludo inicial, dice su frase y acaba su presentación
+		System.out.println(nombreAvenger + " dice su frase 'Guay': " + frase);
+		System.out.println(nombreAvenger + " Acabe mi presentación! Que pase el siguiente!");
 	}
 }

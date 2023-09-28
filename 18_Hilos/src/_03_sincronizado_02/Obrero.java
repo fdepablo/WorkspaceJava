@@ -1,4 +1,4 @@
-package _03_sincronizado_03;
+package _03_sincronizado_02;
 
 public class Obrero extends Thread{
 	
@@ -12,7 +12,6 @@ public class Obrero extends Thread{
 		this.nombre = nombre;
 	}
 	
-	//Esto es excatamente "igual" a un main de java
 	@Override
 	public void run() {
 		// Los obreros, cuando se ejecuta su start, se ponen a poner ladridos como locos!

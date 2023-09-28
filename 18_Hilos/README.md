@@ -82,7 +82,7 @@ Un hilo pasa a estar muerto en la mayoría de los casos cuando ha terminado de e
 
 Cuando estamos trabajando con hilos podemos tener problemas de sincronización entre ellos o lo que es lo mismo problemas cuando dos hilos acceden simultáneamente a la misma posición de memoria.
 
-Varios hilos podrán compartir información accediendo a la misma variable, objeto, fichero, etc. Esto podrá crear zonas críticas, es decir, �reas de código que podrán crear problemas de concurrencia.
+Varios hilos podrán compartir información accediendo a la misma variable, objeto, fichero, etc. Esto podrá crear zonas críticas, es decir, áreas de código que podrán crear problemas de concurrencia.
 
 Para indicar que un fragmento de código está sincronizado, es decir, que solamente un hilo puede acceder a dicho método a la vez se utilizara el modificador <b>"synchronized"</b> que se utiliza para indicar que un fragmento de código está sincronizado, es decir, que solamente un hilo puede acceder a dicho método a la vez. 
 

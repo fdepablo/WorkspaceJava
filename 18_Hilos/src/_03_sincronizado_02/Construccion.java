@@ -1,23 +1,31 @@
-package _03_sincronizado_03;
+package _03_sincronizado_02;
 /*
  * En este ejemplo se intenta simular como 5 obreros 
- * intentan ponder ladrillos en una valla. No habr�a
- * ning�n problema si no fuera porque los obreros quieren
- * descansar y SOLAMENTE hay una silla para todos los obreros
+ * intentan ponder ladrillos en una valla. 
+ * 
+ * No habría ningún problema si no fuera porque los obreros 
+ * quieren descansar y SOLAMENTE hay una silla para todos los 
+ * obreros.
+ * 
  * Una de las reglas es que solo puede haber sentado un obrero
  * en la silla al mismo tiempo por lo que puede haber problemas
- * de sincronizaci�n
+ * de sincronización si varios obreros intentan sentarse 
+ * 'a la vez'.
  */
-public class MainObreros {
+public class Construccion {
 	public static void main(String[] args) {
 		
-		//Una unica silla para todos los obreros
-		//Tambien podemos probarlo dando a cada obrero su silla
-		//para ver que no hay problemas de sincronizaci�n
+		//Una única silla para todos los obreros
+		//Esta es la clave para ver los problemas
+		//de sincronización. Es decir, tenemos
+		//5 hilos que acceder a un UNICO OBJETO.
 		Silla silla = new Silla();
+		//También podemos probarlo creando 5 sillas y 
+		//dando a cada obrero una silla diferente
+		//para ver que no hay problemas de sincronización.
 		
-		//cada obrero se encarga de poner ladrillos en una
-		//valla, cada obrero cubre una porci�n de una valla
+		//Cada obrero se encarga de poner ladrillos en una
+		//valla y cubre una porción de la valla
 		Obrero obrero1 = new Obrero(1,100,"Pepe");
 		obrero1.setSilla(silla);
 				

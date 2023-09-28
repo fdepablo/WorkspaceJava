@@ -1,5 +1,10 @@
-package _03_sincronizado_02;
+package _03_sincronizado_03;
 
+/*
+ * El objetivo de este ejemplo es simular una carrera de caballos
+ * Los tres caballos saldrán corriendo 'a la vez' y cuando 
+ * llegen a un objeto 'Meta' se deben apuntar en el orden en el que llegan.
+ */
 public class Carrera {
 	public static void main(String[] args) {
 		
