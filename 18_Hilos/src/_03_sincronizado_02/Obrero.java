@@ -21,13 +21,15 @@ public class Obrero extends Thread{
 	
 	public void ponerLadrillos() {
 		for(int i = inicioLadrillo;i<=finLadrillo;i++) {
-			System.out.println("Obrero " + nombre + " esta Poniendo el ladrillo " + i);
+			System.out.println("Obrero " + nombre + " está poniendo el ladrillo " + i);
 			//cada 10 segundos un obrero descansa
 			//y se sienta en la silla durante 10 segundo
 			if(i % 10 == 0) {
-				silla.descansar(this);
+				silla.descansar(this);//Pasamos la referencia del objeto que este invocando
+									//este método (this)
 			}
 			try {
+				//Hago una simulación de que el obrero tarda en poner cada ladrillo 1 segundo
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block

@@ -12,6 +12,8 @@ public class Avenger implements Runnable {
 		this.fiesta = fiesta;
 	}
 	
+	//Cuando invocamos el método start(), se arranca el hilo y se ejecuta
+	//el método run()
 	@Override
 	public void run() {
 		fiesta.entrar(nombre,saludo,frase);

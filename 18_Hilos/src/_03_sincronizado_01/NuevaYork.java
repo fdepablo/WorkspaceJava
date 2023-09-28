@@ -1,17 +1,18 @@
 package _03_sincronizado_01;
 
 /*
- * Este objeto intenta simular como varios avengers acceden
- * a una fiesta y lo primero que hacen es presentarse.
+ * Este ejemplo intenta simular como podemos tener problemas
+ * de sincronización de hilos. Para ello, varios avengers acceden
+ * a una fiesta e intentan saludar y decir una frase de manera ordenada.
  * 
  * Cada superheroe sera un objeto diferente que a su vez será
  * un hilo en ejecución.
  *
- * La fiesta, en cambio, será un objeto único ya que solo tendremos
+ * La fiesta, en cambio, será un objeto ÚNICO ya que solo tendremos
  * una fiesta en nuestro programa.
  * 
- * Los superheroes cuando entran en la fiesta saludaran, y pasado
- * un pequeño tiempo, dirán una frase "Guay"
+ * Los superheroes cuando entran en la fiesta saludarán, y pasado
+ * un pequeño tiempo, dirán una frase "Guay".
  *  
  * La idea es entender como podemos tener problemas cuando varios
  * hilos intentan acceder 'a la vez' a la fiesta, ya que hasta
@@ -39,24 +40,25 @@ public class NuevaYork {
 		//Creamos a los avenger con su nombre, su saludo
 		//y su frase. A continuación hacemos que todos apunten
 		//al MISMO objeto fiesta.
-		Avenger p1 = new Avenger("Steve Rogers",
+		Avenger a1 = new Avenger("Steve Rogers",
 								"Hey!", 
 								"Prodría estar haciendo esto todo el día!",
 								fiesta);
-		Avenger p2 = new Avenger("Tony Stark",
+		Avenger a2 = new Avenger("Tony Stark",
 								"Hola!", 
 								"La armadura y yo somos uno!",
 								fiesta);
-		Avenger p3 = new Avenger("Peter Parker",
+		Avenger a3 = new Avenger("Peter Parker",
 								"Como vamos!", 
 								"Un gran poder conlleva una gran responsabilidad!",
 								fiesta);
 		
-		Thread t1 = new Thread(p1);
-		Thread t2 = new Thread(p2);
-		Thread t3 = new Thread(p3);
+		Thread t1 = new Thread(a1);
+		Thread t2 = new Thread(a2);
+		Thread t3 = new Thread(a3);
 		
 		try {
+			System.out.println("Esperando a arrancar los hilos...");
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();

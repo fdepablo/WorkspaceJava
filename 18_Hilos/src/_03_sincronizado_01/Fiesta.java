@@ -16,20 +16,20 @@ public class Fiesta {
 	//OJO, al ser un método dinámico afecta a nivel de objeto, es decir, solo bloquea
 	//el objeto en cuestión.
 	public synchronized void entrar(String nombreAvenger,String saludo, String frase){
-		System.out.println("La fiesta se encuentra en: " + direccion);
-		
 		System.out.println(nombreAvenger +" está entrando en la fiesta '" 
-				+ this.nombre + "'");		
+				+ this.nombre + "'" + " que se encuentra en la dirección '" 
+				+ this.direccion + "'");		
 		
 		//Nada más entrar en la fiesta, el avenger dice su saludo
 		System.out.println(nombreAvenger + " saluda: " + saludo);
 		
 		try {
-			//Simulamos que entra el hilo, dice una frase y luego 
+			//Simulamos que cuando entra el hilo, dice el saludo y luego 
 			//se queda un tiempo posando y recibiendo aplausos, esto sería
 			//una tarea de 'larga' duración
 			System.out.println(nombreAvenger + " (Está posando para las fotos)");
-			Thread.sleep(5000);
+			System.out.println("---------------------------------------------");
+			Thread.sleep(5000);			
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

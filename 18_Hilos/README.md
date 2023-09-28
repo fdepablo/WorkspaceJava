@@ -84,13 +84,13 @@ Cuando estamos trabajando con hilos podemos tener problemas de sincronización e
 
 Varios hilos podrán compartir información accediendo a la misma variable, objeto, fichero, etc. Esto podrá crear zonas críticas, es decir, áreas de código que podrán crear problemas de concurrencia.
 
-Para indicar que un fragmento de código está sincronizado, es decir, que solamente un hilo puede acceder a dicho método a la vez se utilizara el modificador <b>"synchronized"</b> que se utiliza para indicar que un fragmento de código está sincronizado, es decir, que solamente un hilo puede acceder a dicho método a la vez. 
+Para indicar que un fragmento de código está sincronizado, es decir, que solamente un hilo puede acceder a dicho método a la vez, se utilizará la palabra reservada <b>"synchronized"</b>.
 
 Se podrá afirmar que un método sincronizado tiene una marca de abierto y cerrado: cuando está cerrado ningún otro hilo puede entrar en dicho método.
 
-La clave de la sincronización está en la palabra <b>monitor</b>. Como hemos comentado anteriormente, sólo un hilo de ejecución puede acceder a un método sincronizado al mismo tiempo; se dice que ese hilo es el que tiene el monitor y tendrá bloqueado el proceso hasta que finalice su ejecución y lo libere.
+La clave de la sincronización está en entender la palabra <b>monitor</b>. Como hemos comentado anteriormente, sólo un hilo de ejecución puede acceder a un método sincronizado al mismo tiempo; se dice que ese hilo es el que tiene el monitor y tendrá bloqueado el proceso hasta que finalice su ejecución y lo libere.
 
-Podemos ver los ejemplos 03 de este proyecto para ver ejemplos sobre la sincronización de hilos.
+Podemos ver los ejemplos 03_Sincronizado_XX de este proyecto para ver como podemos utilizar la sincronización de hilos.
 
 ## Wait y Notify
 

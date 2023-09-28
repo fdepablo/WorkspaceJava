@@ -26,26 +26,26 @@ public class Construccion {
 		
 		//Cada obrero se encarga de poner ladrillos en una
 		//valla y cubre una porción de la valla
-		Obrero obrero1 = new Obrero(1,100,"Pepe");
-		obrero1.setSilla(silla);
+		Obrero o1 = new Obrero(1,100,"Pepe");
+		o1.setSilla(silla);
 				
-		Obrero obrero2 = new Obrero(101,200,"Luis");
-		obrero2.setSilla(new Silla());
+		Obrero o2 = new Obrero(101,200,"Luis");
+		o2.setSilla(silla);
 		
-		Obrero obrero3 = new Obrero(201,300,"Maria");
-		obrero3.setSilla(new Silla());
+		Obrero o3 = new Obrero(201,300,"Maria");
+		o3.setSilla(silla);
 		
-		Obrero obrero4 = new Obrero(301,400,"Marta");
-		obrero4.setSilla(new Silla());		
+		Obrero o4 = new Obrero(301,400,"Marta");
+		o4.setSilla(silla);		
 		
-		Obrero obrero5 = new Obrero(401,500,"Harry potter");
-		obrero5.setSilla(new Silla());
+		Obrero o5 = new Obrero(401,500,"Harry potter");
+		o5.setSilla(silla);
 		
-		obrero1.start();
-		obrero2.start();
-		obrero3.start();
-		obrero4.start();
-		obrero5.start();
+		o1.start();
+		o2.start();
+		o3.start();
+		o4.start();
+		o5.start();
 		
 		System.out.println("Muerto el hilo principal");
 	}
