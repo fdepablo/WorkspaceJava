@@ -15,11 +15,11 @@ public class _01_MainDES {
 	public static void main(String[] args) throws IOException {
 		System.out.println("Probando sistema de encriptación con algoritmo DES");
 		try {
-			//Generador de claves simetricas (escítalas espartanas)
+			//Generador de claves simétricas (escítalas espartanas)
 			KeyGenerator generador = KeyGenerator.getInstance("DES");
 			System.out.println("Paso 1: Se ha obtenido el generador de claves");
 			
-			//Generamos la clave simetrica. (Una escítala espartana)
+			//Generamos la clave simétrica. (Una escítala espartana)
 			SecretKey paloEspartano = generador.generateKey();
 			//Si se hiciera otra vez, obtendria otra clave DIFERENTE, por ejemplo
 			//otro palo espartano con otras medidas
@@ -59,15 +59,15 @@ public class _01_MainDES {
 		} catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException e) {
 			//NoSuchAlgorithmException: se produce cuando se especifica un algoritmo de cifrado 
 			//que no existe.
-			//NoSuchPaddingException: cuando la clave no tiene la configuraci�n correcta
-			//InvalidKeyException: la clave es inv�lida (codificaci�n incorrecta, 
-			//longitud incorrecta o no est� inicializada)
+			//NoSuchPaddingException: cuando la clave no tiene la configuración correcta
+			//InvalidKeyException: la clave es inválida (codificación incorrecta, 
+			//longitud incorrecta o no está inicializada)
 			System.out.println("Error al crear y configurar el descifrador");
 			System.out.println(e.getMessage());
 		} catch (IllegalBlockSizeException | BadPaddingException e) {
 			//IllegalBlockSizeException: longitud incorrecta de alguno de los bloques de 
 			//cifrado por un error durante el algoritmo.
-			//BadPaddingException: cuando la clave no tiene la configuraci�n correcta
+			//BadPaddingException: cuando la clave no tiene la configuración correcta
 			System.out.println("Error al cifrar el mensaje");
 			System.out.println(e.getMessage());
 		}
