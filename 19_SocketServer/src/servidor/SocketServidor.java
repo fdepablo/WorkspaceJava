@@ -13,17 +13,17 @@ public class SocketServidor {
 	public static final int PUERTO = 2017;
 	
 	public static void main(String[] args) throws InterruptedException {
-		System.out.println("      APLICACIÓN DE SERVIDOR      ");
+		System.out.println("      APLICACIï¿½N DE SERVIDOR      ");
 		System.out.println("----------------------------------");
 		
-		//ServidorSocket -> Este objeto es el que estará escuchando peticiones por un puerto
+		//ServidorSocket -> Este objeto es el que estarï¿½ escuchando peticiones por un puerto
 		//y creara un objeto socket por cada peticion
 		
 		//Entrada de datos. Es el canal de entrada del servidor, es decir, el canal por 
-		//el cual el cliente nos va a mandar la información.
+		//el cual el cliente nos va a mandar la informaciï¿½n.
 		InputStreamReader entrada = null;
 		//Salida de datos. Es el canal de salida del servidor, es decir, el canal por 
-		//el cual vamos a enviar información al cliente.
+		//el cual vamos a enviar informaciï¿½n al cliente.
 		PrintStream salida = null;
 		
 		//Notese como ahora:
@@ -64,7 +64,7 @@ public class SocketServidor {
 				entrada = new InputStreamReader(socketAlCliente.getInputStream());
 				BufferedReader bf = new BufferedReader(entrada);
 								
-				//El servidor se quedaría aquí parado hasta que el cliente nos mande
+				//El servidor se quedarÃ¡ aquÃ­ parado hasta que el cliente nos mande
 				//informacion, es decir, cuando haga un salida.println(INFORMACION);				
 				String stringRecibido = bf.readLine();//3-4
 				
@@ -72,7 +72,7 @@ public class SocketServidor {
 				//esta en formato de cadena de texto
 				System.out.println("SERVIDOR: Me ha llegado del cliente: " + stringRecibido);
 				//Como sabemos que el cliente nos envia un 3-7, hacemos un split por "-"
-				//para obtener la información.
+				//para obtener la informaciÃ³n.
 				String[] operadores = stringRecibido.split("-");
 				int iNumero1 = Integer.parseInt(operadores[0]);//3
 				int iNumero2 = Integer.parseInt(operadores[1]);//4
