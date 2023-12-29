@@ -4,9 +4,13 @@ En este proyecto se va a ver como podemos consumir un servicio REST con el Frame
 
 ## Configuracion
 
-Para crear este proyecto podemos seguir los mismos pasos que para crear el servicio rest, es decir, habrá que hacer un proyecto web con Spring Boot.
+Para crear este proyecto podemos seguir los mismos pasos que para crear el servicio REST, es decir, habrá que hacer un proyecto web con Spring Boot.
 
 Por otro parte, al ser un proyecto web tambien se levantará un Tomcat, por lo que los puertos del Tomcat cliente y el Tomcat servidor deben de ser diferentes. En este caso en el fichero "src/main/resources/application.properties" hemos configurado el puerto 8081 ya que el puerto del servidor es el 8080.
+
+**NOTA**: Si usamos este ejemplo a partir de la versión 3 de SpringBoot, debemos de configurar el fichero con la siguiente propiedad:
+
+	spring.main.allow-circular-references=true
 
 ## Visualizacion del ejemplo
 
