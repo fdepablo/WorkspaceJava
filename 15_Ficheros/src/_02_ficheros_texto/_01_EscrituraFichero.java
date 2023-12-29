@@ -14,8 +14,9 @@ public class _01_EscrituraFichero {
 		
 		FileWriter fw = null;
 		PrintWriter pw = null;
+		
 		//Las lecturas y escrituras de los ficheros normalmente arrojan excepciones "checked"
-		//por lo que tenemos que capturarlas o el programa no compilará
+		//por lo que tenemos que capturarlas o el programa no compilarï¿½
 		try {
 			//Abrimos el fichero en modo escritura, cada vez que lo abrimos se borra lo anterior
 			fw = new FileWriter(NOMBRE_FICHERO);//Si ponemos (nombreFichero,true) add en vez de borrar
