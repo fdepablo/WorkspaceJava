@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function procesarRespuesta(mensaje){
+            console.log(mensaje)
+        }
+
+        function pedirDatosPizzeria(recurso){
+            console.log("pedirDatosPizzeria -> Entrando")
+            let xmlHttp = new XMLHttpRequest()
+
+            xmlHttp.onreadystatechange = function(){        
+                if( this.readyState == 4){
+                    if(this.status == 200){//OK
+                        procesarRespuesta(this.responseText)//ESTO SE HARA MANIPULANDO EL DOM
+                    }else if(this.status == 404){
+                        console.log("El recurso solicitado NO existe: 404")
+                        console.log(this.responseText)
+                    }else {
+                        alert("ZASCA!")
+                    }
+                }
+            }
+
+            //localhost:5500/Actividad02/pizzeria.json
+            xmlHttp.open('GET',recurso, true)//Accedemos de manera relativa
+            //readyState = 2, y se ejecutará la función de callback
+            xmlHttp.send(null)
+            console.log("pedirDatosPizzeria -> Saliendo")
+        }
+    </script>
+</head>
+<body>
+    <h1>BIENVENIDOS A LA PIZZERIA</h1>
+    <label>Nombre:</label>
+    <input type="text"/>
+    <br/>
+    <label>Direccion:</label>
+    <input type="text"/>
+    <br/>
+    <label>Email:</label>
+    <input type="email"/>
+    <br/>
+    <label>Telefono:</label>
+    <input type="tel"/>
+    <br/>    
+    <button onclick="pedirDatosPizzeria('pizzeria.json')">Prueba</button>    
+    <button onclick="pedirDatosPizzeria('ServletPizzeria')">Prueba</button>    
+</body>
+</html>
