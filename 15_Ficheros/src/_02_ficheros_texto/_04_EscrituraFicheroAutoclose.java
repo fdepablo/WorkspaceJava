@@ -16,8 +16,8 @@ public class _04_EscrituraFicheroAutoclose {
 		//dicho recurso implemente la interfaz java.lang.AutoCloseable
 		//Se llaman try-with-resources statement
 		
-		//El recurso se cerrar· como si lo hubieramos puesto en la clausula "finally"
-		//esto ayuda a mantener el codigo m·s compacto y entendible.
+		//El recurso se cerrar√° como si lo hubieramos puesto en la clausula "finally"
+		//esto ayuda a mantener el codigo m√°s compacto y entendible.
 		//Los recursos van entre parentesis despues del bloque try
 		//si tenemos varios, podemos separararlos por ';'
 		try(FileWriter fw = new FileWriter(NOMBRE_FICHERO);

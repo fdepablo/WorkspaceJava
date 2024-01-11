@@ -17,7 +17,7 @@ public class _03_LecturaFicheroBuffer {
 		try {
 			fr = new FileReader(_01_EscrituraFichero.NOMBRE_FICHERO);
 			br = new BufferedReader(fr);
-			String frase = br.readLine();//si estamos en EOF, entonces s apuntan a null
+			String frase = br.readLine();//si estamos en EOF, entonces 'frase' apunta a null
 			while(frase != null){
 				System.out.println("Frase del fichero: " + frase);
 				frase = br.readLine();

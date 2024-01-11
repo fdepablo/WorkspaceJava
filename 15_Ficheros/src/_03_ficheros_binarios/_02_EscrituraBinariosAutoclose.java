@@ -10,9 +10,9 @@ public class _02_EscrituraBinariosAutoclose {
 
 	public static void main(String[] args) {
 		
-		// Creación de 3 objetos producto
+		// CreaciÃ³n de 3 objetos producto
 		Producto p1 = new Producto("Manzanas Royal Gala",2.50f,7);
-		Producto p2 = new Producto("Dátiles de la tía Julita",3.25f,12);
+		Producto p2 = new Producto("Dï¿½tiles de la tï¿½a Julita",3.25f,12);
 		Producto p3 = new Producto("Mandarinas Clementinas",2.20f,25);
 		
 		List<Producto> listaProductos = new ArrayList<Producto>();
@@ -20,7 +20,7 @@ public class _02_EscrituraBinariosAutoclose {
 		listaProductos.add(p2);
 		listaProductos.add(p3);
 		
-		// Apertura del fichero almacen.dat
+		// Apertura del fichero 'almacen.dat'
 		try(FileOutputStream fichero = new FileOutputStream("almacen.dat", true);
 				DataOutputStream  escritor = new DataOutputStream (fichero);) {
 			

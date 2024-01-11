@@ -13,7 +13,7 @@ public class ClaseFile {
 		if (!fn.exists()) {// Averiguamos si existe
 			//Creamos el fichero
 			fn.createNewFile();
-			//Tambien podemos crear un directorio, normalmente le quitamos la 
+			//TambiÃ©n podemos crear un directorio, normalmente le quitamos la 
 			//extension al fichero (fn)
 			// fn.mkdir();
 			System.out.println("Creado el archivo " + fn.getName());
@@ -27,9 +27,9 @@ public class ClaseFile {
 		
 		System.out.println(fn.canRead());// Averigua si tengo permisos de lectura
 		System.out.println(fn.canWrite());// Averiguamos si tenemos permisos de escritura
-		System.out.println(fn.lastModified());// fecha de última modificación
+		System.out.println(fn.lastModified());// fecha de ï¿½ltima modificaciÃ³n
 					//nos devuelve el numero de milisegundos desde 1970 (fecha unix)
-		System.out.println(fn.length());// tamaño en bytes
+		System.out.println(fn.length());// tamaÃ±o en bytes
 		fn.delete();// borraria el fichero
 	}
 }
