@@ -6,13 +6,18 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
-import beans.Direccion;
-import beans.Familia;
-import beans.Persona;
+import entidad.Direccion;
+import entidad.Familia;
+import entidad.Persona;
 
 public class _03_FamiliaToXML {
 	public static void main(String[] args) {
 
+		/*
+		 *  En este ejemplo vamos a ver como podemos trabajar con objetos
+		 *  mas conplejos. Concretamente trabajaremos con objetos Familia,
+		 *  Persona y Direccion.
+		 */
 		JAXBContext contexto;
 		try {
 			contexto = JAXBContext.newInstance(Familia.class);
@@ -38,9 +43,9 @@ public class _03_FamiliaToXML {
 			familia.getPersonas().add(new Persona(5, "Magie", "Simpson", 3));
 			
 			Direccion direccion = new Direccion();
-			direccion.setNombreVia("Evergreen Terrace");
-			direccion.setTipoVia("742");
-			direccion.setCp("28054");
+			direccion.setNombreVia("Evergreen Terrace 742");
+			direccion.setTipoVia("Calle");
+			direccion.setCp("08056");
 			
 			familia.getPersonas().get(0).setDireccion(direccion);
 			familia.getPersonas().get(1).setDireccion(direccion);
@@ -51,6 +56,9 @@ public class _03_FamiliaToXML {
 			m.marshal(familia, new File("simpson.xml"));
 			System.out.println("El archivo Simpson.xml ha sido creado con exito,"
 					+ " refresque su Eclipse :)");
+			
+			//Si quisieramos deserializar el XML a objeto, deberíamos usar la
+			//clase "Unmarshaller"
 		} catch (JAXBException e) {
 			System.out.println("Error convertiendo el objeto a formato XML");
 			e.printStackTrace();

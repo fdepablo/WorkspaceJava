@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<persona id="1">
+<personaPersona id="1">
     <nombre>Homer</nombre>
     <apellidos>Simpson</apellidos>
     <edad>37</edad>
@@ -8,4 +8,4 @@
         <nombreVia>Gran Via</nombreVia>
         <tipoVia>Calle</tipoVia>
     </direccion>
-</persona>
+</personaPersona>

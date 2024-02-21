@@ -1,4 +1,4 @@
-package beans;
+package entidad;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,18 +11,19 @@ import javax.xml.bind.annotation.XmlRootElement;
 //de objetos Persona al siguiente formato.
 
 /*
- * <personas>
- * 	<persona>
+ *<familia>
+ * <miembros>
+ * 	<miembro>
  * 		......
  * 		......
- * 	</persona>
+ * 	</miembro>
  * 
- * 	<persona>
+ * 	<miembro>
  * 		......
  * 		......
- * 	</persona>
- * </personas>
- * 
+ * 	</miembro>
+ * </miembros>
+ *</familia>
  */
 
 @XmlRootElement(name="familia")
@@ -35,12 +36,13 @@ public class Familia {
 		personas = new ArrayList<Persona>();
 	}
 	
-	//Establecemos que cada elemento del array se serialice a una etiqueta XML
-	//cuyo nombre sea "persona"
+	// Establecemos que cada elemento del array se serialice a una etiqueta XML
+	//cuyo nombre sea "miembro"
 	@XmlElement(name = "miembro")
-	//Podemos crear una anotación que envuelva las etiquetas persona, si no la 
-	//ponemos, las etiquetas "persona" saldrán al mismo nivel que la familia, de 
-	//esta manera agrupamos todos los "miembro" en la etiqueta "miembros"
+	// Además, podemos crear una anotación que envuelva las etiquetas "miembro", 
+	//si no la ponemos, las etiquetas "miembro" saldrán al mismo nivel que 
+	//la "familia", de esta manera, agrupamos todas las etiquetas "miembro" 
+	//con la etiqueta "miembros"
 	@XmlElementWrapper(name = "miembros")
 	public List<Persona> getPersonas() {
 		return personas;

@@ -1,4 +1,4 @@
-package beans;
+package entidad;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
@@ -6,19 +6,29 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
-//El objetivo de JAXB es convertir 
+// El objetivo de JAXB es trabajar de una manera sencilla con XML
+//para serializar y deserializar objetos.
 
-//Cuando trabajamos con JAXB para serializar y deserializar objetos necesitamos
+// Serializar es cuando convertimos un objeto a cadena (String)
+// Deserializar es el proceso inverso, cuando convertimos una cadena
+//a objeto.
+
+// Cuando trabajamos con JAXB para serializar y deserializar objetos necesitamos
 //utilizar anotaciones para realizar la funcionalidad.
 
-//Primero de todo, tenemos anotaciones a nivel de clase.
+// Primero de todo, tenemos anotaciones a nivel de clase. Vamos a verlas a 
+//continuación.
 
-//Con esta anotación estamos estableciendo el nombre de el nodo raíz en el XML
-//Es una anotación obligatoria
+// Con esta anotación estamos estableciendo el nombre de el nodo en el XML
+//Es una anotación obligatoria en JAXB
+// Por defecto pondría el nombre de la clase en lowerCamelCase, pero si usamos 
+//el atributo "name" dentro de la anotacón podemos cambiar el nombre del nodo.
 @XmlRootElement(name="persona")
-//Por defecto, cuando serializamos un objeto, el orden de los nodos elemento
-//Podemos hacer que las etiquetas salgan en un determinado orden con la siguiente
-//anotación. Es opcional
+// Por defecto, cuando serializamos un objeto, todos los atributos del objeto se 
+//serializan a nodos elemento.
+
+// Podemos hacer dichos nodos elemento salgan en un determinado orden con la siguiente
+//anotación. Sería opcional.
 @XmlType(propOrder = {
 		"idPersona",
 	    "nombre",
@@ -27,15 +37,19 @@ import javax.xml.bind.annotation.XmlType;
 	    "direccion"
 	})
 public class Persona {
-	//Por defecto, JAXB convertirá todos los atributos en nodos elemento en el
-	//XML. El nombre del nodo elemento será el del atributo.
+	// Como hemos dicho antes, JAXB convertirá todos los atributos en nodos elemento
+	//en el XML. El nombre del nodo elemento será el del atributo.
 	private int idPersona;
 	private String nombre;
 	private String apellido;
 	private int edad;
+	// Podemos también tener referencias de otras clases, no solo primitivos
+	//dicha clase debera de estar anotada correctamente con anotaciones
+	//JAXB
 	private Direccion direccion;
 	
-	//JAXB necesita para funcionar del constructor por defecto de java
+	// JAXB necesita del constructor por defecto de java para poder funcionar.
+	//Realmente necesita que la clase tenga la estructura JavaBean
 	public Persona() {
 		
 	}
@@ -47,12 +61,12 @@ public class Persona {
 		this.edad = edad;
 	}
 
-	//Además de anotaciones a nivel de clase, tenemos anotaciones a nivel de 
+	// Además de anotaciones a nivel de clase, tenemos anotaciones a nivel de 
 	//métodos como @XmlAttribute, @XmlElement y @XmlTransient
-	//Siempre las pondremos en el método "get"
+	//Siempre las pondremos en el método accesor o método "get"
 	
-	//Esta anotación hace que el atributo de la persona se serialize 
-	//como atributo en el XML
+	// Esta anotación hace que el atributo de la persona se serialize 
+	//como atributo en el XML.
 	//Ej: <persona id="1">
 	@XmlAttribute(name = "id")
 	public int getIdPersona() {
@@ -81,7 +95,7 @@ public class Persona {
 		this.apellido = apellido;
 	}
 
-	//Esta anotación es opcional, sirve para si en algún momento no queremos 
+	// Esta anotación es opcional, sirve para si en algún momento no queremos 
 	//serializar un atributo, es decir, el nodo no aparecerá en el XML resultante.
 	//@XmlTransient
 	public int getEdad() {
