@@ -35,7 +35,7 @@ public class MainTresCapas {
 				}else if(alta == 1) {
 					System.out.println("Error de conexión con la BBDD");
 				}else if(alta == 2){
-					System.out.println("El usuario tiene menos de tres carateres");
+					System.out.println("El usuario tiene menos de tres carateres. Invalido!!");
 				}
 				break;
 
@@ -50,7 +50,7 @@ public class MainTresCapas {
 	}
 
 	private static void menu() {
-		System.out.println("Elija una opci�n:");
+		System.out.println("Elija una opción:");
 		System.out.println("1- Alta de persona");
 		System.out.println("0- Salir del programa");
 	}
