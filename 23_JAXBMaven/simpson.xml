@@ -8,9 +8,9 @@
             <apellidos>Simpson</apellidos>
             <edad>38</edad>
             <direccion>
-                <cp>28054</cp>
-                <nombreVia>Evergreen Terrace</nombreVia>
-                <tipoVia>742</tipoVia>
+                <cp>08056</cp>
+                <nombreVia>Evergreen Terrace 742</nombreVia>
+                <tipoVia>Calle</tipoVia>
             </direccion>
         </miembro>
         <miembro id="2">
@@ -18,9 +18,9 @@
             <apellidos>Simpson</apellidos>
             <edad>8</edad>
             <direccion>
-                <cp>28054</cp>
-                <nombreVia>Evergreen Terrace</nombreVia>
-                <tipoVia>742</tipoVia>
+                <cp>08056</cp>
+                <nombreVia>Evergreen Terrace 742</nombreVia>
+                <tipoVia>Calle</tipoVia>
             </direccion>
         </miembro>
         <miembro id="3">
@@ -28,9 +28,9 @@
             <apellidos>Simpson</apellidos>
             <edad>11</edad>
             <direccion>
-                <cp>28054</cp>
-                <nombreVia>Evergreen Terrace</nombreVia>
-                <tipoVia>742</tipoVia>
+                <cp>08056</cp>
+                <nombreVia>Evergreen Terrace 742</nombreVia>
+                <tipoVia>Calle</tipoVia>
             </direccion>
         </miembro>
         <miembro id="4">
@@ -38,9 +38,9 @@
             <apellidos>Simpson</apellidos>
             <edad>35</edad>
             <direccion>
-                <cp>28054</cp>
-                <nombreVia>Evergreen Terrace</nombreVia>
-                <tipoVia>742</tipoVia>
+                <cp>08056</cp>
+                <nombreVia>Evergreen Terrace 742</nombreVia>
+                <tipoVia>Calle</tipoVia>
             </direccion>
         </miembro>
         <miembro id="5">
@@ -48,9 +48,9 @@
             <apellidos>Simpson</apellidos>
             <edad>3</edad>
             <direccion>
-                <cp>28054</cp>
-                <nombreVia>Evergreen Terrace</nombreVia>
-                <tipoVia>742</tipoVia>
+                <cp>08056</cp>
+                <nombreVia>Evergreen Terrace 742</nombreVia>
+                <tipoVia>Calle</tipoVia>
             </direccion>
         </miembro>
     </miembros>

@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlType;
 // Con esta anotación estamos estableciendo el nombre de el nodo en el XML
 //Es una anotación obligatoria en JAXB
 // Por defecto pondría el nombre de la clase en lowerCamelCase, pero si usamos 
-//el atributo "name" dentro de la anotacón podemos cambiar el nombre del nodo.
+//el atributo "name" dentro de la anotación podemos cambiar el nombre del nodo.
 @XmlRootElement(name="persona")
 // Por defecto, cuando serializamos un objeto, todos los atributos del objeto se 
 //serializan a nodos elemento.
@@ -36,6 +36,18 @@ import javax.xml.bind.annotation.XmlType;
 	    "edad",
 	    "direccion"
 	})
+/* Ejemplo resultante
+ * <persona id="VALOR">
+ * 		<nombre></nombre>
+ * 		<apellidos>VALOR</apellidos>
+ * 		<edad>VALOR</edad>
+ *  	<direccion>
+ *  		<cp>VALOR</cp>
+ *  		<nombreVia>VALOR</nombreVia>
+ * 			<tipoVia>VALOR</tipoVia> *  
+ * 		</dirección>
+ * </persona>
+ */
 public class Persona {
 	// Como hemos dicho antes, JAXB convertirá todos los atributos en nodos elemento
 	//en el XML. El nombre del nodo elemento será el del atributo.

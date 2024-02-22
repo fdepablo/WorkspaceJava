@@ -23,7 +23,7 @@ public class _02_XMLToObject {
 			File fichero = new File("homer.xml");
 			if (fichero.exists()) {
 				Object o = u.unmarshal(fichero);
-				Persona p = (Persona) o;
+				Persona p = (Persona) o;//casting
 				// Una vez convertido a objeto ya podemos trabajar con él.
 				System.out.println(p.getApellido());
 				System.out.println(p.getNombre());
