@@ -7,6 +7,7 @@ import modelo.negocio.GestorPersona;
 
 public class MainTresCapas {
 
+	//La vista no hace todo el CRUD, pero sirve como ejemplo perfectamente
 	public static void main(String[] args) {
 		
 		System.out.println("Bienvenidos a nuestra CRUD de personas");
