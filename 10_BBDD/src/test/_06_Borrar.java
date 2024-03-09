@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class _06_Borrar {
 
 	public static void main(String[] args) {
-		// Paso 1: Establecemos los parametros de conexión con la base de datos
+		// Paso 1: Establecemos los parametros de conexiÃ³n con la base de datos
 		String cadenaConexion = "jdbc:mysql://localhost:3306/bbdd";
 		String user = "root";
 		String pass = "";
@@ -27,7 +27,7 @@ public class _06_Borrar {
 			
 			//Como estamos cambiando registros, executeUpdate
 			int afectados = sentencia.executeUpdate();
-			System.out.println("Sentencia SQL ejecutada con éxito");
+			System.out.println("Sentencia SQL ejecutada con ï¿½xito");
 			System.out.println("Registros afectados: "+afectados);
 		} catch (SQLException e) {
 			System.out.println("Error al borrar el cliente");

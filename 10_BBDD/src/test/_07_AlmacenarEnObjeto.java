@@ -12,7 +12,7 @@ import entidad.Persona;
 
 public class _07_AlmacenarEnObjeto {
 	public static void main(String[] args) {
-		// Paso 1: Establecemos los parametros de conexión con la base de datos
+		// Paso 1: Establecemos los parametros de conexiÃ³n con la base de datos
 		String cadenaConexion = "jdbc:mysql://localhost:3306/bbdd";
 		String user = "root";
 		String pass = "";

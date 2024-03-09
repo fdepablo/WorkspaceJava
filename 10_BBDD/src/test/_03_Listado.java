@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class _03_Listado {
 
 	public static void main(String[] args) {
-		// Paso 1: Establecemos los parametros de conexi�n con la base de datos
+		// Paso 1: Establecemos los parametros de conexión con la base de datos
 		String cadenaConexion = "jdbc:mysql://localhost:3306/bbdd";
 		String user = "root";
 		String pass = "";
@@ -17,7 +17,7 @@ public class _03_Listado {
 		try (Connection con = DriverManager.getConnection(cadenaConexion, user, pass);){
 			PreparedStatement sentencia = con.prepareStatement("SELECT * FROM PERSONAS");
 			ResultSet rs = sentencia.executeQuery();//no cambia registros, se usa para consultas
-			while (rs.next()) {//preguntamos si hay mas filas
+			while (rs.next()) {//preguntamos si hay más filas
 				System.out.print(rs.getInt("ID"));//DAME EL VALOR DE LA COLUMNA ID
 				System.out.print(" - "); 
 				System.out.print(rs.getString("NOMBRE"));

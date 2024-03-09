@@ -4,16 +4,16 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-//Cuando ejecutamos varias queries en un entorno de transaccionalidad 
-//quiere decir que ejecutamos todas las queries como si fuera una unica (operacion at髆ica)
-//es decir, si falla una de las quueries deben de fallar todas
+//Cuando ejecutamos varias "queries" en un entorno de transaccionalidad 
+//quiere decir que ejecutamos todas las queries como si fuera una 煤nica (operacion at贸mica)
+//es decir, si falla una de las "queries" deben de fallar todas
 
 //Este ejemplo no se ha podido hacer con autoclose ya que si ponemos la referencia
-//"Connection con" dentro del autoclose, no tenemos visibilidad dentro del catch
+//"Connection con" dentro del autoclose, no tenemos visibilidad dentro del "catch"
 public class MainTransacciones {
 
 	public static void main(String[] args) throws SQLException {
-		// Paso 1: Establecer conexi髇 con la base de datos
+		// Paso 1: Establecer conexi贸n con la base de datos
 		String cadenaConexion = "jdbc:mysql://localhost:3306/Ferreteria";
 		String user = "root";
 		String pass = "";
@@ -21,22 +21,22 @@ public class MainTransacciones {
 		try {
 			con = DriverManager.getConnection(cadenaConexion, user, pass);
 		} catch (SQLException e) {
-			System.out.println("No se ha podido establecer la conexi髇 con la BD");
+			System.out.println("No se ha podido establecer la conexi贸n con la BD");
 			System.out.println(e.getMessage());
 			return;
 		}
-		System.out.println("Se ha establecido la conexi髇 con la Base de datos");
+		System.out.println("Se ha establecido la conexi贸n con la Base de datos");
 		
 		// Paso 2: Interactuar con la BD 
 		try {
-			//por defecto cada vez que lanzamos una modificacion(inserte, update, delete...)
-			//, se hace commit a la bbdd.
+			//por defecto cada vez que lanzamos una modificaci贸n (inserte, update, delete...)
+			//se hace commit a la bbdd.
 			//Por lo tanto, lo desactivamos para hacer commit solamente cuando se hayan ejecutado 
-			//todas las las queries
+			//todas las las "queries"
 			con.setAutoCommit(false);
 			
-			//Este es un ejemplo sencillo y usarremos Statement
-			//OJO! Se deber韆 hacer con preparedstatements, consultas parametrizadas
+			//Este es un ejemplo sencillo y usaremos "Statement"
+			//OJO! Se deber铆a hacer con preparedstatements, consultas parametrizadas
 			Statement sentencia = con.createStatement();
 			
 			//Simulamos el alta de un cliente con una factura que tiene asociada unos productos
@@ -54,25 +54,25 @@ public class MainTransacciones {
 			sql = "UPDATE PRODUCTO SET STOCK=STOCK-2 WHERE CODIGO='TOR7'";
 			sentencia.executeUpdate(sql);	
 			
-			//si llegamos a este punto sin problema, persistimos todas las
+			//Si llegamos a este punto sin problema, persistimos todas las
 			//queries lanzadas contra la bbdd
 			con.commit();
 			
 		} catch (SQLException e) {
 			System.out.println("Ha ocurrido un error al ejecutar la transaccion");
 			System.out.println(e.getMessage()); 
-			//si en algun caso ha ocurrido alg鷑 error, eliminamos todas las
-			//anteriores queries que se hayan lanzado, para mantener la 
+			//si en algun caso ha ocurrido alg煤n error, eliminamos todas las
+			//anteriores "queries" que se hayan lanzado, para mantener la 
 			//consistencia en nuestra bbdd
 			con.rollback();
 		}
 		
 		
-		// Paso 3: Cerrar la conexi髇
+		// Paso 3: Cerrar la conexi贸n
 		try {
 			con.close();
 		} catch (SQLException e) {
-			System.out.println("No se ha podido cerrar la conexi髇 con la BD");
+			System.out.println("No se ha podido cerrar la conexi贸n con la BD");
 			System.out.println(e.getMessage());
 			return;
 		}
