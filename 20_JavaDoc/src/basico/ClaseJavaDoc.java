@@ -2,7 +2,7 @@ package basico;
 import java.util.Date;
 
 /**
- * Ejemplo de creaci�n de documentación para Javadoc.
+ * Ejemplo de creación de documentación para Javadoc.
  * <br>
  * Aquí debería ir una descripción de lo que hace la clase y sus objetivos.
  * <br>
@@ -67,12 +67,12 @@ public class ClaseJavaDoc {
 	 * @author Peter Parker
 	 */
 	public void metodoUno() {
-		// AQUÍ IRÍA EL CODIGO DEL METODO
+		// AQUI IRIA EL CODIGO DEL METODO
 		// ESTOS COMENTARIOS NO SON JAVADOC, SON COMENTARIOS NORMALES
 	}
 
 	/**
-	 * Aquí iría una descripción del método, pero como además tenemos parametros
+	 * Aqui iría una descripción del método, pero como además tenemos parametros
 	 * de entrada y de salida, deberiamos crear anotaciones que representen y
 	 * expliquen los parametros de entrada y el parametro de salida
 	 * 
@@ -81,7 +81,7 @@ public class ClaseJavaDoc {
 	 * @return explicar lo que devolvemos o los posibles valores de retorno
 	 */
 	public String metodoDos(Integer numero, Date fecha) {
-		//AQUÍ IRIA EL CÓDIGO DEL MÉTODO
+		//AQUI IRIA EL CÓDIGO DEL MÉTODO
 		return null;
 	}
 

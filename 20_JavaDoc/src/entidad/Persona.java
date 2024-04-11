@@ -1,7 +1,7 @@
 package entidad;
 
 /**
- * Entidad persona con un nombre, una edad, una posición y un objeto de tipo
+ * Entidad persona con un nombre, una edad, una posiciÃ³n y un objeto de tipo
  * Direccion
  * 
  * @author Tony Stark
@@ -90,12 +90,12 @@ public class Persona {
 		return nombre;
 	}
 	
-	//Este en cambio si que haría falta documentarlo, ya que le hemos cambiado.
+	//Este en cambio si que harÃ­a falta documentarlo, ya que le hemos cambiado.
 	
 	/**
-	 * Este metodo asiganará el nombre pasado por parametro a la 
+	 * Este metodo asiganarÃ¡ el nombre pasado por parametro a la 
 	 * propiedad nombre del objeto, pero unicamente cuando el nombre 
-	 * pasado tenga más de 3 caracteres. En caso contrario (menor o 
+	 * pasado tenga mÃ¡s de 3 caracteres. En caso contrario (menor o 
 	 * igual que 3 caracteres) se le pondra el valor de vacio ("")
 	 * 
 	 * @param nombre representa el nombre a dar de alta
@@ -161,7 +161,7 @@ public class Persona {
 	 * No se admiten posiciones negativas
 	 * 
 	 * @param posicion representa una posicion en el eje de las X, es 
-	 * la posición con la que voy a comparar la persona. No se admite
+	 * la posiciï¿½n con la que voy a comparar la persona. No se admite
 	 * valores negativos
 	 * 
 	 * @return la distancia en metros y absoluta de la posicion 
@@ -171,7 +171,7 @@ public class Persona {
 	public int calcularDistancia(int posicion) {
 		if(posicion < 0) {
 			return -1;//error, no se aceptan posiciones negativas
-			//Tambien valdría y sería una mejor opción, arrojar 
+			//Tambien valdrÃ­a y serÃ­a una mejor opciÃ³n, arrojar 
 			//Excepciones
 		}
 		

@@ -21,7 +21,7 @@ public class Calculo {
 	 * El numero debe de ser menor o igual que 1000
 	 * 
 	 * @param numero reprenta el numero a calcular si es primo o no
-	 * @return false si no es primo o est· fuera de rango (1000) true en caso
+	 * @return false si no es primo o est√° fuera de rango (1000) true en caso
 	 * de que sea primo
 	 */
 	public boolean calculoPrimoVersion1(int numero) {
