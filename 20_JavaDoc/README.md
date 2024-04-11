@@ -6,7 +6,7 @@ JavaDoc es una utilidad de Oracle para la generación de documentación en forma
 
 ## Objetivos
 
-El objetivo de JavaDoc es el de proporcionar información a otro desarrolladores de como tienen que utilizar nuestros clases y métodos. Esta documentación no es para nosotros (que también), es principalmente para los programadores que usen nuestro código.
+El objetivo de JavaDoc es el de proporcionar información a otros desarrolladores de como tienen que utilizar nuestros clases y métodos. Esta documentación no es para nosotros (que también), es principalmente para los programadores que usen nuestro código.
 
 Es fundamental entender que con la documentación queremos dar a conocer la función que realizan nuestras clases y métodos sin necesidad de meternos en el código fuente de las clases para entender lo que hace.
 
