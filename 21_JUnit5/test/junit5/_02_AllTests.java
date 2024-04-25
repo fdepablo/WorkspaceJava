@@ -1,8 +1,7 @@
 package junit5;
 
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-import org.junit.runners.Suite.SuiteClasses;
+import org.junit.platform.suite.api.SelectClasses;
+import org.junit.platform.suite.api.Suite;
 
 /*
  * Si tenemos varias clases con test que queremos ejecutar, podemos crear
@@ -10,12 +9,11 @@ import org.junit.runners.Suite.SuiteClasses;
  * con test que queramos.
  */
 
-@RunWith(Suite.class)
+@Suite
 //Aqui podemos poner todas las clases con test que tengamos
-@SuiteClasses({
+@SelectClasses({
         _01_Asserciones.class,
         _00_Anotaciones.class})
-
 public class _02_AllTests {
 
 }
