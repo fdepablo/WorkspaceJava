@@ -2,8 +2,8 @@ package serviciorest.entidad;
 
 import java.io.Serializable;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 //Atributo para convertir el objeto en xml en vez de en JSON.
 //solo se usa en caso de que se devuelva un xml

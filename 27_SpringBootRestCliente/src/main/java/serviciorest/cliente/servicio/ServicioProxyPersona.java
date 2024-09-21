@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
@@ -41,7 +42,7 @@ public class ServicioProxyPersona {
 			//tambien podemos hacerlo en el cliente
 			//Ej http://localhost:8080/personas/1 GET
 			ResponseEntity<Persona> re = restTemplate.getForEntity(URL + id, Persona.class);
-			HttpStatus hs= re.getStatusCode();
+			HttpStatusCode hs= re.getStatusCode();
 			if(hs == HttpStatus.OK) {	
 				//Si la persona existe, la persona viene en formato JSON en el body
 				//Al ser el objeto ResponseEntity de tipo Persona, al obtener el 

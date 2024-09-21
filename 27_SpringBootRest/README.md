@@ -68,7 +68,7 @@ Para crear este proyecto debemos de crear un proyecto spring boot con algunos st
 1. Pulsamos -> File | new | Spring starter proyect
 2. En la opciones debemos de elegir la siguiente configuracion y pulsar next:
     - El nombre del proyecto
-    - Elegir la version java que queramos (este caso 11)
+    - Elegir la version java que queramos (este caso 21)
     - Si vamos a desplegar el proyecto en un servidor de aplicaciones, debemos de empaquetar el proyecto en formato WAR
     - Podemos cambiar el paquete por defecto (en este caso "serviciorest")
 	

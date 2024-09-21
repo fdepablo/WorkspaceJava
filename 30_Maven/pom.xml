@@ -19,8 +19,8 @@
 		2. maven.compiler.source -> propiedad que establece la version de java 
 		del codigo fuente. -->
 	<properties>
-		<maven.compiler.target>17</maven.compiler.target>
-		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>21</maven.compiler.target>
+		<maven.compiler.source>21</maven.compiler.source>
 		<!-- Con la siguiente propiedad cambiamos la codificación de caracteres a UTF-8-->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -48,11 +48,12 @@
 		<!-- En este ejemplo estamos agragando a nuestro proyecto una librería 
 			de MySql, para poder realizar conexiones a una Base de Datos MySql -->
 
-		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.23</version>
+		    <groupId>com.mysql</groupId>
+		    <artifactId>mysql-connector-j</artifactId>
+		    <version>8.4.0</version>
 		</dependency>
+
 	</dependencies>
 </project>

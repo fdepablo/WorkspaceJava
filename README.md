@@ -6,7 +6,7 @@ La plataforma Java es el nombre de un entorno de computación originaria de Sun 
 Aqui vamos a encontrar un repositorio de eclipse con teoria y ejemplos sobre java
 
 # Versiones usadas en el repositorio
-- Java 17 (aunque hay algún proyecto en la version 1.8)
+- Java 21 (aunque hay algún proyecto en la version 1.8)
 - Tomcat 9.0
 
 # Instalación y configuración
@@ -60,6 +60,8 @@ Para cambiar la codificación de un workspace en eclipse realizar los siguientes
 Una vez ahí, seleccionar el de su preferencia (UTF-8 en este caso)
 	
 ![UTF8](img/UTF8.png "UTF8")
+
+Es posible que en las últimas versiones de Eclipse ya este configurado en **UTF-8** y no haga falta hacer este paso.
 
 ## Visualizar ficheros MarkDown(.md) en las últimas versiones de Eclipse
 
