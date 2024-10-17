@@ -17,12 +17,12 @@ public class _02_EscrituraFicheroBuffer {
 			return;
 		}
 
-		// Abrir buffer y escribir tres líneas
+		// Abrir buffer y escribir tres lï¿½neas
 		BufferedWriter buffer = new BufferedWriter(file);
 		try {
-			buffer.write("¡Bienvenido, Mister Marshall!");
+			buffer.write("Bienvenido, Mister Marshall!");
 			buffer.newLine();
-			buffer.flush();//con flush mandamos la información que tenemos en el buffer al fichero
+			buffer.flush();//con flush mandamos la informaciï¿½n que tenemos en el buffer al fichero
 			buffer.write("Con la muerte en los talones");
 			buffer.newLine();
 			buffer.write("Muerte de un ciclista");
