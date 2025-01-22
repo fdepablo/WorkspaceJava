@@ -15,17 +15,17 @@ public class _05_BorrarPersonaJPA {
 		EntityManagerFactory factoria = Persistence.createEntityManagerFactory("PruebaJPA");
 		EntityManager em = factoria.createEntityManager();
 		
-		//Para borrar una persona, debe de estar cacheada dentro del entity
-		//manager, no podemos borrar una persona directamente
-		//los objetos con los que trabajemos en el EntityManager
-		//Se van a quedar cacheados hasta que cerremos el entitymanager
+		//Para borrar una persona, debe de estar cacheada/gestionada dentro del Entity
+		//Manager, no podemos borrar una persona directamente.
+		//Los objetos con los que trabajemos en el EntityManager
+		//se van a quedar cacheados hasta que cerremos el EM.
 		int id = 1;
 		Persona persona = em.find(Persona.class, id);
 		
-		//Abrimos transaccion, ya que vamos a cambiar la bbdd
+		//Abrimos transacción, ya que vamos a cambiar la BBDD
 		EntityTransaction et = em.getTransaction();
 		et.begin();
-		em.remove(persona);//borramos la persona con el id que le hayamos dado y teniendola cacheada en el "em"
+		em.remove(persona);//borramos la persona con el id que le hayamos dado y teniendola cacheada en el EM
 		et.commit();
 		
 		System.out.println("Persona borrada");
