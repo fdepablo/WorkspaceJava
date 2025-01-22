@@ -147,7 +147,7 @@ Normalmente este método se utiliza para modificar información en base de datos
 Podemos identificar las siguientes casuísticas:
 
 1. El objeto pasado tiene datos y valor en el id, es decir, un caso normal de modificación de una entidad.
-    - Si el objeto <b>SI</b> lo tiene ya en la caché, mira si los datos cambian y si es as� modifica el objeto gestionado (el objeto de cache) y lo marca para un update cuando hagamos el "commit" o el "flush".
+    - Si el objeto <b>SI</b> lo tiene ya en la caché, mira si los datos cambian y si es así modifica el objeto gestionado (el objeto de cache) y lo marca para un update cuando hagamos el "commit" o el "flush".
     - Si el objeto <b>NO</b> lo tiene en la caché entonces hará un select para traer el objeto a la cache pero podrá suceder lo siguiente:
         - Que no exista en BBDD: INSERT del objeto en BBDD. Es decir, su comportamiento sería igual que el de un <b>persist()</b>
         - Que exista pero que los datos no cambien: no hace nada
