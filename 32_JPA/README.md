@@ -144,35 +144,29 @@ El método **merge(Object o)** permite volver a incorporar en el contexto de per
 
 Normalmente este método se utiliza para modificar información en base de datos, aunque puede ser usado para dar de alta en un momento dado debido a su peculiar uso. 
 
-Podemos identificar las siguientes casuísticas: 
+Podemos identificar las siguientes casuísticas:
 
-1. El objeto pasado tiene datos y valor en el id, es decir, un caso normal de modificación de una entidad. 
-
-- Si el objeto <b>SI</b> lo tiene ya en la caché, mira si los datos cambian y si es así modifica el objeto gestionado (el objeto de cache) y lo marca para un “update” cuando hagamos el “commit” o un “flush”. 
-
-- Si el objeto <b>NO</b> lo tiene en la caché entonces hará un “select” para traer el objeto a la cache, pero podrá suceder lo siguiente: 
-
-- Que no exista en BBDD: INSERT del objeto en BBDD. Es decir, su comportamiento sería igual que el de un <b>persist()</b> 
-
-- Que exista pero que los datos no cambien: no hace nada 
-
-- Que exista y con datos diferentes: se lo trae, lo modifica con los datos del objeto que pasamos y lo marca para “update” al hacer “commit” 
-
-2. El objeto pasado tiene datos, pero la clave primaria a null -> En este caso insertara el objeto y le asignar� un ID, siempre y cuando la clave primaria sea gestionada por la BBDD. Es decir, su comportamiento sería igual que el de un <b>persist()</b> 
+1. El objeto pasado tiene datos y valor en el id, es decir, un caso normal de modificación de una entidad.
+    - Si el objeto <b>SI</b> lo tiene ya en la caché, mira si los datos cambian y si es as� modifica el objeto gestionado (el objeto de cache) y lo marca para un update cuando hagamos el "commit" o el "flush".
+    - Si el objeto <b>NO</b> lo tiene en la caché entonces hará un select para traer el objeto a la cache pero podrá suceder lo siguiente:
+        - Que no exista en BBDD: INSERT del objeto en BBDD. Es decir, su comportamiento sería igual que el de un <b>persist()</b>
+        - Que exista pero que los datos no cambien: no hace nada
+        - Que exista y con datos diferentes: se lo trae, lo modifica con los datos del objeto que pasamos y lo marca para update al hacer commit
+	
+2. El objeto pasado tiene datos, pero la clave primaria a null -> En este caso insertara el objeto y le asignará un ID, siempre y cuando la clave primaria sea gestionada por la BBDD. Es decir, su comportamiento sería igual que el de un <b>persist()</b>
 
 Hay que tener cuidado con su utilización, porque el objeto que se pasa como parámetro no pasa a ser gestionado. Hay que usar el objeto que devuelve el método. Veamos el siguiente ejemplo para entenderlo mejor, dado el siguiente registro en la tabla: 
 
-ID	|NOMBRE	|DIR	|TEL 
-
------------------------- 
-1		|a		|b	|c	 
+	ID	|NOMBRE	|DIR	|TEL 
+	---------------------------
+	1	|a	|b	|c	 
 
 Ejecutamos el siguiente código 
 
 	Cliente c = new Cliente(1,"A","B",C"); 
 	em.merge(c); 
 	c.setNombre("F");  
-	//El cambio se perderá cuando hagamos el commit, ya que el objeto donde estamos cambiando el valor no es el objeto gestionado 
+	//El cambio se perderá cuando hagamos el commit, ya que el objeto donde estamos cambiando el valor NO es el objeto gestionado 
 	em.commit(); 
 	Cliente c = new Cliente(1,"A","B",C"); 
 	c = em.merge(c); //Devuelve el objeto que esté la caché 
