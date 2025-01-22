@@ -10,6 +10,9 @@
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpa_persona"/>
 			<property name="javax.persistence.jdbc.user" value="root"/>
+			
+			<!-- Nota: El Schema de BBDD (jpa_persona, en este caso) debe de estar creado -->
+			
 			<!-- 
 			Podemos poner los siguientes parámetros para la generacion de la base
 			de datos:
