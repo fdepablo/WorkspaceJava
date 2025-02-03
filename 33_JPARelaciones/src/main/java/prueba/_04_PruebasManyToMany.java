@@ -71,7 +71,7 @@ public class _04_PruebasManyToMany {
 		
 		//Como estan puestos los cascades, al dar de alta un cliente, se dan de alta
 		//sus comerciales, y a dar de alta esos comerciales, se dan de alta los clientes
-		//Si no hubiera cascades, habría que hacerlo poco a poco como en las relaciones
+		//Si no hubiera cascades, habrÃ¡ que hacerlo poco a poco como en las relaciones
 		//"one to many"
 		em.persist(bud);
 		
