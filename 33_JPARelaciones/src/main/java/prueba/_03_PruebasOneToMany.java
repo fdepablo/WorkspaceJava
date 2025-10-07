@@ -28,10 +28,10 @@ public class _03_PruebasOneToMany {
 		db.setCliente(c);
 		c.setDatosBancarios(db);
 		
-		//Aqui no tenemos el id del cliente
+		//Aquí no tenemos el id del cliente
 		System.out.println("Id del cliente: " + c.getId());
 		
-		//A�adimos los pedidos asociados al cliente, no nos olvidamos de cruzar las
+		//Añadimos los pedidos asociados al cliente, no nos olvidamos de cruzar las
 		//referencias para hacerlo bidireccional, a los pedidos le asignamos su cliente
 		List<Pedido> pedidos = new ArrayList<>();
 		Pedido p1 = new Pedido(null,"PED-1",new Date(),c);
@@ -53,7 +53,7 @@ public class _03_PruebasOneToMany {
 		em.getTransaction().begin();
 		
 		//Si queremos insertar todos los objetos y NO hay CASCADES hemos
-		//de hacerlo por orden. Esto tambien lo podemos hacer haya o no 
+		//de hacerlo por orden. Esto también lo podemos hacer haya o no 
 		//haya CASCADES
 		//em.persist(c);
 		//em.persist(p1);
@@ -70,9 +70,9 @@ public class _03_PruebasOneToMany {
 		em.persist(c); 
 		System.out.println(" ----- Dando de alta el cliente, sus pedidos y sus datos bancarios ----- ");
 				
-		//El siguiente persist tambien funcionaria, de hecho al insertar cliente
+		//El siguiente persist tambien funcionaría, de hecho al insertar cliente
 		//y detectar que tiene 4 pedidos mas, tambien se insertarian los pedidos en la
-		//BBDD. Todo esto es as� por los cascades en ambos sentidos
+		//BBDD. Todo esto es así por los cascades en ambos sentidos
 		//em.persist(p2); 
 		
 		em.getTransaction().commit(); 
@@ -83,7 +83,7 @@ public class _03_PruebasOneToMany {
 		//al persistir el objeto en la BBDD
 		System.out.println("Id del cliente: " + c.getId());
 				
-		//Acceso a objetos en realacions one to many y one to one
+		//Acceso a objetos en realaciones "one to many" y "one to one"
 		System.out.println("==============================================");
 		em = emf.createEntityManager();
 
@@ -105,7 +105,7 @@ public class _03_PruebasOneToMany {
 		
 		//Las relaciones "one to many" y "many to many" son perezosas por defecto
 		//En este caso, al buscar el objeto Cliente NO nos ha traido de manera
-		//automatica los objetos Pedido asociados a �l.
+		//automatica los objetos Pedido asociados a él.
 		
 		//Cuando queramos acceder a los pedidos, ser� cuando se haga la query
 		//En la siguiente linea, al acceder al size() de los pedidos, sera cuando

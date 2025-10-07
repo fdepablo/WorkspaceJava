@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="PruebaJPA" transaction-type="RESOURCE_LOCAL">
-		<!-- Aqui pondemos todas las clases que queremos que JPA vaya a leer las anotaciones
+		<!-- Aquí pondemos todas las clases que queremos que JPA vaya a leer las anotaciones
 		para poder mapearlas a la BBDD -->
 		<class>modelo.entidad.Persona</class>
 		<properties>
-			<!-- Tenemos una seríe de parametros minimos que decirle a JPA para que se pueda
+			<!-- Tenemos una seríe de parámetros mínimos que decirle a JPA para que se pueda
 			contectar a la BBDD -->
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpa_persona"/>
 			<property name="javax.persistence.jdbc.user" value="root"/>
+			
+			<!-- Nota: El Schema de BBDD (jpa_persona, en este caso) debe de estar creado -->
+			
 			<!-- 
-			Podemos poner los sigueintes parametros a la action de la generacion de la base
+			Podemos poner los siguientes parámetros para la generacion de la base
 			de datos:
 			create -> si queremos crear la bbdd cada vez que arranquemos la aplicacion.
 			drop-and-create -> cada vez que arranquemos la app se borraran y crearan las 
 			tablas desde cero.
-			update -> para solamente refrescar las tablas en caso de cambios de anotaciones
+			update -> para refrescar las tablas en caso de cambios de anotaciones
 			 -->
 			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
 						 

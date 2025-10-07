@@ -77,14 +77,14 @@ public class Cliente {
 	//		a los cuales estamos referenciado desde este objeto. Es optativo,
 	//		pero a tener muy en cuenta en caso de que queramos que al guardar
 	//		un objeto, se guarde tambien los objetos a los cuales estemos referenciando
-	//		Tenemos varios tipos de cascades, los m�s comunes:
+	//		Tenemos varios tipos de cascades, los más comunes:
 	
 	//   	1- CascadeType.ALL, siempre que hagamos cualquier accion
 	// 		sobre un cliente, reaccionamos de igual manera con 
 	// 		sus datos bancarios, por ejemplo si borramos un cliente
 	// 		borramos sus datos bancarios asociados, si damos de alta
 	// 		un cliente, daremos tambien de alta sus datos bancarios 
-	//		asociados. (Este caso ser� en nuestro ejemplo)
+	//		asociados. (Este caso se verá en nuestro ejemplo)
 
 	// 		2- CascadeType.PERSIST, solo en caso de que demos de alta un cliente
 	//		daremos de alta sus datos bancarios
@@ -103,12 +103,12 @@ public class Cliente {
 	// Relacion de "uno a muchos"
 	//---------------------------
 	// Esta anotacion en este extremo es para hacer relaciones bidireccionales.
-	// La anotacion que es obligatoria es la que tiene la FK, es decir, la clase
+	// La anotación que es obligatoria es la que tiene la FK, es decir, la clase
 	// Pedidio. 
 	
 	// Este cascade hace que cuando demos de alta o baja un cliente, lo hagamos
 	// tambien de sus pedidos asociados. OJO! con esto porque podemos perder
-	// informaci�n de pedidos.
+	// información de pedidos.
 	@OneToMany(mappedBy="cliente", cascade=CascadeType.ALL) 
 	private List<Pedido> pedidos;
 	

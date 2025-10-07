@@ -12,7 +12,7 @@ public class _03_ObtenerPersonaJPA {
 		EntityManager em = factoria.createEntityManager();
 		
 		//Como ahora no vamos a modificar la BBDD no tenemos porque abrir un entorno de transaccionalidad
-		//las busquedas por defecto son por clave primaría
+		//las busquedas por defecto son por clave primarÃ­a
 		Persona p = em.find(Persona.class, 1);
 		System.out.println(p);
 		

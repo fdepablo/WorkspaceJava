@@ -17,11 +17,11 @@ public class _02_PruebasOneToOne {
 		Cliente c = new Cliente(null, "Hommer", "555-1234", null);
 		DatosBancarios db = new DatosBancarios(null, "Bankia", 6000, null);
 		
-		// Si la relación es bidireccional debemos SIEMPRE cruzar las referencias,
+		// Si la relaciÃ³n es bidireccional debemos SIEMPRE cruzar las referencias,
 		// es decir, que el Cliente apunte a los Datos Bancarios y los datos
 		// bancarios apunten al Cliente
 		// Si no lo hacemos, la columna de la FK de la tabla de datos bancarios
-		// aparecería en null. 
+		// aparecerÃ¡ en null. 
 		c.setDatosBancarios(db);
 		db.setCliente(c);
 				
@@ -34,14 +34,14 @@ public class _02_PruebasOneToOne {
 		//em.persist(c);//guardamos el cliente
 		//em.persist(db);//guardamos los datos bancarios del cliente
 		
-		//Como hemos definido la relación en las dos clases con un CASCADE.ALL,
-		//persistiendo el objeto Cliente, se persistirían los dos. Si NO hubiera
-		// un CASCADE.ALL o un CASCADE.PERSIST, esta persistencia fallaría.
+		//Como hemos definido la relaciÃ³n en las dos clases con un CASCADE.ALL,
+		//persistiendo el objeto Cliente, se persistirÃ¡n los dos. Si NO hubiera
+		// un CASCADE.ALL o un CASCADE.PERSIST, esta persistencia fallarÃ¡.
 		em.persist(c); 
 		
-		// El siguiente "persist" fallaría ya que no hay ningun tipo de
+		// El siguiente "persist" fallarï¿½a ya que no hay ningun tipo de
 		// CASCADE en la clase DatosBancarios
-		//em.persist(db); //-> se insería el cliente SI HUBIERA un cascade en DatosBancarios
+		//em.persist(db); //-> se inserï¿½a el cliente SI HUBIERA un cascade en DatosBancarios
 		
 		em.getTransaction().commit(); 
 		em.close();		
@@ -64,7 +64,7 @@ public class _02_PruebasOneToOne {
 		
 		//En un futuro lisa me manda los datos bancarios
 		//Creamos otra transaccion, simulando que en otro momento del ciclo de vida del programa
-		//queremos añadir a lisa unos datos bancarios
+		//queremos aÃ±adir a lisa unos datos bancarios
 		em.getTransaction().begin();
 		DatosBancarios db2 = new DatosBancarios(null, "ING", 8008, null);
 		
@@ -79,7 +79,7 @@ public class _02_PruebasOneToOne {
 		em.getTransaction().commit(); 
 		em.close();				
 
-		//cerramos el entitymanager
+		//cerramos el EntityManager
 		emf.close();			
 	}
 	

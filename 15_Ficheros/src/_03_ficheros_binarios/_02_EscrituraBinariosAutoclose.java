@@ -12,7 +12,7 @@ public class _02_EscrituraBinariosAutoclose {
 		
 		// Creación de 3 objetos producto
 		Producto p1 = new Producto("Manzanas Royal Gala",2.50f,7);
-		Producto p2 = new Producto("D�tiles de la t�a Julita",3.25f,12);
+		Producto p2 = new Producto("Dátiles de la tía Julita",3.25f,12);
 		Producto p3 = new Producto("Mandarinas Clementinas",2.20f,25);
 		
 		List<Producto> listaProductos = new ArrayList<Producto>();

@@ -10,7 +10,7 @@ import modelo.entidad.Cliente;
 import modelo.entidad.Direccion;
 
 //En esta prueba buscamos ver como la direccion que esta embebida en el cliente
-//los atributos de dirección van dentro de la clase cliente
+//los atributos de direcciï¿½n van dentro de la clase cliente
 public class _01_PruebasClienteDireccion {
 
 	public static void main(String[] args) {
@@ -36,7 +36,7 @@ public class _01_PruebasClienteDireccion {
 		em = emf.createEntityManager();
 		em.getTransaction().begin();
 		
-		//Salvamos y observamos como la direccion se ha guardado
+		//Salvamos y observamos como la direcciÃ³n se ha guardado
 		//dentro de la tabla clientes(ya que direccion esta embebida)
 		em.persist(c);
 		

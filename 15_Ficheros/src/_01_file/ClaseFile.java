@@ -9,13 +9,13 @@ import java.io.IOException;
 public class ClaseFile {
 	public static void main(String[] args) throws IOException {
 		//podemos poner rutas absolutas tambien "C:/file.txt" o "C:\\file.txt"
-		File fn = new File("file.txt");// Apuntar al fichero definido de manera relativa
+		File fn = new File("prueba.txt");// Apuntar al fichero definido de manera relativa
 		if (!fn.exists()) {// Averiguamos si existe
 			//Creamos el fichero
 			fn.createNewFile();
 			//También podemos crear un directorio, normalmente le quitamos la 
 			//extension al fichero (fn)
-			// fn.mkdir();
+			//fn.mkdir();
 			System.out.println("Creado el archivo " + fn.getName());
 		}
 
