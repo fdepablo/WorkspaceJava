@@ -117,6 +117,12 @@ public class _07_EntradaSalida {
 		sc.nextLine();
 		String cadena = sc.nextLine();
 		System.out.println("La cadena recogida es: " + cadena);
+		
+		//La Mejor manera de solucionar este problema es crear dos Scanners
+		//uno para número y otro para cadenas.
+		Scanner scNumeros = new Scanner(System.in);
+		Scanner scCadenas = new Scanner(System.in);
+		//Ahora ya no tendremos el problema que ocurria antes
 	}
 
 }
