@@ -16,13 +16,17 @@ public class _03_OperadorTernario {
 		int numero = 6;
 		String cadena = (numero <= 5) ? "Menor o igual que 5" : "Mayor que 5";
 		System.out.println(cadena);
-		
+				
 		//Equivalente al ternario
 		if(numero <= 5) {
 			System.out.println("Menor o igual que 5");
 		}else {
 			System.out.println("Mayor que 5");
 		}
+		
+		//Otro ejemplo
+		int resultado = (numero <= 5) ? (numero * 30) : (numero * 100);
+		System.out.println("El resultado es: " + resultado);
 		
 		//Otro ejemplo
 		String texto = (numero % 2 == 0) ? "El número es par" : "El número es impar";

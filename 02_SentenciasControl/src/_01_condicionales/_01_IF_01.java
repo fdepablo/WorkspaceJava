@@ -35,11 +35,11 @@ public class _01_IF_01 {
 		int numero = 7;
 		if(numero > 5)
 			System.out.println("La variable 'numero' es mayor que 5");
-		
+			System.out.println("Esta linea se ejecuta siempre");
 		numero = 4;
 		if(numero > 5)
 			System.out.println("La variable 'numero' es mayor que 5");
-		
+			System.out.println("Esta linea se ejecuta siempre");
 		//Notese que solamente afecta a la sentencia inmediatamente siguiente
 		//Si queremos que la condicion afecta a más de una línea, debemos
 		//de usar un 'bloque'
