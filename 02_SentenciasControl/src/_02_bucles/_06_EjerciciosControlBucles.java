@@ -2,7 +2,7 @@ package _02_bucles;
 
 public class _06_EjerciciosControlBucles {
 	public static void main(String[] args) {
-		//Escribir como van variando las variables y escribir
+		//Escribir como van cambiando las variables y escribir
 		//la salida parciales por pantalla para cada una de las
 		//iteraciones de los bucles
 		//Hacerlo en un fichero ".txt"

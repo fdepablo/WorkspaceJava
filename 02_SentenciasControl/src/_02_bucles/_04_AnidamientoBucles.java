@@ -24,13 +24,13 @@ public class _04_AnidamientoBucles {
 			System.out.println("3 x " + i + " es igual a " + (i * 3));
 		}
 		
-		//De esta manera si nos pidiran imprimir las tablas de multiplicar
+		//De esta manera si nos pediran imprimir las tablas de multiplicar
 		//de los 1000 primeros números, tendríamos que repetir esto 1000 veces
 		
 		//Mejor aplicar anidamiento de bucles
 		
 		System.out.println("-----------------------------------------");
-		//Este bulce va a llevar el control del numero de veces que queremos repetir la
+		//Este bucle va a llevar el control del numero de veces que queremos repetir la
 		// tabla de multiplicar
 		for(int i = 1; i <= 10; i ++) {
 			System.out.println("Tabla de multiplicar del " + i);

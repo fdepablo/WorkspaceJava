@@ -1,6 +1,6 @@
 package _02_bucles;
 
-public class _01_FOR_01 {
+public class _01_FOR {
 	
 	//Existen otro tipo de sentencias de control que sirven para alterar al flujo
 	//normal de ejecución de un programa, que son los bucles o sentencias repetitivas

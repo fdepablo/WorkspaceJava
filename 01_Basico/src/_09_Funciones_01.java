@@ -38,7 +38,7 @@ public class _09_Funciones_01 {
 		//Normalmente, cuando invocamos una función o método que devuelve un
 		//valor, tenemos que hacer algo con él.
 		System.out.println(dameElNombreDelAutor());
-		//Notese como tenemos la variable "cadena" tanto en el método "main"
+		//Nótese como tenemos la variable "cadena" tanto en el método "main"
 		//con en el método "dameElNombreDelAutor()"
 		//NO son la misma variable, el ciclo de vida de una variable es
 		//desde que se declara hasta el FINAL del bloque donde se creo
