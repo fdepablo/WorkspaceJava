@@ -49,7 +49,9 @@ public class _05_Break_Continue {
 		//"continue"
 		//Esta palabra se usa cuando queremos dejar de ejecutar el código del
 		//bucle y queremos pasar a la siguiente iteración. OJO, no rompe
-		//completamente la ejecución del bucle
+		//completamente la ejecución del bucle.
+		//El "continue" sería como llegar al fin de bucle, y volveriamos
+		//a subir arriba
 		
 		//Imprimir todos los numeros pares del 1 al 10
 		for(int i = 1; i <= 10; i ++) {
@@ -63,7 +65,8 @@ public class _05_Break_Continue {
 		for(int i = 1; i <= 10; i ++) {
 			if(i % 2 != 0) {
 				continue;//Saltamos a la siguiente iteracion del bucle
-						//por lo tanto, no se ejecutaria la linea 68
+						//por lo tanto, no se ejecutaria la linea 70 y volveriamos
+						//a la línea 65
 			}	
 			System.out.println("Numero par: " + i);
 		}
@@ -72,12 +75,12 @@ public class _05_Break_Continue {
 		//numeros pares pero solo los resultados del 1 al 6 pares
 		for(int i = 1; i <= 6; i ++) {
 			if(i % 2 != 0) {
-				continue;//volveriamos a la línea 73
+				continue;//volveriamos a la línea 76
 			}
 			System.out.println("Tabla de multiplicar del " + i);
 			for(int j = 1; j <= 6; j++) {
 				if(j % 2 != 0) {
-					continue;//volveriamos a la línea 78
+					continue;//volveriamos a la línea 81
 				}
 				System.out.println(j + " x " + i + " es igual a " + (i * j));
 			}
