@@ -3,9 +3,12 @@ package _02_constructores;
 //Siempre que queramos construir un objeto, necesitamos de la ayuda de lo
 //que se conoce como "Constructor"
 
-//Un Constructor en POO es un método especial el cual se usa pra la creación
+//Un Constructor en POO es un método especial el cual se usa para la creación
 //de los objetos. Es imperativo usar siempre algún constructor para crear un
 //objeto.
+
+//Los constructores sirven principalmente para inicializar valores de 
+//atributos de objetos.
 
 // En java se permite crear mas de un constructor. El constructor de un objeto
 // en java, sigue la misma regla que los métodos, es decir, la firma de un 
@@ -38,7 +41,7 @@ public class Persona {
 		//Normalmente podemos alterar el comportamiento de un constructor
 		//cuando queremos que todos los valores de los objetos empiecen
 		//igual
-		edad = 18;//De esta manera TODOS los objetos tendrán la edad
+		//edad = 18;//De esta manera TODOS los objetos tendrán la edad
 				//d2 18 cuando invoquemos este constructor
 		
 		this.edad = 18;

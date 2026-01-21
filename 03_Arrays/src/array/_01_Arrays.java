@@ -7,7 +7,7 @@ public class _01_Arrays {
 		//almacenar una colección de datos de un mismo tipo.
 
 		// Podemos entender un array como tener muchas variables
-		//de un mismo declaradas en una estructura.
+		//de un mismo tipo declaradas en una estructura.
 		
 		//Ejemplo, si queremos almacenar 5 números en memoria
 		//necesitariamos 5 variables de tipo int
@@ -24,8 +24,11 @@ public class _01_Arrays {
 		System.out.println(n4);
 		System.out.println(n5);
 		
-		// Los arrays nos permiten almacenar un número de variables
-		//dentro de una misma "variable"
+		//¿Te imaginas que te dijera que tienes que almacenar 500 números
+		//metidos por el usuario? Tendrías que crearte 500 variables a mano...
+		
+		// Los arrays nos permiten almacenar muchas variables
+		//dentro de una misma estructura
 		
 		//Podemos declarar un array de la siguiente manera
 		int[] arrayNumeros = new int[5];
@@ -57,24 +60,23 @@ public class _01_Arrays {
 		
 		//Para acceder a una posición del array se hace de la misma manera
 		System.out.println(arrayNumeros[0]);//Esta seria la primera posición del array
-		System.out.println(arrayNumeros[1]);//Esta sería la segunda posición del array
-		System.out.println(arrayNumeros[2]);//Esta sería la tercera posición del array
-		System.out.println(arrayNumeros[3]);//Esta sería la cuarta posición del array
-		System.out.println(arrayNumeros[4]);//Esta sería la quinta posición del array
-											//o la última posición del array
+		System.out.println(arrayNumeros[1]);
+		System.out.println(arrayNumeros[2]);
+		System.out.println(arrayNumeros[3]);
+		System.out.println(arrayNumeros[4]);//Esta sería la última posición del array
 		
-		//Ojo, si accedéis o modificais una posición que no existe, da error
+		//El orden de las posiciones de los elementos en un array se conoce 
+		//como índice o index.
+		
+		//Ojo, si accedéis o modificais una posición o indice que no existe, da error
 		//en tiempo de ejecución, concretamente ArrayIndexOutOfBoundsException
 		//arrayNumeros[5] = 6;//No da error en tiempo de compilación, pero si en ejecución
 		
 		//Una vez creado el array, NO se puede modificar el tamaño. Es por esto que este
-		//tipo de array en java se conoce como "array estatico"
+		//tipo de array en java se conoce como "array estático"
 		
-		//Podemos conocer la longitud de un array gracias a la propiedad "length"
+		//Podemos conocer el tamaño de un array gracias a la propiedad "length"
 		System.out.println("El tamaño del array es: " + arrayNumeros.length);//5
-		
-		//Gracias a que un array es una colección de variables se puede recorrer
-		//con bucles
 		
 		//Ejemplo, guardar los primeros 1000 numeros en variables
 		int[] arrayMilNumeros = new int[1000];
@@ -82,7 +84,9 @@ public class _01_Arrays {
 		//arrayMilNumeros[1] = 2;
 		//arrayMilNumeros[2] = 3;
 		//Esto es inviable....
-		//Hay que usar bucles
+		
+		//Gracias a que un array es una colección de variables se puede recorrer
+		//con bucles
 		for(int i = 0; i < 1000; i++) {//i <= 999;
 			arrayMilNumeros[i] = i + 1;
 		}
@@ -105,11 +109,10 @@ public class _01_Arrays {
 			System.out.println(arrayMilNumeros[i]);
 		}
 		/*
-		a) te imprime los numeros del 1 al 1000
-		b) te imprime los numeros del 0 al 1000
-		c) te imprime los numeros del 0 al 999
-		d) error en tiempo de complacion
-		e) error en tiempo de ejecución
+		a) Te imprime los numeros del 1 al 1000
+		b) Te imprime los numeros del 0 al 1000
+		c) Te imprime los numeros del 0 al 999
+		d) Error en tiempo de ejecución
 		*/
 		
 		//Normalmente para recorrer un array se usa como condición de parada
@@ -129,7 +132,8 @@ public class _01_Arrays {
 		//Podemos declarar arrays e inicializarlos al mismo tiempo
 		char[] arrayCaracteres = {'F','e','l','i','x'};
 		//El tamaño de este array es 5
-		//El numero de posiciones de este array es 5
+		//El numero de posiciones de este array van de la 0 a la 4
+		//o dicho de otra manera, el indice va del 0 al 4
 		//La primera posición del array tiene de valor: F
 		//La última posición del array tiene de valor: x
 		//La posición 5 del array tiene de valor: NO EXISTE
@@ -138,15 +142,12 @@ public class _01_Arrays {
 		
 		int[] arrayNumerico2 = {2,4,5,6,7,8};
 		//El tamaño de este array es 6
-		//El numero de posiciones de este array es 6
+		//El numero de posiciones de este array van de la 0 a la 5
 		//La primera posición del array tiene de valor: 2
 		//La última posición del array tiene de valor: 8
 		//La posición 5 del array tiene de valor: 8
 		//La posición 6 del array tiene de valor: NO EXISTE
 		//La posición 4 del array tiene de valor: 7
-		//La posición tercera del array tiene de valor: 5
-		//La posición quinta del array tiene de valor: 7
-		//La posición septima del array tiene de valor: NO EXISTE
 	}
 
 }

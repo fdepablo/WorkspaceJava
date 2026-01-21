@@ -34,6 +34,7 @@ public class _02_MainReferencias {
 		System.out.println(p2.edad);
 		System.out.println(p3.edad);
 		//ver dibujo "_01_basico_04_dos_referencias_primitivos.jpg"
+		p3 = p2;
 		
 		Persona p4 = new Persona();
 		p4.edad = 50;

@@ -20,7 +20,7 @@ public class Persona {
 	//El ciclo de vida de los atributos es igual al ciclo de vida de un 
 	//objeto
 	
-	//los atributos siguen la convención lowerCamelCase
+	//Los atributos siguen la convención lowerCamelCase
 	String nombre;
 	int edad;
 	double peso;

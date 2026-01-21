@@ -5,6 +5,7 @@ public class _01_MainBasico {
 	public static void main(String[] args) {
 		// A partir de una clase podremos crear los objetos.
 		// Un objeto es una instancia de una clase.
+		
 		// Los objetos se crean en la JVM en un espacio de memoria
 		// llamado 'heap'
 		

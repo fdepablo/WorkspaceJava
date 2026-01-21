@@ -23,14 +23,16 @@ public class _04_ForEach {
 		//Esta manera tiene ventajas e incovenientes.
 		//VENTAJAS
 		//1- Es muy sencillo de recorrer completamente un array por todas sus posiciones
+		//o indices
 		//2- Es más rápido de escribir
 		
 		//INCONVENIENTES
-		//1- No tenemos acceso al indice
+		//1- No tenemos acceso al indice o a una posición concreta
 		//2- No podemos alterar la manera de recorrere el array. Por ejemplo, 
 		//no podemos acceder solamente a los pares
 		
 		//Podemos utilizar variables auxiliares para controlar el indice
+		//de manera artificial
 		int posicion = 1;
 		for(String s : blackWidow) {
 			System.out.println(posicion + "-" + s);

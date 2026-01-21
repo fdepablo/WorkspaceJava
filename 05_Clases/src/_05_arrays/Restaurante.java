@@ -3,9 +3,9 @@ package _05_arrays;
 import java.util.Arrays;
 
 public class Restaurante {
-	int id;//0
-	String nombre;//null
-	double[] puntuaciones;//null
+	int id;// Por defecto 0
+	String nombre;//Por defecto null
+	double[] puntuaciones;//Por defecto null
 	
 	public Restaurante() {
 		super();
@@ -21,6 +21,15 @@ public class Restaurante {
 	@Override
 	public String toString() {
 		return "Restaurante [id=" + id + ", nombre=" + nombre + ", puntuaciones=" + Arrays.toString(puntuaciones) + "]";
+	}
+	
+	public double calcularMedia() {
+		double suma = 0;
+		for(double puntuacion : puntuaciones) {
+			suma += puntuacion;
+		}
+		double media = suma / puntuaciones.length;
+		return media;
 	}
 	
 	

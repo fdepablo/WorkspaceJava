@@ -1,5 +1,6 @@
 package array;
 
+//Aquí vamos a ver algunos usos que podemos darle a los arrays
 public class _02_UsosArrays {
 	public static void main(String[] args) {
 		//Queremos guardar los siguientes datos de una persona
