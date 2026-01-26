@@ -17,15 +17,15 @@ public class MainCicloDeVida {
 		//Si que puede tener sentido, crear un objeto sin referencia
 		//para acceder a sus métodos en un momento dado, pero hay que
 		//tener claro, que no podemos volver a acceder a dicho objeto
-		int numero = new Random().nextInt(1, 10);
-		System.out.println("El número aleatorio es: " + numero);
+		System.out.println("El número aleatorio es: " + 
+				new Random().nextInt(1, 10));
 		
 		//¿Cuanto tiempo viven los objetos en el Heap de memoria
 		//En java tenemos un programa dentro de la JVM que se llama
 		//Recolector de Basura o Garbage Collector (GC). Este programa
 		//pasa aleatoriamente por el Heap de memoria para borrar
 		//objetos. La condición para que un objeto sea eliminado
-		//del Heap es que no tenga ninguna referencia.
+		//del Heap es que NO tenga ninguna referencia.
 		
 		//En este caso, mientras que los 3 objetos creados arriba
 		//seran borrados por el GC, este objeto NO será borrado
@@ -44,7 +44,7 @@ public class MainCicloDeVida {
 		
 		//En POO existe el concepto de "null". Null representa "vacio",
 		//nulo, ausencia de valor y se usa la palabra reservada "null"
-		//Solamente puede ser nulos las referenciaww
+		//Solamente puede ser nulos las referencias
 		Persona p2 = null;
 		String s = null;
 		Random rd = null;
