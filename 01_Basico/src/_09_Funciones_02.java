@@ -64,23 +64,26 @@ public class _09_Funciones_02 {
 	//En java existe el concepto de Firma de Función
 	//La firma de una función es lo que hace que Java distinga univocamente
 	//una función de otra
+	
 	//En Java la firma de una función esta compuesta de:
 	//1. El nombre de la función
 	//2. El número de parámetros de entrada de una función
 	//3. El tipo de parámetros de entrada de una función
-	//NO, pertenece el parámetro de salida
+	//OJO! El parámetro de salida no pertenece a la firma de una función
 	
-	//La siguiente función daria erro, porque tiene la MISMA FIRMA que la
+	//La siguiente función daria error, porque tiene la MISMA FIRMA que la
 	//función de arriba. Para Java ambas funciones son iguales
+	//por lo que si la queremos llamar no sabría cual invocar
+	
 	/*
 	public static void imprimirCadena(String s1) {
 		System.out.println("----------------------------");
 	}
 	*/
-	//La función de arriba no daría error si cambiamos el nombre
 	
 	//Creamos otra funcion que se llame igual, PERO cambiamos el número
-	//de parámetros de entrada. Por lo tanto, la firma es diferente
+	//de parámetros de entrada. Por lo tanto, la firma es diferente y 
+	//no da error
 	public static void imprimirCadena(String s1,String s2) {
 		System.out.println("----------------------------");
 		System.out.println("Salida 1: " + s1);
@@ -99,11 +102,11 @@ public class _09_Funciones_02 {
 	
 	//Concepto de SOBRECARGA de funciones.
 	//En java sobrecargamos una función cuando dos o mas funciones tienen
-	//el mismo nombre pero distinta firma, es decir, cambian el número de
-	//parametros de entrada o cambia el tipo de parámetros de entrada.
+	//el mismo nombre pero distinta firma, es decir, cambia el número de
+	//parametros de entrada, cambia el tipo de parámetros de entrada, o ambos.
 	
-	//La funcion System.out.println() esta sobrecargada, según el parámetro
-	//de entrada que se pase, se invoca a un println o a otro.
+	//Por ejemplo, la funcion System.out.println() esta sobrecargada, 
+	//según el parámetro de entrada que se pase, se invoca a un println o a otro.
 	
 	//Vamos a sobrecargar la funcion imprimir(), para hacerla genérica
 	public static void imprimir(long valor) {
@@ -125,7 +128,7 @@ public class _09_Funciones_02 {
 	}
 	
 	//La siguiente función daría error en tiempo de compilación porque
-	//tiene la misma firma que el método de arriba. El parámetro de
+	//tiene la misma firma que la función de arriba. El parámetro de
 	//salida NO pertenece a la firma de un método, por lo tanto
 	//Java no tiene manera de distinguirlos
 	/*
@@ -133,7 +136,7 @@ public class _09_Funciones_02 {
 		System.out.println("------- double -------------");
 		System.out.println("salida: " + valor);
 		System.out.println("----------------------------");
-		return "Manuel no te arrime a la pared, que te va a llenar de cal";
+		return "Manuel no te arrimes a la pared!";
 	}*/
 	
 }

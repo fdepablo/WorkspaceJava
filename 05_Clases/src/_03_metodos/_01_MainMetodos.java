@@ -23,6 +23,17 @@ public class _01_MainMetodos {
 		p1 = new Persona("Hulk",40,635,false);
 		System.out.println(p1.obtenerPesoEnLibras());
 		p1.presentarse();
+		
+		//Probamos la sobrecarga de métodos
+		System.out.println("Probando sobrecarga de métodos");
+		p1.presentarse(false);
+		p1.presentarse(true);
+		p1.presentarse(1);
+		
+		//La función System.out.println() esta sobrecargada
+		System.out.println(5);
+		System.out.println("Hola");
+		System.out.println(3.1416);
 	}
 
 }
