@@ -1,4 +1,4 @@
-package _08_visibilidades.relaciones;
+package _08_visibilidades.javabean;
 
 public class CuentaBancaria {
 	private String iban;

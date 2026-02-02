@@ -15,8 +15,8 @@ package _08_visibilidades;
 //proyecto
 
 //A efectos prácticos los atributos, normalmente, los atributos
-//siempre se declaran como private, y se crean sus métodos accesores
-//y modificadores
+//prácticamente siempre se declaran como private, y se crean 
+//sus métodos accesores y modificadores (veremos mas adelante)
 public class Estudiante {
 	private String nombre;
 	int edad;
@@ -44,7 +44,7 @@ public class Estudiante {
 	//Los métodos modificadores empiezan por "set" y luego el nombre
 	//del atributo
 	public void setNombre(String nombre) {
-		if(nombre.length() > 1) {
+		if(nombre.length() > 2) {
 			this.nombre = nombre;
 		}
 	}
@@ -53,9 +53,9 @@ public class Estudiante {
 	//luego el nombre del atributo
 	public String getNombre() {
 		if(this.nombre != null) {//envitamos nullpointers
-			return convertirNombreAMinuscula();
+			return "";
 		}
-		return this.nombre;
+		return convertirNombreAMinuscula();
 	}
 	
 	//podemos aplicar visibilidades a métodos

@@ -1,8 +1,8 @@
-package _08_visibilidades.otropaquete;
+package _08_visibilidades.auxiliar;
 
 import _08_visibilidades.Estudiante;
 
-public class MainVisibilidad2 {
+public class MainEstudiante2 {
 
 	public static void main(String[] args) {
 		Estudiante e1 = new Estudiante();

@@ -1,6 +1,6 @@
 package _08_visibilidades;
 
-public class MainVisibilidad1 {
+public class MainEstudiante1 {
 
 	public static void main(String[] args) {
 		Estudiante e1 = new Estudiante();

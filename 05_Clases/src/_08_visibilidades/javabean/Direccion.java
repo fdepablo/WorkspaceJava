@@ -1,7 +1,5 @@
-package _08_visibilidades.relaciones;
+package _08_visibilidades.javabean;
 
-//Esta clase tendra como atributos los valores que queriamos
-//poner si fuera una cadena
 public class Direccion {
 	private String tipoVia;
 	private String nombreVia;
