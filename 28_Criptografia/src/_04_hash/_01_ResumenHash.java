@@ -11,7 +11,7 @@ public class _01_ResumenHash {
 		//En este caso quiero "hashear" una serie de canciones.
 		//Notese que lo pasamos a bytes ya que se necesita que la 
 		//información este así para poder crear su resumen hash.
-		byte[] cancion1 = "Bohemian Rhapsody".getBytes();
+		byte[] cancion1 = "Bohemian Rhapsodi".getBytes();
 		byte[] cancion2 = "Imagine".getBytes();
 		byte[] cancion3 = "We Are the Champions".getBytes();
 		byte[] cancion4 = "Hotel California".getBytes();
