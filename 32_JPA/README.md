@@ -116,7 +116,7 @@ Podemos encontrar métodos importantes dentro del EM:
 
 7. <b>void detach(Object entity):</b> elimina la entidad del contexto de persistencia, dejándola desconectada de la base de datos. Como el metodo clear() pero solamente para una entidad. 
 
-8. <b>void flush():</b> sincroniza el contexto de persistencia con la base de datos. También podemos hacerlo haciendo un commit(). 
+8. <b>void flush():</b> envía a la base de datos los cambios pendientes del contexto de persistencia dentro de la transacción actual, pero no confirma la transacción. Los cambios aún pueden revertirse con <b>rollback()</b>. <b>commit()</b> sincroniza lo pendiente y confirma la transacción.
 
 9. <b>boolean contains(Object entity):</b> comprueba si una entidad está gestionada en el contexto de persistencia 
 
@@ -140,38 +140,27 @@ Ver ejemplo _01_CrearPersonaJPA
 
 ### Merge para modificar entidades 
 
-El método **merge(Object o)** permite volver a incorporar en el contexto de persistencia del EM una entidad que habrá sido desconectada. Debemos pasar como parámetro la entidad que queremos incluir.  
+El método **merge(Object o)** copia el estado de una entidad separada a una instancia gestionada y devuelve esta última. El objeto pasado como parámetro no pasa a estar gestionado. También puede utilizarse con una entidad nueva, pero no debe confundirse con una orden explícita de <b>UPDATE</b> o <b>INSERT</b>.
 
-Normalmente este método se utiliza para modificar información en base de datos, aunque puede ser usado para dar de alta en un momento dado debido a su peculiar uso. 
+Si la entidad ya existe, el proveedor compara y sincroniza su estado; puede emitir un <b>UPDATE</b> cuando haya cambios. Si es nueva, puede terminar insertándola. Un identificador informado no garantiza que la fila exista: con un ID inexistente, el resultado depende del estado de la entidad y del proveedor y puede producir una inserción o una excepción. Por eso, para una modificación normal suele ser más claro buscar la entidad con <b>find()</b>, comprobar que existe y cambiar la instancia gestionada dentro de una transacción. Si se usa <b>merge()</b>, hay que trabajar con la instancia que devuelve y confirmar la transacción para conservar los cambios.
 
-Podemos identificar las siguientes casuísticas:
+Por ejemplo, suponiendo que `id` corresponde a una persona existente, buscamos la entidad con un gestor y lo cerramos. La instancia queda separada. Al llamar a `merge()` con otro gestor, solo la instancia devuelta está gestionada:
 
-1. El objeto pasado tiene datos y valor en el id, es decir, un caso normal de modificación de una entidad.
-    - Si el objeto <b>SI</b> lo tiene ya en la caché, mira si los datos cambian y si es así modifica el objeto gestionado (el objeto de cache) y lo marca para un update cuando hagamos el "commit" o el "flush".
-    - Si el objeto <b>NO</b> lo tiene en la caché entonces hará un select para traer el objeto a la cache pero podrá suceder lo siguiente:
-        - Que no exista en BBDD: INSERT del objeto en BBDD. Es decir, su comportamiento sería igual que el de un <b>persist()</b>
-        - Que exista pero que los datos no cambien: no hace nada
-        - Que exista y con datos diferentes: se lo trae, lo modifica con los datos del objeto que pasamos y lo marca para update al hacer commit
-	
-2. El objeto pasado tiene datos, pero la clave primaria a null -> En este caso insertara el objeto y le asignará un ID, siempre y cuando la clave primaria sea gestionada por la BBDD. Es decir, su comportamiento sería igual que el de un <b>persist()</b>
+```java
+EntityManager lectura = emf.createEntityManager();
+Persona separada = lectura.find(Persona.class, id);
+lectura.close();
 
-Hay que tener cuidado con su utilización, porque el objeto que se pasa como parámetro no pasa a ser gestionado. Hay que usar el objeto que devuelve el método. Veamos el siguiente ejemplo para entenderlo mejor, dado el siguiente registro en la tabla: 
+EntityManager em = emf.createEntityManager();
+em.getTransaction().begin();
+Persona gestionada = em.merge(separada);
+separada.setNombre("Este cambio no se sincroniza automáticamente");
+gestionada.setNombre("Este cambio sí se sincroniza al confirmar");
+em.getTransaction().commit();
+em.close();
+```
 
-	ID	|NOMBRE	|DIR	|TEL 
-	---------------------------
-	1	|a	|b	|c	 
-
-Ejecutamos el siguiente código 
-
-	Cliente c = new Cliente(1,"A","B",C"); 
-	em.merge(c); 
-	c.setNombre("F");  
-	//El cambio se perderá cuando hagamos el commit, ya que el objeto donde estamos cambiando el valor NO es el objeto gestionado 
-	em.commit(); 
-	Cliente c = new Cliente(1,"A","B",C"); 
-	c = em.merge(c); //Devuelve el objeto que esté la caché 
-	c.setNombre("TPM"); //Ahora no se pierde porque la referencia apunta al objeto gestionado por el contexto de persistencia. 
-	em.commit(); 
+El ejemplo presupone que `find()` no devuelve `null`. En código real hay que comprobarlo antes de usar el objeto.
 
 Ver el ejemplo _02_ModificarPersonaJPA 
  
