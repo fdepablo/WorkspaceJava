@@ -14,7 +14,7 @@ public class _02_Lambdas {
 		//Recordemos que Supplier se usa para generar objetos de un tipo sin argumentos
 		//de entrada. En este caso vamos a generar un objeto de tipo Integer
 		Supplier<Integer> sup;
-		//La primera funcion lambda serÌa que siempre genere un 2, por ejemplo
+		//La primera funcion lambda ser√≠a que siempre genere un 2, por ejemplo
 		sup = () -> 2;
 		Integer numero = sup.get();
 		System.out.println(numero);
@@ -52,7 +52,7 @@ public class _02_Lambdas {
 		con.accept(78);
 		
 		Consumer<Persona> conPersona;
-		//El siguiente ejemplo tambien valdrÌa con (p) o con (Persona p)
+		//El siguiente ejemplo tambien valdrÔøΩa con (p) o con (Persona p)
 		conPersona = p -> {
 			System.out.println("imprimiendo: " + p.getId());
 			System.out.println("imprimiendo: " +p.getNombre());
@@ -81,15 +81,14 @@ public class _02_Lambdas {
 		bifunc = (i,j) -> i / j;
 		System.out.println(bifunc.apply(10, 5));
 		
-		Predicate<Persona> predic;
-		predic = p -> {
+		Predicate<Persona> predic = p -> {
 			if(p.getEdad() > 18) {
 				return true;
 			}
 			return false;
 		};
 		
-		//En programcion funcional es muy habitual orientar a funciones
+		//En programcion funcional es muy habitual pasar funciones como par√°metro
 		System.out.println(predic.test(supPersona.get()));
 	}
 }

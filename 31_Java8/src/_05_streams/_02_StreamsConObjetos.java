@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class _03_StreamsConObjetos {
+public class _02_StreamsConObjetos {
     public static void main(String[] args) {
         List<Alumno> alumnos = Arrays.asList(
             new Alumno("Ana", 8), new Alumno("Luis", 4),

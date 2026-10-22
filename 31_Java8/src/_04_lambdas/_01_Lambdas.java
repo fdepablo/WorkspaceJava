@@ -76,27 +76,30 @@ public class _01_Lambdas {
 		
 		//Para utilizar expresiones lambda NECESITAMOS definir/tener interfaces 
 		//funcionales
-		//El return viene implicito pero lo podemos poner tambien
+
 		//Tambien podemos observar lo que se conoce como inferencia de tipos,
 		//los parametros n1 y n2 no tienen tipo declarado. Java lo hara automaticamente
 		//y pondra el mismo tipo que tenemos en la declarado en la interfaz
 		//InterfazDosParametros i1    = ( Integer n1, Integer n2 ) -> n1 + n2;
 		
-		//Esto ser�a equivalente a la creacion de la clase anonima de m�s arriba
-		//Aqui se invocar�a automaticamente el metodo "operacion"
-		InterfazDosParametros i1    = ( n1, n2 ) -> n1 + n2;
-		InterfazDosParametros i1bis = ( n1, n2 ) -> { return n1 + n2; };
+		//Esto sería equivalente a la creacion de la clase anonima de más arriba
+		//y se invocará automaticamente el método "operacion"
 		
-		InterfazUnParametro    i2    = n1 -> n1 * n1;
-		InterfazUnParametro    i2bis = n1 -> { return n1 * n1; };
+		InterfazDosParametros i1    = ( n1, n2 ) -> { return n1 + n2; };
+		//Podemos quitar el return y las llaves si solo tenemos una expresión.
+		InterfazDosParametros i1bis = ( n1, n2 ) -> n1 + n2;
 		
-		//Si no tengo parametros de entrada debemos de poner "()"
-		InterfazSinParametros      i3    = () -> 4000;
-		InterfazSinParametros      i3Bis = () -> { return 4000; };
+		InterfazUnParametro    i2    = (n1) -> { return n1 * n1; };
+		//Podemos quitar los paréntesis si solo tenemos parámetro de entrada
+		InterfazUnParametro    i2bis = n1 -> n1 * n1;
+		
+		//Si no tengo parametros de entrada debemos de poner "()" obligatoriamente
+		InterfazSinParametros      i3    = () -> { return 4000; };
+		InterfazSinParametros      i3Bis = () -> 4000;
 				
 		InterfazSinReturn i4    = () -> System.out.println("Sin return!");
-		//Las expresiones lambda pueden tener varias lineas, pero con varias
-		//lineas si la funcion devuelve algun valor, debemos de poner "return"
+		
+		//Si dentro del cuerpo tenemos varías expresiones debemos de poner "return"
 		InterfazSinReturn i4bis = () -> { 
 			//una expresion lambda puede tener variables dentro
 			int i = 5;
@@ -108,7 +111,7 @@ public class _01_Lambdas {
 		};
 		
 		InterfazGenerica<Double> iGenerica = ( n1, n2 ) -> n1 + n2;//sumamos
-		InterfazGenerica<String> iGenericaCadena = ( n1, n2 ) -> n1 + n2;//concatener
+		InterfazGenerica<String> iGenericaCadena = ( n1, n2 ) -> n1 + n2;//concatenamos
 				
 		System.out.println("=============================================");
 		System.out.println(i1.operacion(300, 600));
@@ -127,7 +130,7 @@ public class _01_Lambdas {
 		
 		
 		//De igual manera podemos pasar expresiones lambda como argumento
-		//de otras funciones
+		//de otras funciones cuyo parámetro de entrada sea de la misma interfaz
 		metodo1(( n1, n2 ) -> n1 + n2);
 		metodo1(i1);
 		
