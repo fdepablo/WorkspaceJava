@@ -27,7 +27,7 @@ public class _00_DelForAlStream {
         notas.stream()
             .forEach(nota -> System.out.println(nota));
         // Los tres recorridos muestran: 4, 7, 3, 9 y 5, cada una en una linea.
-        // Aqui stream() es opcional; sera util para encadenar filter en el paso 3.
+        // Aqui stream() es opcional pero sera util para encadenar filter en el paso 3.
 
         // PASO 2: seleccionar las aprobadas y guardarlas en otra lista.
         System.out.println("\n=== 2. Seleccionar con filter ===");
@@ -39,9 +39,9 @@ public class _00_DelForAlStream {
         }
         System.out.println("Con for e if: " + aprobadasConFor);
 
-        // filter recibe una condicion: la lambda devuelve true o false.
+        // filter recibe una condicion y la lambda devuelve true o false.
         // Si devuelve true, la nota pasa; si devuelve false, se descarta del flujo.
-        // filter no imprime ni crea una lista: devuelve otro stream.
+        // filter no imprime ni crea una lista, devuelve otro stream.
         
         // collect termina el recorrido y recoge las notas en una nueva lista.
         // Por ahora basta con reconocer collect(Collectors.toList()) como
