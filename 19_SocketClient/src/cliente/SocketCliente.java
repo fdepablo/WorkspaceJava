@@ -19,7 +19,7 @@ public class SocketCliente {
 	public static final String IP_SERVER = "localhost";
 	
 	public static void main(String[] args) {
-		System.out.println("        APLICACI�N CLIENTE         ");
+		System.out.println("        APLICACIÓN CLIENTE         ");
 		System.out.println("-----------------------------------");
 		
 		//Socket -> es la clase que nos va a permitir comunicarnos con el servidor
@@ -29,12 +29,12 @@ public class SocketCliente {
 		//informaci�n.
 
 		//PrintStream salida -> Salida de datos. Es el canal de salida del cliente, 
-		//es decir, el canal por el cual vamos a enviar informaci�n al servidor.		
+		//es decir, el canal por el cual vamos a enviar información al servidor.		
 
 		//En este objeto vamos a encapsular la IP y el puerto al que nos vamos a conectar
 		InetSocketAddress direccionServidor = new InetSocketAddress(IP_SERVER, PUERTO);
 		
-		//Usaremos la declaracion try-with-resources, esta declaraci�n nos asegura que
+		//Usaremos la declaracion try-with-resources, esta declaración nos asegura que
 		//todos los objetos que declaremos e instanciemos dentro del bloque try, ser�n
 		//cerrados cuando salgan del bloque try-catch. Es muy util parar ahorranos codigo
 		//ya que sino deber�amos cerrarlos (ejecutar su metodo close()), dentro del bloque
@@ -57,14 +57,15 @@ public class SocketCliente {
 			//se mandan a traves de un socket se mandan SIEMPRE en formato cadena
 			
 			//Establecemos la conexión
-			System.out.println("CLIENTE: Esperando a que el servidor acepte la conexi�n");
-			socketAlServidor.connect(direccionServidor);			
+			System.out.println("CLIENTE: Esperando a que el servidor acepte la conexión");
+			socketAlServidor.connect(direccionServidor);
+			
 			System.out.println("CLIENTE: Conexion establecida... a " + IP_SERVER 
 					+ " por el puerto " + PUERTO);		
 			
 			//Creamos el objeto que nos permite mandar informacion al servidor
 			PrintStream salida = new PrintStream(socketAlServidor.getOutputStream());
-			//Mandamos la informaci�n por el Stream
+			//Mandamos la información por el Stream
 			salida.println(operandos);//3-4
 			
 			//Creamos el objeto que nos va a permitir leer la salida del servidor
@@ -76,7 +77,7 @@ public class SocketCliente {
 			
 			System.out.println("CLIENTE: Esperando al resultado del servidor...");
 			//En la siguiente linea se va a quedar parado el hilo principal
-			//de ejecuci�n hasta que el servidor responda, es decir haga un println
+			//de ejecución hasta que el servidor responda, es decir haga un println
 			String resultado = bf.readLine();//7
 				
 			System.out.println("CLIENTE: El resultado de la suma es: " + resultado);//7
