@@ -6,13 +6,13 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 //En este caso, vamos a abrir un hilo por cada peticion que haga el servidor
-//para así poder procesar varias peticiones simultaneas de diferentes clientes
+//para asï¿½ poder procesar varias peticiones simultaneas de diferentes clientes
 public class SocketServidorHilo {
 	
 	public static final int PUERTO = 2018;
 	
 	public static void main(String[] args) {
-		System.out.println("      APLICACIÓN DE SERVIDOR CON HILOS     ");
+		System.out.println("      APLICACIÃ“N DE SERVIDOR CON HILOS     ");
 		System.out.println("-------------------------------------------");		
 		
 		int peticion = 0;

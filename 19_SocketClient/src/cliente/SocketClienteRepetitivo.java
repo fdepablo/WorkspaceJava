@@ -15,7 +15,7 @@ import java.util.Scanner;
 //hasta que el cliente decida parar el programa
 
 //En este caso, cada peticion que se haga al cliente sera independiente y se hara
-//con un objeto socket diferente, es decir, simulamos abrir y cerrar comunicación
+//con un objeto socket diferente, es decir, simulamos abrir y cerrar comunicaciï¿½n
 //por cada peticion.
 public class SocketClienteRepetitivo {
 
@@ -24,7 +24,7 @@ public class SocketClienteRepetitivo {
 	public static final String IP_SERVER = "localhost";
 
 	public static void main(String[] args) {
-		System.out.println("        APLICACIÓN CLIENTE         ");
+		System.out.println("        APLICACIÃ“N CLIENTE         ");
 		System.out.println("-----------------------------------");		
 
 		InetSocketAddress direccionServidor = new InetSocketAddress(IP_SERVER, PUERTO);
@@ -41,7 +41,7 @@ public class SocketClienteRepetitivo {
 				
 				Socket socketAlServidor = new Socket();
 				socketAlServidor.connect(direccionServidor);
-				System.out.println("CLIENTE: Esperando a que el servidor acepte la conexión");
+				System.out.println("CLIENTE: Esperando a que el servidor acepte la conexiï¿½n");
 				System.out.println("CLIENTE: Conexion establecida... a " + IP_SERVER 
 						+ " por el puerto " + PUERTO);	
 				
@@ -66,7 +66,7 @@ public class SocketClienteRepetitivo {
 				socketAlServidor.close();
 			} while (continuar);			
 		}catch (UnknownHostException e) {
-			System.err.println("CLIENTE: No encuentro el servidor en la dirección" + IP_SERVER);
+			System.err.println("CLIENTE: No encuentro el servidor en la direcciï¿½n" + IP_SERVER);
 			e.printStackTrace();
 		} catch (IOException e) {
 			System.err.println("CLIENTE: Error de entrada/salida");

@@ -10,7 +10,7 @@ import java.net.UnknownHostException;
 import java.util.Scanner;
 
 //En este ejemplo vamos a hacer que el cliente mande frases al servidor
-//y el servidor tendrá que contar el numero de letras que tiene la frase
+//y el servidor tendrï¿½ que contar el numero de letras que tiene la frase
 //La conexion se mantendra abierta hasta que el cliente mande la palabra
 //"FIN" al servidor.
 
@@ -23,14 +23,14 @@ public class SocketClienteHilo {
 	public static final String IP_SERVER = "localhost";
 	
 	public static void main(String[] args) {
-		System.out.println("        APLICACIÓN CLIENTE         ");
+		System.out.println("        APLICACIÃ“N CLIENTE         ");
 		System.out.println("-----------------------------------");
 
 		InetSocketAddress direccionServidor = new InetSocketAddress(IP_SERVER, PUERTO);
 		
 		try (Scanner sc = new Scanner(System.in)){
 						
-			System.out.println("CLIENTE: Esperando a que el servidor acepte la conexión");
+			System.out.println("CLIENTE: Esperando a que el servidor acepte la conexiÃ³n");
 			Socket socketAlServidor = new Socket();
 			socketAlServidor.connect(direccionServidor);
 			System.out.println("CLIENTE: Conexion establecida... a " + IP_SERVER + 
@@ -60,7 +60,7 @@ public class SocketClienteHilo {
 			//Cerramos la conexion
 			socketAlServidor.close();
 		} catch (UnknownHostException e) {
-			System.err.println("CLIENTE: No encuentro el servidor en la dirección" + IP_SERVER);
+			System.err.println("CLIENTE: No encuentro el servidor en la direcciï¿½n" + IP_SERVER);
 			e.printStackTrace();
 		} catch (IOException e) {
 			System.err.println("CLIENTE: Error de entrada/salida");
